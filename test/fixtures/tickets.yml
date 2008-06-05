@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  event_id: 1
+  name: MyString
+  price: 1.5
+  reservation_code: MyString
+  email: MyString
+  num_tickets: 1
+  note: MyText
+  telephone: MyString
+
+two:
+  event_id: 1
+  name: MyString
+  price: 1.5
+  reservation_code: MyString
+  email: MyString
+  num_tickets: 1
+  note: MyText
+  telephone: MyString

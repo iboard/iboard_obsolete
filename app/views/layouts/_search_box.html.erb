@@ -1,0 +1,32 @@
+<!-- SEARCH FIELD -->
+<% 
+    observe     ||= true 
+    field_name  ||= 'search_txt'
+%>
+<% form_remote_tag( :update => 'main', 
+                    :complete => "Element.show('main');"+visual_effect(:highlight, 'main'), 
+                    :method => :get,
+                    :url => { :controller => controller, :observer => 1 } ) do %> 
+   
+    <% 
+       show_button ||= false 
+       size        ||= 20
+    %>
+    <img src=<%= root_url -%>images/magnifyingglass.gif valign=middle>
+    <%= text_field_tag field_name, params[field_name], :size => size -%>
+    <% if observe == true %>
+    <%= observe_field("search_txt", 
+                    :frequency => 1, 
+                    :update => 'main', 
+                    :url => { :controller => controller },
+                    :with => "'#{field_name}=' + escape(value) + '&observer=1'", 
+                    :method => :get,
+                    :before => "Element.hide('main');Element.show('main_spinner');",
+                    :complete => "Element.hide('main_spinner');Element.show('main');"
+     ) 
+   %><% end %>
+   <% if show_button %>
+       <%= submit_tag _('Search') -%>
+   <% end %>
+<% end %>
+<!-- SEARCH FIELD -->

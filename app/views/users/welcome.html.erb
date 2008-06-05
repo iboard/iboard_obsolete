@@ -1,0 +1,18 @@
+<% content_for :html_title do -%>
+<%= _(' for %s') % @user.longname -%>
+<%- end -%>
+<h1><%= _('Welcome %{longname}') % {:longname => @user.longname} -%>!</h1>
+<div style="border: 1px solid #ddd; padding: 10px; float:right; width:33%;">
+    <%= render :partial => '/layouts/user_menu' -%>
+</div>
+<div style="width: 67%">
+    <%= _('You\'r logged in from <em>%{ip}</em> as <b>%{username}</b>') % { :ip => request.env['REMOTE_ADDR'], :username => @user.longname } %>
+    <div style="font-size: 13px;">
+    <br/><b><%= _('Your Browser') -%></b>  :<br/> <%= request.env['HTTP_USER_AGENT'] -%><br />
+    <br/><b><%= _('Your IP:PORT') -%></b>  : <%= request.env['REMOTE_ADDR'] -%>:<%= request.env['REMOTE_PORT'] -%><br />
+    <br/><b><%= _('Server IP:PORT') -%></b>: <%= request.env['SERVER_ADDR'] -%>:<%= request.env['SERVER_PORT'] -%><br />
+    <br/><b><%= _('Session utok') -%></b>  : <%= user.utok -%><br />
+    </div>
+    <p><%= link_to _('Log out'), logout_path %></p>
+</div>
+

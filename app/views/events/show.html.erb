@@ -1,0 +1,26 @@
+<% shadow_wrapper do  %>
+
+  <div class="event_details">
+    <div class="event_details_header_back"><%= link_to 'Back', calendar_events_path( :location => @event.location) %></div>
+    <div class="event_details_header">
+      <%=h @event.title %>
+    </div>
+    
+    <div class="event_details_table">
+       <div class="event_details_table_row">
+         <% @event.split_body.each do |column| %>
+           <div class="event_details_column">
+               <%= interpret( column ) -%>
+           </div>
+         <% end %>
+         <div class="event_details_column">
+           <%= render :partial => 'event_picture_column', :locals => { :event => @event } -%>
+           
+           <%= render :partial => 'details_tickets_edit', :locals => { :event => @event } -%>          
+           
+         </div>
+       </div>
+    </div>
+  </div>
+<% end %>
+

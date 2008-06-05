@@ -1,0 +1,14 @@
+<div class="event_index_entry_picture"><%=interpret "[[sizedimage:#{event.picture_id}:200x200:#{event.title}]]" -%></div>
+<p>
+  <b><%= _('Begins at') -%></b>:
+  <%=h event.begins_at.to_s(:begins_at) %>
+</p>
+<% if !event.open_end %>
+  <p>
+    <b><%= _('Ends at') %></b>:
+    <%=h event.ends_at.to_s(:begins_at) %>
+  </p>
+<% end %>
+<p>
+    <%= interpret(h(event.picture_text)) %>
+</p>

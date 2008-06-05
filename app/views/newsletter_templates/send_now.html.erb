@@ -1,0 +1,19 @@
+<h1><%= _('Sending Newsletter Template %s') % @newsletter_template.subject -%></h1>
+
+<div id='progress_bar'></div>
+
+<%= periodically_call_remote(:url => {:controller => 'newsletter_templates', :action => 'show_status', :id => @newsletter_template.id}, 
+    :frequency => '5', :update => 'progress_bar') %>
+
+<table width=100%>
+    <tr>
+        <th width=25%><%= _('Address') -%></th>
+        <th width=15%><%= _('Type') -%></th>
+        <th width=35%><%= _('Status')  -%></th>
+        <th width=25%><%= _('Timestamp') -%></th>
+    </tr>
+</table>
+
+<% @newsletter_template.newsletter.newsletter_subscriptions.each_with_index do |subscription,idx| %>
+  <%= render :partial => 'sending', :locals => { :template => @newsletter_template, :subscription => subscription, :idx => idx } -%>
+<% end %>

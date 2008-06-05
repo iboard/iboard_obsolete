@@ -1,0 +1,80 @@
+<div class='float_left'>
+  <p>
+    <b><%= _('Nickname') -%></b><br />
+    <%= f.text_field :nickname %>
+  </p>
+  
+  <p>
+    <b><%= _('User') -%></b><br />
+    <%= f.select :user_id, User.find(:all,:order => 'longname').map { |u| [u.longname,u.id] } -%>
+  </p>
+  
+  <p>
+    <b><%= _('Prename') -%></b><br />
+    <%= f.text_field :prename %>
+  </p>
+  
+  <p>
+    <b><%= _('Lastname') -%></b><br />
+    <%= f.text_field :lastname %>
+  </p>
+  
+  <p>
+    <b><%= _('Secret') -%></b><br />
+    <%= f.text_field :secret %>
+  </p>
+  
+  
+  <p>
+    <b><%= _('Gender') -%></b>
+    <%= f.select :gender, gender_dropdown_options %>
+  </p>
+  <p>
+    <b><%= _('Date birth') -%></b>:
+    <%= f.text_field :date_birth_string, :size => 10, :maxlength => 10 %>
+  </p>
+</div>
+<div class='float_right'>
+    
+    <p>
+      <b><%= _('Country') -%></b><br />
+      <%= f.select :country, country_dropdown_options %>
+    </p>
+
+    <p>
+      <b><%= _('Address') -%></b><br />
+      <%= f.text_area :address, :rows => 3 %>
+    </p>
+
+    <p>
+      <b><%= _('ZIP') -%></b><br />
+      <%= f.text_field :zip %>
+    </p>
+
+    <p>
+      <b><%= _('City') -%></b><br />
+      <%= f.text_field :city %>
+    </p>
+
+    <p>
+      <b><%= _('EMail') -%></b><br />
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <b><%= _('Phone') -%></b><br />
+      <%= f.text_field :phone %>
+    </p>
+
+    <p>
+      <b><%= _('Chat') -%></b><br />
+      <%= f.text_field :chat %>
+    </p>
+
+
+    <p>
+      <b><%= _('Note') -%></b><br />
+      <%= f.text_area :note, :rows => 10, :cols => 60 %>
+    </p>
+</div>
+<br clear=all />

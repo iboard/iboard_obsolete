@@ -1,0 +1,30 @@
+<h1><%= _('Subscribe to newsletters') -%></h1>
+
+<div id='subscriptions' style='float: right; width: 300px; border: 1px solid black; padding: 10px'>
+    <%= render :partial => 'user_subscriptions' %>
+</div>
+
+<% form_tag 'subscription', :action => 'submit_subscription' do %>
+<b><%= _('Your e-mail-address') -%>:</b><br />
+   <%= user.email -%><br />
+
+<p>
+  <b><%= _('Available Newsletters') %></b><ul>
+      <% @newsletters.each do |nl| %>
+        <li>
+            <%= check_box_tag "newsletter_id[#{nl.id}]", nl.id, nl.email_subscripted?(user.email),
+                :onclick => remote_function(
+                              :url => 'user_subscriptions', 
+                              :update => 'subscriptions',
+                              :with => "this.name + '=' + this.checked"
+                            ) 
+            %>&nbsp;<%= nl.name %>
+        </li>
+      <% end %>
+  </ul>
+</p>
+<% end %>
+
+<div class='link_button'>
+    <%= link_to _('finished'), root_path%>
+</div>

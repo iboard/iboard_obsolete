@@ -1,0 +1,15 @@
+<h1><%= _('Maintaining Newsletters') -%></h1>
+<div class='link_button'><%= link_to _('New Newsletter'), new_newsletter_path -%></div>
+<p></p>
+<table width=100%>
+    <tr>
+        <th><%= _('Newsletter') -%></th>
+        <th><%= _('Description') -%></th>
+        <th><%= _('Address')     -%></th>
+        <th><%= _('# Subscriptions') -%></th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <%= render :partial => @newsletters -%>
+    
+</table>

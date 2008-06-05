@@ -1,0 +1,19 @@
+<p>
+  <b><%= _('Name') -%></b><br />
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <b><%= _('User') -%></b><br />
+  <%= f.select :user_id, User.find(:all,:order => 'longname').map { |u| [u.longname,u.id] } %>
+</p>
+
+<p>
+  <b><%= _('Function') -%></b><br />
+  <%= f.select :function_id, Function.find(:all, :order => 'name').map { |fnc| [fnc.name,fnc.id]} %>
+</p>
+
+<p>
+  <b><%= _('Comment') -%></b><br />
+  <%= f.text_field :comment, :size => 80 %>
+</p>

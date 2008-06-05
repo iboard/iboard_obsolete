@@ -1,0 +1,25 @@
+<div class='posting_listing'>
+    <b><%=link_to h(posting.title), posting %></b>
+    <% if posting.date_expires < Date::today %>
+      <small> (<%= _('Expired since %s') % posting.date_expires -%>)</small>
+    <% end %>
+    <% if posting.editable_by_user?(user) %><br/>
+         <%= link_to icon('posting-edit.png',_('Edit Posting'),12,12),     edit_posting_path(posting) %> 
+         <%= link_to icon('posting-delete.png',_('Delete Posting'),12,12), posting, 
+               :confirm => _("Are you sure you want delete posting '%s'?") % posting.title, 
+               :method => :delete %>
+    <% end %>
+    <% page_id ||= nil %>
+    <small>
+    <%=  truncate( (h(posting.body)), POSTING_LISTING_LENGTH,
+          " ["+link_to(('.... '+_('read')), posting_path(posting,:page_id => page_id)) +"] " )
+    %>
+    <% begin %>
+    <% if posting.page_columns.length > 0 %>
+      <br/><%=_('On page') -%>: <%= posting.page_columns.map { |c| link_to c.page.name, show_page_page_path(c.page) }.join(' | ') -%>
+    <% end %>
+    <% rescue %>
+      <%= _('This posting is not assigned to any column') -%>
+    <% end %>
+    </small>
+</div>

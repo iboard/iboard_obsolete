@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Events: <%= controller.action_name %></title>
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed"  href='<%= "#{root_url}events/rss" -%>'>
+  
+  <%= stylesheet_link_tag 'scaffold' %>
+  <% if ! request.env["HTTP_USER_AGENT"].include? "MSIE" %>
+    <%= stylesheet_link_tag 'events' %>
+  <% else %>
+    <%= stylesheet_link_tag 'events_ie' %>
+  <% end %>
+  <%= javascript_include_tag 'prototype', 'effects', 'application', 'dragdrop.js' %>
+</head>
+<body id='body' onload="new Effect.Fade('flash_popup',{});">
+     
+    <div id="webview" style="
+              position: absolute;
+              top: 150px;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              height: 100%;
+              width: 100%;
+              text-align: center;
+              vertical-align: middle;
+              z-index: 4;
+              display: none;
+              background: #333;
+              overflow: visible;">
+      </div>
+      <div id="photo_spinner" style="
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        padding-top: 180px;
+        opacity: 1.0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+        z-index: 5;
+        display: none;
+        overflow: visible;"><img src=<%= root_url + "/images/spinner.gif" -%>>
+      </div>
+            
+    <div class='top1'>
+       <center>
+            <div id='open_id' style='background: #ddd; opacity: 0.8; padding: 2px; width: 100px;'>
+                <a  
+                    onclick="Element.hide('open_id');Element.show('close_id');new Effect.Appear('flash_popup',{});">
+                    <%= _('open') -%>
+                </a> 
+            </div>   
+            <div id='close_id' style='background: #ddd; opacity: 0.8; padding: 2px; width: 100px; display: none;'>
+                <a
+                    onclick="Element.hide('close_id');Element.show('open_id');new Effect.Fade('flash_popup',{});">
+                    <%= _('close') -%>
+                </a>        
+            </div>
+            <div id='flash_popup' style='
+            	position: relative;
+            	z-index: 10;
+            	vertical-align: top;
+            	width: 774px;
+            	height: 790px;
+            	border: 4px solid #9b846b;
+            	background: white;
+            	padding: 10px;
+            	margin: 10px;
+                display: none;'>
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+                  codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" height="783" width="766">
+                				<param name="movie" value="/iboard/flash/curtain.swf">
+                				<param name="quality" value="best">
+                				<param name="play" value="true">
+                				<embed height="783" pluginspage="http://www.macromedia.com/go/getflashplayer" 
+                				src="/iboard/flash/curtain.swf" 
+                				type="application/x-shockwave-flash" width="766" quality="best" play="true">
+                </object>
+            </div>
+       </center>
+    </div>
+    <div class='top2'>
+      <div class='navigation'><%= month_links('soundtheatre') -%> || <%= pages_links('soundtheatre') -%></div>
+      <center>
+      <div class='center_wrapper'>
+         <% if request.env["HTTP_USER_AGENT"].include? "MSIE" %>
+             <div class=event_title><b>Ihr Browser ist nicht für diese Website geeignet!<br />
+                 Die Seite wird daher mit Ihrem Browser nicht richtig angezeigt.</b>
+                 <hr>
+                 Wir sind bemüht so bald als möglich auch eine Version für den Microsoft Internet Explorer anzubieten.<br/>
+                 Einen geeigneten (gratis) Browser finden Sie u.a. <a href=http://www.apple.com/safari/>hier...</a>
+                 <br>
+             </div>
+         <% end %>
+         <div class='main'>
+             
+             <p style="color: green"><%= flash[:notice] %></p>
+              <%= yield %>
+             <div class='footer'>
+                 Stelzhamer-Straße 9 · 4600 Wels · Austria · T. +43 (0) 72 42 / 21 64 06 · events@thesoundtheatre.com
+                 <br/><img src='/iboard/images/hr_pic.gif' /><br/>
+                 Copyright © 2008 TheSoundtheatre. All Rights Reserved. | 
+                 <%= link_to( _('AGB | Impressum'), show_page_page_path(5,:layout => 'soundtheatre') ) -%>
+             </div>
+         </div>
+      
+      </div>
+      <% if granted_for?('events') %>
+          <%= link_to( _('Administration'), root_path ) -%> | <%= link_to( _('Logout'), logout_path )%>
+      <% end %>
+      </center>
+    </div>
+ 
+</body>
+</html>

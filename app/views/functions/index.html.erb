@@ -1,0 +1,26 @@
+<% content_for :html_title do %>
+  <%= _('Listing functions') %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('New Function'), new_function_path %>
+<% end %>
+
+<table width=100%>
+  <tr>
+    <th><%= _('Name') -%></th>
+    <th><%= _('Comment') -%></th>
+    <th colspan=3>&nbsp;</th>
+  </tr>
+
+<% for function in @functions %>
+  <tr>
+    <td><%=h function.name %></td>
+    <td><%=h function.comment %></td>
+    <td width=33><%= link_to _('Show'), function %></td>
+    <td width=33><%= link_to _('Edit'), edit_function_path(function) %></td>
+    <td width=33><%= link_to _('Destroy'), function, :confirm => _('Are you sure?'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

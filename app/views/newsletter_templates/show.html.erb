@@ -1,0 +1,23 @@
+<h1><%= @newsletter_template.subject -%></h1>
+<div>
+    <h2><%= _('HTML-Version') -%></h2>
+    <div style='border: 1px solid black; padding: 10px;'>
+      <%= interpret @newsletter_template.body -%>
+    </div>
+    <h2><%= _('Plaintext-Version') -%></h2>
+    <div style='border: 1px solid black; padding: 10px'>
+      <pre><%=h ( (@newsletter_template.body)) -%></pre>
+    </div>
+</div>
+
+<hr>
+<div class='link_button'>
+    <%= link_to _('Edit'), edit_newsletter_template_path(@newsletter_template) -%>
+</div>
+<div class='link_button'>
+    <%= link_to _('Goto Newsletter'), @newsletter_template.newsletter -%>
+</div>
+<div class='link_button'>
+    <%= link_to _('Send Now!'), send_now_newsletter_template_path(@newsletter_template), 
+      :confirm => _('Are you sure you want to send this template to %d subscribers?') % @newsletter_template.newsletter.newsletter_subscriptions.length -%>
+</div>

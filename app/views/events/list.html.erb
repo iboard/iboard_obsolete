@@ -1,0 +1,20 @@
+
+<div class="no_events_found">
+    <%= flash[:error] unless flash[:error].nil? -%>
+</div>
+
+<%= link_to( 'New event', new_event_path) unless !granted_for?('events') %>
+
+<table width=100%>
+  <tr>    
+    <th><%= _('Title') -%></th>
+    <th><%= _('Begins at') -%></th>
+    <th><%= _('Reservations') -%></th>
+    <th>&nbsp;</th>
+  </tr>
+  
+<% for event in @events %>
+  <%= render :partial => 'event_line', :locals => { :event => event } %>
+<% end %>
+</table>
+

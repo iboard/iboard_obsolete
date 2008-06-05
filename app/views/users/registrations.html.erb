@@ -1,0 +1,9 @@
+<h1><%= _('Unconfirmed Registrations') -%></h1>
+<div style='display: table;'>
+    <div style='display: table-row;'>
+        <div style='display: table-cell; width: 200px;'><b><%= _('Username') -%></b></div>
+        <div style='display: table-cell; width: 200px;'><b><%= _('e-mail') -%></b></div>
+        <div style='display: table-cell; width: 200px;'><b><%= _('registered at/from ip') -%></b></div>
+    </div>
+  <%= render :partial => @registrations -%>
+</div>

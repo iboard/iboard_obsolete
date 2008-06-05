@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  introduction: MyText
+  num_postings: 1
+  num_columns: 1
+
+two:
+  name: MyString
+  introduction: MyText
+  num_postings: 1
+  num_columns: 1

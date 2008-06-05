@@ -1,0 +1,25 @@
+<p>
+  <b><%= _('Title') -%></b><br />
+  <%= f.text_field :title %>
+</p>
+<p>
+  <b><%= _('Description') -%></b><br />
+  <%= f.text_area :description, :rows => 5, :cols => 60 %>
+</p>
+
+<% if ! @binary.new_record? %>
+<p>
+  <b><%= _('Filename') -%></b><br />
+  <%= f.file_field :uploaded_file %>
+</p>
+
+<p>
+  <b><%= _('Mime type') -%></b>: <%= f.text_field :mime_type -%>
+</p>
+<p>
+  <b><%= _('Size') -%>:</b> <%= @binary.size -%> Bytes
+</p>
+<% else %>
+  <%= f.hidden_field :mime_type, :value => 'new' %>
+  <%= _('Please create record befor you can upload a binary...')%>
+<% end %>

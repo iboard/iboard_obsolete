@@ -1,0 +1,6 @@
+<div style='display: table-row;'>
+    <div style='display: table-cell;'><b><%= user.username -%></b></div>
+    <div style='display: table-cell;'><%= user.email -%></div>
+    <div style='display: table-cell;'><%= user.registered_at.to_s -%></div>
+    <div style='display: table-cell;'><%= user.confirmed_at -%>/<%= user.confirmed_from_ip -%></div>
+</div>

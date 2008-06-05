@@ -1,0 +1,40 @@
+<%= error_messages_for :newsletter -%>
+
+<div class='form_field'>
+    <b><%= _('Name') -%></b><br/>
+    <%= f.text_field :name -%>
+</div>
+
+<div class='form_field'>
+    <b><%= _('Who is allowed to send newsletters?') -%></b><br/>
+    <%= f.select :user_id, User.opts_for_select %>
+</div>
+
+<div class='form_field'>
+    <b><%= _('Public subscribable?') -%></b><br/>
+    <%= f.check_box :public_subscribable -%>
+</div>
+
+<div class='form_field'>
+    <b><%= _('Default Mime-type') -%></b><br/>
+    <%= f.select :default_type, ['text/html', 'text/plain'] -%>
+</div>
+
+<div class='form_field'>
+    <b><%= _('Description') -%></b><br/>
+    <%= f.text_area :description, :cols=>50, :rows => 5 -%>
+</div>
+
+
+<div class='form_field'>
+    <b><%= _('From Address') -%></b><br/>
+    <%= f.text_field :from_address -%>
+</div>
+
+<div class='form_field'>
+    <b><%= _('Footer') -%></b><br/>
+    <%= f.text_area :footer, :cols=>50, :rows => 5 -%>
+</div>
+
+
+

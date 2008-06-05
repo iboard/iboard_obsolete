@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  newsletter_id: 1
+  email: MyString
+  subscripted_at: 2008-05-15 13:37:25
+  subscripted_from: MyString
+
+two:
+  newsletter_id: 1
+  email: MyString
+  subscripted_at: 2008-05-15 13:37:25
+  subscripted_from: MyString

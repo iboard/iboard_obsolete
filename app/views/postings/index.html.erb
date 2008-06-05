@@ -1,0 +1,16 @@
+<% content_for :html_title do %><%= _('Postings') -%><% end %>
+<% content_for :controller_menu do %>
+  <%= _('%{postings} found') % { :postings => pluralize(@postings.length, _('posting')) } -%> 
+  <% if granted_for? 'new posting' %>
+    | <%= link_to _('New posting'), new_posting_path %>
+  <% end %>
+<% end %>
+
+<% render :partial => '/layouts/search_box', :locals => { :show_button => true , :size => 30, :controller => 'postings', :observe => false } %>
+
+<% today = Date::today %>
+<% for posting in @postings %>
+   <%= render :partial => 'list_posting', :locals => { :posting => posting, :page_id => nil } -%>
+<% end %>
+<br />
+<%= will_paginate @postings -%>

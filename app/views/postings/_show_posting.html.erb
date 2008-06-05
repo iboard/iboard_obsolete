@@ -1,0 +1,28 @@
+<% page_id ||= nil %>
+
+<h2><%=link_to h(posting.title), posting_path(posting,:page_id => page_id) -%></h2>
+
+<% if posting.author %>
+  <div class='created_at'><%= _('posted by %{author} at %{date}') % { :author => posting.author.display_name, 
+       :date => DateTime::parse(posting.created_at.to_s(:db)).localize(get_language_code) } -%></div>
+<% end %>
+
+<% if posting.date_expires < Date::today %>
+  <div class='expired'><%= _('Expired since %s') % posting.date_expires -%></div>
+<% end %>
+
+<div class="posting_frontpage_body">
+  <%=  interpret(truncate(h(posting.body),
+          POSTING_PREVIEW_LENGTH,
+         ( " ["+link_to(_('read more'), posting_path(posting,:page_id => page_id, :layout => params[:layout] )) +"] " )))
+  %>
+</div>  
+<br clear=left />
+<% if granted_for? 'edit posting' or (posting.editable_by_user?(user) ) %>
+  <div class="posting_frontpage_menu">
+     <%= link_to icon('posting-edit.png',_('Edit Posting')),     edit_posting_path(posting,:page_id => page_id) %> 
+     <%= link_to icon('posting-delete.png',_('Delete Posting')), posting_path(posting,:page_id => page_id), 
+            :confirm => _("Are you sure you want delete posting '%s'?") % posting.title, 
+            :method => :delete %>
+  </div>
+<% end %>

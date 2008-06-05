@@ -1,0 +1,15 @@
+<% content_for :html_title do %>
+  <%= _('New user') -%>
+<% end %>
+<% content_for :controller_menu do %>
+    <%= link_to _('Back'), users_path %>
+<% end %>
+<%= error_messages_for :user %>
+
+<% form_for(@user) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } %>
+
+  <p>
+    <%= f.submit _("Create") %>
+  </p>
+<% end %>

@@ -1,0 +1,10 @@
+<% form_tag "#{root_url}postings/", :method => :get do %>
+  <% 
+     show_button ||= false 
+     size        ||= 20
+  %>
+  <%= text_field_tag :search_txt, params[:search_txt], :size => size -%>
+  <% if show_button %>
+    <%= submit_tag _('Search') -%>
+  <% end %>
+<% end %>

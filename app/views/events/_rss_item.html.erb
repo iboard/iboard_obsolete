@@ -1,0 +1,17 @@
+<item>
+	<title><%= e.title -%></title>
+	<link><%= event_url e -%></link>
+	<comments>....</comments>
+	<pubDate><%= ((e.updated_at)).to_s(:long) -%></pubDate>
+	<category><![CDATA[News]]></category>
+	<description><![CDATA[
+	    <%= interpret h(e.introduction) -%>
+	]]></description>
+	<content:encoded><![CDATA[
+	  <h3><%= e.begins_at.to_s(:begins_at) -%></h3>
+      <%= interpret "[[rsizedimage:#{e.picture_id}:300x300:#{e.title}]]" -%>
+      <%= link_to _('Tickets'), new_ticket_path(:event => e) %><br/>
+      <br />
+	  <%= interpret h(e.body) -%>
+	  ]]></content:encoded>
+</item>

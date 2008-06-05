@@ -1,0 +1,50 @@
+<div class="thank_you">
+<%= _('Thank you for your reservation!') -%>
+  
+    <%= _('Your reservation code is <span class="reservation_code_display">%{code}</span>.
+    <br /><br/>Please print this page and show it at the reception') % 
+         { :code => @ticket.reservation_code} -%>
+    <br /><br />
+    <%= _('Note: You have to check out the tickets 30 minutes before the event (before %{time})!') % 
+         { :time => ((@ticket.event.begins_at)-30.minutes).to_s(:begins_at) } -%>
+</div>
+
+<p>
+  <b><%= _('Reservation Name') %>:</b>
+  <%=h @ticket.name %>
+</p>
+
+<p>
+  <b>Num tickets:</b>
+  <%=h @ticket.num_tickets %>
+</p>
+<p>    
+  <b>Price per Ticket:</b>
+  € <%=h @ticket.price %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @ticket.email %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%=h @ticket.telephone %>
+</p>
+
+<p>
+  <b><%= _('Your notes') -%></b><br/>
+  <%=h @ticket.note %>
+</p>
+
+<p>
+  <b>Event:</b><br/>
+  <h1><%=h @ticket.event.title %></h1>
+  <h2><%= @ticket.event.begins_at.to_s(:begins_at) -%></h2>
+  <br>
+  <%= interpret( "[[rimage:#{@ticket.event.picture_id}:#{@ticket.event.title}]]")%>
+  <%= interpret( @ticket.event.introduction ) -%><br/>
+  <%= interpret( @ticket.event.body.gsub(/\|\|/,"<br/>") ) -%>
+</p>
+<%= link_to 'Back', @ticket.event %>

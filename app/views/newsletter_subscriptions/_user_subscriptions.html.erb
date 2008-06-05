@@ -1,0 +1,6 @@
+<b><%= _('Your active subscriptions') -%></b><br/>
+<ol>
+<% @subscriptions.each do |s| %>
+  <li><%= s.newsletter.name -%> (<%= s.handling_code -%>)</li>
+<% end %>
+</ol>

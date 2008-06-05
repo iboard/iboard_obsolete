@@ -1,0 +1,26 @@
+<% content_for :html_title do %>
+  <%= _('Acessor') %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('Edit'), edit_accessor_path(@accessor) %> |
+  <%= link_to _('Back'), accessors_path %>
+<% end %>
+<p>
+  <b><%= _('Name') -%>:</b>
+  <%=h @accessor.name %>
+</p>
+
+<p>
+  <b><%= _('User') -%>:</b>
+  <%=h @accessor.user.longname %>
+</p>
+
+<p>
+  <b><%= _('Function') -%>:</b>
+  <%=h @accessor.function.name %>
+</p>
+
+<p>
+  <b><%= _('Comment') -%>:</b>
+  <%=h @accessor.comment %>
+</p>

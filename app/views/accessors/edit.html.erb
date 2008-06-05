@@ -1,0 +1,15 @@
+<% content_for :html_title do %>
+  <%= _('Editing Acessor') %>
+<% end %>
+<% content_for :controller_menu do %>
+    <%= link_to _('Show'), @accessor %>
+    <%= link_to _('Back'), accessors_path %>
+<% end %>
+<%= error_messages_for :accessor %>
+
+<% form_for(@accessor) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Update") %>
+  </p>
+<% end %>

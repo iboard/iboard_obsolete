@@ -1,0 +1,15 @@
+<%= _('Hello %s') % @user.longname -%>!
+
+<%= _('Thank you for registering at %s') % REGISTRATION_DOMAIN_NAME %>
+
+<%= _('Your confirmation code is')%>: <%= @user.confirmation_code -%>
+
+<%= _('Please goto %{url}') % { :url => @confirmation_url } %>
+<%= _('to confirm and complete your registration')%>
+
+<%= _('Please notice that your password is stored crypted only and nobody can access your plain-text-password.') %>
+
+
+
+<%= _('Have fun @ %s!') % REGISTRATION_DOMAIN_NAME -%>
+

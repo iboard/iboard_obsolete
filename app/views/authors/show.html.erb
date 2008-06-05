@@ -1,0 +1,78 @@
+<% content_for :html_title do %>
+ <%= @author.prename + " " + @author.lastname %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('Edit'), edit_author_path(@author) %> |
+  <%= link_to _('Back'), authors_path %>
+<% end %>
+
+<p>
+  <b><%= _('Nickname (User)') -%>:</b>
+  <%=h @author.nickname %> (<%= link_to(@author.user.username, @author.user) unless @author.user.nil? -%>)
+</p>
+
+<p>
+  <b><%= _('Prename') -%>:</b>
+  <%=h @author.prename %>
+</p>
+
+<p>
+  <b><%= _('Lastname') -%>:</b>
+  <%=h @author.lastname %>
+</p>
+
+<p>
+  <b><%= _('Secret') -%>:</b>
+  <%=h @author.secret %>
+</p>
+
+<p>
+  <b><%= _('Date birth') -%>:</b>
+  <%=h @author.date_birth %>
+</p>
+
+<p>
+  <b><%= _('Gender') -%>:</b>
+  <%= gender_name @author.gender %>
+</p>
+
+<p>
+  <b><%= _('Country') -%>:</b>
+  <%=h country_name @author.country %>
+</p>
+
+<p>
+  <b><%= _('Address') -%>:</b>
+  <%=h @author.address %>
+</p>
+
+<p>
+  <b><%= _('Zip') -%>:</b>
+  <%=h @author.zip %>
+</p>
+
+<p>
+  <b><%= _('City') -%>:</b>
+  <%=h @author.city %>
+</p>
+
+<p>
+  <b><%= _('Email') -%>:</b>
+  <%=h @author.email %>
+</p>
+
+<p>
+  <b><%= _('Phone') -%>:</b>
+  <%=h @author.phone %>
+</p>
+
+<p>
+  <b><%= _('Chat') -%>:</b>
+  <%=h @author.chat %>
+</p>
+
+<p>
+  <b><%= _('Note') -%>:</b><blockquote>
+  <%= textilize h(@author.note) %>
+  </blockquote>
+</p>

@@ -1,0 +1,17 @@
+<% content_for :html_title do %>
+  <%= _('Editing posting') %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('read'), @posting %> |
+  <%= link_to _('postings index'), postings_path %>
+<% end %>
+
+<%= error_messages_for :posting %>
+
+<% form_for(@posting) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Update") %>
+  </p>
+<% end %>
+

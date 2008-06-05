@@ -1,0 +1,6 @@
+<h2><%= _('Accessors to this function') -%></h2>
+<ul>
+<%= @function.accessors.map { |a| 
+    "<li>#{a.name} - #{a.user.longname}</li>"
+} -%>
+</ul>

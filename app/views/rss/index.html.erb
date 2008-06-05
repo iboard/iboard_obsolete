@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="<%= rss_path -%>"
+>
+
+<channel>
+	<title><%= APPLICATION_TITLE -%></title>
+	<link><%= root_path %></link>
+	<description><%= APPLICATION_TITLE -%> RSS Feed</description>
+	<pubDate><%= DateTime.now().to_s(:long) -%></pubDate>
+	<generator>http://iboard.cc</generator>
+	<language><%= params[:language] -%></language>
+	<% @postings.each do |p| %>
+      <%= render :partial => 'item',  :locals => { :p => p } %>
+    <% end %>
+</channel>
+
+</rss>

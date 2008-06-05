@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/Sites/iboard
+rgettext app/controllers/* app/helpers/* app/views/*/* -o po/de_AT/iboard-new.pot

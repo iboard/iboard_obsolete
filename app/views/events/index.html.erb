@@ -1,0 +1,12 @@
+<%= link_to( 'New event', new_event_path) unless !granted_for?('events') %>
+
+<div class="no_events_found">
+    <%= flash[:error] unless flash[:error].nil? -%>
+</div>
+
+<% for event in @events %>
+  <%= render :partial => 'event_index_entry', :locals => { :event => event } %>
+<% end %>
+
+<br />
+

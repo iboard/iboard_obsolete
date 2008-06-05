@@ -1,0 +1,37 @@
+<a name='top_of_event_body_<%= "#{event.id}" -%>'></a>
+<% shadow_wrapper do %> 
+
+  <div class="event_index_entry">
+      <div class="event_index_entry_row">
+        
+         <div class="event_index_left">
+           <div class="event_index_entry_title"><%=h event.title %></div>
+           <div class="event_index_entry_begins_at"><%=h event.begins_at.to_s(:begins_at) %></div>
+           <div class="event_index_entry_introduction">
+               <%= interpret(event.introduction) %>
+               <div id="introduction_<%= event.id -%>" class="event_more_close_button">
+               <a 
+                   onclick="Element.hide('introduction_<%= event.id -%>');new Effect.BlindDown('event_body_<%= "#{event.id}" -%>',{});"><%= _('more...') -%></a>
+               </div>
+           </div>
+            
+           <div id="event_body_<%= "#{event.id}" -%>" style="display:none;" class="event_more_close_button">
+                <a  
+                       onclick="new Effect.BlindUp('event_body_<%= "#{event.id}" -%>',{});Element.show('introduction_<%= event.id -%>');"><%= _('close...') -%></a>
+                <div class="event_index_entry_body">
+                   <%= interpret(event.body) -%>
+                </div>
+                
+           </div>
+           
+         </div>
+         
+          <div class="event_index_rigth">
+            <%= render :partial => 'event_picture_column', :locals => { :event => event } -%>
+            <%= render :partial => 'details_tickets_edit', :locals => { :event => event } -%>          
+        </div>
+         
+      </div>
+  </div>   
+
+<% end %>

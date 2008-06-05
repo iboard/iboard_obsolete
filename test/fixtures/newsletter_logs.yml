@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  newsletter_template_id: 1
+  newsletter_subscription_id: 1
+  status: MyString
+
+two:
+  newsletter_template_id: 1
+  newsletter_subscription_id: 1
+  status: MyString

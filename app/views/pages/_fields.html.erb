@@ -1,0 +1,30 @@
+<p>
+  <b><%= _('Name') -%></b><br />
+  <%= f.text_field :name, :size => 80 %>
+</p>
+
+<p>
+    <b><%= _('Language') -%></b>
+    <%= f.select :language, LANGUAGE_CODES.map { |l| [l[0], l[1]] } -%>
+    
+    <b><%= _('Access restricted to ...') -%></b>(<%= @page.restrict_to_function_id.inspect -%>)
+    <%= f.select :restrict_to_function_id, function_selector -%>
+</p>
+
+<p>
+  <b><%= _('Introduction') -%></b><br />
+  <%= f.text_area :introduction, :rows => 10, :cols => 80 -%>
+</p>
+
+<p>
+  <b><%= _('DIV-Tag') -%></b><br />
+  <%= f.select :div_tag_id, DivTag.find(:all,:order => 'name').map { |d| [d.name,d.id] } -%>
+</p>
+
+
+<p>
+  <b><%= _('Show title' ) -%></b> <%= f.check_box :show_title -%>
+  <b><%= _('Show introduction') -%></b> <%= f.check_box :show_introduction -%>
+  <b><%= _('Show in menu') -%></b> <%= f.check_box :show_in_menu -%>
+</p>
+

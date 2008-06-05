@@ -1,0 +1,8 @@
+<tr>
+    <td><%= link_to newsletter.name, newsletter -%></td>
+    <td><%= newsletter.description -%></td>
+    <td><%= newsletter.from_address -%></td>
+    <td><%= link_to newsletter.newsletter_subscriptions.length.to_s, list_subscriptions_newsletter_path(newsletter)  -%></td>
+    <td><%= link_to _('+Addresses'), import_addresses_newsletter_path(newsletter) -%>
+    <td><%= link_to _('-Addresses'), remove_addresses_newsletter_path(newsletter) -%>
+</tr>

@@ -1,0 +1,56 @@
+<p>
+  <b>Title</b><br />
+  <%= f.text_field :title %>
+  <%= _('Event Location') -%>
+  <%= f.select :location, [[ 'TheSoundtheatre', 'soundtheatre']] %>
+  <%= _('Event Producer') -%>
+  <%= f.select :producer, [[ 'WWEDU Music', 'wwedu']] %>
+
+</p>
+
+<p>
+  <b>Begins at</b><br />
+  <%= f.datetime_select :begins_at %>
+</p>
+
+<p>
+  <b>Ends at</b><br />
+  <%= f.datetime_select :ends_at %> or <%= f.check_box :open_end %> open end
+</p>
+
+<div style='display: table;'>
+    <div style='display: table-row;'>
+      <div style='display: table-cell;'>
+      <p>
+        <b>Introduction</b><br />
+        <%= f.text_area :introduction, :rows => 7, :cols => 30 %>
+      </p>
+      <p>
+        <b>Picture</b><br />
+        <%= f.select :picture_id, Binary.find(:all).map { |b| [ b.title, b.id ] } %>
+      </p>
+      <p>
+        <b>Picture text</b><br />
+        <%= f.text_area :picture_text,:rows => 5, :cols => 30 %>
+      </p>
+      
+      </div>
+      <div style='display: table-cell;'>
+      <p>
+        <b>Body</b><br />
+        <%= f.text_area :body, :rows => 20, :cols => 80 %>
+      </p>
+      </div>
+    </div>
+</div>
+
+
+
+<p>
+  <b>Price</b><br />
+  <%= _('Normal') -%>: <%= f.text_field :price, :size => 5 %>
+  prebooking         : <%= f.text_field :price_prebooking, :size => 5 %>
+  reduced            : <%= f.text_field :price_reduced, :size => 5 %>
+  <%= _('Max Tickets') -%>: <%= f.text_field :max_tickets, :size => 5 %>
+  <%= link_to(_('Reservations'), tickets_path(:event_id => @event) )-%>: <%= @event.tickets.find_all_by_event_id(@event).length %>
+</p>

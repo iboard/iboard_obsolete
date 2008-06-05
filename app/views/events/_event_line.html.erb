@@ -1,0 +1,13 @@
+<tr>    
+   <td><b><%= event.title -%></b>
+       <br />
+       <%= interpret( "[[sizedimage:#{event.picture_id}:48x48:#{event.title}]]" ) -%>
+   </td>
+   <td><%= event.begins_at.to_s(:begins_at) -%></td>
+   <td><%= event.tickets.length -%>/<%= event.max_tickets %></td>
+   <td>
+       <%= link_to _('Edit'), edit_event_path(event) -%> |
+       <%= link_to _('Destroy'), event, :confirm => _('Are you sure you want delete the event %s. ALL RESERVATIONS WILL BE DELETED TOO!!!') % event.title,
+         :method => :delete %>
+   </td>
+</tr>

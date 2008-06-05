@@ -1,0 +1,5 @@
+<% @events.in_groups_of(4) do |row_events| %>
+  <div class='calendar_index'>
+     <%= render :partial => 'events_row', :locals => { :events => row_events } %>
+  </div>
+<% end %>

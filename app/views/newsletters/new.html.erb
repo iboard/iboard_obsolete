@@ -1,0 +1,7 @@
+<h1><%= _('Create new newsletter') -%></h1>
+
+<% form_for @newsletter do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <%= f.submit _('Create') -%>
+<% end %>
+

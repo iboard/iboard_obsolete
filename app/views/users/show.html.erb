@@ -1,0 +1,46 @@
+<% content_for :html_title do %>
+  <%= _('Users %s') % @user.longname -%>
+<% end %>
+<% content_for :controller_menu do %>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to _('Back'), users_path %>    
+<% end %>
+<table width=100% border=0 cellpadding=10>
+  <tr>
+    <td valign=top align=left width=50%>
+       <h1>
+         <%=h @user.username %>
+       </h1>
+       
+       <p>
+         <b><%= _('Longname') -%>:</b>
+         <%=h @user.longname %>
+       </p>
+       
+       <p>
+         <b><%= _('Password') -%>:</b>
+         <%=h @user.password %>
+       </p>
+       <h3><%= _('Assigned Authors') -%></h3>
+       <% @user.authors.map do |a| %>
+         <div><b><%= link_to a.lastname+" "+a.prename, a -%></b>:
+             <%= a.postings.map { |p| 
+                    link_to( p.title, p) 
+                    }.join(", ") 
+             %>
+         </div>
+       <% end %>
+             
+    </td>
+    
+    <td valign=top align=left width=50%>
+        <h1><%= _('Accessors to functions') %></h1>
+        <ul>
+        <% @user.functions.each do |fnc| %>
+          <li><%= fnc.name -%></li>
+        <% end %>
+        </ul>
+    </td>
+  </tr>
+</table>
+

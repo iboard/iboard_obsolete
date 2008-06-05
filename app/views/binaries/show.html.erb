@@ -1,0 +1,38 @@
+<table width=100%>
+    <tr>
+        <td align=left valign=top width=50%>
+          <p>
+            <b><%= _('Title') -%>:</b>
+            <%=h @binary.title %>
+          </p>
+          
+          <p>
+            <b><%= _('Download original file/size') -%>:</b>
+            <a target=_blank href="<%= download_binary_path(@binary) %>"><%=h @binary.filename %></a>
+          </p>
+          
+          <p>
+            <b><%= _('Mime type') -%>:</b>
+            <%=h @binary.mime_type %>
+          </p>
+          
+          <p>
+            <b><%= _('Size') -%>:</b>
+            <%=h @binary.size/1024 %> kB
+          </p>
+          <p>
+            <%= @binary.embed(original_binary_path(@binary),450,250) -%>
+          </p>
+        </td>
+        <td align=left valign=top height=500 width=50%>
+            <% [16,32,64,128,256].each do |size| %>
+              <img align=bottom src=<%= thumbnail_binary_path(@binary,:size=>sprintf("%dx%d",size,size)) %>>
+              (<%= sprintf("%dx%d",size,size) %>)<br />
+              <br/>
+            <% end %>
+        </td>
+    </tr>
+</table>
+
+<%= link_to _('Edit'), edit_binary_path(@binary) %> |
+<%= link_to _('Back'), binaries_path %>

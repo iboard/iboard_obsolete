@@ -1,0 +1,16 @@
+<% content_for :html_title do %>
+  <%= _('New posting') %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('Back'), postings_path %>
+<% end %>
+
+<%= error_messages_for :posting %>
+
+<% form_for(@posting) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Create") %>
+  </p>
+<% end %>
+

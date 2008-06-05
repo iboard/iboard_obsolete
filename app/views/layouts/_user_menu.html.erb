@@ -1,0 +1,38 @@
+<div class='menu_subject'><%= _('User Menu') -%></div>
+<% if logged_in? %>
+  <div class='menu_subject'>
+    <div class='username_in_menu'><%= user[:longname] -%></div>
+  </div>
+  <div class="vertical_menu_item"><%= link_to _('my iBoard'), welcome_user_path(user) -%></div> 
+  <div class="vertical_menu_item"><%= link_to _('Logout'), logout_path -%></div>
+<% else %>
+  <div class="vertical_menu_item"><%= link_to _('Login'), login_path -%></div>
+<% end %>
+
+<div class='menu_subject'><%= _('Newsletter') -%></div>
+<div class="vertical_menu_item"><%= link_to _('Subscribe'), subscribe_newsletter_subscriptions_path -%></div>
+<div class="vertical_menu_item"><%= link_to( _('Newsletters'), newsletters_path) unless not granted_for? 'newsletters' -%></div>
+
+<% if (granted_for?('content')) or (granted_for?('root')) %>
+    <div class='menu_subject'><%= _('Content') -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Postings'), postings_path(:expires => "0" ) -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Galleries'),galleries_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Events'),list_events_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Pages'), pages_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Binaries'), binaries_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('DIV Tags'), div_tags_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Columns'), page_columns_page_path(0), :method => :get -%></div>    
+    
+<% end %>
+<% if granted_for? 'root'  %>
+  <div class='menu_subject'><%= _('Superuser menu') -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Users'), users_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Authors'), authors_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Functions'), functions_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Accessors'), accessors_path -%></div>
+<% end %>
+<% if granted_for? "logs"  or granted_for?('root') %>
+    <div class='menu_subject'><%= _('System') -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Logs'), :controller => "logs" -%></div>
+    <div class="vertical_menu_item"><a href=http://iboard.wwedu.com/cgi-bin/awstats.pl?config=wwedu>Webstatistik</a></div>
+<% end %>

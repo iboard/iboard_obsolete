@@ -1,0 +1,9 @@
+    <tr>
+        <td><%= newsletter_template.subject -%></td>
+        <td><%= newsletter_template.newsletter.name -%></td>
+        <td><%= newsletter_template.updated_at.to_s(:db) -%></td>
+        <td><%= _('sent to %s addresses yet') % newsletter_template.newsletter_logs.length -%>
+        <td><%= link_to _('Show'), newsletter_template -%></td>
+        <td><%= link_to _('Edit'), edit_newsletter_template_path(newsletter_template)%></td>
+    </tr>
+    

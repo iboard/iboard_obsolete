@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  begins_at: 2008-05-28 12:19:17
+  ends_at: 2008-05-28 12:19:17
+  introduction: MyText
+  body: MyText
+  picture_id: 1
+  picture_text: MyText
+  price: 1.5
+  price_prebooking: 1.5
+  price_reduced: 1.5
+
+two:
+  title: MyString
+  begins_at: 2008-05-28 12:19:17
+  ends_at: 2008-05-28 12:19:17
+  introduction: MyText
+  body: MyText
+  picture_id: 1
+  picture_text: MyText
+  price: 1.5
+  price_prebooking: 1.5
+  price_reduced: 1.5

@@ -1,0 +1,29 @@
+<h1><%= _('Subscriptions of Newsletters') -%></h1>
+<p></p>
+<table width=100%>
+    <tr>
+        <th><%= _('Newsletter') -%></th>
+        <th><%= _('Description') -%></th>
+        <th><%= _('Address')     -%></th>
+        <th><%= _('# Subscriptions') -%></th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <%= render :partial => @newsletter -%>
+</table>
+
+<h2><%= _('Subscriptions') -%></h2>
+<table width=100%>
+    <tr>
+        <th><%= _('Address') -%></th>
+        <th><%= _('Name') -%></th>
+        <th><%= _('since') -%><br/>
+        <%= _('subscripted from') -%></th>
+        <th><%= _('Format') -%></th>
+        <th><%= _('Functions') -%></th>
+    </tr>
+    
+    <%= render :partial => @newsletter.newsletter_subscriptions -%>
+</table>
+
+

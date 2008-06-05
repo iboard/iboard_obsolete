@@ -1,0 +1,10 @@
+<div id="login">
+  <% form_tag 'verify_login' do -%>
+      <p><label for="user"><%= _('Username')   -%></label><br /><%= text_field     'login', 'username'  -%></p>  
+      <p><label for="passwd"><%= _('Password') -%></label><br /><%= password_field 'login', 'password'  -%></p>  
+      <p><%= submit_tag _("Login") -%> </p>
+  <% end -%>
+  <p>
+    <%= link_to _('Register new user'), register_users_path -%>
+  </p>
+</div>

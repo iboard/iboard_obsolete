@@ -1,0 +1,39 @@
+<% content_for :html_title do %>
+  <%= _('Listing users') -%>
+<% end %>
+<% content_for :controller_menu do %>
+    <%= link_to _('New user'), new_user_path %>
+<% end %>
+
+
+<%= render :partial => '/layouts/search_box', 
+           :locals => { :field_name => 'search_user',
+                       :show_button => true , 
+                       :size => 30, 
+                       :controller => 'users', 
+                       :observe => false } %>
+
+<table width=100%>
+  <tr>
+    <th><%= _('Username') -%></th>
+    <th><%= _('Locked?') -%></th>
+    <th><%= _('Longname') -%></th>
+    <th><%= _('utok') -%></th>
+    <th width=100 colspan=3>&nbsp;</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%=h user.username %></td>
+    <td><%= user.locked ? '<font color=red>'+_('locked')+'</font>' : '<font color=green>'+_('active')+'</font>' %></td>
+    <td><%=h user.longname %></td>
+    <td><%=h user.utok %></td>
+    <td width=33><%= link_to _('Show'), user %></td>
+    <td width=33><%= link_to _('Edit'), edit_user_path(user) %></td>
+    <td width=33><%= link_to _('Destroy'), user, :confirm => _('Are you sure?'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @users -%>

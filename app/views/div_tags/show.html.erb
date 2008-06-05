@@ -1,0 +1,13 @@
+<p>
+  <b><%= _('Name') -%>:</b>
+  <%=h @div_tag.name %>
+</p>
+
+<p>
+  <b><%= _('Listing div_tags') -%>:</b>
+  <%=h @div_tag.definition %>
+</p>
+
+
+<%= link_to _('Edit'), edit_div_tag_path(@div_tag) %> |
+<%= link_to _('Back'), div_tags_path %>

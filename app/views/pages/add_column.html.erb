@@ -1,0 +1,8 @@
+<% PageColumn.find(:all, :order => 'title').each do |column| %>
+<ul>
+  <% if not @page.page_columns.include?( column ) and column.page.nil? %>
+    <li><%= link_to column.title, add_existing_column_page_path(@page,:page_column_id => column.id),:method => :put %></li>  
+  <% end %>
+</ul>
+<% end %>
+<p><%= link_to _('Add a new column'), add_new_column_page_path(@page), :method => :post %></p>

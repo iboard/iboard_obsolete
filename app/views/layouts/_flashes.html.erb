@@ -1,0 +1,5 @@
+<% if flash %>
+  <% flash.each do |f| %>
+    <div id="<%= f[0] %>"><%= f[1] -%></div>
+  <% end %>
+<% end %>

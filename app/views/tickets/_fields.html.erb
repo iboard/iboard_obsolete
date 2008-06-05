@@ -1,0 +1,44 @@
+<%= hidden_field_tag :event_id, @event.id %>
+
+<p><b><%= _('Name') -%></b>:<br/>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <b><%= _('Number of tickets') -%></b><br />
+  <% @ticket.num_tickets ||= 1 %>
+  <%= f.text_field :num_tickets, :size => 2 %>
+</p>
+
+<p>
+  <b><%= _('Price per Ticket') -%></b>:
+  <% if @event.price_reduced == @event.price_prebooking %>
+    <%= f.hidden_field :price %><b>€ <%= @event.price_prebooking -%></b> 
+  <% else %>
+  <br />
+    <%= f.radio_button :price, @event.price_prebooking, :checked => 'checked' -%>&nbsp;<%= _('standard preselling price') -%> € <%= sprintf("%.2f", @event.price_prebooking) -%>
+    <br />
+    <%= f.radio_button :price, @event.price_reduced -%>&nbsp;<%= _('reduced price') -%> € <%= sprintf("%.2f", @event.price_reduced) -%>
+  <% end %>
+</p>
+
+<p>
+  <b>Email</b><br />
+  <%= f.text_field :email %>
+</p>
+
+<p>
+  <b>Telephone</b><br />
+  <%= f.text_field :telephone %>
+</p>
+
+
+<p>
+  <b>Note</b><br />
+  <%= f.text_area :note, :rows => 5, :cols => 80 %>
+</p>
+
+ <% url = generate_secure_code_img_url(@send_code) %>
+ <%= _('Please enter the code <img src=\'%s\' border=0 title=\'Security Code\'><br/>for security reasons') % url -%>
+ <%= hidden_field_tag "send_code", @send_code -%>
+ <%= text_field_tag   "sec_code", "", :size => 8 -%>

@@ -1,0 +1,17 @@
+<h1><%= _('Editing div_tag') -%></h1>
+
+<%= error_messages_for :div_tag %>
+
+<p><%= _('Preview') %></p>
+<div style="<%= @div_tag.definition -%>"><%= @div_tag.definition -%></div>
+
+
+<% form_for(@div_tag) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Update") %>
+  </p>
+<% end %>
+
+<%= link_to _('Show'), @div_tag %> |
+<%= link_to _('Back'), div_tags_path %>

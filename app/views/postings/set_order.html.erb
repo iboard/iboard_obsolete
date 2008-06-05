@@ -1,0 +1,15 @@
+<h4><%= _('Set postings order for column <em>%{colname}</em> ') % { :colname  =>  @column.title } -%></h4>
+<div id="items">
+  <br clear=all>
+  <p><%= _("Drag and drop postings into the order you want to have for 'manualy sorted' option ...")-%></p>
+  
+  <ol id="sortable_list">
+    <% @column.postings.each do |item| -%>    
+      <li id="item_<%= item.id -%>"><b><%= item.title -%></b></li>
+    <% end -%>
+  </ol>
+</div>
+
+<%= sortable_element('sortable_list', :url => {:action => :update_positions, :page_column_id => @column } ) -%>
+
+<p><a href=# onclick="Element.hide('postings_order');"><%= _('finished') -%></a></p>

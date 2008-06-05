@@ -1,0 +1,14 @@
+<h1><%= _('New binary') -%></h1>
+
+<%= error_messages_for :binary %>
+
+<% form_for(@binary, 
+   :url => { :action => 'create', :method => "post" },
+   :html => {:multipart => true }) do |f| %>
+   <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Create") -%>
+  </p>
+<% end %>
+
+<%= link_to _('Back'), binaries_path %>

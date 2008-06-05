@@ -1,0 +1,15 @@
+<h1><%= _('Editing binary') -%></h1>
+
+<%= error_messages_for :binary %>
+
+<% form_for(@binary, 
+   :url => { :action => 'update', :method => "post"},
+   :html => {:multipart => true }) do |f| %>
+   <%= render :partial => 'fields', :locals => { :f => f } -%> 
+  <p>
+    <%= f.submit _("Update") %>
+  </p>
+<% end %>
+
+<%= link_to _('Show'), @binary %> |
+<%= link_to _('Back'), binaries_path %>

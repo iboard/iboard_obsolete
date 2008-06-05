@@ -1,0 +1,11 @@
+<%= error_messages_for :newsletter_template -%>
+
+<%= f.hidden_field :newsletter_id -%>
+<b><%=_('Subject') -%></b>
+<div class='form_field'>
+    <%= f.text_field :subject, :size => 60 %>
+</div>
+
+<div class='form_field'>
+  <%= f.text_area  :body,    :rows => 20, :cols => 80 %>
+</div>

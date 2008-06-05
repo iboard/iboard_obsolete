@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="<%= rss_path -%>"
+>
+  <channel>
+  	<title>EVENTS</title>
+  	<link><%= calendar_events_path(:location => 'soundtheatre') -%></link>
+  	<description><%= APPLICATION_TITLE -%> RSS Feed - EVENTS</description>
+  	<pubDate><%= DateTime.now().to_s(:long) -%></pubDate>
+  	<generator>http://iboard.cc</generator>
+  	<language><%= params[:language] -%></language>
+  	<% @events.each do |e| %>
+        <%= render :partial => 'rss_item',  :locals => { :e => e } %>
+      <% end %>
+  </channel>
+
+</rss>

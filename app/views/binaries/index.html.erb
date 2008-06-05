@@ -1,0 +1,58 @@
+<h1><%= _('Listing binaries') -%></h1>
+
+<%= render :partial => '/layouts/search_box', 
+     :locals => { :show_button => true , :size => 30, 
+                  :controller => 'binaries', 
+                  :observe => false, 
+                  :field_name => "search_binary" } %>
+
+<div style="width: 270px; height: 170px; 
+    text-align: center; vertical-align: middle;
+    float: right; background:#fff; color: #ddd; border:1px solid #ddd; padding: 20px;" id=preview>
+    <p><%= _('Klick on a thumbnail-image to show preview in this frame.') -%><br/><br/>
+        <img src=<%= root_url -%>images/audio_x-wav.gif height=64>
+        <img src=<%= root_url -%>images/audio_mpeg.gif height=64>
+        <img src=<%= root_url -%>images/video_quicktime.gif height=64>
+        <img src=<%= root_url -%>images/image_tiff.gif height=64>
+    </p>
+</div>
+<div>
+<table width=50%>
+  <tr>
+    <th colspan=2><%= _('Binary ID') -%></th>
+    <th><%= _('Title') -%><br /><%= _('Filename') -%></th>
+    <th><%= _('Mime type') -%></th>
+    <th><%= _('KBytes') -%></th>
+    <th colspan=3></th>
+  </tr>
+
+<% for binary in @binaries %>
+  <tr>
+    <td align=center><%=h binary.id.to_s %></td>    
+    <td><%= link_to_remote(
+             '<img border=0 src='+thumbnail_binary_path(binary,:size=>"48x48")+'>',
+              :url    => preview_binary_path(binary,:width=>270,:height=>170) ,
+              :method => :get,
+              :update => 'preview'
+             ) 
+        -%>
+    </td>
+    <td><%=h binary.title %><br />
+    <%=h binary.filename %></td>
+    <td><%=h binary.mime_type %></td>
+    <td align=right><%=h binary.size/1024 unless binary.size.nil? %></td>
+    </tr><tr>
+    <td colspan=5 align=center>
+       <%= link_to _('Show'), binary %>
+       <%= link_to _('Download'), download_binary_path(binary) %>
+       <%= link_to _('Edit'), edit_binary_path(binary) %>
+       <%= link_to _('Destroy'), binary, :confirm => _('Are you sure?'), :method => :delete %><hr>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @binaries -%>
+</div>
+<br />
+
+<%= link_to _('New binary'), new_binary_path %>

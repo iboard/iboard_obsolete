@@ -1,0 +1,33 @@
+<h1><%= _('User Registration') -%></h1>
+<% content_for :html_title do %>
+  <%= _('New user') -%>
+<% end %>
+<% content_for :controller_menu do %>
+    <%= link_to _('Back'), users_path %>
+<% end %>
+<%= error_messages_for :user %><% form_for  @user, :url => {:action => :create_registration}, :method => :post do |f| %>
+<div style='display: table;'>
+    <div style='display: table-row'>
+       <div style='display: table-cell; width: 45%;'>  
+           <b><%= _('Username') -%></b>:<br/>   <%= f.text_field :username -%><br /><br/>
+           <b><%= _('Full name') -%></b>:<br /> <%= f.text_field :longname -%><br />
+       </div>
+       <div style='display: table-cell; width: 45%;'>  
+           <b><%= _('Password') -%></b>:<br /> <%= f.password_field :password_field,:value => ( params[:confirm] ? params[:confirm] : '') %><br /><br />
+           <b><%= _('Confirm password') -%></b>:<br /> <%= password_field_tag 'confirm', ( params[:confirm] ? params[:confirm] : ''), :size => 30 %>
+       </div>
+     </div>
+     <div style='display: table-row;'>
+       <div style='display: table-cell; width: 45%;'>  
+           <b><%= _('EMail') -%></b>:<br /> <%= f.text_field :email %>
+       </div>
+       <div style='display: table-cell; width: 45%;'>  
+          <% url = generate_secure_code_img_url(@send_code) %>
+          <%= _('Please enter the code <img src=\'%s\' border=0 title=\'Security Code\'><br/>for security reasons') % url -%>
+          <%= hidden_field_tag "send_code", @send_code -%>
+          <%= text_field_tag   "sec_code", "", :size => 8 -%>
+       </div>
+    </div>
+</div>   
+<%= f.submit _('Register') -%>
+<% end %>

@@ -1,0 +1,12 @@
+<h1><%= _('Log entries...') -%></h1>
+
+<b><%= _('Search for timestamp, facility, ip, or entry...') %></b>:<br/>
+<%= render :partial => '/layouts/search_box', :locals => { :show_button => true , :size => 30, :controller => 'logs', :observer => "1" } %>
+
+<%= will_paginate( @logs ) %>
+<%= render :partial => 'logs_with_header', :locals => { :logs => @logs } %>
+<%= will_paginate( @logs ) %>
+
+<p>&nbsp;</p>
+
+<%= link_to _('Delete logs older than one month'), 'logs/delete_old',:confirm => _('Are you sure?') -%>

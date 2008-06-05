@@ -1,0 +1,7 @@
+<tr>
+    <td><%= link_to newsletter_subscription.email, edit_newsletter_subscription_path(newsletter_subscription) %></td>
+    <td><%= newsletter_subscription.name %></td>
+    <td><%= newsletter_subscription.created_at.to_s(:long) -%><br/><%= newsletter_subscription.subscripted_from %></td>
+    <td><%= newsletter_subscription.content_type %></td>
+    <td><%= link_to _('Destroy'), newsletter_subscription, :confirm => _('Are you sure?'), :method => :delete %></td>
+</tr>

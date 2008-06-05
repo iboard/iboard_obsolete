@@ -1,0 +1,40 @@
+<% content_for :html_title do %><%= _('Listing authors') -%><% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('New author'), new_author_path %>
+<% end %>
+
+<table class='scaffold_table' cellspacing=0 cellpadding=3>
+  <tr>
+    <th><%= _('Nickname (user)') -%></th>
+    <th><%= _('Prename') -%></th>
+    <th><%= _('Lastname') -%></th>
+    <th><%= _('Date birth') -%></th>
+    <th><%= _('Gender') -%></th>
+    <th><%= _('Country') -%></th>
+    <th><%= _('Zip') -%></th>
+    <th><%= _('City') -%></th>
+    <th><%= _('Email') -%></th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% for author in @authors %>
+  <tr>
+    <td><%= link_to h(author.nickname), author %> (<%=h author.user.longname unless author.user.nil? -%>)</td>
+    <td><%=h author.prename %></td>
+    <td><%=h author.lastname %></td>
+    <td><%=h author.date_birth %></td>
+    <td><%=h gender_name(author.gender) %></td>
+    <td><%=h country_name author.country %></td>
+    <td><%=h author.zip %></td>
+    <td><%=h author.city %></td>
+    <td><%=h author.email %></td>
+    <td>&nbsp;</td>
+    <td><%= link_to _('Edit'), edit_author_path(author) %></td>
+    <td><%= link_to _('Destroy'), author, :confirm => _('Are you sure?'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

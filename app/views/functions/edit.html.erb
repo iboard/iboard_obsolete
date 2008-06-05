@@ -1,0 +1,25 @@
+<% content_for :html_title do %>
+  <%= _('Editing function') %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('Show'), @function %> |
+  <%= link_to _('Back'), functions_path %>
+<% end %>
+
+<%= error_messages_for :function %>
+
+<% form_for(@function) do |f| %>
+  <p>
+    <b><%= _('Name') -%></b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b><%= _('Comment') -%></b><br />
+    <%= f.text_field :comment %>
+  </p>
+
+  <p>
+    <%= f.submit _("Update") %>
+  </p>
+<% end %>

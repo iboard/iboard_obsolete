@@ -1,0 +1,16 @@
+<% content_for :html_title do %>
+  <%= _('Editing author') %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('Show'), @author %> |
+  <%= link_to _('Back'), authors_path %>
+<% end %>
+
+<%= error_messages_for :author %>
+
+<% form_for(@author) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } %>
+  <p>
+    <%= f.submit _("Update") %>
+  </p>
+<% end %>

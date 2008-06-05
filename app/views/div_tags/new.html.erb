@@ -1,0 +1,12 @@
+<h1><%= _('New DIV Tag') -%></h1>
+
+<%= error_messages_for :div_tag %>
+
+<% form_for(@div_tag) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Create") -%>
+  </p>
+<% end %>
+
+<%= link_to _('Back'), div_tags_path %>

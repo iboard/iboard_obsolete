@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd ~/Sites/iboard
+rm locale/de_AT/LC_MESSAGES/iboard.mo
+rmsgfmt po/de_AT/iboard.pot -o locale/de_AT/LC_MESSAGES/iboard.mo

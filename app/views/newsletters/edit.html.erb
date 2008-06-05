@@ -1,0 +1,11 @@
+<h1><%= _('Edit newsletter %s') % @newsletter.name -%></h1>
+
+<% form_for @newsletter do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <%= f.submit _('Update') -%>
+<% end %>
+
+
+<div class='link_button'><%= link_to _('Show'), @newsletter, 
+  :confirm => _('Attention: Changes you made since you pressed save last time will not be saved!') -%></div>    
+<div class='link_button'><%= link_to _('Destroy'), @newsletter, :confirm => _('Are you sure?'), :method => :delete %></div>

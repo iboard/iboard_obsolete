@@ -1,0 +1,15 @@
+<p>
+  <b><%= _('Name') -%>:</b>
+  <%=h @page.name %>
+</p>
+
+<p>
+  <b><%= _('Introduction') -%>:</b>
+  <%=h @page.introduction %>
+</p>
+
+<% if granted_for? 'Edit pages' %>
+  <%= link_to _('Edit'), edit_page_path(@page) %> |
+  <%= link_to _('Back'), pages_path %> |
+<% end %>
+<%= link_to _('Display as page'), show_page_page_path(@page)%>

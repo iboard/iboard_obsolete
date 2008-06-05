@@ -1,0 +1,12 @@
+<h1><%= _('Remove Addresses from Newsletter <em>%s</em>') % @newsletter.name %></h1>
+<p><%= _('Newsletter has %s subscriptions yet') % @newsletter.newsletter_subscriptions.length.to_s %></p>
+<div class='link_button'><%= link_to( _('Back'), @newsletter ) -%></div>
+
+
+<% form_tag  :action => 'remove_subscriptions' do %>
+  <p><%= _('Comma- or Newline-separated list of new addresses') -%>:<br/>
+  <%= text_area_tag 'addresses', '', :rows => 10, :cols => 80 -%>
+  <br/>
+  </p>
+  <%= submit_tag ( _('Remove') ) -%>
+<% end %>

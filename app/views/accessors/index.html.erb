@@ -1,0 +1,29 @@
+<% content_for :html_title do %>
+  <%= _('Listing acessors') %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('New Accessor'), new_accessor_path %>
+<% end %>
+<table width=100%>
+  <tr>
+    <th><%= _('Name')    -%></th>
+    <th><%= _('User')    -%></th>
+    <th><%= _('Function')-%></th>
+    <th><%= _('Comment') -%></th>
+    <th colspan=3>&nbsp;</th>
+  </tr>
+
+<% for accessor in @accessors %>
+  <tr>
+    <td><%=h accessor.name %></td>
+    <td><%=h accessor.user.longname unless accessor.user.nil? %></td>
+    <td><%=h accessor.function.name %></td>
+    <td><%=h accessor.comment %></td>
+    <td width=33><%= link_to _('Show'), accessor %></td>
+    <td width=33><%= link_to _('Edit'), edit_accessor_path(accessor) %></td>
+    <td width=33><%= link_to _('Destroy'), accessor, :confirm => _('Are you sure?'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

@@ -1,0 +1,5 @@
+<div id='edit_buttons'>
+    <%= column.title -%>:<br/><%= link_to icon('column-delete.png',(_('Remove column <em>%s</em>') % column.title)), remove_column_page_path(@page,:page_column_id => column ),
+      :confirm => _('The column will be removed from this page but the column itself will not be deleted and '+
+                    'may be added again to this or any other page later. Are you sure to remove?'), :method => :post -%>
+</div>

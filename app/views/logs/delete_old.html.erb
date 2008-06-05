@@ -1,0 +1,7 @@
+<h1><%= _('Deleted records') -%></h1>
+<p>
+  <%= _('Last chance to print or save this page! Logs are deleted already! If you close this page they are lost forever!') -%>
+</p>
+
+<%= render :partial => 'logs_with_header', :locals => { :logs => @logs } %>
+

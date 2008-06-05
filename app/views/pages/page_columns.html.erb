@@ -1,0 +1,19 @@
+<h1><%= _('Columns') -%></h1>
+<table width=100%>
+    <tr>
+      <th><%= _('ID') -%></th>
+      <th><%= _('Title') -%></th>
+      <th><%= _('used in') -%></th>
+      <th><%= _('#Postings') -%></th>
+      <th>&nbsp;</th>
+    </tr>
+    <% @columns.each do |column| %>
+    <tr>
+      <td align=right><%= column.id -%></td>
+      <td align=left><%= column.title -%></td>  
+      <td align=center><%= link_to(column.page.name,show_page_page_path(column.page)) unless column.page.nil? -%></td>
+      <td align=center><%= column.postings.length -%> 
+      <td align=center><%= link_to _('Delete'), delete_column_page_path(column), :confirm => _('Are you shure?'), :method => :put -%></td>
+    </tr>
+    <% end %>
+</table>

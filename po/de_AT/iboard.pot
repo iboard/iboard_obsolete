@@ -1,0 +1,1464 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2008-05-07 19:12+0200\n"
+"PO-Revision-Date: 2008-05-07 19:12+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/application.rb:25
+msgid "Please log in"
+msgstr "Bitte anmelden"
+
+#: app/controllers/authenticate_controller.rb:10
+msgid "Goodbye"
+msgstr "Auf wiedersehen"
+
+#: app/controllers/authenticate_controller.rb:21
+msgid "Welcome %{longname}! You are successfully logged in as %{shortname}"
+msgstr "Willkommen %{longname}! Du bist erfolgreich als %{shortname} angemeldet"
+
+#: app/controllers/authenticate_controller.rb:31
+msgid "Bad username and/or passwort. Try again …"
+msgstr "Falscher Benutzer und/oder Passwort. Bitte wiederholen ..."
+
+#: app/controllers/div_tags_controller.rb:78
+msgid "You can't delete the default DIV-Tag"
+msgstr "Du kannst den 'default-DIV-Tag' nicht löchen"
+
+#: app/controllers/pages_controller.rb:28
+msgid "ERROR: No Page found in %{file}, line %{line}"
+msgstr "FEHLER: Keine Seite gefunden (Datei:%{file}, Zeile:%{line})"
+
+#: app/controllers/pages_controller.rb:29
+msgid "No page found"
+msgstr "Keine Seite gefunden"
+
+#: app/controllers/pages_controller.rb:29
+msgid "Create a new page"
+msgstr "Neue Seite erstellen"
+
+#: app/controllers/pages_controller.rb:100
+msgid "Please choose a column to add"
+msgstr "Bitte wähle eine Spalte zum Hinzufügen"
+
+#: app/controllers/pages_controller.rb:112
+msgid "New Column for page %s"
+msgstr "Neue Spalte für Seite %s"
+
+#: app/controllers/pages_controller.rb:131
+msgid "Changes saved"
+msgstr "Änderungen gespeichert"
+
+#: app/controllers/pages_controller.rb:140
+msgid "Column removed from this page"
+msgstr "Spalte von dieser Seite entfernt"
+
+#: app/controllers/pages_controller.rb:151
+msgid "You can't destroy columns which still contains postings!"
+msgstr "Du kannst die Spalte nicht löschen solange sie noch Beiträge enthält"
+
+#: app/controllers/pages_controller.rb:153
+msgid "Column %s deleted"
+msgstr "Spalte %s gelöscht"
+
+#: app/controllers/users_controller.rb:80
+msgid "You can't delete the root-user!"
+msgstr "Der Benutzer 'root' kann nicht gelöscht werden!"
+
+#: app/views/accessors/_fields.html.erb:2 app/views/accessors/index.html.erb:9
+#: app/views/accessors/show.html.erb:9 app/views/div_tags/_fields.html.erb:2
+#: app/views/div_tags/show.html.erb:2 app/views/functions/edit.html.erb:13
+#: app/views/functions/index.html.erb:10 app/views/functions/new.html.erb:12
+#: app/views/functions/show.html.erb:12 app/views/pages/_fields.html.erb:2 app/views/pages/index.html.erb:5
+#: app/views/pages/show.html.erb:2
+msgid "Name"
+msgstr "Name"
+
+#: app/views/accessors/_fields.html.erb:7 app/views/accessors/index.html.erb:10
+#: app/views/accessors/show.html.erb:14 app/views/authors/_fields.html.erb:8
+msgid "User"
+msgstr "Benutzer"
+
+#: app/views/accessors/_fields.html.erb:12 app/views/accessors/index.html.erb:11
+#: app/views/accessors/show.html.erb:19
+msgid "Function"
+msgstr "Funktion"
+
+#: app/views/accessors/_fields.html.erb:17 app/views/accessors/index.html.erb:12
+#: app/views/accessors/show.html.erb:24 app/views/functions/edit.html.erb:18
+#: app/views/functions/index.html.erb:11 app/views/functions/new.html.erb:17
+#: app/views/functions/show.html.erb:17
+msgid "Comment"
+msgstr "Kommentar"
+
+#: app/views/accessors/edit.html.erb:2
+msgid "Editing Acessor"
+msgstr "Zugriff bearbeiten"
+
+#: app/views/accessors/edit.html.erb:5 app/views/accessors/index.html.erb:22
+#: app/views/authors/edit.html.erb:5 app/views/binaries/edit.html.erb:14
+#: app/views/div_tags/edit.html.erb:16 app/views/functions/edit.html.erb:5
+#: app/views/functions/index.html.erb:19 app/views/pages/edit.html.erb:13 app/views/pages/index.html.erb:15
+#: app/views/postings/edit.html.erb:5 app/views/users/edit.html.erb:5 app/views/users/index.html.erb:18
+msgid "Show"
+msgstr "Anzeigen"
+
+#: app/views/accessors/edit.html.erb:6 app/views/accessors/new.html.erb:5
+#: app/views/accessors/show.html.erb:6 app/views/authors/edit.html.erb:6 app/views/authors/new.html.erb:5
+#: app/views/authors/show.html.erb:6 app/views/binaries/edit.html.erb:15
+#: app/views/binaries/new.html.erb:14 app/views/binaries/show.html.erb:38
+#: app/views/div_tags/edit.html.erb:17 app/views/div_tags/new.html.erb:12
+#: app/views/div_tags/show.html.erb:13 app/views/functions/edit.html.erb:6
+#: app/views/functions/new.html.erb:5 app/views/functions/show.html.erb:6
+#: app/views/pages/edit.html.erb:14 app/views/pages/edit_columns.html.erb:16
+#: app/views/pages/new.html.erb:12 app/views/pages/show.html.erb:13 app/views/postings/edit.html.erb:6
+#: app/views/postings/new.html.erb:5 app/views/postings/show.html.erb:10
+#: app/views/postings/show.html.erb:12 app/views/users/edit.html.erb:6 app/views/users/new.html.erb:5
+#: app/views/users/show.html.erb:6
+msgid "Back"
+msgstr "Zurück"
+
+#: app/views/accessors/edit.html.erb:13 app/views/authors/edit.html.erb:14
+#: app/views/binaries/edit.html.erb:10 app/views/div_tags/edit.html.erb:12
+#: app/views/functions/edit.html.erb:23 app/views/pages/edit.html.erb:9 app/views/postings/edit.html.erb:14
+#: app/views/users/edit.html.erb:13
+msgid "Update"
+msgstr "Änderungen speichern"
+
+#: app/views/accessors/index.html.erb:2
+msgid "Listing acessors"
+msgstr "Zugriffsliste"
+
+#: app/views/accessors/index.html.erb:5
+msgid "New Accessor"
+msgstr "Neuer Zugriff"
+
+#: app/views/accessors/index.html.erb:23 app/views/accessors/show.html.erb:5
+#: app/views/authors/index.html.erb:34 app/views/authors/show.html.erb:5
+#: app/views/binaries/index.html.erb:39 app/views/binaries/show.html.erb:37
+#: app/views/div_tags/show.html.erb:12 app/views/functions/index.html.erb:20
+#: app/views/functions/show.html.erb:5 app/views/pages/index.html.erb:16 app/views/pages/show.html.erb:12
+#: app/views/postings/_list_posting.html.erb:12 app/views/postings/_show_posting.html.erb:15
+#: app/views/postings/show.html.erb:6 app/views/users/index.html.erb:19
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: app/views/accessors/index.html.erb:24 app/views/authors/index.html.erb:35
+#: app/views/binaries/index.html.erb:40 app/views/functions/index.html.erb:21
+#: app/views/pages/index.html.erb:17 app/views/postings/_list_posting.html.erb:13
+#: app/views/postings/_show_posting.html.erb:16 app/views/users/index.html.erb:20
+msgid "Destroy"
+msgstr "Löschen"
+
+#: app/views/accessors/index.html.erb:24 app/views/authors/index.html.erb:35
+#: app/views/binaries/index.html.erb:40 app/views/functions/index.html.erb:21
+#: app/views/pages/index.html.erb:17 app/views/postings/_list_posting.html.erb:13
+#: app/views/postings/_show_posting.html.erb:16 app/views/users/index.html.erb:20
+msgid "Are you sure?"
+msgstr "Bist Du sicher?"
+
+msgid "Are you sure you want delete posting '%s'?"
+msgstr "Willst du den Beitrag '%s' wirklich löschen?"
+
+#: app/views/accessors/new.html.erb:2
+msgid "New acessor"
+msgstr "Neuer Zugriff"
+
+#: app/views/accessors/new.html.erb:12 app/views/authors/new.html.erb:14
+#: app/views/binaries/new.html.erb:10 app/views/div_tags/new.html.erb:8
+#: app/views/functions/new.html.erb:22 app/views/pages/new.html.erb:8 app/views/postings/new.html.erb:13
+#: app/views/users/new.html.erb:13
+msgid "Create"
+msgstr "Erzeugen"
+
+#: app/views/accessors/show.html.erb:2
+msgid "Acessor"
+msgstr "Zugriff"
+
+#: app/views/authenticate/login.html.erb:3 app/views/users/_fields.html.erb:5 app/views/users/index.html.erb:9
+msgid "Username"
+msgstr "Benutzername"
+
+#: app/views/authenticate/login.html.erb:4 app/views/users/_fields.html.erb:15
+#: app/views/users/show.html.erb:21
+msgid "Password"
+msgstr "Passwort"
+
+#: app/views/authenticate/login.html.erb:5 app/views/layouts/_user_menu.html.erb:9
+msgid "Login"
+msgstr "Anmelden"
+
+#: app/views/authors/_fields.html.erb:3
+msgid "Nickname"
+msgstr "Spitzname"
+
+#: app/views/authors/_fields.html.erb:13 app/views/authors/index.html.erb:9
+#: app/views/authors/show.html.erb:15
+msgid "Prename"
+msgstr "Vorname"
+
+#: app/views/authors/_fields.html.erb:18 app/views/authors/index.html.erb:10
+#: app/views/authors/show.html.erb:20
+msgid "Lastname"
+msgstr "Familienname"
+
+#: app/views/authors/_fields.html.erb:23 app/views/authors/show.html.erb:25
+msgid "Secret"
+msgstr "Geheimwort"
+
+#: app/views/authors/_fields.html.erb:29 app/views/authors/index.html.erb:12
+#: app/views/authors/show.html.erb:35
+msgid "Gender"
+msgstr "Geleschlecht"
+
+#: app/views/authors/_fields.html.erb:33 app/views/authors/index.html.erb:11
+#: app/views/authors/show.html.erb:30
+msgid "Date birth"
+msgstr "Geburtsdatum"
+
+#: app/views/authors/_fields.html.erb:40 app/views/authors/index.html.erb:13
+#: app/views/authors/show.html.erb:40
+msgid "Country"
+msgstr "Land"
+
+#: app/views/authors/_fields.html.erb:45 app/views/authors/show.html.erb:45
+msgid "Address"
+msgstr "Adresse"
+
+#: app/views/authors/_fields.html.erb:50
+msgid "ZIP"
+msgstr "Postleitzahl"
+
+#: app/views/authors/_fields.html.erb:55 app/views/authors/index.html.erb:15
+#: app/views/authors/show.html.erb:55
+msgid "City"
+msgstr "Ort"
+
+#: app/views/authors/_fields.html.erb:60
+msgid "EMail"
+msgstr "E-Mail"
+
+#: app/views/authors/_fields.html.erb:65
+msgid "Phone"
+msgstr "Telefon"
+
+#: app/views/authors/_fields.html.erb:70
+msgid "Chat"
+msgstr "Chat"
+
+#: app/views/authors/_fields.html.erb:76
+msgid "Note"
+msgstr "Bemerkung"
+
+#: app/views/authors/edit.html.erb:2
+msgid "Editing author"
+msgstr "Autor bearbeiten"
+
+#: app/views/authors/index.html.erb:1
+msgid "Listing authors"
+msgstr "Liste der Autoren"
+
+#: app/views/authors/index.html.erb:3 app/views/authors/new.html.erb:2
+msgid "New author"
+msgstr "Neuer Autor"
+
+#: app/views/authors/index.html.erb:8
+msgid "Nickname (user)"
+msgstr "Spitzname (user)"
+
+#: app/views/authors/index.html.erb:14 app/views/authors/show.html.erb:50
+msgid "Zip"
+msgstr "Postleitzahl"
+
+#: app/views/authors/index.html.erb:16 app/views/authors/show.html.erb:60
+msgid "Email"
+msgstr "E-Mail"
+
+#: app/views/authors/show.html.erb:10
+msgid "Nickname (User)"
+msgstr "Spitzname (User)"
+
+#: app/views/binaries/_fields.html.erb:2 app/views/binaries/index.html.erb:16
+#: app/views/binaries/show.html.erb:5 app/views/pages/edit_columns.html.erb:5
+#: app/views/pages/page_columns.html.erb:5 app/views/postings/_fields.html.erb:12
+msgid "Title"
+msgstr "Titel"
+
+#: app/views/binaries/_fields.html.erb:6
+msgid "Description"
+msgstr "Beschreibung"
+
+#: app/views/binaries/_fields.html.erb:12 app/views/binaries/index.html.erb:16
+#: app/views/binaries/show.html.erb:10
+msgid "Filename"
+msgstr "Dateiname"
+
+#: app/views/binaries/_fields.html.erb:17 app/views/binaries/index.html.erb:17
+#: app/views/binaries/show.html.erb:15
+msgid "Mime type"
+msgstr "Mime-Type"
+
+#: app/views/binaries/_fields.html.erb:20 app/views/binaries/show.html.erb:20
+msgid "Size"
+msgstr "Grösse"
+
+#: app/views/binaries/_fields.html.erb:24
+msgid "Please create record befor you can upload a binary..."
+msgstr "Bitte den Eintrag zuerst erstellen - dann kann eine Datei hochgeladen werden..."
+
+#: app/views/binaries/edit.html.erb:1
+msgid "Editing binary"
+msgstr "Binärdatei bearbeiten"
+
+#: app/views/binaries/index.html.erb:1
+msgid "Listing binaries"
+msgstr "Liste der Binärdateien"
+
+#: app/views/binaries/index.html.erb:5
+msgid "Klick on a thumbnail-image to show preview in this frame."
+msgstr "Klicke auf das Vorschaubild um es im Rahmen anzuzeigen."
+
+#: app/views/binaries/index.html.erb:15
+msgid "Binary ID"
+msgstr "Binär ID"
+
+#: app/views/binaries/index.html.erb:18
+msgid "KBytes"
+msgstr "KBytes"
+
+#: app/views/binaries/index.html.erb:48 app/views/binaries/new.html.erb:1
+msgid "New binary"
+msgstr "Neue Binärdatei"
+
+#: app/views/div_tags/_fields.html.erb:7
+msgid "Definition"
+msgstr "Definition"
+
+#: app/views/div_tags/edit.html.erb:1
+msgid "Editing div_tag"
+msgstr "DIV-Tag bearbeiten"
+
+#: app/views/div_tags/edit.html.erb:5
+msgid "Preview"
+msgstr "Vorschau"
+
+#: app/views/div_tags/index.html.erb:1
+msgid "Listing DIV Tags"
+msgstr "Liste der DIV-Tags"
+
+#: app/views/div_tags/new.html.erb:1
+msgid "New DIV Tag"
+msgstr "Neuer DIV-Tag"
+
+#: app/views/div_tags/show.html.erb:7
+msgid "Listing div_tags"
+msgstr "Liste der DIV-Tags"
+
+#: app/views/functions/_function_members.html.erb:1
+msgid "Accessors to this function"
+msgstr "Zugriffsrechte für diese Funktion"
+
+#: app/views/functions/edit.html.erb:2
+msgid "Editing function"
+msgstr "Funktion bearbeiten"
+
+#: app/views/functions/index.html.erb:2
+msgid "Listing functions"
+msgstr "Liste der Funktionen"
+
+#: app/views/functions/index.html.erb:5
+msgid "New Function"
+msgstr "Neue Funktion"
+
+#: app/views/functions/new.html.erb:2
+msgid "New function"
+msgstr "Neue Funktion"
+
+#: app/views/functions/show.html.erb:2
+msgid "Function %s"
+msgstr "Funktion %s"
+
+#: app/views/layouts/_user_menu.html.erb:3
+msgid "User Menu"
+msgstr "Benutzermenü"
+
+#: app/views/layouts/_user_menu.html.erb:6
+msgid "my iBoard"
+msgstr "mein iBoard"
+
+#: app/views/layouts/_user_menu.html.erb:7
+msgid "Logout"
+msgstr "Abmelden"
+
+#: app/views/layouts/_user_menu.html.erb:12
+msgid "Content"
+msgstr "Inhalt"
+
+#: app/views/layouts/_user_menu.html.erb:13 app/views/postings/index.html.erb:1
+msgid "Postings"
+msgstr "Beitrag"
+
+#: app/views/layouts/_user_menu.html.erb:14
+msgid "Pages"
+msgstr "Seiten"
+
+#: app/views/layouts/_user_menu.html.erb:15
+msgid "Binaries"
+msgstr "Binärdateien"
+
+#: app/views/layouts/_user_menu.html.erb:18
+msgid "Superuser menu"
+msgstr "Admin.menü"
+
+#: app/views/layouts/_user_menu.html.erb:19
+msgid "Users"
+msgstr "Benutzer"
+
+#: app/views/layouts/_user_menu.html.erb:20 app/views/pages/page_columns.html.erb:1
+msgid "Columns"
+msgstr "Spalten"
+
+#: app/views/layouts/_user_menu.html.erb:21
+msgid "DIV Tags"
+msgstr "DIV Tags"
+
+#: app/views/layouts/_user_menu.html.erb:22
+msgid "Authors"
+msgstr "Autoren"
+
+#: app/views/layouts/_user_menu.html.erb:23
+msgid "Functions"
+msgstr "Funktionen"
+
+#: app/views/layouts/_user_menu.html.erb:24 app/views/users/_fields.html.erb:25
+msgid "Accessors"
+msgstr "Zugriffsrechte"
+
+#: app/views/layouts/application.html.erb:8
+msgid "Last update:"
+msgstr "Letzes Update"
+
+#: app/views/pages/_edit_columns_buttons.html.erb:2
+msgid "Remove column"
+msgstr "Spalte entfernen"
+
+#: app/views/pages/_edit_columns_buttons.html.erb:3
+msgid "The column will be removed from this page but the column itself will not be deleted and may be added again to this or any other page later. Are you sure to remove?"
+msgstr "Die Spalte wird entfernt aber nicht gelöscht. Die entfernte Spalte kann später wieder einer Seite zugeordnet werden. Bist Du sicher?"
+
+#: app/views/pages/_edit_layout_buttons.html.erb:2
+msgid "Add column"
+msgstr "Spalte hinzufügen"
+
+#: app/views/pages/_edit_layout_buttons.html.erb:3
+msgid "Edit columns"
+msgstr "Spalten bearbeiten"
+
+#: app/views/pages/_fields.html.erb:7 app/views/pages/index.html.erb:6 app/views/pages/show.html.erb:7
+msgid "Introduction"
+msgstr "Einleitung"
+
+#: app/views/pages/_fields.html.erb:12
+msgid "DIV-Tag"
+msgstr "DIV-Tag"
+
+#: app/views/pages/_fields.html.erb:18
+msgid "Show title"
+msgstr "Titel anzeigen"
+
+#: app/views/pages/_fields.html.erb:19
+msgid "Show introduction"
+msgstr "Einleitung anzeigen"
+
+#: app/views/pages/add_column.html.erb:8
+msgid "Add a new column"
+msgstr "Neue Spalte hinzufügen"
+
+#: app/views/pages/edit.html.erb:1
+msgid "Editing page"
+msgstr "Seite bearbeiten"
+
+#: app/views/pages/edit_columns.html.erb:1
+msgid "Editing columns of page <em>%s</em>"
+msgstr "Spalten der Seite <em>%s</em> bearbeiten"
+
+#: app/views/pages/edit_columns.html.erb:10
+msgid "Position"
+msgstr "Position"
+
+#: app/views/pages/edit_columns.html.erb:13
+msgid "Save"
+msgstr "Speichern"
+
+#: app/views/pages/index.html.erb:1
+msgid "Listing pages"
+msgstr "Liste der Seiten"
+
+#: app/views/pages/index.html.erb:14 app/views/pages/show.html.erb:15
+msgid "Display as page"
+msgstr "Als 'Seite' anzeigen"
+
+#: app/views/pages/index.html.erb:24 app/views/pages/new.html.erb:1
+msgid "New page"
+msgstr "Neue Seite"
+
+#: app/views/pages/page_columns.html.erb:4
+msgid "ID"
+msgstr "ID"
+
+#: app/views/pages/page_columns.html.erb:6
+msgid "used in"
+msgstr "benutzt in"
+
+#: app/views/pages/page_columns.html.erb:7
+msgid "#Postings"
+msgstr "Anz. Beiträge"
+
+#: app/views/pages/page_columns.html.erb:16
+msgid "Delete"
+msgstr "Löschen"
+
+#: app/views/pages/page_columns.html.erb:16
+msgid "Are you shure?"
+msgstr "Bist Du sicher?"
+
+#: app/views/postings/_fields.html.erb:3
+msgid "show this posting in page columns"
+msgstr "Diesen Beitrag in folgenden Spalten anzeigen"
+
+#: app/views/postings/_fields.html.erb:17
+msgid "Author"
+msgstr "Autor"
+
+#: app/views/postings/_fields.html.erb:22
+msgid "Body"
+msgstr "Text"
+
+#: app/views/postings/_fields.html.erb:28
+msgid "expires"
+msgstr "Ablaufdatum"
+
+#: app/views/postings/_list_posting.html.erb:4 app/views/postings/_show_posting.html.erb:3
+msgid "Expired since %s"
+msgstr "Seit %s abgelaufen"
+
+#: app/views/postings/_list_posting.html.erb:20
+msgid "This posting is not assigned to any column"
+msgstr "Dieser Beitrag ist keiner Spalte zugeordnet"
+
+#: app/views/postings/_posting_search_box.html.erb:8
+msgid "Search"
+msgstr "Suchen"
+
+#: app/views/postings/_show_posting.html.erb:10
+msgid "read more"
+msgstr "mehr"
+
+#: app/views/postings/edit.html.erb:2
+msgid "Editing posting"
+msgstr "Beitrag bearbeiten"
+
+#: app/views/postings/index.html.erb:3
+msgid "%{postings} found"
+msgstr "%{postings} gefunden"
+
+#: app/views/postings/index.html.erb:3
+msgid "posting"
+msgstr "Beitrag"
+
+#: app/views/postings/index.html.erb:5 app/views/postings/new.html.erb:2
+msgid "New posting"
+msgstr "Neuer Beitrag"
+
+#: app/views/postings/show.html.erb:18
+msgid "unknown"
+msgstr "unbekannt"
+
+#: app/views/postings/show.html.erb:19
+msgid "posted by %{author} at %{date}"
+msgstr "erstellt am %{date} von %{author}"
+
+#: app/views/postings/show.html.erb:26
+msgid "expires at"
+msgstr "Ablaufdatum"
+
+#: app/views/users/_fields.html.erb:10 app/views/users/index.html.erb:10 app/views/users/show.html.erb:16
+msgid "Longname"
+msgstr "ganzer Name"
+
+#: app/views/users/_fields.html.erb:22
+msgid "Please save this new record before assigning functions here."
+msgstr "Bitte den Eintrag speichern bevor Funktonen zugeordnet werden können."
+
+#: app/views/users/edit.html.erb:2
+msgid "Editing user %s"
+msgstr "Benutzer %s bearbeiten"
+
+#: app/views/users/index.html.erb:2
+msgid "Listing users"
+msgstr "Liste der Benutzer"
+
+#: app/views/users/index.html.erb:5 app/views/users/new.html.erb:2
+msgid "New user"
+msgstr "Neuer Benutzer"
+
+#: app/views/users/show.html.erb:2
+msgid "Users %s"
+msgstr "Benutzer %s"
+
+#: app/views/users/show.html.erb:24
+msgid "Assigned Authors"
+msgstr "Zugeordneter Autor"
+
+#: app/views/users/show.html.erb:30
+msgid "Accessors to functions"
+msgstr "Zugriffsrechte für diese Funktion"
+
+#: app/views/users/welcome.html.erb:2
+msgid " for %s"
+msgstr " für %s"
+
+#: app/views/users/welcome.html.erb:4
+msgid "Welcome %{longname}"
+msgstr "Willkommen %{longname}"
+
+#: app/views/users/welcome.html.erb:9
+msgid "You'r logged in from <em>%{ip}</em> as <b>%{username}</b>"
+msgstr "Du bist von <em>%{ip}</em> aus als <b>%{username}</b> angemeldet"
+
+#: app/views/users/welcome.html.erb:11
+msgid "Your Browser"
+msgstr "Dein Browser"
+
+#: app/views/users/welcome.html.erb:12
+msgid "Your IP:PORT"
+msgstr "Deine IP:PORT"
+
+#: app/views/users/welcome.html.erb:13
+msgid "Server IP:PORT"
+msgstr "Server IP:PORT"
+
+#: app/views/users/welcome.html.erb:15
+msgid "Log out"
+msgstr "Abmelden"
+
+
+#: Manually Added
+msgid "Post to <em>%s</em>"
+msgstr "Beitrag für <em>%s</em> verfassen"
+
+msgid "Remove column <em>%s</em>"
+msgstr "Spalte <em>%s</em> entfernen"
+
+msgid "Column-Title"
+msgstr "Spalten-Name"
+
+msgid "Column position on page"
+msgstr "Position der Spalte auf der Seite"
+
+msgid "Postings order"
+msgstr "Reihenfolge der Beiträge"
+
+msgid "ordering postings manualy..."
+msgstr "Manuelle Reihenfolge bearbeiten..."
+
+msgid "Click on <em>ordering postings manualy</em> for the column which you want to set postings order for."
+msgstr "Klicke auf <em>Manuelle Reihenfolge bearbeiten</em> für die jeweilige Spalte um deren Beiträge zu sortieren."
+
+msgid "Set postings order for column <em>%{colname}</em> "
+msgstr "Reihenfolge der Beiträge in der Spalte <em>%{colname}</em> bearbeiten "
+
+msgid "Drag and drop postings into the order you want to have for 'manualy sorted' option ..."
+msgstr "Reihenfolge der Beiträge für die manuelle Sortierung kann hier mit Drag & Drop verändert werden ..."
+
+msgid "finished"
+msgstr "fertig"
+
+msgid "On page"
+msgstr "Auf Seite"
+
+msgid "&laquo; Previous"
+msgstr "&laquo; zurück"
+
+msgid "Next &raquo;"
+msgstr "weiter &raquo;"
+
+msgid "read"
+msgstr "lesen"
+
+msgid "Accessor was successfully created."
+msgstr "Zugriffsrecht erfolgreich erstellt."
+
+msgid "Accessor was successfully updated."
+msgstr "Zugriffsrecht erfolgreich geändert."
+
+msgid "Permition denied to <em>%{ctl}-controller</em> for <em>%{user}</em>"
+msgstr "Der Zugriff auf <em>%{ctl}-controller</em> wurde für <em>%{user}</em> verweigert"
+
+msgid "Please log in with an authorized user"
+msgstr "Bitte mit einem authorisierten Benutzer anmelden"
+
+msgid "Language changed to %{language}"
+msgstr "Sprache wurde auf %{language} geändert"
+
+msgid "&laquo; Previous"
+msgstr "&laquo; zurück"
+
+msgid "Next &raquo;"
+msgstr "weiter &raquo;"
+
+msgid "Sorry, your account is locked. Did you confirm your registration email?"
+msgstr "Ihr Account ist gesperrt. Haben Sie Ihr 'Registrierungs-EMail' schon bestätigt?"
+
+msgid "Author was successfully created."
+msgstr "Autor wurde erfolgreich angelegt."
+
+msgid "Author was successfully updated."
+msgstr "Autor wurde erfolgreich geändert."
+
+msgid "Binary was successfully created."
+msgstr "Binärdatei wurde erfolgreich erstellt."
+
+msgid "Binary was successfully updated."
+msgstr "Binärdatei wurde erfolgreich geändert."
+
+msgid "Binary not found"
+msgstr "Binärdatei nicht gefunden"
+
+msgid "DivTag was successfully created."
+msgstr "DivTag wurde erzeugt."
+
+msgid "DivTag was successfully updated."
+msgstr "DivTag wurde geändert."
+
+msgid "Function was successfully created."
+msgstr "Funktion wurde erstellt."
+
+msgid "Function was successfully updated."
+msgstr "Funktion wurde geändert."
+
+msgid "Newsletter Subscription was successfully created."
+msgstr "Newsletter Anmeldung erstellt."
+
+msgid "Newsletter Subscription was successfully updated."
+msgstr "Anmeldung/Einstellung zum Newsletter wurde geändert."
+
+msgid "Subscription removed."
+msgstr "Newsletter-Anmeldung wurde glöscht."
+
+msgid "Finished"
+msgstr "fertig"
+
+msgid "Running"
+msgstr "läuft"
+
+msgid "sent"
+msgstr "gesendet"
+
+msgid "Mailer error"
+msgstr "Mailer Fehler"
+
+msgid "unkown error"
+msgstr "unerwarteter Fehler"
+
+msgid "Sorry, access to the addressed page is restricted."
+msgstr "Sorry, der Zugriff auf diese Seite ist nicht erlaubt."
+
+msgid "Page was successfully created."
+msgstr "Seite wurde erstellt"
+
+msgid "Page was successfully updated."
+msgstr "Seite wurde geändert"
+
+msgid "<b>ERROR 404</b>: Sorry, the page you've requested (%s) was not found.<br/>"
+msgstr "<b>Fehler 404</b>: Die angeforderte Seite (%s) wurde nicht gefunden.<br/>"
+
+msgid "Posting was successfully created."
+msgstr "Beitrag wurde erstellt."
+
+msgid "Posting appended to <b>%s</b>"
+msgstr "Beitrag wurde zu <b>%s</b> hinzugefügt"
+
+msgid "Posting was successfully updated."
+msgstr "Beitrag erfolgreich geändert."
+
+msgid "Posting deleted"
+msgstr "Beitrag wurde gelöscht"
+
+msgid "User was successfully created."
+msgstr "Benutzer wurde erstellt."
+
+msgid "Thank You! Your confirmation-code was sent to %{email}.<br />Please check your mail before you login."
+msgstr "Danke! Der Bestätigungscode wurde an die Adresse %{email} gesandt.<br/>Bitte kontrollieren sie ihren Posteingang."
+
+msgid "Password mismatch. Please try again."
+msgstr "Die Passwörter stimmen nicht überein."
+
+msgid "Secure code invalid"
+msgstr "Sicherheitscode ist falsch"
+
+msgid "Welcome! Your registration was completed successfully. Please login now."
+msgstr "Willkommen! Ihre Registrierung ist nun abgeschlossen. Bitte loggen sie sich jetzt ein."
+
+msgid "Your registration was logged at %{t} from %{ip}"
+msgstr "Ihre Registrierung wurd am %{t} von der Adresse %{ip} aus protokolliert"
+
+msgid "Sorry, this code is invalid. Please try again: "
+msgstr "Der Code ist ungültig. Bitte wiederholen: "
+
+msgid "User was successfully updated."
+msgstr "Benutzer wurde geändert."
+
+msgid "Access denied"
+msgstr "Zugriff verweigert"
+
+msgid "..public.."
+msgstr "..öffentlich.."
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Date created descending"
+msgstr "Erstelldatum absteigend"
+
+msgid "Date created ascending"
+msgstr "Erstelldatum aufsteigend"
+
+msgid "Date modified descending"
+msgstr "Änderungsdatum absteigend"
+
+msgid "Date modified ascending"
+msgstr "Änderungsdatum aufsteigend"
+
+msgid "manually ascending"
+msgstr "Manuell aufsteigend"
+
+msgid "manually descanding"
+msgstr "Manuell absteigend"
+
+msgid "Register new user"
+msgstr "Neuen Benutzer registrieren"
+
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Download original file/size"
+msgstr "Original Datei/Größe"
+
+msgid "Gallery-Name"
+msgstr "Gallerie-Name"
+
+msgid "Gallery path"
+msgstr "Gallerie-Pfad"
+
+msgid "Thumb width"
+msgstr "Vorschau Breite"
+
+msgid "Thumb height"
+msgstr "Vorschau Höhe"
+
+msgid "Web width"
+msgstr "Web Breite"
+
+msgid "Web height"
+msgstr "Web Höhe"
+
+msgid "Upload Foto ZIP-File"
+msgstr "Foto-ZIP-File senden"
+
+msgid "Access-Function"
+msgstr "Zugriffsfunktion"
+
+msgid "Options"
+msgstr "Optionen"
+
+msgid "New gallery"
+msgstr "Neue Gallerie"
+
+msgid "close"
+msgstr "schließen"
+
+msgid "Gallery %s"
+msgstr "Gallerie %s"
+
+msgid "Search"
+msgstr "Suchen"
+
+msgid "Subscribe"
+msgstr "Abonnieren"
+
+msgid "Galleries"
+msgstr "Gallerien"
+
+msgid "Your active subscriptions"
+msgstr "Ihre aktiven Abos"
+
+msgid "Edit newsletter subscription"
+msgstr "Abo bearbeiten"
+
+msgid "Email Address"
+msgstr "E-Mail-Adresse"
+
+msgid "or"
+msgstr "oder"
+
+msgid "Plain text"
+msgstr "Nur Text"
+
+msgid "Unsubscribe"
+msgstr "Abo kündigen"
+
+msgid "Newsletter Subscription"
+msgstr "Newsletter Abo"
+
+msgid "E-Mail Address: %{name} &lt;%{email}&gt;<br/>Newsletter %{newsletter}<br />Date: %{date}"
+msgstr "E-Mail Adresse: %{name} &lt;%{email}&gt;<br/>Newsletter %{newsletter}<br />Datum: %{date}"
+
+msgid "Sorry, sc-code is invalid for this subscription"
+msgstr "SC-Code ist für dieses Abo ungültig"
+
+msgid "Subscribe to newsletters"
+msgstr "Newsletter abonnieren"
+
+msgid "Your e-mail-address"
+msgstr "Ihre e-mail-Adresse"
+
+msgid "Available Newsletters"
+msgstr "Verfügbare Newsletter"
+
+msgid "finished"
+msgstr "fertig"
+
+msgid "Subject"
+msgstr "Betreff"
+
+msgid "sent to %s addresses yet"
+msgstr "Bisher an %s Adressen versandt"
+
+msgid "Allready sent at %s"
+msgstr "Bereits versandt am %s"
+
+msgid "padding"
+msgstr "Warteschleife"
+
+msgid "Edit newsletter template for <em>%s</em>"
+msgstr "Vorlage für <em>%s</em> bearbeiten"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Does not send the newsletter!"
+msgstr "Sendet den Newsletter noch nicht!"
+
+msgid "Newsletter Templates"
+msgstr "Vorlagen"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Create a new newsletter template for <em>%s</em>"
+msgstr "Neue Vorlage für <em>%s</em> erstellen"
+
+msgid "Sending Newsletter Template %s"
+msgstr "Vorlage %s senden"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Timestamp"
+msgstr "Zeitstempel"
+
+msgid "Plaintext-Version"
+msgstr "Reine Text Version"
+
+msgid "Goto Newsletter"
+msgstr "Zum Newsletter"
+
+msgid "Send Now!"
+msgstr "Jetzt Senden!"
+
+msgid "Are you sure you want to send this template to %d subscribers?"
+msgstr "Wollen sie die Vorlage nun an %d Empfänger senden?"
+
+msgid "Who is allowed to send newsletters?"
+msgstr "Wer darf Newsletter versenden?"
+
+msgid "Public subscribable?"
+msgstr "Öffentlich abonnierbar?"
+
+msgid "Default Mime-type"
+msgstr "Standard Mime-Typ"
+
+msgid "From Address"
+msgstr "Absender"
+
+msgid "Footer"
+msgstr "Fußzeilen"
+
+msgid "+Addresses"
+msgstr "+Adressen"
+
+msgid "-Addresses"
+msgstr "-Adressen"
+
+msgid "Importing Subscriptions ..."
+msgstr "Adressen importieren..."
+
+msgid "Edit newsletter %s"
+msgstr "Newsletter %s bearbeiten"
+
+msgid "Attention: Changes you made since you pressed save last time will not be saved!"
+msgstr "Achtung: Änderungen seit dem letzten Speichern gehen verloren!"
+
+msgid "Import Addresses to Newsletter <em>%s</em>"
+msgstr "Adressen zum Newsletter <em>%s</em> hinzufügen"
+
+msgid "Newsletter has %s subscriptions yet"
+msgstr "Derzeit %s Abonennten"
+
+msgid "Comma- or Newline-separated list of new addresses"
+msgstr "Mit Beistrich oder neuer Zeile getrennte Adressen"
+
+msgid "Import"
+msgstr "Importieren"
+
+msgid "Maintaining Newsletters"
+msgstr "Newsletter verwalten"
+
+msgid "New Newsletter"
+msgstr "Neuer Newsletter"
+
+msgid "# Subscriptions"
+msgstr "Anz. Abos"
+
+msgid "Subscriptions of Newsletters"
+msgstr "Abos"
+
+msgid "Subscriptions"
+msgstr "Abos"
+
+msgid "since"
+msgstr "seit"
+
+msgid "subscripted from"
+msgstr "abonniert von"
+
+msgid "Create new newsletter"
+msgstr "Neuen Newsletter erstellen"
+
+msgid "Remove Addresses from Newsletter <em>%s</em>"
+msgstr "Adresse vom Newsletter <em>%s</em> abmelden"
+
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Removing Subscriptions ..."
+msgstr "Abos kündigen ..."
+
+msgid "Sending Address"
+msgstr "Absender"
+
+msgid "Public subscribable"
+msgstr "Öffentlich abonnierbar"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "Default mime-type"
+msgstr "Standard Mime-Typ"
+
+msgid "# of subscriptions"
+msgstr "Anz. Abos"
+
+msgid "Templates"
+msgstr "Vorlagen"
+
+msgid "Sent"
+msgstr "gesandt"
+
+msgid "New Template"
+msgstr "Neue Vorlage"
+
+msgid "Remove column <em>%s</em>"
+msgstr "Spalte <em>%s</em> entfernen"
+
+msgid "Layout/Columns"
+msgstr "Layout/Spalten"
+
+msgid "Add column"
+msgstr "Spalte hinzufügen"
+
+msgid "Language"
+msgstr "Sprache"
+
+msgid "Access restricted to ..."
+msgstr "Zugriff beschränken auf ..."
+
+msgid "Introduction"
+msgstr "Einleitung"
+
+msgid "Show in menu"
+msgstr "In Menü anzeigen"
+
+msgid "Post to <em>%s</em>"
+msgstr "Beitrag in <em>%s</em> ertellen"
+
+msgid "Column-Title"
+msgstr "Spalten-Name"
+
+msgid "Column position on page"
+msgstr "Position der Spalte"
+
+msgid "Postings order"
+msgstr "Beitragsreihenfolge"
+
+msgid "ordering postings manualy..."
+msgstr "Beiträge manuell sortieren"
+
+msgid "Click on <em>ordering postings manualy</em> for the column which you want to set postings order for."
+msgstr "Klicke auf <em>Beiträge manuell sortieren</em> für die jeweilige Spalte"
+
+msgid "not assigned to a page"
+msgstr "Keiner Seite zugewiesen"
+
+msgid "This posting will be auto-assigned to <br/><b>%s</b>"
+msgstr "Dieser Beitrag wird der <br/><b>%s</b> zugewiesen"
+
+msgid "Read access restricted to ..."
+msgstr "Lesezugriff begrenzen auf ..."
+
+msgid "Edit access"
+msgstr "Zugriff bearbeiten"
+
+msgid "By owner only"
+msgstr "Nur vom Besitzer"
+
+msgid "By registered users"
+msgstr "Registrierte Benutzer"
+
+msgid "By function members (as selected above)"
+msgstr "Benuter der oben gewählten Gruppe"
+
+msgid "public writeable"
+msgstr "jeder darf ändern"
+
+msgid "Edit Posting"
+msgstr "Beitrag bearbeiten"
+
+msgid "Delete Posting"
+msgstr "Beitrag löschen"
+
+msgid "Are you sure you want delete posting '%s'?"
+msgstr "Wollen Sie den Beitrag '%s' wirklich löschen?"
+
+msgid "read"
+msgstr "lesen"
+
+msgid "On page"
+msgstr "Auf Seite"
+
+msgid "posted by %{author} at %{date}"
+msgstr "Erstellt von %{author} am %{date}"
+
+msgid "postings index"
+msgstr "Beitragsindex"
+
+msgid "Set postings order for column <em>%{colname}</em> "
+msgstr "Beitragsreihenfolge für Spalte <em>%{colname}</em> ändern"
+
+msgid "Drag and drop postings into the order you want to have for 'manualy sorted' option ..."
+msgstr "Bringe die Beiträge mit 'Drag & Drop' in die gewünschte Reihenfolge ..."
+
+msgid "Hello %s"
+msgstr "Hallo %s"
+
+msgid "Thank you for registering at %s"
+msgstr "Danke für ihre Registrierung bei %s"
+
+msgid "Your confirmation code is"
+msgstr "Ihr Bestätigungs-Code lautet"
+
+msgid "Please goto %{url}"
+msgstr "Bitte gehen sie zu %{url}"
+
+msgid "to confirm and complete your registration"
+msgstr "um ihre Registrierung zu bestätigen"
+
+msgid "Please notice that your password is stored crypted only and nobody can access your plain-text-password."
+msgstr "Bitte beachten sie, dass ihr Passwort verschlüsselt gespeichert wurde und niemand darauf Zugriff hat."
+
+msgid "Have fun @ %s!"
+msgstr "Viel Spass bei %s!"
+
+msgid "User Locked?"
+msgstr "Benutzer gesperrt?"
+
+msgid "Locked?"
+msgstr "gesperrt?"
+
+msgid "locked"
+msgstr "gesperrt"
+
+msgid "active"
+msgstr "aktiv"
+
+msgid "User Registration"
+msgstr "Benutzer Registrierung"
+
+msgid "Full name"
+msgstr "Voller Name"
+
+msgid "Confirm password"
+msgstr "Passwort bestätigen"
+
+msgid "Please enter the code <img src='%s' border=0 title='Security Code'><br/>for security reasons"
+msgstr "Bitter geben Sie aus Sicherheitsgründen den Code<br><img src='%s' border=0 title='Security Code'> ein"
+
+msgid "Register"
+msgstr "Registrieren"
+
+msgid "Unconfirmed Registrations"
+msgstr "Unbestätigte Registrierungen"
+
+msgid "registered at/from ip"
+msgstr "Registriert am/von ip"
+
+msgid "Log out"
+msgstr "Abmelden"
+
+msgid "Sorry, no events found"
+msgstr "Sorry - keine Vernanstaltungen gefunden"
+
+msgid "Please set your email first!"
+msgstr "Bitte zuerst Deine email angeben!"
+
+msgid "Error: Page with ID %s not found."
+msgstr "Fehler: Seite %s nicht gefunden."
+
+msgid "Sorry, Access denied"
+msgstr "Sorry, Zugriff verweigert"
+
+msgid "Ticket was successfully created."
+msgstr "Ticket wurde erfolgreich gespeichert."
+
+msgid "Thank You! A copy was sent to %{email}."
+msgstr "Danke! Eine Kopie wurde an %{email} gesandt."
+
+msgid "Upcoming"
+msgstr "Nächste"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "more..."
+msgstr "mehr..."
+
+msgid "close..."
+msgstr "schliessen..."
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Tickets"
+msgstr "Tickets"
+
+msgid "Event Location"
+msgstr "Veranstaltungsort"
+
+msgid "Event Producer"
+msgstr "Veranstalter"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Begins at"
+msgstr "Beginn"
+
+msgid "Ends at"
+msgstr "Ende"
+
+msgid "DIV-Extras"
+msgstr "DIV-Extras"
+
+msgid "Newsletter"
+msgstr "Newsletter"
+
+msgid "Newsletters"
+msgstr "Newsletters"
+
+msgid "Events"
+msgstr "Veranstaltungen"
+
+msgid "System"
+msgstr "System"
+
+msgid "Logs"
+msgstr "Logs"
+
+msgid "open"
+msgstr "öffnen"
+
+msgid "AGB | Impressum"
+msgstr "AGB | Impressum"
+
+msgid "User/IP"
+msgstr "Benutzer/IP"
+
+msgid "Facility"
+msgstr "Gerät"
+
+msgid "Entry"
+msgstr "Eintrag"
+
+msgid "Deleted records"
+msgstr "Gelöschte Datensätze"
+
+msgid "Last chance to print or save this page! Logs are deleted already! If you close this page they are lost forever!"
+msgstr "Letzte Chance diese Seite zu Drucken oder zu Speichern! Die Logs wurden gelöscht. Wenn Du diese Seite schliesst gibt es keine Aufzeichnungen mehr!"
+
+msgid "Log entries..."
+msgstr "Logeinträge"
+
+msgid "Search for timestamp, facility, ip, or entry..."
+msgstr "Suche nach Zeitstempel, Gerät, IP oder Eintrag..."
+
+msgid "Delete logs older than one month"
+msgstr "Logs, älter als ein Monat löschen"
+
+msgid "Content-type"
+msgstr "Content-type"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "HTML-Version"
+msgstr "HTML-Version"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Newsletter %s"
+msgstr "Newsletter %s"
+
+msgid "Layout (DIV-Tag)"
+msgstr "Layout (DIV-Tag)"
+
+msgid "Number of tickets"
+msgstr "Anzahl Tickets"
+
+msgid "Price per Ticket"
+msgstr "Preis pro Ticket"
+
+msgid "standard preselling price"
+msgstr "Standard Vorverkaufspreis"
+
+msgid "reduced price"
+msgstr "ermäßigter Preis"
+
+msgid "Ticket reservation for %{event} at %{date}"
+msgstr "Ticket-Reservierung für %{event} am %{date}"
+
+msgid "Send reservation"
+msgstr "Reservierung senden"
+
+msgid "Thank you for your reservation!"
+msgstr "Danke für Deine Reservierung!"
+
+msgid "Your reservation code is <span class=\"reservation_code_display\">%{code}</span>.\n    <br /><br/>Please print this page and show it at the reception"
+msgstr "Dein Reservierungs-Code lautet <span class=\"reservation_code_display\">%{code}</span>.\n    <br /><br/>Bitte drucke diese Seite aus und lege sie an der Abendkassa vor"
+
+msgid "Note: You have to check out the tickets 30 minutes before the event (before %{time})!"
+msgstr "Beachte: Du musst die Tickets 30 Minuten vor Veranstaltungsbeginn abholen (also vor %{time})!"
+
+msgid "Reservation Name"
+msgstr "Reserviert für"
+
+msgid "Your notes"
+msgstr "Deine Anmerkungen"
+
+msgid "Your reservation code is <span style=\"font-family: Courier new; font-weight: bold;\">%{code}</span>.\n    <br /><br/>Please print this page and show it at the reception"
+msgstr "Dein Reservierungs-Code lautet <span style=\"font-family: Courier new; font-weight: bold;\">%{code}</span>.\n    <br /><br/>Lege diesen bitte an der Abendkassa vor"
+
+msgid "Note: You have to check out the tickets 30 minutes before the event (that is before %{time})"
+msgstr "Beachte: Du musst die Tickets 30 Minuten vor Veranstaltungsbeginn abholen (also vor %{time})!"
+
+msgid "Num tickets"
+msgstr "Anzahl Karten"
+
+msgid "Telephone"
+msgstr "Telefon"
+
+msgid "utok"
+msgstr "utok"
+
+msgid "e-mail"
+msgstr "E-Mail"
+
+msgid "Session utok"
+msgstr "Session utok"
+
+msgid "January"
+msgstr "Jänner"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "March"
+msgstr "März"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "December"
+msgstr "Dezember"
+
+msgid "<font color=green>%s</font>"
+msgstr "<font color=green>%s</font>"
+
+msgid "<font color=red>%s</font>"
+msgstr "<font color=red>%s</font>"
+
+msgid "Page %s not found."
+msgstr "Seite %s nicht gefunden."
+
+msgid "<div class=\"sold_out\">Sorry, this event is sold out!</div>"
+msgstr "<div class=\"sold_out\">Diese Veranstaltung ist leider ausverkauft!</div>"
+
+msgid "Max Tickets"
+msgstr "Max Tickets"
+
+msgid "Reservations"
+msgstr "Reservierungen"
+
+msgid "All..."
+msgstr "Alle..."
+
+msgid "Are you sure you want delete the event %s. ALL RESERVATIONS WILL BE DELETED TOO!!!"
+msgstr "Bist Du sicher, dass Du die Veranstaltung %s löschen willst?. ALLE RESERVIERUNGEN GEHEN VERLOREN!!"
+
+msgid "Administration"
+msgstr "Administration"
+

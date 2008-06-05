@@ -1,0 +1,18 @@
+<% shadow_wrapper do %>
+<div style="width: 918px;">
+    <h1><%= _('Ticket reservation for %{event} at %{date}') % { :event => @event.title, :date => @event.begins_at.to_s(:begins_at) } -%></h1>
+  
+     <%= error_messages_for :ticket %>
+  
+     <% form_for(@ticket) do |f| %>
+       <%= render :partial => 'fields', :locals => { :f => f} -%>
+       <p>
+         <%= f.submit _('Send reservation') %>
+       </p>
+     <% end %>
+  
+    <div class='ticket_reservation_back'>
+      <%= link_to _('Back'), @event %>
+    </div>
+</div>
+<% end %>

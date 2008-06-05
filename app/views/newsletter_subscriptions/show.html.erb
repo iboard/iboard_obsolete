@@ -1,0 +1,19 @@
+<% if @newsletter_subscription.handling_code == params[:sc] %>
+  <h1><%= _('Newsletter Subscription') -%></h1>
+  <p>
+      <%= _('E-Mail Address: %{name} &lt;%{email}&gt;<br/>Newsletter %{newsletter}<br />Date: %{date}') %
+        { :name => @newsletter_subscription.name, :email =>  @newsletter_subscription.email, :newsletter => @newsletter_subscription.newsletter.name,
+          :date  => @newsletter_subscription.updated_at.to_s(:db) 
+        } %>
+  </p>
+  
+  <p><%= _('Content-type') -%>: <%= @newsletter_subscription.content_type -%></p>
+  
+  <div class='link_button'><%= link_to _('Edit'), edit_newsletter_subscription_path(@newsletter_subscription,:sc => params[:sc]) -%></div>
+  <div class='link_button'><%= link_to _('Unsubscribe'), destroy_newsletter_subscription_path(@newsletter_subscription,:sc => params[:sc]),
+                  :confirm => _('Are you sure?')
+                  %></div>
+  
+<% else %>
+  <%= _('Sorry, sc-code is invalid for this subscription') -%>
+<% end %>

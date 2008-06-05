@@ -1,0 +1,5 @@
+<div class='event_preview_image'><%= interpret( "[[sizedimage:#{event.picture_id}:195x85:#{event.title}]]") -%></div>
+<div class='event_title'><%= event.title %></div>
+<div class='event_begins_at'><%= event.begins_at.to_s(:begins_at) -%></div>
+<div class='event_introduction'><%= interpret(event.introduction) -%></div>
+<%= render :partial => 'details_tickets_edit', :locals => { :event => event } -%>          

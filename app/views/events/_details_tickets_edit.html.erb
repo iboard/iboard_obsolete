@@ -1,0 +1,14 @@
+<div class='event_preview_links'>
+    <div class='event_preview_links_row'>
+  <ul>
+    <li><%= link_to _('Details'), event -%></li>
+    </ul>
+    <ul>
+    <li><%= link_to _('Tickets'), new_ticket_path(:event => event) -%></li>
+    </ul><ul>
+    <% if granted_for? 'events' %>
+      <li><%= link_to _('Edit'), edit_event_path(event) -%></li>
+    <% end %>
+  </ul>
+  </div>
+</div>

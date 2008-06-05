@@ -1,0 +1,13 @@
+<div style='<%= column.div_tag.definition -%>'>
+    <% if granted_for? 'new posting' %>
+        <%= render :partial => 'new_posting_button', :locals => { :column => column } -%>
+    <% end %>
+    <% column.load_postings.each do |posting| %>
+      <%= render :partial => 'column_posting', :locals => { :posting => posting } -%>
+    <% end %>
+    <% if granted_for? 'Edit layout' %>
+      <hr>
+      <%= render :partial => 'edit_columns_buttons', :locals => { :column => column } -%>
+    <% end %>
+  
+</div>

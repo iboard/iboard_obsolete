@@ -1,0 +1,11 @@
+<item>
+	<title><%= p.title -%></title>
+	<link><%= posting_url p -%></link>
+	<comments>....</comments>
+	<pubDate><%= p.updated_at.to_s(:long) -%></pubDate>
+	<category><![CDATA[News]]></category>
+	<description><![CDATA[
+	    <%= interpret h(p.body) -%>
+	]]></description>
+	<content:encoded><![CDATA[<%= interpret p.body -%>]]></content:encoded>
+</item>

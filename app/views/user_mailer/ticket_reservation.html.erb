@@ -1,0 +1,49 @@
+<h1><%= _('Thank you for your reservation!') -%></h1>
+  
+    <%= _('Your reservation code is <span style="font-family: Courier new; font-weight: bold;">%{code}</span>.
+    <br /><br/>Please print this page and show it at the reception') % 
+         { :code => @ticket.reservation_code} -%>
+    <br /><br />
+    <%= _('Note: You have to check out the tickets 30 minutes before the event (that is before %{time})') % 
+         { :time => ((@ticket.event.begins_at)-30.minutes).to_s(:begins_at) } -%>
+</div>
+
+<p>
+  <b><%= _('Reservation Name') %>:</b>
+  <b><%=h @ticket.name %></b>
+</p>
+
+<p>
+  <b><%= _('Num tickets') -%>:</b>
+  <%=h @ticket.num_tickets %>
+</p>
+<p>    
+  <b><%= _('Price per Ticket') -%>:</b>
+  € <%=h @ticket.price %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @ticket.email %>
+</p>
+
+<p>
+  <b><%= _('Telephone') -%>:</b>
+  <%=h @ticket.telephone %>
+</p>
+
+<p>
+  <b><%= _('Your notes') -%></b><br/>
+  <%=h @ticket.note %>
+</p>
+
+<p>
+  <b>Event:</b><br/>
+  <h1><%=h @ticket.event.title %></h1>
+  <h2><%=h @ticket.event.begins_at.to_s(:begins_at) -%></h2>
+  <br>
+  <%= ( @ticket.event.introduction ) -%><br/>
+  <%= ( @ticket.event.body.gsub(/\|\|/,"<br/>") ) -%>
+</p>
+
+<%= TICKET_RESERVATION_FOOTER %>

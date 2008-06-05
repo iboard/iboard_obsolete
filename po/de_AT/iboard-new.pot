@@ -1,0 +1,1612 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2008-06-05 12:08+0200\n"
+"PO-Revision-Date: 2008-06-05 12:08+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/accessors_controller.rb:50
+msgid "Accessor was successfully created."
+msgstr ""
+
+#: app/controllers/accessors_controller.rb:67
+msgid "Accessor was successfully updated."
+msgstr ""
+
+#: app/controllers/application.rb:33
+msgid "Permition denied to <em>%{ctl}-controller</em> for <em>%{user}</em>"
+msgstr ""
+
+#: app/controllers/application.rb:35
+msgid "Please log in with an authorized user"
+msgstr ""
+
+#: app/controllers/application.rb:41
+msgid "Please log in"
+msgstr ""
+
+#: app/controllers/application.rb:49
+msgid "Language changed to %{language}"
+msgstr ""
+
+#: app/controllers/application.rb:52
+msgid "&laquo; Previous"
+msgstr ""
+
+#: app/controllers/application.rb:53
+msgid "Next &raquo;"
+msgstr ""
+
+#: app/controllers/authenticate_controller.rb:13
+msgid "Goodbye"
+msgstr ""
+
+#: app/controllers/authenticate_controller.rb:30
+msgid "Welcome %{longname}! You are successfully logged in as %{shortname}"
+msgstr ""
+
+#: app/controllers/authenticate_controller.rb:39
+msgid "Sorry, your account is locked. Did you confirm your registration email?"
+msgstr ""
+
+#: app/controllers/authenticate_controller.rb:53
+msgid "Bad username and/or passwort. Try again …"
+msgstr ""
+
+#: app/controllers/authors_controller.rb:50
+msgid "Author was successfully created."
+msgstr ""
+
+#: app/controllers/authors_controller.rb:67
+msgid "Author was successfully updated."
+msgstr ""
+
+#: app/controllers/binaries_controller.rb:57
+msgid "Binary was successfully created."
+msgstr ""
+
+#: app/controllers/binaries_controller.rb:84
+msgid "Binary was successfully updated."
+msgstr ""
+
+#: app/controllers/binaries_controller.rb:155 app/controllers/binaries_controller.rb:164
+msgid "Binary not found"
+msgstr ""
+
+#: app/controllers/div_tags_controller.rb:50
+msgid "DivTag was successfully created."
+msgstr ""
+
+#: app/controllers/div_tags_controller.rb:67
+msgid "DivTag was successfully updated."
+msgstr ""
+
+#: app/controllers/div_tags_controller.rb:81
+msgid "You can't delete the default DIV-Tag"
+msgstr ""
+
+#: app/controllers/events_controller.rb:16 app/controllers/events_controller.rb:37
+msgid "Sorry, no events found"
+msgstr ""
+
+#: app/controllers/functions_controller.rb:50
+msgid "Function was successfully created."
+msgstr ""
+
+#: app/controllers/functions_controller.rb:67
+msgid "Function was successfully updated."
+msgstr ""
+
+#: app/controllers/newsletter_subscriptions_controller.rb:40
+msgid "Please set your email first!"
+msgstr ""
+
+#: app/controllers/newsletter_subscriptions_controller.rb:74
+msgid "Newsletter Subscription was successfully created."
+msgstr ""
+
+#: app/controllers/newsletter_subscriptions_controller.rb:92
+msgid "Newsletter Subscription was successfully updated."
+msgstr ""
+
+#: app/controllers/newsletter_subscriptions_controller.rb:118
+msgid "Subscription removed."
+msgstr ""
+
+#: app/controllers/newsletter_templates_controller.rb:62
+msgid "Finished"
+msgstr ""
+
+#: app/controllers/newsletter_templates_controller.rb:62
+msgid "Running"
+msgstr ""
+
+#: app/controllers/newsletter_templates_controller.rb:82
+msgid "sent"
+msgstr ""
+
+#: app/controllers/newsletter_templates_controller.rb:86
+msgid "Mailer error"
+msgstr ""
+
+#: app/controllers/newsletter_templates_controller.rb:90
+msgid "unkown error"
+msgstr ""
+
+#: app/controllers/newsletters_controller.rb:109 app/controllers/newsletters_controller.rb:130
+msgid "<font color=green>%s</font>"
+msgstr ""
+
+#: app/controllers/newsletters_controller.rb:111 app/controllers/newsletters_controller.rb:133
+msgid "<font color=red>%s</font>"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:38
+msgid "ERROR: No Page found in %{file}, line %{line}"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:39
+msgid "Page %s not found."
+msgstr ""
+
+#: app/controllers/pages_controller.rb:41
+msgid "Create a new page"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:50
+msgid "Sorry, access to the addressed page is restricted."
+msgstr ""
+
+#: app/controllers/pages_controller.rb:81
+msgid "Page was successfully created."
+msgstr ""
+
+#: app/controllers/pages_controller.rb:98
+msgid "Page was successfully updated."
+msgstr ""
+
+#: app/controllers/pages_controller.rb:123
+msgid "Please choose a column to add"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:135
+msgid "New Column for page %s"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:155
+msgid "Changes saved"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:164
+msgid "Column removed from this page"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:175
+msgid "You can't destroy columns which still contains postings!"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:177
+msgid "Column %s deleted"
+msgstr ""
+
+#: app/controllers/pages_controller.rb:184
+msgid "<b>ERROR 404</b>: Sorry, the page you've requested (%s) was not found.<br/>"
+msgstr ""
+
+#: app/controllers/postings_controller.rb:78
+msgid "Posting was successfully created."
+msgstr ""
+
+#: app/controllers/postings_controller.rb:81
+msgid "Posting appended to <b>%s</b>"
+msgstr ""
+
+#: app/controllers/postings_controller.rb:105
+msgid "Posting was successfully updated."
+msgstr ""
+
+#: app/controllers/postings_controller.rb:127
+msgid "Posting deleted"
+msgstr ""
+
+#: app/controllers/tickets_controller.rb:23 app/controllers/tickets_controller.rb:33
+msgid "Sorry, Access denied"
+msgstr ""
+
+#: app/controllers/tickets_controller.rb:44
+msgid "<div class=\"sold_out\">Sorry, this event is sold out!</div>"
+msgstr ""
+
+#: app/controllers/tickets_controller.rb:74
+msgid "Ticket was successfully created."
+msgstr ""
+
+#: app/controllers/tickets_controller.rb:79
+msgid "Thank You! A copy was sent to %{email}."
+msgstr ""
+
+#: app/controllers/tickets_controller.rb:93 app/controllers/users_controller.rb:85
+msgid "Secure code invalid"
+msgstr ""
+
+#: app/controllers/users_controller.rb:55
+msgid "User was successfully created."
+msgstr ""
+
+#: app/controllers/users_controller.rb:75
+msgid "Thank You! Your confirmation-code was sent to %{email}.<br />Please check your mail before you login."
+msgstr ""
+
+#: app/controllers/users_controller.rb:82
+msgid "Password mismatch. Please try again."
+msgstr ""
+
+#: app/controllers/users_controller.rb:98
+msgid "Welcome! Your registration was completed successfully. Please login now."
+msgstr ""
+
+#: app/controllers/users_controller.rb:99
+msgid "Your registration was logged at %{t} from %{ip}"
+msgstr ""
+
+#: app/controllers/users_controller.rb:104
+msgid "Sorry, this code is invalid. Please try again: "
+msgstr ""
+
+#: app/controllers/users_controller.rb:116
+msgid "User was successfully updated."
+msgstr ""
+
+#: app/controllers/users_controller.rb:130
+msgid "You can't delete the root-user!"
+msgstr ""
+
+#: app/helpers/application_helper.rb:129
+msgid "Access denied"
+msgstr ""
+
+#: app/helpers/events_helper.rb:7 app/views/layouts/_user_menu.html.erb:20
+msgid "Events"
+msgstr ""
+
+#: app/helpers/events_helper.rb:11
+msgid "All..."
+msgstr ""
+
+#: app/helpers/functions_helper.rb:4
+msgid "..public.."
+msgstr ""
+
+#: app/helpers/pages_helper.rb:6 app/views/binaries/_fields.html.erb:2
+#: app/views/binaries/index.html.erb:23 app/views/binaries/show.html.erb:5
+#: app/views/events/list.html.erb:10 app/views/pages/page_columns.html.erb:5
+#: app/views/postings/_fields.html.erb:29
+msgid "Title"
+msgstr ""
+
+#: app/helpers/pages_helper.rb:7
+msgid "Date created descending"
+msgstr ""
+
+#: app/helpers/pages_helper.rb:8
+msgid "Date created ascending"
+msgstr ""
+
+#: app/helpers/pages_helper.rb:9
+msgid "Date modified descending"
+msgstr ""
+
+#: app/helpers/pages_helper.rb:10
+msgid "Date modified ascending"
+msgstr ""
+
+#: app/helpers/pages_helper.rb:11
+msgid "manually ascending"
+msgstr ""
+
+#: app/helpers/pages_helper.rb:12
+msgid "manually descanding"
+msgstr ""
+
+#: app/views/accessors/_fields.html.erb:2 app/views/accessors/index.html.erb:9
+#: app/views/accessors/show.html.erb:9 app/views/div_tags/_fields.html.erb:2
+#: app/views/div_tags/show.html.erb:2 app/views/functions/edit.html.erb:13
+#: app/views/functions/index.html.erb:10 app/views/functions/new.html.erb:12
+#: app/views/functions/show.html.erb:12 app/views/newsletter_subscriptions/edit.html.erb:6
+#: app/views/newsletters/_fields.html.erb:4 app/views/newsletters/list_subscriptions.html.erb:19
+#: app/views/newsletters/show.html.erb:33 app/views/pages/_fields.html.erb:2 app/views/pages/index.html.erb:5
+#: app/views/pages/show.html.erb:2 app/views/tickets/_fields.html.erb:3
+msgid "Name"
+msgstr ""
+
+#: app/views/accessors/_fields.html.erb:7 app/views/accessors/index.html.erb:10
+#: app/views/accessors/show.html.erb:14 app/views/authors/_fields.html.erb:8
+#: app/views/galleries/_fields.html.erb:46
+msgid "User"
+msgstr ""
+
+#: app/views/accessors/_fields.html.erb:12 app/views/accessors/index.html.erb:11
+#: app/views/accessors/show.html.erb:19
+msgid "Function"
+msgstr ""
+
+#: app/views/accessors/_fields.html.erb:17 app/views/accessors/index.html.erb:12
+#: app/views/accessors/show.html.erb:24 app/views/functions/edit.html.erb:18
+#: app/views/functions/index.html.erb:11 app/views/functions/new.html.erb:17
+#: app/views/functions/show.html.erb:17
+msgid "Comment"
+msgstr ""
+
+#: app/views/accessors/edit.html.erb:2
+msgid "Editing Acessor"
+msgstr ""
+
+#: app/views/accessors/edit.html.erb:5 app/views/accessors/index.html.erb:22
+#: app/views/authors/edit.html.erb:5 app/views/binaries/edit.html.erb:14
+#: app/views/binaries/index.html.erb:46 app/views/div_tags/edit.html.erb:16
+#: app/views/functions/edit.html.erb:5 app/views/functions/index.html.erb:19
+#: app/views/newsletter_templates/_newsletter_template.html.erb:6 app/views/newsletters/edit.html.erb:9
+#: app/views/pages/edit.html.erb:13 app/views/pages/index.html.erb:15 app/views/users/edit.html.erb:5
+#: app/views/users/index.html.erb:31
+msgid "Show"
+msgstr ""
+
+#: app/views/accessors/edit.html.erb:6 app/views/accessors/new.html.erb:5
+#: app/views/accessors/show.html.erb:6 app/views/authors/edit.html.erb:6 app/views/authors/new.html.erb:5
+#: app/views/authors/show.html.erb:6 app/views/binaries/edit.html.erb:15
+#: app/views/binaries/new.html.erb:14 app/views/binaries/show.html.erb:38
+#: app/views/div_tags/edit.html.erb:17 app/views/div_tags/new.html.erb:12
+#: app/views/div_tags/show.html.erb:13 app/views/functions/edit.html.erb:6
+#: app/views/functions/new.html.erb:5 app/views/functions/show.html.erb:6
+#: app/views/galleries/new.html.erb:13 app/views/newsletters/create_subscriptions.html.erb:4
+#: app/views/newsletters/import_addresses.html.erb:3 app/views/newsletters/remove_addresses.html.erb:3
+#: app/views/newsletters/remove_subscriptions.html.erb:4 app/views/pages/edit.html.erb:14
+#: app/views/pages/edit_columns.html.erb:23 app/views/pages/new.html.erb:12 app/views/pages/show.html.erb:13
+#: app/views/postings/new.html.erb:5 app/views/postings/show.html.erb:10
+#: app/views/postings/show.html.erb:12 app/views/tickets/new.html.erb:15 app/views/users/edit.html.erb:6
+#: app/views/users/new.html.erb:5 app/views/users/register.html.erb:6 app/views/users/show.html.erb:6
+msgid "Back"
+msgstr ""
+
+#: app/views/accessors/edit.html.erb:13 app/views/authors/edit.html.erb:14
+#: app/views/binaries/edit.html.erb:10 app/views/div_tags/edit.html.erb:12
+#: app/views/functions/edit.html.erb:23 app/views/newsletter_subscriptions/edit.html.erb:16
+#: app/views/newsletters/edit.html.erb:5 app/views/pages/edit.html.erb:9 app/views/postings/edit.html.erb:14
+#: app/views/users/edit.html.erb:13
+msgid "Update"
+msgstr ""
+
+#: app/views/accessors/index.html.erb:2
+msgid "Listing acessors"
+msgstr ""
+
+#: app/views/accessors/index.html.erb:5
+msgid "New Accessor"
+msgstr ""
+
+#: app/views/accessors/index.html.erb:23 app/views/accessors/show.html.erb:5
+#: app/views/authors/index.html.erb:34 app/views/authors/show.html.erb:5
+#: app/views/binaries/index.html.erb:48 app/views/binaries/show.html.erb:37
+#: app/views/div_tags/show.html.erb:12 app/views/events/_details_tickets_edit.html.erb:10
+#: app/views/events/_event_line.html.erb:9 app/views/functions/index.html.erb:20
+#: app/views/functions/show.html.erb:5 app/views/newsletter_subscriptions/show.html.erb:12
+#: app/views/newsletter_templates/_newsletter_template.html.erb:7 app/views/newsletter_templates/show.html.erb:15
+#: app/views/newsletters/show.html.erb:3 app/views/pages/index.html.erb:16 app/views/pages/show.html.erb:12
+#: app/views/postings/show.html.erb:6 app/views/users/index.html.erb:32
+msgid "Edit"
+msgstr ""
+
+#: app/views/accessors/index.html.erb:24 app/views/authors/index.html.erb:35
+#: app/views/binaries/index.html.erb:49 app/views/events/_event_line.html.erb:10
+#: app/views/functions/index.html.erb:21
+#: app/views/newsletter_subscriptions/_newsletter_subscription.html.erb:6 app/views/newsletters/edit.html.erb:11
+#: app/views/newsletters/show.html.erb:4 app/views/pages/index.html.erb:17 app/views/users/index.html.erb:33
+msgid "Destroy"
+msgstr ""
+
+#: app/views/accessors/index.html.erb:24 app/views/authors/index.html.erb:35
+#: app/views/binaries/index.html.erb:49 app/views/functions/index.html.erb:21
+#: app/views/logs/index.html.erb:12
+#: app/views/newsletter_subscriptions/_newsletter_subscription.html.erb:6 app/views/newsletter_subscriptions/edit.html.erb:20
+#: app/views/newsletter_subscriptions/show.html.erb:14 app/views/newsletters/edit.html.erb:11
+#: app/views/newsletters/show.html.erb:4 app/views/pages/index.html.erb:17 app/views/users/index.html.erb:33
+msgid "Are you sure?"
+msgstr ""
+
+#: app/views/accessors/new.html.erb:2
+msgid "New acessor"
+msgstr ""
+
+#: app/views/accessors/new.html.erb:12 app/views/authors/new.html.erb:14
+#: app/views/binaries/new.html.erb:10 app/views/div_tags/new.html.erb:8
+#: app/views/functions/new.html.erb:22 app/views/galleries/new.html.erb:9
+#: app/views/newsletters/new.html.erb:5 app/views/pages/new.html.erb:8 app/views/postings/new.html.erb:13
+#: app/views/users/new.html.erb:13
+msgid "Create"
+msgstr ""
+
+#: app/views/accessors/show.html.erb:2
+msgid "Acessor"
+msgstr ""
+
+#: app/views/authenticate/login.html.erb:3 app/views/users/_fields.html.erb:5
+#: app/views/users/index.html.erb:18 app/views/users/register.html.erb:12
+#: app/views/users/registrations.html.erb:4
+msgid "Username"
+msgstr ""
+
+#: app/views/authenticate/login.html.erb:4 app/views/users/_fields.html.erb:24
+#: app/views/users/register.html.erb:16 app/views/users/show.html.erb:21
+msgid "Password"
+msgstr ""
+
+#: app/views/authenticate/login.html.erb:5 app/views/layouts/_user_menu.html.erb:9
+msgid "Login"
+msgstr ""
+
+#: app/views/authenticate/login.html.erb:8
+msgid "Register new user"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:3
+msgid "Nickname"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:13 app/views/authors/index.html.erb:9
+#: app/views/authors/show.html.erb:15
+msgid "Prename"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:18 app/views/authors/index.html.erb:10
+#: app/views/authors/show.html.erb:20
+msgid "Lastname"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:23 app/views/authors/show.html.erb:25
+msgid "Secret"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:29 app/views/authors/index.html.erb:12
+#: app/views/authors/show.html.erb:35
+msgid "Gender"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:33 app/views/authors/index.html.erb:11
+#: app/views/authors/show.html.erb:30
+msgid "Date birth"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:40 app/views/authors/index.html.erb:13
+#: app/views/authors/show.html.erb:40
+msgid "Country"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:45 app/views/authors/show.html.erb:45
+#: app/views/newsletter_templates/send_now.html.erb:10 app/views/newsletters/index.html.erb:8
+#: app/views/newsletters/list_subscriptions.html.erb:7 app/views/newsletters/list_subscriptions.html.erb:18
+msgid "Address"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:50
+msgid "ZIP"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:55 app/views/authors/index.html.erb:15
+#: app/views/authors/show.html.erb:55
+msgid "City"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:60 app/views/users/_fields.html.erb:14
+#: app/views/users/register.html.erb:22
+msgid "EMail"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:65 app/views/authors/show.html.erb:65
+msgid "Phone"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:70 app/views/authors/show.html.erb:70
+msgid "Chat"
+msgstr ""
+
+#: app/views/authors/_fields.html.erb:76 app/views/authors/show.html.erb:75
+msgid "Note"
+msgstr ""
+
+#: app/views/authors/edit.html.erb:2
+msgid "Editing author"
+msgstr ""
+
+#: app/views/authors/index.html.erb:1
+msgid "Listing authors"
+msgstr ""
+
+#: app/views/authors/index.html.erb:3 app/views/authors/new.html.erb:2
+msgid "New author"
+msgstr ""
+
+#: app/views/authors/index.html.erb:8
+msgid "Nickname (user)"
+msgstr ""
+
+#: app/views/authors/index.html.erb:14 app/views/authors/show.html.erb:50
+msgid "Zip"
+msgstr ""
+
+#: app/views/authors/index.html.erb:16 app/views/authors/show.html.erb:60
+msgid "Email"
+msgstr ""
+
+#: app/views/authors/show.html.erb:10
+msgid "Nickname (User)"
+msgstr ""
+
+#: app/views/binaries/_fields.html.erb:6 app/views/galleries/_fields.html.erb:14
+#: app/views/newsletters/_fields.html.erb:24 app/views/newsletters/index.html.erb:7
+#: app/views/newsletters/list_subscriptions.html.erb:6 app/views/newsletters/show.html.erb:7
+msgid "Description"
+msgstr ""
+
+#: app/views/binaries/_fields.html.erb:12 app/views/binaries/index.html.erb:23
+msgid "Filename"
+msgstr ""
+
+#: app/views/binaries/_fields.html.erb:17 app/views/binaries/index.html.erb:24
+#: app/views/binaries/show.html.erb:15
+msgid "Mime type"
+msgstr ""
+
+#: app/views/binaries/_fields.html.erb:20 app/views/binaries/show.html.erb:20
+msgid "Size"
+msgstr ""
+
+#: app/views/binaries/_fields.html.erb:24
+msgid "Please create record befor you can upload a binary..."
+msgstr ""
+
+#: app/views/binaries/edit.html.erb:1
+msgid "Editing binary"
+msgstr ""
+
+#: app/views/binaries/index.html.erb:1
+msgid "Listing binaries"
+msgstr ""
+
+#: app/views/binaries/index.html.erb:12
+msgid "Klick on a thumbnail-image to show preview in this frame."
+msgstr ""
+
+#: app/views/binaries/index.html.erb:22
+msgid "Binary ID"
+msgstr ""
+
+#: app/views/binaries/index.html.erb:25
+msgid "KBytes"
+msgstr ""
+
+#: app/views/binaries/index.html.erb:47
+msgid "Download"
+msgstr ""
+
+#: app/views/binaries/index.html.erb:58 app/views/binaries/new.html.erb:1
+msgid "New binary"
+msgstr ""
+
+#: app/views/binaries/show.html.erb:10
+msgid "Download original file/size"
+msgstr ""
+
+#: app/views/div_tags/_fields.html.erb:7
+msgid "Definition"
+msgstr ""
+
+#: app/views/div_tags/edit.html.erb:1
+msgid "Editing div_tag"
+msgstr ""
+
+#: app/views/div_tags/edit.html.erb:5
+msgid "Preview"
+msgstr ""
+
+#: app/views/div_tags/index.html.erb:1
+msgid "Listing DIV Tags"
+msgstr ""
+
+#: app/views/div_tags/new.html.erb:1
+msgid "New DIV Tag"
+msgstr ""
+
+#: app/views/div_tags/show.html.erb:7
+msgid "Listing div_tags"
+msgstr ""
+
+#: app/views/events/_details_tickets_edit.html.erb:4
+msgid "Details"
+msgstr ""
+
+#: app/views/events/_details_tickets_edit.html.erb:7
+msgid "Tickets"
+msgstr ""
+
+#: app/views/events/_event_index_entry.html.erb:14
+msgid "more..."
+msgstr ""
+
+#: app/views/events/_event_index_entry.html.erb:20
+msgid "close..."
+msgstr ""
+
+#: app/views/events/_event_line.html.erb:10
+msgid "Are you sure you want delete the event %s. ALL RESERVATIONS WILL BE DELETED TOO!!!"
+msgstr ""
+
+#: app/views/events/_event_picture_column.html.erb:3 app/views/events/list.html.erb:11
+msgid "Begins at"
+msgstr ""
+
+#: app/views/events/_event_picture_column.html.erb:8
+msgid "Ends at"
+msgstr ""
+
+#: app/views/events/_fields.html.erb:4
+msgid "Event Location"
+msgstr ""
+
+#: app/views/events/_fields.html.erb:6
+msgid "Event Producer"
+msgstr ""
+
+#: app/views/events/_fields.html.erb:51
+msgid "Normal"
+msgstr ""
+
+#: app/views/events/_fields.html.erb:54
+msgid "Max Tickets"
+msgstr ""
+
+#: app/views/events/_fields.html.erb:55 app/views/events/list.html.erb:12
+msgid "Reservations"
+msgstr ""
+
+#: app/views/functions/_function_members.html.erb:1
+msgid "Accessors to this function"
+msgstr ""
+
+#: app/views/functions/edit.html.erb:2
+msgid "Editing function"
+msgstr ""
+
+#: app/views/functions/index.html.erb:2
+msgid "Listing functions"
+msgstr ""
+
+#: app/views/functions/index.html.erb:5
+msgid "New Function"
+msgstr ""
+
+#: app/views/functions/new.html.erb:2
+msgid "New function"
+msgstr ""
+
+#: app/views/functions/show.html.erb:2
+msgid "Function %s"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:4
+msgid "Gallery-Name"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:9
+msgid "Gallery path"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:19
+msgid "Thumb width"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:21
+msgid "Thumb height"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:26
+msgid "Web width"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:28
+msgid "Web height"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:33
+msgid "Upload Foto ZIP-File"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:41
+msgid "Access-Function"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:51
+msgid "Options"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:56 app/views/pages/_fields.html.erb:20
+msgid "DIV-Tag"
+msgstr ""
+
+#: app/views/galleries/_fields.html.erb:61
+msgid "DIV-Extras"
+msgstr ""
+
+#: app/views/galleries/new.html.erb:1
+msgid "New gallery"
+msgstr ""
+
+#: app/views/galleries/show_picture.html.erb:25 app/views/layouts/soundtheatre.html.erb:60
+msgid "close"
+msgstr ""
+
+#: app/views/galleries/webgallery.html.erb:2
+msgid "Gallery %s"
+msgstr ""
+
+#: app/views/layouts/_search_box.html.erb:29 app/views/postings/_posting_search_box.html.erb:8
+msgid "Search"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:1
+msgid "User Menu"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:6
+msgid "my iBoard"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:7 app/views/layouts/soundtheatre.html.erb:105
+msgid "Logout"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:12 app/views/newsletter_subscriptions/edit.html.erb:2
+#: app/views/newsletter_templates/index.html.erb:5 app/views/newsletters/index.html.erb:6
+#: app/views/newsletters/list_subscriptions.html.erb:5 app/views/newsletters/show.html.erb:34
+msgid "Newsletter"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:13
+msgid "Subscribe"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:14
+msgid "Newsletters"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:17
+msgid "Content"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:18 app/views/postings/index.html.erb:1
+msgid "Postings"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:19
+msgid "Galleries"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:21
+msgid "Pages"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:22
+msgid "Binaries"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:23
+msgid "DIV Tags"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:24 app/views/pages/page_columns.html.erb:1
+msgid "Columns"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:28
+msgid "Superuser menu"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:29
+msgid "Users"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:30
+msgid "Authors"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:31 app/views/newsletters/list_subscriptions.html.erb:23
+#: app/views/newsletters/show.html.erb:37
+msgid "Functions"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:32 app/views/users/_fields.html.erb:34
+msgid "Accessors"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:35
+msgid "System"
+msgstr ""
+
+#: app/views/layouts/_user_menu.html.erb:36
+msgid "Logs"
+msgstr ""
+
+#: app/views/layouts/application.html.erb:8
+msgid "Last update:"
+msgstr ""
+
+#: app/views/layouts/soundtheatre.html.erb:54
+msgid "open"
+msgstr ""
+
+#: app/views/layouts/soundtheatre.html.erb:99
+msgid "AGB | Impressum"
+msgstr ""
+
+#: app/views/layouts/soundtheatre.html.erb:105
+msgid "Administration"
+msgstr ""
+
+#: app/views/logs/_logs_with_header.html.erb:3 app/views/newsletter_templates/send_now.html.erb:13
+msgid "Timestamp"
+msgstr ""
+
+#: app/views/logs/_logs_with_header.html.erb:4
+msgid "User/IP"
+msgstr ""
+
+#: app/views/logs/_logs_with_header.html.erb:5
+msgid "Facility"
+msgstr ""
+
+#: app/views/logs/_logs_with_header.html.erb:6
+msgid "Entry"
+msgstr ""
+
+#: app/views/logs/delete_old.html.erb:1
+msgid "Deleted records"
+msgstr ""
+
+#: app/views/logs/delete_old.html.erb:3
+msgid "Last chance to print or save this page! Logs are deleted already! If you close this page they are lost forever!"
+msgstr ""
+
+#: app/views/logs/index.html.erb:1
+msgid "Log entries..."
+msgstr ""
+
+#: app/views/logs/index.html.erb:3
+msgid "Search for timestamp, facility, ip, or entry..."
+msgstr ""
+
+#: app/views/logs/index.html.erb:12
+msgid "Delete logs older than one month"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/_user_subscriptions.html.erb:1
+msgid "Your active subscriptions"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/edit.html.erb:1
+msgid "Edit newsletter subscription"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/edit.html.erb:9
+msgid "Email Address"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/edit.html.erb:12 app/views/newsletter_subscriptions/show.html.erb:10
+msgid "Content-type"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/edit.html.erb:12
+msgid "or"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/edit.html.erb:13
+msgid "Plain text"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/edit.html.erb:19 app/views/newsletter_subscriptions/show.html.erb:13
+msgid "Unsubscribe"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/show.html.erb:2
+msgid "Newsletter Subscription"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/show.html.erb:4
+msgid "E-Mail Address: %{name} &lt;%{email}&gt;<br/>Newsletter %{newsletter}<br />Date: %{date}"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/show.html.erb:18
+msgid "Sorry, sc-code is invalid for this subscription"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/subscribe.html.erb:1
+msgid "Subscribe to newsletters"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/subscribe.html.erb:8
+msgid "Your e-mail-address"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/subscribe.html.erb:12
+msgid "Available Newsletters"
+msgstr ""
+
+#: app/views/newsletter_subscriptions/subscribe.html.erb:29 app/views/postings/set_order.html.erb:15
+msgid "finished"
+msgstr ""
+
+#: app/views/newsletter_templates/_fields.html.erb:4 app/views/newsletter_templates/index.html.erb:4
+msgid "Subject"
+msgstr ""
+
+#: app/views/newsletter_templates/_newsletter_template.html.erb:5
+msgid "sent to %s addresses yet"
+msgstr ""
+
+#: app/views/newsletter_templates/_sending.html.erb:8
+msgid "Allready sent at %s"
+msgstr ""
+
+#: app/views/newsletter_templates/_sending.html.erb:10
+msgid "padding"
+msgstr ""
+
+#: app/views/newsletter_templates/edit.html.erb:1
+msgid "Edit newsletter template for <em>%s</em>"
+msgstr ""
+
+#: app/views/newsletter_templates/edit.html.erb:4 app/views/newsletter_templates/new.html.erb:4
+#: app/views/pages/edit_columns.html.erb:22
+msgid "Save"
+msgstr ""
+
+#: app/views/newsletter_templates/edit.html.erb:4 app/views/newsletter_templates/new.html.erb:4
+msgid "Does not send the newsletter!"
+msgstr ""
+
+#: app/views/newsletter_templates/index.html.erb:1
+msgid "Newsletter Templates"
+msgstr ""
+
+#: app/views/newsletter_templates/index.html.erb:6 app/views/newsletters/show.html.erb:35
+msgid "Date"
+msgstr ""
+
+#: app/views/newsletter_templates/new.html.erb:1
+msgid "Create a new newsletter template for <em>%s</em>"
+msgstr ""
+
+#: app/views/newsletter_templates/send_now.html.erb:1
+msgid "Sending Newsletter Template %s"
+msgstr ""
+
+#: app/views/newsletter_templates/send_now.html.erb:11
+msgid "Type"
+msgstr ""
+
+#: app/views/newsletter_templates/send_now.html.erb:12
+msgid "Status"
+msgstr ""
+
+#: app/views/newsletter_templates/show.html.erb:3
+msgid "HTML-Version"
+msgstr ""
+
+#: app/views/newsletter_templates/show.html.erb:7
+msgid "Plaintext-Version"
+msgstr ""
+
+#: app/views/newsletter_templates/show.html.erb:18
+msgid "Goto Newsletter"
+msgstr ""
+
+#: app/views/newsletter_templates/show.html.erb:21
+msgid "Send Now!"
+msgstr ""
+
+#: app/views/newsletter_templates/show.html.erb:22
+msgid "Are you sure you want to send this template to %d subscribers?"
+msgstr ""
+
+#: app/views/newsletters/_fields.html.erb:9
+msgid "Who is allowed to send newsletters?"
+msgstr ""
+
+#: app/views/newsletters/_fields.html.erb:14
+msgid "Public subscribable?"
+msgstr ""
+
+#: app/views/newsletters/_fields.html.erb:19
+msgid "Default Mime-type"
+msgstr ""
+
+#: app/views/newsletters/_fields.html.erb:30
+msgid "From Address"
+msgstr ""
+
+#: app/views/newsletters/_fields.html.erb:35 app/views/newsletters/show.html.erb:13
+msgid "Footer"
+msgstr ""
+
+#: app/views/newsletters/_newsletter.html.erb:6
+msgid "+Addresses"
+msgstr ""
+
+#: app/views/newsletters/_newsletter.html.erb:7
+msgid "-Addresses"
+msgstr ""
+
+#: app/views/newsletters/create_subscriptions.html.erb:1
+msgid "Importing Subscriptions ..."
+msgstr ""
+
+#: app/views/newsletters/edit.html.erb:1
+msgid "Edit newsletter %s"
+msgstr ""
+
+#: app/views/newsletters/edit.html.erb:10
+msgid "Attention: Changes you made since you pressed save last time will not be saved!"
+msgstr ""
+
+#: app/views/newsletters/import_addresses.html.erb:1
+msgid "Import Addresses to Newsletter <em>%s</em>"
+msgstr ""
+
+#: app/views/newsletters/import_addresses.html.erb:2 app/views/newsletters/remove_addresses.html.erb:2
+msgid "Newsletter has %s subscriptions yet"
+msgstr ""
+
+#: app/views/newsletters/import_addresses.html.erb:7 app/views/newsletters/remove_addresses.html.erb:7
+msgid "Comma- or Newline-separated list of new addresses"
+msgstr ""
+
+#: app/views/newsletters/import_addresses.html.erb:11
+msgid "Import"
+msgstr ""
+
+#: app/views/newsletters/index.html.erb:1
+msgid "Maintaining Newsletters"
+msgstr ""
+
+#: app/views/newsletters/index.html.erb:2
+msgid "New Newsletter"
+msgstr ""
+
+#: app/views/newsletters/index.html.erb:9 app/views/newsletters/list_subscriptions.html.erb:8
+msgid "# Subscriptions"
+msgstr ""
+
+#: app/views/newsletters/list_subscriptions.html.erb:1
+msgid "Subscriptions of Newsletters"
+msgstr ""
+
+#: app/views/newsletters/list_subscriptions.html.erb:15 app/views/newsletters/show.html.erb:23
+msgid "Subscriptions"
+msgstr ""
+
+#: app/views/newsletters/list_subscriptions.html.erb:20
+msgid "since"
+msgstr ""
+
+#: app/views/newsletters/list_subscriptions.html.erb:21
+msgid "subscripted from"
+msgstr ""
+
+#: app/views/newsletters/list_subscriptions.html.erb:22
+msgid "Format"
+msgstr ""
+
+#: app/views/newsletters/new.html.erb:1
+msgid "Create new newsletter"
+msgstr ""
+
+#: app/views/newsletters/remove_addresses.html.erb:1
+msgid "Remove Addresses from Newsletter <em>%s</em>"
+msgstr ""
+
+#: app/views/newsletters/remove_addresses.html.erb:11
+msgid "Remove"
+msgstr ""
+
+#: app/views/newsletters/remove_subscriptions.html.erb:1
+msgid "Removing Subscriptions ..."
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:1
+msgid "Newsletter %s"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:10
+msgid "Sending Address"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:16
+msgid "Public subscribable"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:17
+msgid "Yes"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:17
+msgid "No"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:19
+msgid "Default mime-type"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:24
+msgid "# of subscriptions"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:30
+msgid "Templates"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:36
+msgid "Sent"
+msgstr ""
+
+#: app/views/newsletters/show.html.erb:43
+msgid "New Template"
+msgstr ""
+
+#: app/views/pages/_edit_columns_buttons.html.erb:2
+msgid "Remove column <em>%s</em>"
+msgstr ""
+
+#: app/views/pages/_edit_columns_buttons.html.erb:3
+msgid "The column will be removed from this page but the column itself will not be deleted and may be added again to this or any other page later. Are you sure to remove?"
+msgstr ""
+
+#: app/views/pages/_edit_layout_buttons.html.erb:2
+msgid "Layout/Columns"
+msgstr ""
+
+#: app/views/pages/_edit_layout_buttons.html.erb:3
+msgid "Add column"
+msgstr ""
+
+#: app/views/pages/_edit_layout_buttons.html.erb:4
+msgid "Edit columns"
+msgstr ""
+
+#: app/views/pages/_fields.html.erb:7
+msgid "Language"
+msgstr ""
+
+#: app/views/pages/_fields.html.erb:10
+msgid "Access restricted to ..."
+msgstr ""
+
+#: app/views/pages/_fields.html.erb:15 app/views/pages/index.html.erb:6 app/views/pages/show.html.erb:7
+msgid "Introduction"
+msgstr ""
+
+#: app/views/pages/_fields.html.erb:26
+msgid "Show title"
+msgstr ""
+
+#: app/views/pages/_fields.html.erb:27
+msgid "Show introduction"
+msgstr ""
+
+#: app/views/pages/_fields.html.erb:28
+msgid "Show in menu"
+msgstr ""
+
+#: app/views/pages/_new_posting_button.html.erb:3
+msgid "Post to <em>%s</em>"
+msgstr ""
+
+#: app/views/pages/add_column.html.erb:8
+msgid "Add a new column"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:1
+msgid "Editing page"
+msgstr ""
+
+#: app/views/pages/edit_columns.html.erb:1
+msgid "Editing columns of page <em>%s</em>"
+msgstr ""
+
+#: app/views/pages/edit_columns.html.erb:5
+msgid "Column-Title"
+msgstr ""
+
+#: app/views/pages/edit_columns.html.erb:6
+msgid "Column position on page"
+msgstr ""
+
+#: app/views/pages/edit_columns.html.erb:7
+msgid "Layout (DIV-Tag)"
+msgstr ""
+
+#: app/views/pages/edit_columns.html.erb:12
+msgid "Postings order"
+msgstr ""
+
+#: app/views/pages/edit_columns.html.erb:13
+msgid "ordering postings manualy..."
+msgstr ""
+
+#: app/views/pages/edit_columns.html.erb:20
+msgid "Click on <em>ordering postings manualy</em> for the column which you want to set postings order for."
+msgstr ""
+
+#: app/views/pages/index.html.erb:1
+msgid "Listing pages"
+msgstr ""
+
+#: app/views/pages/index.html.erb:14 app/views/pages/show.html.erb:15
+msgid "Display as page"
+msgstr ""
+
+#: app/views/pages/index.html.erb:24 app/views/pages/new.html.erb:1
+msgid "New page"
+msgstr ""
+
+#: app/views/pages/page_columns.html.erb:4
+msgid "ID"
+msgstr ""
+
+#: app/views/pages/page_columns.html.erb:6
+msgid "used in"
+msgstr ""
+
+#: app/views/pages/page_columns.html.erb:7
+msgid "#Postings"
+msgstr ""
+
+#: app/views/pages/page_columns.html.erb:16
+msgid "Delete"
+msgstr ""
+
+#: app/views/pages/page_columns.html.erb:16
+msgid "Are you shure?"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:3
+msgid "show this posting in page columns"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:14
+msgid "not assigned to a page"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:24
+msgid "This posting will be auto-assigned to <br/><b>%s</b>"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:34
+msgid "Author"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:38
+msgid "Read access restricted to ..."
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:40
+msgid "Edit access"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:41
+msgid "By owner only"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:43
+msgid "By registered users"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:44
+msgid "By function members (as selected above)"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:45
+msgid "public writeable"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:47
+msgid "Body"
+msgstr ""
+
+#: app/views/postings/_fields.html.erb:53
+msgid "expires"
+msgstr ""
+
+#: app/views/postings/_list_posting.html.erb:4 app/views/postings/_show_posting.html.erb:11
+msgid "Expired since %s"
+msgstr ""
+
+#: app/views/postings/_list_posting.html.erb:7 app/views/postings/_show_posting.html.erb:23
+msgid "Edit Posting"
+msgstr ""
+
+#: app/views/postings/_list_posting.html.erb:8 app/views/postings/_show_posting.html.erb:24
+msgid "Delete Posting"
+msgstr ""
+
+#: app/views/postings/_list_posting.html.erb:9 app/views/postings/_show_posting.html.erb:25
+msgid "Are you sure you want delete posting '%s'?"
+msgstr ""
+
+#: app/views/postings/_list_posting.html.erb:15 app/views/postings/edit.html.erb:5
+msgid "read"
+msgstr ""
+
+#: app/views/postings/_list_posting.html.erb:19
+msgid "On page"
+msgstr ""
+
+#: app/views/postings/_list_posting.html.erb:22
+msgid "This posting is not assigned to any column"
+msgstr ""
+
+#: app/views/postings/_show_posting.html.erb:6 app/views/postings/show.html.erb:20
+msgid "posted by %{author} at %{date}"
+msgstr ""
+
+#: app/views/postings/_show_posting.html.erb:17
+msgid "read more"
+msgstr ""
+
+#: app/views/postings/edit.html.erb:2
+msgid "Editing posting"
+msgstr ""
+
+#: app/views/postings/edit.html.erb:6
+msgid "postings index"
+msgstr ""
+
+#: app/views/postings/index.html.erb:3
+msgid "%{postings} found"
+msgstr ""
+
+#: app/views/postings/index.html.erb:3
+msgid "posting"
+msgstr ""
+
+#: app/views/postings/index.html.erb:5 app/views/postings/new.html.erb:2
+msgid "New posting"
+msgstr ""
+
+#: app/views/postings/set_order.html.erb:1
+msgid "Set postings order for column <em>%{colname}</em> "
+msgstr ""
+
+#: app/views/postings/set_order.html.erb:4
+msgid "Drag and drop postings into the order you want to have for 'manualy sorted' option ..."
+msgstr ""
+
+#: app/views/postings/show.html.erb:19
+msgid "unknown"
+msgstr ""
+
+#: app/views/postings/show.html.erb:27
+msgid "expires at"
+msgstr ""
+
+#: app/views/tickets/_fields.html.erb:8
+msgid "Number of tickets"
+msgstr ""
+
+#: app/views/tickets/_fields.html.erb:14 app/views/user_mailer/ticket_reservation.html.erb:21
+msgid "Price per Ticket"
+msgstr ""
+
+#: app/views/tickets/_fields.html.erb:19
+msgid "standard preselling price"
+msgstr ""
+
+#: app/views/tickets/_fields.html.erb:21
+msgid "reduced price"
+msgstr ""
+
+#: app/views/tickets/_fields.html.erb:42 app/views/users/register.html.erb:26
+msgid "Please enter the code <img src='%s' border=0 title='Security Code'><br/>for security reasons"
+msgstr ""
+
+#: app/views/tickets/new.html.erb:3
+msgid "Ticket reservation for %{event} at %{date}"
+msgstr ""
+
+#: app/views/tickets/new.html.erb:10
+msgid "Send reservation"
+msgstr ""
+
+#: app/views/tickets/show.html.erb:2 app/views/user_mailer/ticket_reservation.html.erb:1
+msgid "Thank you for your reservation!"
+msgstr ""
+
+#: app/views/tickets/show.html.erb:4
+msgid "Your reservation code is <span class=\"reservation_code_display\">%{code}</span>.\n    <br /><br/>Please print this page and show it at the reception"
+msgstr ""
+
+#: app/views/tickets/show.html.erb:8
+msgid "Note: You have to check out the tickets 30 minutes before the event (before %{time})!"
+msgstr ""
+
+#: app/views/tickets/show.html.erb:13 app/views/user_mailer/ticket_reservation.html.erb:12
+msgid "Reservation Name"
+msgstr ""
+
+#: app/views/tickets/show.html.erb:37 app/views/user_mailer/ticket_reservation.html.erb:36
+msgid "Your notes"
+msgstr ""
+
+#: app/views/user_mailer/registration_confirmation.html.erb:1
+msgid "Hello %s"
+msgstr ""
+
+#: app/views/user_mailer/registration_confirmation.html.erb:3
+msgid "Thank you for registering at %s"
+msgstr ""
+
+#: app/views/user_mailer/registration_confirmation.html.erb:5
+msgid "Your confirmation code is"
+msgstr ""
+
+#: app/views/user_mailer/registration_confirmation.html.erb:7
+msgid "Please goto %{url}"
+msgstr ""
+
+#: app/views/user_mailer/registration_confirmation.html.erb:8
+msgid "to confirm and complete your registration"
+msgstr ""
+
+#: app/views/user_mailer/registration_confirmation.html.erb:10
+msgid "Please notice that your password is stored crypted only and nobody can access your plain-text-password."
+msgstr ""
+
+#: app/views/user_mailer/registration_confirmation.html.erb:14
+msgid "Have fun @ %s!"
+msgstr ""
+
+#: app/views/user_mailer/ticket_reservation.html.erb:3
+msgid "Your reservation code is <span style=\"font-family: Courier new; font-weight: bold;\">%{code}</span>.\n    <br /><br/>Please print this page and show it at the reception"
+msgstr ""
+
+#: app/views/user_mailer/ticket_reservation.html.erb:7
+msgid "Note: You have to check out the tickets 30 minutes before the event (that is before %{time})"
+msgstr ""
+
+#: app/views/user_mailer/ticket_reservation.html.erb:17
+msgid "Num tickets"
+msgstr ""
+
+#: app/views/user_mailer/ticket_reservation.html.erb:31
+msgid "Telephone"
+msgstr ""
+
+#: app/views/users/_fields.html.erb:9
+msgid "User Locked?"
+msgstr ""
+
+#: app/views/users/_fields.html.erb:19 app/views/users/index.html.erb:20 app/views/users/show.html.erb:16
+msgid "Longname"
+msgstr ""
+
+#: app/views/users/_fields.html.erb:31
+msgid "Please save this new record before assigning functions here."
+msgstr ""
+
+#: app/views/users/edit.html.erb:2
+msgid "Editing user %s"
+msgstr ""
+
+#: app/views/users/index.html.erb:2
+msgid "Listing users"
+msgstr ""
+
+#: app/views/users/index.html.erb:5 app/views/users/new.html.erb:2 app/views/users/register.html.erb:3
+msgid "New user"
+msgstr ""
+
+#: app/views/users/index.html.erb:19
+msgid "Locked?"
+msgstr ""
+
+#: app/views/users/index.html.erb:21
+msgid "utok"
+msgstr ""
+
+#: app/views/users/index.html.erb:28
+msgid "locked"
+msgstr ""
+
+#: app/views/users/index.html.erb:28
+msgid "active"
+msgstr ""
+
+#: app/views/users/register.html.erb:1
+msgid "User Registration"
+msgstr ""
+
+#: app/views/users/register.html.erb:13
+msgid "Full name"
+msgstr ""
+
+#: app/views/users/register.html.erb:17
+msgid "Confirm password"
+msgstr ""
+
+#: app/views/users/register.html.erb:32
+msgid "Register"
+msgstr ""
+
+#: app/views/users/registrations.html.erb:1
+msgid "Unconfirmed Registrations"
+msgstr ""
+
+#: app/views/users/registrations.html.erb:5
+msgid "e-mail"
+msgstr ""
+
+#: app/views/users/registrations.html.erb:6
+msgid "registered at/from ip"
+msgstr ""
+
+#: app/views/users/show.html.erb:2
+msgid "Users %s"
+msgstr ""
+
+#: app/views/users/show.html.erb:24
+msgid "Assigned Authors"
+msgstr ""
+
+#: app/views/users/show.html.erb:37
+msgid "Accessors to functions"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:2
+msgid " for %s"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:4
+msgid "Welcome %{longname}"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:9
+msgid "You'r logged in from <em>%{ip}</em> as <b>%{username}</b>"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:11
+msgid "Your Browser"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:12
+msgid "Your IP:PORT"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:13
+msgid "Server IP:PORT"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:14
+msgid "Session utok"
+msgstr ""
+
+#: app/views/users/welcome.html.erb:16
+msgid "Log out"
+msgstr ""

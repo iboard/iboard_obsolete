@@ -1,0 +1,20 @@
+<% content_for :html_title do %>
+  <%= _('Function %s') % @function.name %>
+<% end %>
+<% content_for :controller_menu do %>
+  <%= link_to _('Edit'), edit_function_path(@function)  %> |
+  <%= link_to _('Back'), functions_path %>
+<% end %>
+<div class='right_box'>
+    <%= render :partial => 'function_members' -%>
+</div>
+<p>
+  <b><%=_('Name') -%>:</b>
+  <%=h @function.name %>
+</p>
+
+<p>
+  <b><%= _('Comment') -%>:</b>
+  <%=h @function.comment %>
+</p>
+

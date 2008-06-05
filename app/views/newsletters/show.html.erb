@@ -1,0 +1,43 @@
+<h1><%= _('Newsletter %s') % @newsletter.name -%></h1>
+<div class='top_buttons_right'>
+  <div class='link_button'><%= link_to _('Edit'), edit_newsletter_path(@newsletter) -%></div>    
+  <div class='link_button'><%= link_to _('Destroy'), @newsletter, :confirm => _('Are you sure?'), :method => :delete %></div>
+</div>
+
+<div class=description><b><%= _('Description') -%></b>: 
+  <p><%= @newsletter.description -%></p>
+</div>
+<div class=description><b><%= _('Sending Address') -%></b>: 
+  <p><%= @newsletter.from_address -%></p>
+</div>
+<div class=description><b><%= _('Footer') -%></b>:
+  <p><%= @newsletter.footer -%></p>
+</div>
+<div class=description><b><%= _('Public subscribable') -%></b>:
+  <p><%= @newsletter.public_subscribable ? _('Yes') : _('No') -%></p>
+</div>
+<div class=description><b><%= _('Default mime-type') -%></b>:
+  <p><%= @newsletter.default_type -%></p>
+</div>
+
+<div class=description><b><%= _('Subscriptions') -%></b>:
+  <p><%= _('# of subscriptions') -%>: 
+     <b><%= link_to @newsletter.newsletter_subscriptions.length, list_subscriptions_newsletter_path(@newsletter) -%></b>
+     <div class='link_button'><%= link_to( '+Addresses', import_addresses_newsletter_path(@newsletter) )%></div>
+     <div class='link_button'><%= link_to( '-Addresses', remove_addresses_newsletter_path(@newsletter) )%></div>
+  </p>
+</div>
+<div class=description><b><%= @newsletter.newsletter_templates.length %> <%= _('Templates') -%></b>:
+    <table width=100%>
+       <tr>
+           <th><%= _('Name') -%></th>
+           <th><%= _('Newsletter') -%></th>
+           <th><%= _('Date') -%></th>
+           <th><%= _('Sent') -%></th>
+           <th colspan=2><%= _('Functions') -%></th>
+       </tr>
+       <%= render :partial => @newsletter.newsletter_templates -%>
+    </table>
+</div>
+
+<div class='link_button'><%= link_to _('New Template'), send_newsletter_newsletter_path(@newsletter) -%></div>    

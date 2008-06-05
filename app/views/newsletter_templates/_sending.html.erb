@@ -1,0 +1,25 @@
+<table width=100%>
+<tr>
+    <td width=25%><%= subscription.name -%> &lt;<%= subscription.email -%>&gt;</td>
+    <td width=15%><%= subscription.content_type -%></td>
+    <td width=35%>
+      <% log = subscription.find_log( template ) %>
+      <% if log %>
+        <%= _('Allready sent at %s') % log.updated_at.to_s(:db) unless log.nil? %>
+      <% else %>
+        <span id='spinner-<%= subscription.id %>'><em><%= _('padding') -%></em></span>
+          <script language='Javascript'>
+            <%= 
+                remote_function :url => send_one_mail_newsletter_template_url(template.id,
+                                          :newsletter_subscription_id => subscription.id
+                                        ), 
+                                :method => :put,
+                                :update => "spinner-#{subscription.id}"
+            -%>
+            </script>
+      <% end %>
+    </td>
+    <td width=25%>
+        <%= DateTime.now.to_s(:long) -%>
+    </td>
+</tr></table>

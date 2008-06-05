@@ -1,0 +1,15 @@
+<%
+   user = "unknown"
+   begin
+       u = User.find(log.user_id)
+       user = u.username + " #{u.longname}"
+   rescue
+       user = 'unknown'
+   end
+%>
+<tr>
+    <td width=120><%= log.created_at.to_s(:db) -%></td>
+    <td width=180><%= user   -%><br/><%= log.ip -%></td>
+    <td width=150><%= log.logtype -%></td>
+    <td><%= log.entry   -%></td>
+</tr>

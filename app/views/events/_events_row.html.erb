@@ -1,0 +1,13 @@
+<div class='event_row_shadow'>
+   <div class='event_calendar_row'>
+      <% events.each do |event| %>
+        <div class='event_summary'>
+          <% if event %>
+              <%= render :partial => 'event_preview', :locals => { :event => event } %>
+          <% else %>
+             &nbsp;
+          <% end %>
+        </div>
+      <% end%>
+   </div>
+</div>
