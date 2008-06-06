@@ -7,3 +7,6 @@ db/*sqlite3
 binary_data/**/*
 gallery_cache/*
 galleries
+.htaccess
+public/.htaccess
+public/dispatch*
