@@ -27,6 +27,7 @@
   <%= f.text_field :email %>
 </p>
 
+<!-- 
 <p>
   <b>Telephone</b><br />
   <%= f.text_field :telephone %>
@@ -37,6 +38,7 @@
   <b>Note</b><br />
   <%= f.text_area :note, :rows => 5, :cols => 80 %>
 </p>
+-->
 
  <% url = generate_secure_code_img_url(@send_code) %>
  <%= _('Please enter the code <img src=\'%s\' border=0 title=\'Security Code\'><br/>for security reasons') % url -%>

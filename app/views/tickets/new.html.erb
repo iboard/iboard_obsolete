@@ -1,5 +1,8 @@
 <% shadow_wrapper do %>
 <div style="width: 918px;">
+    <div class='ticket_reservation_back'>
+         <%= link_to 'Back', @event %>
+    </div>
     <h1><%= _('Ticket reservation for %{event} at %{date}') % { :event => @event.title, :date => @event.begins_at.to_s(:begins_at) } -%></h1>
   
      <%= error_messages_for :ticket %>
@@ -11,8 +14,5 @@
        </p>
      <% end %>
   
-    <div class='ticket_reservation_back'>
-      <%= link_to _('Back'), @event %>
-    </div>
 </div>
 <% end %>

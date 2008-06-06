@@ -1,3 +1,7 @@
+<div class='ticket_reservation_back'>
+  <%= link_to 'Back', @ticket.event %>
+</div>
+
 <div class="thank_you">
 <%= _('Thank you for your reservation!') -%>
   
@@ -15,19 +19,23 @@
 </p>
 
 <p>
-  <b>Num tickets:</b>
+  <b><%= _('Num tickets') -%>:</b>
   <%=h @ticket.num_tickets %>
 </p>
 <p>    
-  <b>Price per Ticket:</b>
+  <b><%= _('Price per Ticket') -%>:</b>
   € <%=h @ticket.price %>
+</p>
+<p>    
+  <b><%= _('Total price') -%>:</b>
+  € <%= sprintf( "%.2f", @ticket.price.to_f * @ticket.num_tickets.to_f) -%>
 </p>
 
 <p>
   <b>Email:</b>
   <%=h @ticket.email %>
 </p>
-
+<!-- 
 <p>
   <b>Telephone:</b>
   <%=h @ticket.telephone %>
@@ -37,6 +45,7 @@
   <b><%= _('Your notes') -%></b><br/>
   <%=h @ticket.note %>
 </p>
+-->
 
 <p>
   <b>Event:</b><br/>
@@ -47,4 +56,3 @@
   <%= interpret( @ticket.event.introduction ) -%><br/>
   <%= interpret( @ticket.event.body.gsub(/\|\|/,"<br/>") ) -%>
 </p>
-<%= link_to 'Back', @ticket.event %>

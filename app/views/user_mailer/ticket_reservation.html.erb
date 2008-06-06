@@ -21,20 +21,13 @@
   <b><%= _('Price per Ticket') -%>:</b>
   € <%=h @ticket.price %>
 </p>
-
+<p>    
+  <b><%= _('Total price') -%>:</b>
+  € <%= sprintf( "%.2f", @ticket.price.to_f * @ticket.num_tickets.to_f) -%>
+</p>
 <p>
   <b>Email:</b>
   <%=h @ticket.email %>
-</p>
-
-<p>
-  <b><%= _('Telephone') -%>:</b>
-  <%=h @ticket.telephone %>
-</p>
-
-<p>
-  <b><%= _('Your notes') -%></b><br/>
-  <%=h @ticket.note %>
 </p>
 
 <p>

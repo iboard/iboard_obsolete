@@ -1376,28 +1376,31 @@ msgid "Send reservation"
 msgstr "Reservierung senden"
 
 msgid "Thank you for your reservation!"
-msgstr "Danke für Deine Reservierung!"
+msgstr "Danke für Ihre Reservierung!"
 
 msgid "Your reservation code is <span class=\"reservation_code_display\">%{code}</span>.\n    <br /><br/>Please print this page and show it at the reception"
-msgstr "Dein Reservierungs-Code lautet <span class=\"reservation_code_display\">%{code}</span>.\n    <br /><br/>Bitte drucke diese Seite aus und lege sie an der Abendkassa vor"
+msgstr "Ihr Reservierungs-Code lautet <span class=\"reservation_code_display\">%{code}</span>.\n    <br /><br/>Bitte drucken Sie diese Seite (oder die zugesandte E-Mail) aus. An der Abendkasse erhalten Sie damit die Karten zum Vorverkaufspreis."
 
 msgid "Note: You have to check out the tickets 30 minutes before the event (before %{time})!"
-msgstr "Beachte: Du musst die Tickets 30 Minuten vor Veranstaltungsbeginn abholen (also vor %{time})!"
+msgstr "Bitte beachten: Die Tickets müssen 30 Minuten vor Veranstaltungsbeginn abgeholt werden (also vor %{time})!"
 
 msgid "Reservation Name"
 msgstr "Reserviert für"
 
 msgid "Your notes"
-msgstr "Deine Anmerkungen"
+msgstr "Ihre Anmerkungen"
 
 msgid "Your reservation code is <span style=\"font-family: Courier new; font-weight: bold;\">%{code}</span>.\n    <br /><br/>Please print this page and show it at the reception"
-msgstr "Dein Reservierungs-Code lautet <span style=\"font-family: Courier new; font-weight: bold;\">%{code}</span>.\n    <br /><br/>Lege diesen bitte an der Abendkassa vor"
+msgstr "Ihr Reservierungs-Code lautet <span class=\"reservation_code_display\">%{code}</span>.\n    <br /><br/>Bitte drucken Sie diese Seite (oder die zugesandte E-Mail) aus. An der Abendkasse erhalten Sie damit die Karten zum Vorverkaufspreis."
 
 msgid "Note: You have to check out the tickets 30 minutes before the event (that is before %{time})"
-msgstr "Beachte: Du musst die Tickets 30 Minuten vor Veranstaltungsbeginn abholen (also vor %{time})!"
+msgstr "Bitte beachten: Die Tickets müssen 30 Minuten vor Veranstaltungsbeginn abgeholt werden (also vor %{time})!"
 
 msgid "Num tickets"
 msgstr "Anzahl Karten"
+
+msgid "Total price"
+msgstr "Summe"
 
 msgid "Telephone"
 msgstr "Telefon"
@@ -1462,3 +1465,8 @@ msgstr "Bist Du sicher, dass Du die Veranstaltung %s löschen willst?. ALLE RESE
 msgid "Administration"
 msgstr "Administration"
 
+msgid "Prebooking"
+msgstr "VK"
+
+msgid "Box office"
+msgstr "AK"
