@@ -6,13 +6,12 @@
       <%- content_for :user_menu do -%><%= render :partial => 'layouts/user_menu' -%><% end %>
       <%- content_for :banner_left do -%><% end %><% date = DateTime::now %>
       <%- content_for :banner_right do -%><%= _('Last update:') + "<br/>" + _( date.localize(get_language_code) ) -%><% end %>
-      <%- content_for :copyright do -%>© 2008 by World Wide Education, WWEDU GmbH, Austria<% end %>
+      <%- content_for :copyright do -%>© 2008 by Andreas Altendorfer, Haid, Austria<% end %>
   -->
   <head>
     <title>iboard - <%= yield :html_title -%></title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed"  href='<%= "#{root_url}rss/?language=" -%><%= get_language_code -%>'>
-    
     <meta http-equiv="Content-Language" content="<%= get_language_code -%>">
     <%= stylesheet_link_tag "default"  %>
     <%= stylesheet_link_tag "scaffold" %>
