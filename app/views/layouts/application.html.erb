@@ -14,8 +14,13 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed"  href='<%= "#{root_url}rss/?language=" -%><%= get_language_code -%>'>
     <meta http-equiv="Content-Language" content="<%= get_language_code -%>">
-    <%= stylesheet_link_tag "default"  %>
-    <%= stylesheet_link_tag "scaffold" %>
+    <% if  !request.env["HTTP_USER_AGENT"].include? "MSIE" %>
+       <%= stylesheet_link_tag 'default' %>
+       <%= stylesheet_link_tag "scaffold" %>
+    <% else %>
+       <%= stylesheet_link_tag 'default_ie' %>
+    <% end %>    
+    
     <%= javascript_include_tag 'prototype', 'effects', 'application', 'dragdrop.js' %>
   </head>
   <body id="body"><div class="mainframe">
@@ -52,7 +57,14 @@
         display: none;
         overflow: visible;"><img src=<%= root_url + "/images/spinner.gif" -%>>
       </div>
-      
+      <% if request.env["HTTP_USER_AGENT"].include? "MSIE" %>
+        <div class="MSIE">
+            Sorry, your browser is not dedicated to display this page and we realy don't care about the bugs in MSIE.<br />
+            But fortunately we can offer a barrier-free css for you.<br />
+            We recommend to fetch a Browser which can display nearly any page out there, is faster, more beautiful, and stable: 
+            <a target=_blank href=http://www.apple.com/safari>Download Safari for PC + Mac for free</a>
+        </div>      
+      <% end %>
       <div class='banner_layout_row'>
          <div class='rss_chooser'><%= icon('rss.png', 30,20, 'Subscribe to RSS feed' ) -%>&nbsp;&nbsp;<%=  LANGUAGE_CODES.map { |lc| 
                   link_to( "#{lc[0]}", "#{root_url}rss?language=#{lc[1]}")
