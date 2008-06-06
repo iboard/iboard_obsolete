@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 29) do
+ActiveRecord::Schema.define(:version => 30) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -188,6 +188,7 @@ ActiveRecord::Schema.define(:version => 29) do
     t.integer  "position",                  :default => 1
     t.integer  "restricted_to_function_id"
     t.integer  "allow_editing",             :default => 0
+    t.integer  "truncate_length",           :default => 512
   end
 
   create_table "tickets", :force => true do |t|

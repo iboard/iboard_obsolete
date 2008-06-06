@@ -46,6 +46,8 @@
 <p>
   <b><%= _('Body') -%></b><br />
   <%= f.text_area :body, :cols => 73, :rows => 20 %>
+  <br/>
+  <%= _('Truncate body in columndisplay to') -%><%= f.text_field :truncate_length, :size => 5 %><%= _('Characters') -%>
 </p>
 
 
