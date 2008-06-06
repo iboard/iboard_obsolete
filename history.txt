@@ -1,0 +1,6 @@
+== iBoard 2.0 History File
+
+=== 2006-06-06
+
+  * Prepared and cleaned up for git.
+  * Start README and history.txt in the root-directory
