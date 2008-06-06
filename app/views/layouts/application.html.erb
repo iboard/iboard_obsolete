@@ -1,11 +1,12 @@
 <html>
   <!-- RAILS 2.0 APPLICATION BY Andreas Altendorfer
+      <% date = DateTime::now %>
       <%- content_for :html_title do -%><% end %>
       <%- content_for :top_menu do -%><%= render :partial => 'layouts/main_menu' -%><% end %>
       <%- content_for :controller_menu do -%><% end %>
       <%- content_for :user_menu do -%><%= render :partial => 'layouts/user_menu' -%><% end %>
-      <%- content_for :banner_left do -%><% end %><% date = DateTime::now %>
-      <%- content_for :banner_right do -%><%= _('Last update:') + "<br/>" + _( date.localize(get_language_code) ) -%><% end %>
+      <%- content_for :banner_left do -%>&nbsp;<% end %>
+      <%- content_for :banner_right do -%><%= _('Last update:') + " " + _( date.localize(get_language_code) ) -%><% end %>
       <%- content_for :copyright do -%>© 2008 by Andreas Altendorfer, Haid, Austria<% end %>
   -->
   <head>
@@ -52,35 +53,31 @@
         overflow: visible;"><img src=<%= root_url + "/images/spinner.gif" -%>>
       </div>
       
+      <div class='banner_layout_row'>
+         <div class='rss_chooser'><%= icon('rss.png', 30,20, 'Subscribe to RSS feed' ) -%>&nbsp;&nbsp;<%=  LANGUAGE_CODES.map { |lc| 
+                  link_to( "#{lc[0]}", "#{root_url}rss?language=#{lc[1]}")
+                }.join(", ") 
+           -%>
+         </div>
+         <div class='site_title'><h1>iBoard 2.0</h1><p>by Andi Altendorfer, Haid, Austria</p></div>
+
+         <div class='banner_right'>
+             <div id='banner_right'><%= yield :banner_right %></div>
+             <div id='language_chooser'><%= language_chooser -%></div>
+             <div id='spotlight'><%= render :partial => '/layouts/search_box', 
+                :locals => { :show_button => false , :size => 15, :controller => 'postings' } %>
+             </div>
+         </div>
+            
+         <div class="banner">
+             <%= yield :banner_left %>          
+         </div>
+      </div>
+       
+      
       <div class="innerframe">
       
       <div class="layout_table">
-          
-         <div class='banner_layout_row'>
-             
-           <div class='layout_cell'>
-               <div class="banner">
-                   <div id='banner_left'><%= yield :banner_left %></div>                   
-               </div>
-           </div>
-           
-           <div class='banner_right_layout_cell'>
-               <div class='banner_right'>
-                   <div id='banner_right'><%= yield :banner_right %></div>
-                   <div id='language_chooser'><%= language_chooser -%></div><br />
-                   <div id='spotlight'><%= render :partial => '/layouts/search_box', 
-                      :locals => { :show_button => false , :size => 15, :controller => 'postings' } %>
-                      <%= icon('rss.png', 30,20, 'Subscribe to RSS feed' ) -%>&nbsp;&nbsp;
-                      <small><%=  LANGUAGE_CODES.map { |lc| 
-                             link_to( "#{lc[0]}", "#{root_url}rss?language=#{lc[1]}")
-                           }.join(", ") 
-                      -%></small>
-
-                   </div>
-               </div>
-           </div>
-         
-         </div>
 
          <div class='layout_row'>
              

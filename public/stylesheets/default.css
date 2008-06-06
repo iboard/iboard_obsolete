@@ -1,15 +1,14 @@
 body { 
-	background-image: url('/images/background.jpg');
+	background-image: url('/iboard/images/background.jpg');
 	background-repeat: repeat-x;
-	background-position: bottom;
-	color: #333; 
+	background-position: top;
 	margin:0px; 
 	padding:0px; 
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 pre {
-  background-color: #eee;
+  background-color: #eeeeee;
   padding: 10px;
   font-size: 11px;
 }
@@ -24,9 +23,9 @@ table tr td {
 	font-size: 13px;
 }
 
-a { color: #000000; text-decoration: none;}
-a:visited { color: #666666; text-decoration:none; }
-a:hover { color: #000000;  text-decoration: none; background-color:#FFFF88; }
+a { color: #E95800; text-decoration: none;}
+a:visited { color: #B83B00; text-decoration:none; }
+a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 
 .mainframe {
 	margin: 0px;
@@ -39,10 +38,7 @@ a:hover { color: #000000;  text-decoration: none; background-color:#FFFF88; }
 .innerframe {
 	margin-left: 50px;
 	margin-top: 10px;
-	border-top: 1px solid #AAA;
-	border-left: 1px solid #AAA;
-	border-right: 2px solid #888;
-	border-bottom: 2px solid #888;
+	border: none;
 	background: white;
 	width:     1057px;
 	min-width: 1057px;
@@ -70,11 +66,11 @@ a:hover { color: #000000;  text-decoration: none; background-color:#FFFF88; }
 }
 
 .banner_layout_row {
-	background-image: url(/images/iboard-banner.jpg);
-	background-repeat: no-repeat;
-	display: table-row;
 	margin: 0px;
 	padding: 0px;
+	background-image: url('/iboard/images/iboard-banner.jpg');
+	background-repeat: repeat-x;
+	background-position: 0 0;
 }
 
 .banner_right_layout_cell {
@@ -96,22 +92,48 @@ a:hover { color: #000000;  text-decoration: none; background-color:#FFFF88; }
 	min-height: 70px;
 	max-height: 70px;
 	width: 100%;
+	width: 820px;
+	height: 120px;
 }
 
-.banner_left {
-	padding: 0px;
-	margin: 0px;
-	font-weight: bold;
-} 
-
 .banner_right {
-	background: white;
 	padding: 0px;
+	padding-right: 20px;
+	width: 200px;
 	margin: 0px;
+	float: right;
 	font-size: 13px;
 	color: #888;
 }
 
+.rss_chooser {
+	font-size: 11px;
+}
+
+#search_txt {
+	background-image: url('/iboard/images/magnifyingglass.gif');
+	background-repeat: no-repeat;
+	background-position: top right;
+	height: 24px;
+	width: 200px;
+}
+
+.site_title {
+	font-size: 11px;
+	color: #FF3200;
+	float:left;
+	margin-left: 25px;
+	margin-top: 8px;
+	margin-bottom: 0px;
+	line-height: 90%;
+}
+.site_title p {
+	font-size: 11px;
+	margin-top: -10px;
+	margin-bottom: 0px;
+	line-height: 90%;
+	color: #4A4A4A;
+}
 .top_menu_right {
 	margin-bottom: 10px;
     height: 20px;
@@ -363,8 +385,9 @@ H2 {
 }
 
 .created_at {
-	font-size: 11px;
+	font-size: 10px;
 	font-style: italic;
+	color: #C9D4A0;
 	margin-top: 0px;
 	line-height: 95%;
 }
@@ -440,3 +463,5 @@ H2 {
 	display: table-cell;
 }
 
+.show_posting {
+}
