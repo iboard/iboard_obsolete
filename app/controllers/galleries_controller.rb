@@ -116,7 +116,7 @@ class GalleriesController < ApplicationController
       f << data
       f.close
     end
-    send_data(data, :type => "image/jpg", :disposition => 'inline')
+    send_data(data, :type => "image/jpg", :disposition => 'inline', :filename => params[:filename])
     return
   end
   

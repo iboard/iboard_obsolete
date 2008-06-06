@@ -109,12 +109,27 @@ class BinariesController < ApplicationController
     end
     picsize = params[:size] || "64x64"
     @binary = Binary.find(params[:id])
-    data = @binary.thumbnail picsize
-    if ['image/jpg','image/gif','image/png', 'image/jpeg'].include?(@binary.mime_type) && 
-      File::exists?(@binary.get_path + "/" + @binary.filename)
-      send_data(data, :type => @binary.mime_type, :disposition => 'inline')
+    
+    cache_file_name = Digest::SHA1.hexdigest(@binary.filename+picsize)
+    if File::exists?( GALLERY_CACHE_PREFIX + "/" + cache_file_name )
+    f = File.new(GALLERY_CACHE_PREFIX + "/" + cache_file_name, "r" )
+      data = f.sysread(File::size(GALLERY_CACHE_PREFIX + "/" + cache_file_name))
+      f.close
     else
-      send_data(data, :type => "image/gif", :disposition => 'inline')
+      data = @binary.thumbnail picsize
+      begin
+        f = File.open(GALLERY_CACHE_PREFIX + "/" + cache_file_name, "w+" )
+        f << data
+        f.close
+      rescue
+        # file could not be saved in cache
+      end
+    end
+    if ['image/jpg','image/gif','image/png', 'image/jpeg'].include?(@binary.mime_type) && 
+       File::exists?(@binary.get_path + "/" + @binary.filename)
+        send_data(data, :type => @binary.mime_type, :disposition => 'inline')
+    else
+        send_data(data, :type => "image/gif", :disposition => 'inline')
     end
     return
   end
@@ -146,8 +161,7 @@ class BinariesController < ApplicationController
   
   def send_image
     filename = Base64::decode64(params[:file])
-    send_file(filename, :filename => 'confirm.jpg', 
-      :type => "image/jpg", :disposition => 'inline')
+    send_file(filename, :filename => 'confirm.jpg', :type => "image/jpg", :disposition => 'inline')
   end
  
   def download
