@@ -3,7 +3,7 @@ log/*
 tmp/**/*
 config/database.yml
 config/environment.rb
-db/*sqlite3
+db/*sqlite3*
 binary_data/**/*
 gallery_cache/*
 galleries
