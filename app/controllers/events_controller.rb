@@ -117,7 +117,8 @@ class EventsController < ApplicationController
   
   def calendar
     @location = params[:location]
-    @events = Event.find_all_by_location(@location, :order => 'begins_at asc', :conditions => ['begins_at >= ?', Date::today], :limit => 8 )
+    @events = Event.find_all_by_location(@location, :order => 'begins_at asc', 
+      :conditions => ['promoted = ? and begins_at >= ?', true, Date::today], :limit => 8 )
     render :layout => @location
   end
   

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 28) do
+ActiveRecord::Schema.define(:version => 29) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 28) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "max_tickets",      :default => 450
+    t.boolean  "promoted",         :default => true
   end
 
   create_table "functions", :force => true do |t|
