@@ -7,21 +7,21 @@ class CommentsController < ApplicationController
     when "Posting"
       @posting = Posting.find(params[:item_id])
       @comments = 
-        Comment.find(:all, :include => [:posting, :event], :order => 'comments.created_at desc',
+        Comment.find(:all, :include => [:posting, :event, :user], :order => 'comments.created_at desc',
                      :conditions => [ 'posting_id  = ?',
                                       params[:item_id]
                                     ]
                     )
     when "Event"
-      @posting = Event.find(params[:item_id])
+      @event = Event.find(params[:item_id])
       @comments = 
-        Comment.find(:all, :include => [:posting, :event],  :order => 'comments.created_at desc',
+        Comment.find(:all, :include => [:posting, :event, :user],  :order => 'comments.created_at desc',
                      :conditions => [ 'event_id  = ?',
                                       params[:item_id]
                                     ]
                     )
     else
-      @comments = Comment.find(:all, :include => [:posting, :event])
+      @comments = Comment.find(:all, :include => [:posting, :event, :user])
     end
 
     respond_to do |format|
@@ -47,7 +47,7 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
     @comment.ip_remote = request.env['REMOTE_ADDR']
-
+    @comment.user = user
     if params[:posting]
       @comment.posting = Posting.find(params[:posting].to_i)
     end

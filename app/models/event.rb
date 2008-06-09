@@ -18,4 +18,14 @@ class Event < ActiveRecord::Base
     n >= max_tickets
   end
   
+  def avg_stars
+    c = Comment.find_all_by_event_id(self)
+    if c && c.length > 0
+      s = 0
+      c.each { |comment| s+= comment.rating }
+      s/c.length
+    else
+      0
+    end
+  end
 end

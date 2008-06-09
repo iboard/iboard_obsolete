@@ -11,8 +11,8 @@
   <% for comment in @comments %>
     <div class='comment_display'>
       <b>
-        <% if comment.user_id %>
-          <%= comment.user.fullname %>
+        <% if comment.user %>
+          <%= comment.user.username %>
         <% else %>
           <%= _('Anonymous') -%>
         <% end %>

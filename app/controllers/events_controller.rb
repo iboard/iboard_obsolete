@@ -8,8 +8,14 @@ class EventsController < ApplicationController
       month = Date::parse(params[:month])
       conditions = ['begins_at between ? and ?', month, (month+1.month-1.day)]
     else
-      conditions = ['begins_at >= ?', Date::today() ]
+      if granted_for? 'events'
+        conditions = ['begins_at >= ?', Date::today() ]
+      else
+        conditions = ['1 = 1' ]
+      end
     end
+    
+    
     
     @events = Event.find(:all, :conditions => conditions, :order => "begins_at" )
     if @events.length < 1
