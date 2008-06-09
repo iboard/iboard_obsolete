@@ -10,3 +10,4 @@ galleries
 .htaccess
 public/.htaccess
 public/dispatch*
+public/flash/*
