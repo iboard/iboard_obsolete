@@ -8,7 +8,7 @@ class EventsController < ApplicationController
       month = Date::parse(params[:month])
       conditions = ['begins_at between ? and ?', month, (month+1.month-1.day)]
     else
-      if granted_for? 'events'
+      if not granted_for? 'events'
         conditions = ['begins_at >= ?', Date::today() ]
       else
         conditions = ['1 = 1' ]
