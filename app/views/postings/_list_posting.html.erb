@@ -1,16 +1,21 @@
 <div class='posting_listing'>
+    
     <b><%=link_to h(posting.title), posting %></b>
-    <%= render :partial => 'comments/display_rating', :locals => { :posting => posting, :user => user } -%>
+    
+    <%= render :partial => 'comments/display_rating', :locals => { :item => posting, :user => user } -%>
 
     <% if posting.date_expires < Date::today %>
       <small> (<%= _('Expired since %s') % posting.date_expires -%>)</small>
     <% end %>
+    
+    
     <% if posting.editable_by_user?(user) %><br/>
          <%= link_to icon('posting-edit.png',_('Edit Posting'),12,12),     edit_posting_path(posting) %> 
          <%= link_to icon('posting-delete.png',_('Delete Posting'),12,12), posting, 
                :confirm => _("Are you sure you want delete posting '%s'?") % posting.title, 
                :method => :delete %>
     <% end %>
+    
     <% page_id ||= nil %>
     <small>
     <%=  truncate( (h(posting.body)), POSTING_LISTING_LENGTH,

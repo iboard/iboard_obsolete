@@ -19,11 +19,15 @@ class Posting < ActiveRecord::Base
   
   # Check if posting is allowed to be edited
   def editable_by_user?(user)
-    (user and user.id == 1) or                        # by root
-    (allow_editing == 99) or                          # it's public editable
-    (allow_editing == 0 and author and author.user == user) or   # it's the author
-    (allow_editing == 1 and user ) or                 # it's editable by any registered user
-    (allow_editing == 2 and user.functions.include?(restricted_to_function_id)) # user is member of function
+    begin
+      (user && (user.id == 1)) or                        # by root
+      (allow_editing == 99) or                          # it's public editable
+      (allow_editing == 0 and author and author.user == user) or   # it's the author
+      (allow_editing == 1 and user ) or                 # it's editable by any registered user
+      (allow_editing == 2 and user.functions.include?(restricted_to_function_id)) # user is member of function
+    rescue
+      false
+    end
   end
   
   def avg_stars
