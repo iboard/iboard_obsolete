@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 30) do
+ActiveRecord::Schema.define(:version => 31) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(:version => 30) do
     t.datetime "updated_at"
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "posting_id"
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.float    "rating"
+    t.text     "body"
+    t.string   "email"
+    t.string   "ip_remote"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "div_tags", :force => true do |t|
     t.string   "name"
     t.text     "definition"
@@ -58,25 +70,8 @@ ActiveRecord::Schema.define(:version => 30) do
     t.datetime "updated_at"
   end
 
-  create_table "events", :force => true do |t|
-    t.string   "title"
-    t.datetime "begins_at"
-    t.datetime "ends_at"
-    t.boolean  "open_end"
-    t.text     "introduction"
-    t.text     "body"
-    t.integer  "picture_id"
-    t.text     "picture_text"
-    t.float    "price"
-    t.float    "price_prebooking"
-    t.float    "price_reduced"
-    t.string   "location"
-    t.string   "producer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "max_tickets",      :default => 450
-    t.boolean  "promoted",         :default => true
-  end
+# Could not dump table "events" because of following StandardError
+#   Unknown type 'boolen' for column 'allow_comments'
 
   create_table "functions", :force => true do |t|
     t.string   "name"
@@ -189,6 +184,7 @@ ActiveRecord::Schema.define(:version => 30) do
     t.integer  "restricted_to_function_id"
     t.integer  "allow_editing",             :default => 0
     t.integer  "truncate_length",           :default => 512
+    t.string   "allow_comments",            :default => "f"
   end
 
   create_table "tickets", :force => true do |t|

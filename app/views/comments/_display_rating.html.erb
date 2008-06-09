@@ -1,0 +1,10 @@
+<%   
+   if item.nil? || item.comments.nil?
+     av = 0.0
+   else
+     av = item.avg_stars()
+   end
+%>
+<p><b><%= _('Avg. rating') %></b>: <%= av %>
+    
+<%= render_stars(av,false) -%>

@@ -1,6 +1,9 @@
 class Event < ActiveRecord::Base
+  
   has_one  :binary
   has_many :tickets
+  has_many :comments
+  
   validates_presence_of :title
   validates_presence_of :begins_at
   validates_presence_of :introduction

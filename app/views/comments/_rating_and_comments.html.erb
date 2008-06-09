@@ -1,0 +1,19 @@
+<div class='rating_and_comments'>
+  <%
+     event     ||= @evnet || nil
+     posting   ||= @posting || nil
+     anonymous = ( user != nil )
+     hide_comments ||= false
+  %>
+  
+  <% 
+     if event
+       loc = event.comments 
+     else
+       loc = posting.comments
+     end      
+  %>
+  <div>
+    <%= render :partial => '/comments/comment_links', :locals => { :item => (event || posting), :hide_comments => hide_comments } -%>
+  </div>
+</div>

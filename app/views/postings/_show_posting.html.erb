@@ -1,4 +1,5 @@
 <% page_id ||= nil %>
+
 <div class='show_posting'>
 <h2><%=link_to h(posting.title), posting_path(posting,:page_id => page_id) -%></h2>
 
@@ -6,6 +7,8 @@
   <div class='created_at'><%= _('posted by %{author} at %{date}') % { :author => posting.author.display_name, 
        :date => DateTime::parse(posting.created_at.to_s(:db)).localize(get_language_code) } -%></div>
 <% end %>
+
+<%= render :partial => '/comments/rating_and_comments' , :locals => { :event => false, :posting => posting, :user => user, :hide_comments => true } %>
 
 <% if posting.date_expires < Date::today %>
   <div class='expired'><%= _('Expired since %s') % posting.date_expires -%></div>
@@ -17,6 +20,8 @@
          ( " ["+link_to(_('read more'), posting_path(posting,:page_id => page_id, :layout => params[:layout] )) +"] " )))
   %>
 </div>  
+
+
 <br clear=left />
 
 <% if granted_for? 'edit posting' or (posting.editable_by_user?(user) ) %>

@@ -1,0 +1,38 @@
+<% if @comment.posting %>
+  <p>
+    <b>Posting:</b><%=h @comment.posting.title %>
+  </p>
+<% end %>
+<% if @comment.event %>
+  <p>
+    <b>Event:</b> <%=h @comment.event.title %>
+  </p>
+<% end %>
+<p>
+  <b>User:</b>
+  <%=h @comment.user_id %>
+</p>
+
+<p>
+  <b>Rating:</b> <%= @comment.rating -%>
+    <%= render :partial => "display_rating", :locals => { :event => @comment.event, :posting => @comment.posting,:comment => @comment } -%>
+</p>
+    
+<p>
+  <b>Body:</b>
+  <%=h @comment.body %>
+</p>
+
+<p>
+  <b>Ip remote:</b>
+  <%=h @comment.ip_remote %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<% if @comment.event %>
+  <%= link_to 'Back to event', comments_path( :item => "Event", :item_id => @comment.event ) %>
+<% end %>
+<% if @comment.posting %>
+  <%= link_to 'Back to posting', comments_path( :item => "Posting", :item_id => @comment.posting ) %>
+<% end %>

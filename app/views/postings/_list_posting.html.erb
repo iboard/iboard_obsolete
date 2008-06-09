@@ -1,5 +1,7 @@
 <div class='posting_listing'>
     <b><%=link_to h(posting.title), posting %></b>
+    <%= render :partial => 'comments/display_rating', :locals => { :posting => posting, :user => user } -%>
+
     <% if posting.date_expires < Date::today %>
       <small> (<%= _('Expired since %s') % posting.date_expires -%>)</small>
     <% end %>

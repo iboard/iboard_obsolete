@@ -1,0 +1,64 @@
+<h1><%= _('Comments') -%></h1>
+<% if params[:item] == "Posting" %>
+  <h2><%= link_to @posting.title, @posting %></h2>
+<% end %>
+<% if params[:item] == "Event" %>
+    <h2><%= @event.title %></h2>
+    <%= @event.begins_at.to_s(:begins_at) -%>
+<% end %>
+
+<% if( params[:item] ) %>
+  <% for comment in @comments %>
+    <div class='comment_display'>
+      <b>
+        <% if comment.user_id %>
+          <%= comment.user.fullname %>
+        <% else %>
+          <%= _('Anonymous') -%>
+        <% end %>
+      </b>
+      <%= comment.created_at.to_s(:db)%>
+      <%= render_stars( comment.rating.to_f, false )%>
+      <%= interpret( h(comment.body)) %>
+    </div>
+  <% end %>
+  
+  <% if params[:item] == 'Posting' %>
+    <%= link_to _('New comment'), new_comment_path( :posting => params[:item_id] ) -%>
+  <% end %>
+ 
+  <% if params[:item] == 'Event' %>
+      <%= link_to _('New comment'), new_comment_path( :event => params[:item_id] ) -%>
+  <% end %>
+<% end %>
+
+<% if not params[:item] %>
+  <table>
+    <tr>
+      <th>Posting</th>
+      <th>Event</th>
+      <th>User</th>
+      <th>Rating</th>
+      <th>Body</th>
+      <th>Ip remote</th>
+    </tr>
+  
+  <% for comment in @comments %>
+    <tr>
+      <td><%=link_to (h(comment.posting.title), posting_path(comment.posting)) if comment.posting %></td>
+      <td><%=link_to (h(comment.event.title),   event_path(comment.event))     if comment.event %></td>
+      <td><%=h comment.user_id %></td>
+      <td><%= render_stars(comment.rating.to_i, comment) -%></td>
+      <td><%=h comment.body %></td>
+      <td><%=h comment.ip_remote %></td>
+      <td><%= link_to 'Show', comment %></td>
+      <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+      <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+  <% link_to 'New comment', new_comment_path %>
+  
+<% end %>
+<br />
+

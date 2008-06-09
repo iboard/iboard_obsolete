@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 
 module ApplicationHelper
-
+    
   def gender_dropdown_options
     i=0
     GENDER.map { |g| [g,(i += 1)]  }
@@ -154,4 +154,8 @@ module ApplicationHelper
     </div>", block.binding )
   end
   
+  def render_stars(rating,comment)
+    StarsRenderer.new(rating,comment,self).render_stars
+  end
+    
 end

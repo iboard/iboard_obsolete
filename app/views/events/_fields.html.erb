@@ -25,6 +25,8 @@
       <p>
         <b>Introduction</b><br />
         <%= f.text_area :introduction, :rows => 7, :cols => 30 %>
+        <br /><%= _('Show rating') -%><%= f.check_box :allow_comments %>
+        
       </p>
       <p>
         <b>Picture</b><br />

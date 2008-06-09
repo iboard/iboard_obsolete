@@ -1,6 +1,7 @@
 <% content_for :html_title do %>
  <%=h @posting.title -%>
 <% end %>
+
 <% content_for :controller_menu do %>
   <% if granted_for? 'edit posting' %>
     <%= link_to _('Edit'), edit_posting_path(@posting) %> |
@@ -13,23 +14,30 @@
   <% end %>
 <% end %>
 
-<% shadow_wrapper do %>
-<h1><%=h @posting.title -%></h1>
-<address>
-    <% author = @posting.author ? @posting.author.nickname : _('unknown') -%>
-    <%= _( 'posted by %{author} at %{date}') % { :date => @posting.updated_at.to_s(:db), :author => author } %><br/>
-</address>
 
-<br />
-<div id='posting_body'><%=interpret h(@posting.body) %></div>
-<% if  @posting.date_expires < Date.today() %>
-<address><small>
-  <b><%= _('expires at') -%>:</b> <%=h @posting.date_expires %>
-</small></address>
-<% end %>
-<div id='published_pages_list'>
-    <% @posting.page_columns.each do |p| %>
-    &raquo;&nbsp;<%= link_to p.page.name, show_page_page_path( p.page, :layout => params[:layout] )-%>&nbsp;
-    <% end %>
-</div>
+<% shadow_wrapper do %>
+  <h1><%=h @posting.title -%></h1>
+    
+  <address>
+      <% author = @posting.author ? @posting.author.nickname : _('unknown') -%>
+      <%= _( 'posted by %{author} at %{date}') % { :date => @posting.updated_at.to_s(:db), :author => author } %><br/>
+  </address>
+  
+  <%= render :partial => "/comments/rating_and_comments", :locals => { :posting => @posting } -%>
+  
+  <br />
+
+  <div id='posting_body'><%=interpret h(@posting.body) %></div>
+  <% if  @posting.date_expires < Date.today() %>
+    <address><small>
+      <b><%= _('expires at') -%>:</b> <%=h @posting.date_expires %>
+    </small></address>
+  <% end %>
+  
+ 
+  <div id='published_pages_list'>
+      <% @posting.page_columns.each do |p| %>
+      &raquo;&nbsp;<%= link_to p.page.name, show_page_page_path( p.page, :layout => params[:layout] )-%>&nbsp;
+      <% end %>
+  </div>
 <% end %>

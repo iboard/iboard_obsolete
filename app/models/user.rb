@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many                :accessors
   has_many                :functions, :through => :accessors
   has_many                :binaries
+  has_many                :comments
   
   
   # search for paginate

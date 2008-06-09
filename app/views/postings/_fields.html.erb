@@ -48,6 +48,7 @@
   <%= f.text_area :body, :cols => 73, :rows => 20 %>
   <br/>
   <%= _('Truncate body in columndisplay to') -%><%= f.text_field :truncate_length, :size => 5 %><%= _('Characters') -%>
+  | <%= _('Show rating') -%><%= f.check_box :allow_comments %>
 </p>
 
 

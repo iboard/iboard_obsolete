@@ -1,0 +1,28 @@
+<% if @comment.posting %><p>
+  <%= f.hidden_field :posting_id %>
+  <%=h @comment.posting.title %>
+</p><% end %>
+
+<% if @comment.event %><p>
+  <b>Event</b><br />
+  <%= f.text_field :event_id %>
+</p><% end %>
+
+<p>
+<b>User</b> 
+  <% if @comment.user %>
+      <%= f.text_field :user_id %>
+  <% else %>
+        <%= _("anonymous (#{@comment.ip_remote})") -%>
+        <%= f.hidden_field :ip_remote %>      
+  <% end %>
+</p>
+
+
+<%= render :partial => 'display_rating', :locals => { :item => @comment.posting } -%>
+
+<div><b>Rating</b>: <%= f.select :rating, [0,1,2,3,4,5] %></div>
+<p>
+  <%= f.text_area :body, :rows => 10, :cols => 80 %>
+</p>
+

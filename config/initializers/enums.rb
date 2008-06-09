@@ -1,4 +1,5 @@
 GENDER=['unknown','male','female']
+ATTRIBUTES_POSTING_EVENT=[ 'rating','comment' ]
 
 LANGUAGE_CODES=[
   ['English', 'en_US'],

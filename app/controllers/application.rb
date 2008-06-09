@@ -6,6 +6,7 @@ require 'gettext/rails'
 class ApplicationController < ActionController::Base
   include IboardLibrary
   include ApplicationHelper
+
   helper :all # include all helpers, all the time
   helper_method :get_language_code, :user, :logged_id?, :granted_for?, :random_string
 

@@ -466,3 +466,9 @@ H2 {
 .show_posting {
 }
 
+.rating_star {
+	display: inline;
+}
+.rating_and_comments {
+	display: inline;
+}

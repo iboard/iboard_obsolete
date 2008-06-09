@@ -1,0 +1,13 @@
+<% item =  @comment.posting || @comment.event %>
+<h1><%= item.title unless item.nil? -%></h1>
+
+<%= error_messages_for :comment %>
+
+<% form_for(@comment) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', comments_path( :item => item.class.to_s, :item_id => item.id ) %>

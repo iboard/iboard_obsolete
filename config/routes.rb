@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.resources :comments, 
+    :member => {
+      :set_rating => :put
+    },
+    :collection => { :comments => :get }
 
   map.resources :tickets
 
