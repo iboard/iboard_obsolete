@@ -208,7 +208,7 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 
 #posting_body {
 	line-height: 150%;
-	text-align: justify;
+	text-align: left;
 }
 
 H2 {
@@ -220,7 +220,7 @@ H2 {
 .posting_frontpage_body {
 	line-height: 150%;
 	font-size: 13px;
-	text-align: justify;
+	text-align: left;
 }
 
 .posting_frontpage_menu {
