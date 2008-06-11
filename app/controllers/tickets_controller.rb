@@ -19,8 +19,9 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.xml
   def show
+    layout = params[:layout] || get_application_layout
     if (! granted_for?('tickets')) && (! params[:reservation_code] )
-      render :text => _('Sorry, Access denied'), :layout => params[:layout] || 'application'
+      render :text => _('Sorry, Access denied'), :layout => layout
       return true
     end
     @ticket = Ticket.find(params[:id])
@@ -30,7 +31,7 @@ class TicketsController < ApplicationController
         format.xml  { render :xml => @ticket }
       end
     else
-      render :text => _('Sorry, Access denied'), :layout => params[:layout] || 'application'
+      render :text => _('Sorry, Access denied'), :layout => layout
     end
   end
 
@@ -39,9 +40,10 @@ class TicketsController < ApplicationController
   def new
     @ticket = Ticket.new
     @event  = Event.find(params[:event])
+    layout = @event.location
     
     if @event.sold_out?
-      render :text => _('<div class="sold_out">Sorry, this event is sold out!</div>'),  :layout => @event.location
+      render :text => _('<div class="sold_out">Sorry, this event is sold out!</div>'),  :layout => layout
     else
       
       @ticket.price =  @event.price_prebooking
@@ -50,7 +52,7 @@ class TicketsController < ApplicationController
       mk_tmp_file(@send_code)
       
       respond_to do |format|
-        format.html { render :layout => @event.location }
+        format.html { render :layout => @event.location, :layout => layout }
         format.xml  { render :xml => @ticket }
       end
     end
@@ -79,7 +81,7 @@ class TicketsController < ApplicationController
           flash[:notice] += _('Thank You! A copy was sent to %{email}.') % { :email => @ticket.email }
 
           format.html { redirect_to(ticket_path( @ticket, :reservation_code => @ticket.reservation_code, :method => :get )) }
-          format.xml  { render :xml => @ticket, :status => :created, :location => @ticket }
+          format.xml  { render :xml => @ticket, :status => :created, :location => @ticket.location }
         else
           @send_code = random_string(5)
           mk_tmp_file(@send_code)

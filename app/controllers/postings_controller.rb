@@ -32,8 +32,8 @@ class PostingsController < ApplicationController
   def show
     @posting = Posting.find(params[:id])
 
-    layout = params[:layout] || 'application'
-    layout = 'application' if layout.empty?
+    layout = params[:layout] || get_application_layout
+
     
     if params[:page_id]
        @page = Page.find(params[:page_id].to_i)

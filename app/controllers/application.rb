@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
   helper :all # include all helpers, all the time
-  helper_method :get_language_code, :user, :logged_id?, :granted_for?, :random_string
+  helper_method :get_language_code, :user, :logged_id?, :granted_for?, :random_string, :get_application_layout
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -56,6 +56,20 @@ class ApplicationController < ActionController::Base
   end
 
   public
+  
+  def get_application_layout
+    domain = request.env['SERVER_NAME'].gsub(/\./,"_")
+    
+    if File.exists? "#{RAILS_ROOT}/app/views/layouts/#{domain}.html.erb"
+      domain
+    else
+      if granted_for? "root"
+        flash[:notice] = _('No layoutfile found for %s. Using default instead.') % domain
+      end
+      "application"
+    end
+  end
+  
   def get_language_code
     rc = ""
     if cookies[:language_code]

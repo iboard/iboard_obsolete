@@ -1,6 +1,25 @@
 class PagesController < ApplicationController
   
-  before_filter :authenticate, :except => [:show,:show_page,:not_found]
+  before_filter :authenticate, :except => [:show,:show_page,:not_found,:redirect_domain]
+  
+  def redirect_domain
+    
+    if granted_for? "root"
+      flash[:notice] = _('Redirected because of the servername %s') % request.env['SERVER_NAME']
+    end
+    
+    case request.env['SERVER_NAME']
+    when 'www.thesoundtheatre.at' 
+      redirect_to :controller => :events, :action => :calendar, :location => 'soundtheatre'
+    when 'www.thesoundtheatre.com'
+      redirect_to :controller => :events, :action => :calendar, :location => 'soundtheatre'
+    when 'www.thesoundtheatre.eu'
+      redirect_to :controller => :events, :action => :calendar, :location => 'soundtheatre'
+    else
+      redirect_to :action => :show_page, :id => get_language_fisrt_page
+    end
+  end
+  
   
   # GET /pages
   # GET /pages.xml
@@ -29,8 +48,7 @@ class PagesController < ApplicationController
   # If no page-id is given the first page of the selected language will be displayed
   def show_page
     params[:id] ||= get_language_fisrt_page
-    layout = params[:layout] || 'application'
-    layout = 'application' if layout.empty?
+    layout = params[:layout] || get_application_layout
     begin
       @page = Page.load_with_columns(params[:id])
       l = DivTag.find(@page.div_tag_id).name
@@ -188,7 +206,7 @@ class PagesController < ApplicationController
   def not_found
     flash[:error] = _('<b>ERROR 404</b>: Sorry, the page you\'ve requested (%s) was not found.<br/>') %
                     request.env['REQUEST_URI']
-    redirect_to postings_path
+    redirect_to :action => :redirect_domain
   end
   
 

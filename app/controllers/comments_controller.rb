@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.xml
   def index
+    layout = get_application_layout
     case params[:item]
     when "Posting"
       @posting = Posting.find(params[:item_id])
@@ -25,7 +26,7 @@ class CommentsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :layout => layout}
       format.xml  { render :xml => @comments }
     end
     
@@ -34,10 +35,12 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.xml
   def show
+    layout = get_application_layout
+    
     @comment = Comment.find(params[:id])
     
     respond_to do |format|
-      format.html # show.html.erb
+      format.html  { render :layout => layout}
       format.xml  { render :xml => @comment }
     end
   end
@@ -45,6 +48,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.xml
   def new
+    layout = get_application_layout
     @comment = Comment.new
     @comment.ip_remote = request.env['REMOTE_ADDR']
     @comment.user = user
@@ -55,7 +59,7 @@ class CommentsController < ApplicationController
       @comment.event = Event.find(params[:event].to_i)
     end
     respond_to do |format|
-      format.html # new.html.erb
+      format.html  { render :layout => layout}
       format.xml  { render :xml => @comment }
     end
   end

@@ -91,7 +91,8 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'authenticate/logout', :controller => 'authenticate', :action => 'logout'
   map.login  'authenticate/login', :controller => 'authenticate', :action => 'login'
   map.rss    'rss', :controller => 'rss', :action => 'index'
-  map.root   :controller => 'pages', :action => 'show_page'
+  
+  map.root   :controller => 'pages', :action => 'redirect_domain'
   
   # See how all your routes lay out with "rake routes"
 
