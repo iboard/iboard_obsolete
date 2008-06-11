@@ -10,3 +10,4 @@ gallery_cache/*
 public/.htaccess
 public/dispatch*
 public/flash/*
+public/flash/curtain.swf
