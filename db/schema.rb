@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 31) do
+ActiveRecord::Schema.define(:version => 35) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,20 @@ ActiveRecord::Schema.define(:version => 31) do
     t.string   "mime_type"
     t.integer  "size"
     t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cart_items", :force => true do |t|
+    t.integer  "shop_item_id"
+    t.integer  "cart_id"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "carts", :force => true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -185,6 +199,22 @@ ActiveRecord::Schema.define(:version => 31) do
     t.integer  "allow_editing",             :default => 0
     t.integer  "truncate_length",           :default => 512
     t.string   "allow_comments",            :default => "f"
+  end
+
+  create_table "shop_items", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.float    "price"
+    t.integer  "shop_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shops", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tickets", :force => true do |t|

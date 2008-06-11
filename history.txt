@@ -1,5 +1,9 @@
 == iBoard 2.0 History File
 
+=== 2006-06-11
+
+  * Starting Branch "shop" to implement pypal-shopping
+
 === 2006-06-06
 
   * Prepared and cleaned up for git.
