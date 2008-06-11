@@ -20,19 +20,18 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.xml
   def show
-    layout = params[:layout] || get_application_layout
     if (! granted_for?('tickets')) && (! params[:reservation_code] )
-      render :text => _('Sorry, Access denied'), :layout => layout
+      render :text => _('Sorry, Access denied'), :layout => get_application_layout
       return true
     end
     @ticket = Ticket.find(params[:id])
     if params[:reservation_code] == @ticket.reservation_code
       respond_to do |format|
-        format.html { render :layout => @ticket.event.location }
+        format.html
         format.xml  { render :xml => @ticket }
       end
     else
-      render :text => _('Sorry, Access denied'), :layout => layout
+      render :text => _('Sorry, Access denied'), :layout => get_application_layout
     end
   end
 
@@ -41,10 +40,9 @@ class TicketsController < ApplicationController
   def new
     @ticket = Ticket.new
     @event  = Event.find(params[:event])
-    layout = @event.location
     
     if @event.sold_out?
-      render :text => _('<div class="sold_out">Sorry, this event is sold out!</div>'),  :layout => layout
+      render :text => _('<div class="sold_out">Sorry, this event is sold out!</div>'),  :layout => get_application_layout
     else
       
       @ticket.price =  @event.price_prebooking
@@ -53,7 +51,7 @@ class TicketsController < ApplicationController
       mk_tmp_file(@send_code)
       
       respond_to do |format|
-        format.html { render :layout => @event.location, :layout => layout }
+        format.html 
         format.xml  { render :xml => @ticket }
       end
     end
@@ -86,7 +84,7 @@ class TicketsController < ApplicationController
         else
           @send_code = random_string(5)
           mk_tmp_file(@send_code)
-          format.html { render :action => "new", :layout => @event.location }
+          format.html { render :action => "new" }
           format.xml  { render :xml => @ticket.errors, :status => :unprocessable_entity }
         end
       end
@@ -94,7 +92,7 @@ class TicketsController < ApplicationController
       @send_code = random_string(5)
       mk_tmp_file(@send_code)
       @ticket.errors.add(:sec_code, _('Secure code invalid'))
-      render :action => "new", :layout => @event.location
+      render :action => "new"
     end
   end
 
