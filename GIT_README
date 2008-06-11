@@ -3,7 +3,8 @@
 I use this file to documente the git-commands I use frquently
 
 == Push to github ==
-git push origin master
+git push origin master  .................. Update Github's repository
+git push origin :deleted_branch_name   ... delete a brunch at github when it's deleted localy
 
 == Completely remove files ==
 git filter-branch --index-filter 'git update-index --remove filename' HEAD
