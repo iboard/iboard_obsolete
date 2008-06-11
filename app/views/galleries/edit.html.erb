@@ -1,0 +1,14 @@
+<h1>Editing gallery</h1>
+
+<%= error_messages_for :gallery %>
+
+<% form_for(@gallery, 
+   :url => { :action => 'update', :method => "post"},
+   :html => {:multipart => true }) do |f| %>  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @gallery %> |
+<%= link_to 'Back', galleries_path %>

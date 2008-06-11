@@ -1,0 +1,67 @@
+<div style="display: table; width:100%;">
+  <div style="display: table-row;">
+    <div style="display: table-cell; width:45%; vertical-align:top;"><p>
+      <b><%= _('Gallery-Name')%></b><br />
+      <%= f.text_field :name %>
+    </p>
+    
+    <p>
+      <b><Path><%= _('Gallery path') -%></b><br />
+      <%= f.text_field :path %>
+    </p>
+    
+    <p>
+      <b><%= _('Description') -%></b><br />
+      <%= f.text_area :description, :rows => 5, :cols => 40 %>
+    </p>
+    
+    <p>
+      <b><%= _('Thumb width') -%></b> 
+      <%= f.text_field :thumb_width , :size => 4 %>px
+        <b><%= _('Thumb height') -%></b>
+      <%= f.text_field :thumb_height, :size => 4 %>px
+    </p>
+    
+    <p>
+        <b><%= _('Web width') -%></b>
+      <%= f.text_field :web_width, :size => 4 %>px
+      <b><%= _('Web height') -%></b>
+      <%= f.text_field :web_height, :size => 4 %>px
+    </p>
+    
+    <p>
+         <b><%= _('Upload Foto ZIP-File') -%></b><br />
+         <%= f.file_field :foto_zip_file %>
+       </p>
+    
+    </div>
+    
+    <div style="display: table-cell; width:47%; vertikal-align:top;"><p>
+    <p>
+      <b><%= _('Access-Function') -%></b><br />
+      <%= f.text_field :function_id %>
+    </p>
+    
+    <p>
+      <b><%= _('User') -%></b><br />
+      <%= f.text_field :user_id %>
+    </p>
+    
+    <p>
+      <b><%= _('Options') -%></b><br />
+      <%= f.text_area :options, :rows => 5, :cols => 40  %>
+    </p>
+    
+    <p>
+      <b><%= _('DIV-Tag') -%></b><br />
+      <%= f.text_field :div_tag_id %>
+    </p>
+    
+    <p>
+      <b><%= _('DIV-Extras') -%></b><br />
+      <%= f.text_area :div_extras, :rows => 5, :cols => 40  %>
+    </p>
+    </div>
+    
+  </div>
+</div>

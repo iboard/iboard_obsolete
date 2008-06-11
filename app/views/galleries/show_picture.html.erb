@@ -1,0 +1,25 @@
+<% fn = "#{params[:filename] }"
+   width = params[:width] || "640"
+   height = params[:heigth] || "480"
+   filetitle = File::basename(fn)
+%>
+<%  url = thumbnail_gallery_path(1,:filename=>fn,:width=>width,:height=>height) %>
+<% begin %>
+  <div style='
+	border-top: 50px solid black;
+	border-bottom: 50px solid black;
+	background: white;
+	padding-bottom: 40px;'
+  >
+    <h1><%= filetitle -%></h1>
+    <a style='opacity: 1; z-index:1; background: white;' href=# onclick="Element.hide('webview');"><img  
+    src='<%= url -%>'></a>
+  </div>
+<% rescue %>
+  ERROR GENERATING PICTURE 
+  '<%= url -%>'
+  '<%= fn -%>'
+  <%= debug params -%>
+<% end %>
+<br/>
+[<a href=# onclick="Element.hide('webview');"><%= _('close') -%></a>]

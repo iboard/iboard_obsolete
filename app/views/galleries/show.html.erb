@@ -1,0 +1,72 @@
+<div style="display: table;">
+  <div style="display: table-row;">
+      
+    <div style="display: table-cell; width: 45%;">
+    <p>
+      <b>Name:</b>
+      <%=h @gallery.name %>
+    </p>
+    
+    <p>
+      <b>Path:</b>
+      <%=h @gallery.path %>
+    </p>
+    
+    <p>
+      <b>Description:</b>
+      <%=h @gallery.description %>
+    </p>
+    
+    <p>
+      <b>Thumb width:</b>
+      <%=h @gallery.thumb_width %>
+    </p>
+    
+    <p>
+      <b>Thumb height:</b>
+      <%=h @gallery.thumb_height %>
+    </p>
+    
+    <p>
+      <b>Web width:</b>
+      <%=h @gallery.web_width %>
+    </p>
+    
+    <p>
+      <b>Web height:</b>
+      <%=h @gallery.web_height %>
+    </p>
+    
+    <p>
+      <b>Function:</b>
+      <%=h @gallery.function_id %>
+    </p>
+    
+    <p>
+      <b>User:</b>
+      <%=h @gallery.user_id %>
+    </p>
+    
+    <p>
+      <b>Options:</b>
+      <%=h @gallery.options %>
+    </p>
+    
+    <p>
+      <b>Div tag:</b>
+      <%=h @gallery.div_tag_id %>
+    </p>
+    
+    <p>
+      <b>Div extras:</b>
+      <%=h @gallery.div_extras %>
+    </p></div>
+    
+    <div style="display: table-cell; width: 52%;">
+      <%= render :partial => 'webgallery', :locals => { :gallery => @gallery } -%>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

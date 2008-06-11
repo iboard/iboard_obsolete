@@ -1,0 +1,42 @@
+<h1>Listing galleries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Path</th>
+    <th>Description</th>
+    <th>Thumb width</th>
+    <th>Thumb height</th>
+    <th>Web width</th>
+    <th>Web height</th>
+    <th>Function</th>
+    <th>User</th>
+    <th>Options</th>
+    <th>Div tag</th>
+    <th>Div extras</th>
+  </tr>
+
+<% for gallery in @galleries %>
+  <tr>
+    <td><%=h gallery.name %></td>
+    <td><%=h gallery.path %></td>
+    <td><%=h gallery.description %></td>
+    <td><%=h gallery.thumb_width %></td>
+    <td><%=h gallery.thumb_height %></td>
+    <td><%=h gallery.web_width %></td>
+    <td><%=h gallery.web_height %></td>
+    <td><%=h gallery.function_id %></td>
+    <td><%=h gallery.user_id %></td>
+    <td><%=h gallery.options %></td>
+    <td><%=h gallery.div_tag_id %></td>
+    <td><%=h gallery.div_extras %></td>
+    <td><%= link_to 'Show', gallery %></td>
+    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+    <td><%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New gallery', new_gallery_path %>

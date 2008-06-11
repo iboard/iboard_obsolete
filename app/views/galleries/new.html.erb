@@ -1,0 +1,13 @@
+<h1><%= _('New gallery') -%></h1>
+<%= error_messages_for :gallery %>
+
+<% form_for(@gallery,
+   :url => { :action => 'create' }, 
+   :html => {:multipart => true }) do |f| %>
+   <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Create") -%>
+  </p>
+<% end %>
+
+<%= link_to _('Back'), galleries_path %>

@@ -1,0 +1,6 @@
+<% shadow_wrapper do %>
+<h1><%= _('Gallery %s') % @gallery.name -%></h1>
+<center>
+<%= render :partial => 'webgallery', :locals => { :gallery => @gallery } -%>
+</center>
+<% end %>
