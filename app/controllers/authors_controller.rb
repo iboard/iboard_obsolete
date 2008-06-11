@@ -3,6 +3,8 @@ class AuthorsController < ApplicationController
   # GET /authors.xml
   
   before_filter :authenticate 
+  layout :get_application_layout
+  
   
   def index
     @authors = Author.find(:all,:order => 'lastname')

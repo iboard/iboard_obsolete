@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   
   before_filter :authenticate, :except => [ :show, :new, :create ]
+  layout :get_application_layout
   
   # GET /tickets
   # GET /tickets.xml

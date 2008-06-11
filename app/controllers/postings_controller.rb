@@ -1,6 +1,7 @@
 class PostingsController < ApplicationController
   
   before_filter :authenticate, :except => [:index, :show, :add, :edit, :create, :new, :destroy]
+  layout :get_application_layout
   
   
   # GET /postings

@@ -1,6 +1,7 @@
 class NewsletterTemplatesController < ApplicationController
   
   before_filter :authenticate
+  layout :get_application_layout
   
   def index
     @newsletter_templates = NewsletterTemplate.find(:all,:order => 'updated_at desc')

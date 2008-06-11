@@ -1,6 +1,7 @@
 class GalleriesController < ApplicationController
   
   before_filter :authenticate, :except => ['show', 'thumbnail', 'show_picture', 'webgallery']
+  layout :get_application_layout
   
   # GET /galleries
   # GET /galleries.xml

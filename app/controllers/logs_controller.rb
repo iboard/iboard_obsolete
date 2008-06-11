@@ -1,6 +1,7 @@
 class LogsController < ApplicationController
 
   before_filter :authenticate
+  layout :get_application_layout
 
   def index
     @logs = Log.search(params[:search_txt],params[:page],12)

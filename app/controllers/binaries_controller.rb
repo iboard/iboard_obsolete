@@ -1,6 +1,7 @@
 class BinariesController < ApplicationController
   
   before_filter :authenticate, :except => [:thumbnail,:embed,:preview,:original,:download,:send_image ] 
+  layout :get_application_layout
   
   
   # GET /binaries

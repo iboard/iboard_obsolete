@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  layout :get_application_layout
+
   # GET /comments
   # GET /comments.xml
   def index

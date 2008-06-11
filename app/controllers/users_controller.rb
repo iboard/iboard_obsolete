@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter  :authenticate, :except => [ :register, :create_registration, :confirmation ]
+  layout :get_application_layout
   
   # GET /users
   # GET /users.xml

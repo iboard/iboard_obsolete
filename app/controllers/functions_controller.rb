@@ -1,6 +1,7 @@
 class FunctionsController < ApplicationController
   
   before_filter :authenticate
+  layout :get_application_layout
   
   # GET /functions
   # GET /functions.xml

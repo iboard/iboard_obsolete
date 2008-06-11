@@ -1,6 +1,8 @@
 class AccessorsController < ApplicationController
   
   before_filter :authenticate
+  layout :get_application_layout
+  
   
   # GET /accessors
   # GET /accessors.xml

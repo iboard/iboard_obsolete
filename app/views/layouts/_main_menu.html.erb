@@ -1,4 +1,4 @@
-<% Page.find_for_menu(get_language_code,user).map do |page| %>
+<% Page.find_for_menu(get_language_code,user,request.env['SERVER_NAME']).map do |page| %>
   <div class="horizontal_menu_item"><%= link_to page.name, show_page_page_path(page) -%></div>
 <% end %>
 <!-- div class="horizontal_menu_item"><%= link_to 'TheSoundtheatre', calendar_events_path(:location => 'soundtheatre') -%></div  -->

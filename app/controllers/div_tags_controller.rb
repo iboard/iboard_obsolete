@@ -1,6 +1,7 @@
 class DivTagsController < ApplicationController
   
   before_filter :authenticate
+  layout :get_application_layout
 
   # GET /div_tags
   # GET /div_tags.xml

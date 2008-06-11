@@ -14,6 +14,13 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed"  href='<%= "#{root_url}rss/?language=" -%><%= get_language_code -%>'>
     <meta http-equiv="Content-Language" content="<%= get_language_code -%>">
+    <% if  !request.env["HTTP_USER_AGENT"].include? "MSIE" %>
+       <%= stylesheet_link_tag get_application_layout %>
+       <%= stylesheet_link_tag "scaffold" %>
+    <% else %>
+       <%= stylesheet_link_tag get_application_layout+'_ie' %>
+    <% end %>    
+    
     <%= javascript_include_tag 'prototype', 'effects', 'application', 'dragdrop.js' %>
   </head>
   <body id="body"><div class="mainframe">

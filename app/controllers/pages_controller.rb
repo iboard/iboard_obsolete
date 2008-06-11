@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   
   before_filter :authenticate, :except => [:show,:show_page,:not_found,:redirect_domain]
+  layout :get_application_layout
   
   def redirect_domain
     
@@ -48,34 +49,27 @@ class PagesController < ApplicationController
   # If no page-id is given the first page of the selected language will be displayed
   def show_page
     params[:id] ||= get_language_fisrt_page
-    layout = params[:layout] || get_application_layout
+
     begin
       @page = Page.load_with_columns(params[:id])
-      l = DivTag.find(@page.div_tag_id).name
-      ln =  "#{RAILS_ROOT}/app/views/layouts/#{l}.html.erb"
-      if File.exists? "#{RAILS_ROOT}/app/views/layouts/#{l}.html.erb"
-        layout = l
-      end
     rescue
       flash[:error] = _('ERROR: No Page found in %{file}, line %{line}') % { :file => __FILE__, :line => __LINE__ }
       text =  _('Page %s not found.') % params[:id]
       if granted_for? 'content'
         text += "<a href=#{new_page_path}>" + _('Create a new page') + "</a>"
       end
-      render :text => text, :layout => layout
+      render :text => text, :layout => get_application_layout
       return true
     end
     
     # check access
-    if @page.restrict_to_function_id && (DivTag.find_by_name(layout) == nil )
+    if @page.restrict_to_function_id 
       if not granted_for? Function.find(@page.restrict_to_function_id).name
         text = _('Sorry, access to the addressed page is restricted.') +
                         "<br/>#{@page.restrict_to_function_id}"
-        render :text => text, :layout => layout
+        render :text => text, :layout => get_application_layout
       end
     end
-    
-   render :layout => layout
   end
 
   # GET /pages/new

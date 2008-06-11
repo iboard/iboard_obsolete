@@ -1,6 +1,7 @@
 class AuthenticateController < ApplicationController
   
   ### SESSION HANDLING
+  layout :get_application_layout
   
   def login
     render :layout => get_application_layout

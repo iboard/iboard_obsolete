@@ -1,6 +1,7 @@
 class NewsletterSubscriptionsController < ApplicationController
 
   before_filter :authenticate, :except => [:show, :edit, :destroy, :update ]
+  layout :get_application_layout
 
   def index
     @newsletter_subscriptions = NewsletterSubscription.find(:all,:order => 'email')

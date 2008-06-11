@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
   
   before_filter :authenticate
+  layout :get_application_layout
   
   def index
     @shops = Shop.find(:all)

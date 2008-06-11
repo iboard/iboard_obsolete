@@ -10,8 +10,11 @@ class Page < ActiveRecord::Base
     find(id,:include => [:page_columns], :order => 'page_columns.position' )
   end
   
-  def self.find_for_menu(language,user=nil)
-     pages = find_all_by_language(language,:conditions => ['show_in_menu = ? and restrict_to_function_id is ?', true,nil])
+  def self.find_for_menu(language,user=nil,servername='localhost')
+     pages = find_all_by_language(language,
+       :conditions => ['show_in_menu = ? and restrict_to_function_id is ? and (only_for_domain is ? or only_for_domain = ?)', 
+           true,nil,
+           nil, servername ])
      if user
        a = Accessor.find_all_by_user_id(user)
        p2 = find(:all, :conditions => ['restrict_to_function_id in (?)', a])

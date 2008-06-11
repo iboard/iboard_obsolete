@@ -1,5 +1,6 @@
 class NewslettersController < ApplicationController
   before_filter :authenticate
+  layout :get_application_layout
   
   def index
     @newsletters = Newsletter.find(:all,:order => 'name')

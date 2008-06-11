@@ -9,9 +9,9 @@
   
   <%= stylesheet_link_tag 'scaffold' %>
   <% if ! request.env["HTTP_USER_AGENT"].include? "MSIE" %>
-    <%= stylesheet_link_tag 'events' %>
+    <%= stylesheet_link_tag get_application_layout %>
   <% else %>
-    <%= stylesheet_link_tag 'events_ie' %>
+    <%= stylesheet_link_tag get_application_layout + '_ie' %>
   <% end %>
   <%= javascript_include_tag 'prototype', 'effects', 'application', 'dragdrop.js' %>
 </head>

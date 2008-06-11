@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   
   before_filter :authenticate, :except => [:index,:show,:calendar,:rss]
+  layout :get_application_layout
+  
   # GET /events
   # GET /events.xml
   def index
@@ -21,9 +23,9 @@ class EventsController < ApplicationController
     if @events.length < 1
       flash[:error] = _('Sorry, no events found')
     end
-    layout = params[:layout] || 'application'
+
     respond_to do |format|
-      format.html { render :layout => layout }
+      format.html 
       format.xml  { render :xml => @events }
     end
   end
@@ -42,7 +44,7 @@ class EventsController < ApplicationController
     if @events.length < 1
       flash[:error] = _('Sorry, no events found')
     end
-    layout = 'application'
+
     respond_to do |format|
       format.html 
       format.xml  { render :xml => @events }
@@ -54,7 +56,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     respond_to do |format|
-      format.html { render :layout => @event.location }
+      format.html 
       format.xml  { render :xml => @event }
     end
   end
@@ -125,7 +127,6 @@ class EventsController < ApplicationController
     @location = params[:location]
     @events = Event.find_all_by_location(@location, :order => 'begins_at asc', 
       :conditions => ['promoted = ? and begins_at >= ?', true, Date::today], :limit => 8 )
-    render :layout => @location
   end
   
   def rss
