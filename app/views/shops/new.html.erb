@@ -1,0 +1,11 @@
+<h1><%= _('New Shop') -%></h1>
+
+<%= error_messages_for :shop %>
+
+<% form_for(@shop) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f} -%>
+  <p>
+    <%= f.submit _('Create shop') %>
+  </p>
+<% end %>
+
