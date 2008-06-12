@@ -3,6 +3,7 @@
 === 2006-06-12
 
   * Bugfixing see BUGTRACK.txt
+  * Added Page-Edit-Icon/Button to the show_page view
 
 === 2006-06-11
 
