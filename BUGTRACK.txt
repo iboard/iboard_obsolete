@@ -2,3 +2,5 @@
 
 * See http://iboard.cc/pages/15/show_page
 
+=== 2006-06-11
+  Truncate doesn't work as expected with a Link_To in the replaced text. FIXED

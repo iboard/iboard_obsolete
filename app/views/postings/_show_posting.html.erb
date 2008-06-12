@@ -15,10 +15,10 @@
 <% end %>
 
 <div class="posting_frontpage_body">
-  <%=  interpret(truncate(h(posting.body),
-          posting.truncate_length,
-         ( " ["+link_to(_('read more'), posting_path(posting,:page_id => page_id, :layout => params[:layout] )) +"] " )))
-  %>
+  <%= interpret( truncate(h(posting.body),posting.truncate_length,"....")) -%>
+  <% if posting.body.length > posting.truncate_length %>
+    <%= " ["+link_to(_('read more'), posting_path(posting,:page_id => page_id )) +"] " -%>
+  <% end %>
 </div>  
 
 

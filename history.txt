@@ -1,8 +1,14 @@
 == iBoard 2.0 History File
 
+=== 2006-06-12
+
+  * Bugfixing see BUGTRACK.txt
+
 === 2006-06-11
 
   * Starting Branch "shop" to implement pypal-shopping
+  * Chnanges to :get_application_layout (depending on env['HOST_NAME']) instead of handling the
+    layout in the controllers. Use one data-base for more sites!
 
 === 2006-06-06
 

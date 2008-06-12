@@ -32,21 +32,13 @@ class PostingsController < ApplicationController
   # GET /postings/1.xml
   def show
     @posting = Posting.find(params[:id])
-
-    layout = params[:layout] || get_application_layout
-
     
     if params[:page_id]
        @page = Page.find(params[:page_id].to_i)
-       l = DivTag.find(@page.div_tag_id).name
-       ln =  "#{RAILS_ROOT}/app/views/layouts/#{l}.html.erb"
-       if File.exists? "#{RAILS_ROOT}/app/views/layouts/#{l}.html.erb"
-          layout = l
-       end
     end
 
     respond_to do |format|
-      format.html { render :layout => layout }
+      format.html 
       format.xml  { render :xml => @posting }
     end
   end

@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   
   before_filter :authenticate, :except => [:show,:show_page,:not_found,:redirect_domain]
+  
   layout :get_application_layout
   
   def redirect_domain
