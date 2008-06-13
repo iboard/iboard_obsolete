@@ -4,8 +4,10 @@
     comments = item.comments
   %>
   <div class="comments_and_rating">
-    <%= link_to pluralize(comments.length, _("Comment")), comments_path(:item => item.class.to_s, :item_id => item.id ) -%>
-    | 
+    <% if comments.length > 0 %>
+      <%= link_to pluralize(comments.length, _("Comment")), comments_path(:item => item.class.to_s, :item_id => item.id ) -%>
+      | 
+    <% end %>
     <% if item.class.to_s == 'Posting' %>
       <%= link_to _('New comment'), new_comment_path( :posting => item ) -%>
     <% end %>

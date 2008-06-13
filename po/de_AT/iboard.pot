@@ -1470,3 +1470,81 @@ msgstr "VK"
 
 msgid "Box office"
 msgstr "AK"
+
+
+
+msgid "No layoutfile found for %s. Using default instead."
+msgstr "Keine Layoutdatei für %s gefunden. Benutze stattdessen 'default'"
+
+msgid "Redirected because of the servername %s"
+msgstr "Umleitung aufgrund des Servernamens %s"
+
+msgid "Shop was successfully created."
+msgstr "Shop wurde erfolgreich erstellt"
+
+msgid "Shop was successfully updated."
+msgstr "Shop wurde erfolgreich geändert"
+
+msgid "New comment"
+msgstr "Neuer Kommentar"
+
+msgid "Avg. rating"
+msgstr "Durchschnittliche Bewertung"
+
+msgid "Comments"
+msgstr "Kommentare"
+
+msgid "Anonymous"
+msgstr "Anonym"
+
+msgid "Promote on frontpage"
+msgstr "Auf der Frontpage zeigen"
+
+msgid "Show rating"
+msgstr "Wertungen anzeigen"
+
+msgid "Edit page"
+msgstr "Seite bearbeiten"
+
+msgid "Display only at the domain (leave blank to display on any domain)"
+msgstr "Nur in der folgenden Domäne anzeigen (leer=auf allen Seiten anzeigen)"
+
+msgid "List pages"
+msgstr "Liste der Seiten"
+
+msgid "Truncate body in columndisplay to"
+msgstr "Text in der Spaltenansicht abschneiden bei Zeichen"
+
+msgid "Characters"
+msgstr "Zeichen"
+
+msgid "Shop-name"
+msgstr "Shop-Name"
+
+msgid "Editing Shop"
+msgstr "Shop bearbeiten"
+
+msgid "Shops list"
+msgstr "Liste der Shops"
+
+msgid "Are you sure you want to delete this shop and all it's items?"
+msgstr "Sind Sie sicher dass sie den Shop und alle Artikel darin löschen wollen?"
+
+msgid "Shops ..."
+msgstr "Shops ..."
+
+msgid "New Shop..."
+msgstr "Neuer Shop..."
+
+msgid "New Shop"
+msgstr "Neuer Shop"
+
+msgid "Create shop"
+msgstr "Shop erstellen"
+
+msgid "Shop %s"
+msgstr "Shop %s"
+
+msgid "Shop list"
+msgstr "Liste der Shops"
+
