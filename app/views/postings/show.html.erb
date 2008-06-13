@@ -18,10 +18,10 @@
 <% shadow_wrapper do %>
   <h1><%=h @posting.title -%></h1>
     
-  <address>
+  <div class='created_at'>
       <% author = @posting.author ? @posting.author.nickname : _('unknown') -%>
       <%= _( 'posted by %{author} at %{date}') % { :date => @posting.updated_at.to_s(:db), :author => author } %><br/>
-  </address>
+  </div>
   
   <%= render :partial => "/comments/rating_and_comments", :locals => { :posting => @posting } -%>
   

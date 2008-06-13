@@ -1548,3 +1548,6 @@ msgstr "Shop %s"
 msgid "Shop list"
 msgstr "Liste der Shops"
 
+msgid "open flash stage"
+msgstr "Flash-Bühne öffnen"
+
