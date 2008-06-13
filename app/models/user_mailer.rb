@@ -1,4 +1,16 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+
+
 class UserMailer < ActionMailer::Base
+
+  # For public user registration
   def registration_confirmation(user,host)
     recipients              user.email
     bcc                     REGISTRATION_COPY_TO_ADDRESS
@@ -8,6 +20,7 @@ class UserMailer < ActionMailer::Base
                             "/users/confirmation/"+user.id.to_s+"?code=#{user.confirmation_code}"
   end
   
+  # Ticket Reservation
   def ticket_reservation(ticket,host)
     recipients              ticket.email
     bcc                     TICKET_COPY_TO_ADDRESS

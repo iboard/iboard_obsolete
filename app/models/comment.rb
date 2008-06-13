@@ -1,9 +1,24 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+
+#
+# Comments can be posted to 'Postings' and 'Events'
+#
 class Comment < ActiveRecord::Base
 
   belongs_to  :posting
   belongs_to  :event
   belongs_to  :user
   
+  #
+  # Create HTML-Code to display the stars
+  #
   def rating_stars
     (1..5).each do |star|
       if star <= rating
@@ -14,10 +29,17 @@ class Comment < ActiveRecord::Base
     end
   end
   
+  #
+  # Calculate the average of all ratings of given comments
+  #
   def self.avg_stars(comments)
+
+    # prevent from division by zero
     if comments.nil? || comments.length < 1 
       return 0.to_f
     end
+
+    # Sum and calculate ratings
     ratings = []
     comments.each do |c|
       ratings << c.rating if c.rating
@@ -28,4 +50,6 @@ class Comment < ActiveRecord::Base
       0
     end
   end
+  
+  
 end

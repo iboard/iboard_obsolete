@@ -1,3 +1,17 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+
+
+#
+# Author is not fully implemented yet but is used for postings.
+# It's designated as a profile-model for activ users and posters
+#
 class Author < ActiveRecord::Base
   
   validates_presence_of   :nickname

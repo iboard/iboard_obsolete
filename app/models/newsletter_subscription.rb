@@ -1,3 +1,12 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+
 class NewsletterSubscription < ActiveRecord::Base
   validates_presence_of   :email
   validates_uniqueness_of :email, :scope => [:newsletter_id]
@@ -17,6 +26,7 @@ class NewsletterSubscription < ActiveRecord::Base
       template.id, id])
   end
 
+  # TODO: Make this string configurable or gettexted at least
   def add_legals(edit_url)
     u = edit_url + "?sc=#{handling_code}"
     txt = "\n--------------------\n\n" +

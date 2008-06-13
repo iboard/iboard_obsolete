@@ -1,3 +1,12 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+
 class Page < ActiveRecord::Base
   belongs_to :div_tag
   belongs_to :function

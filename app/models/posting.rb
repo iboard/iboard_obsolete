@@ -1,3 +1,12 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+
 class Posting < ActiveRecord::Base
   belongs_to :author
   belongs_to :function, :foreign_key => :restrict_to_function_id

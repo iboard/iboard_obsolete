@@ -1,9 +1,24 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+
+#
+# Upload photos in one ZIP-file - unpack it in GALLERY_PATH
+# Display thumbnails and pictures
+#
 class Gallery < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :path
   validates_uniqueness_of :name
   
-  
+  #
+  # Virtual Attribute
+  #
   def foto_zip_file=(field)
     if field != ""
       mt = field.content_type
@@ -25,10 +40,15 @@ class Gallery < ActiveRecord::Base
     end
   end
   
+  #
+  # TODO: 
   def base_part_of(file_name)
     File.basename(file_name).gsub(/[^\w._-]/, '') 
   end
   
+  #
+  # return all picture-files as an array
+  #
   def get_filenames(prefix=nil)
     files = []
     path = prefix.nil? ? GALLERY_PATH_PREFIX + "/#{self.path}" :  prefix

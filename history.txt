@@ -4,6 +4,7 @@
 
   * Bugfixing see BUGTRACK.txt
   * Added Page-Edit-Icon/Button to the show_page view
+  * Starting Branch 'clean-up'
 
 === 2006-06-11
 

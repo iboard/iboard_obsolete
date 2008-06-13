@@ -1,5 +1,18 @@
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### ######### 
+#
+#  iBoard 2.0 File
+#  (c) 2008 by Andi Altendorfer
+#  Licence: GPL
+#  Warranty: absolutely none
+#
+######### ######### ######### ######### ######### ######### ######### ######### ######### ######### #########
+
 include ActionView
 
+#
+# Any kind of binary data which may be displayed in postings by [[embed:....]] interpreter
+# Binaries are stored in the global configured BINARY_PATH (see config/initializers/static_defaults.rb)
+#
 class Binary < ActiveRecord::Base
   
   validates_presence_of :title
@@ -11,7 +24,10 @@ class Binary < ActiveRecord::Base
     Binary.paginate( :page => page, :per_page => per_page, :order => 'title',
       :conditions => ['title like ? or description like ?', "%#{search_txt}%", "%#{search_txt}%"])
   end
-  
+ 
+  #
+  # Virtaul Attribute to save the uploaded file 
+  #
   def uploaded_file=(field)
      if field != ""
        mt = field.content_type || "application/binary"
@@ -36,14 +52,22 @@ class Binary < ActiveRecord::Base
      end
   end
   
+  #
+  # Shortcut to return a HEX-interpration of the id in BINARY_PATH
+  #
   def get_path
     BINARY_PATH + "/" + sprintf("%08x", self.id )
   end
    
+  
   def base_part_of(file_name)
     File.basename(file_name).gsub(/[^\w._-]/, '') 
   end
-   
+  
+  #
+  # Generate HTML-code to embed object
+  # TODO: Shouldn't this be done by a html(erb)-template?!
+  # 
   def embed(path,width="400",height="250")
       width = width.to_i-10
       height= height.to_i-40
@@ -66,6 +90,10 @@ class Binary < ActiveRecord::Base
             			      </OBJECT>"
   end
 
+
+  #
+  # Caclulate the thumbnail with RMagick
+  #
   public 
   def thumbnail(thumb_size = "64x64",file_full_path=nil)
     fp = file_full_path.nil? ? get_path + "/" + self.filename : file_full_path
