@@ -1,4 +1,8 @@
 == iBoard 2.0 History File
+=== 2006-06-13
+
+  * Update Translation-File
+  * Comment-Link only show when there are comments - not "0 Comments"
 
 === 2006-06-12
 

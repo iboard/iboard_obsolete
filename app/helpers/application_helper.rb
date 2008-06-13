@@ -104,7 +104,7 @@ module ApplicationHelper
         root_url + 'galleries/webgallery/\1' + 
         "' title='Show Gallery'>"+
         '\2</a>')
-      text = out
+      txt = out
       # gallery-layout
       out = txt.gsub(/\[\[gallerylayoutlink:(.*):(.*):(.*)\]\]/, "<a target=_top href='" +
         root_url + 'galleries/webgallery/\1?layout=\2' + 

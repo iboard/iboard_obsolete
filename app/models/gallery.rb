@@ -49,7 +49,13 @@ class Gallery < ActiveRecord::Base
   #
   # return all picture-files as an array
   #
+  public
   def get_filenames(prefix=nil)
+    @files ||= collect_files(prefix)
+    @files
+  end
+  
+  def collect_files(prefix)
     files = []
     path = prefix.nil? ? GALLERY_PATH_PREFIX + "/#{self.path}" :  prefix
     if File::exists? path
@@ -67,5 +73,31 @@ class Gallery < ActiveRecord::Base
     end
     files
   end
+  
+  def get_prev_filename(filename,prefix=nil)
+    all = get_filenames(prefix)
+    all.each_with_index do |f,idx|
+      if f.eql? filename
+        if idx > 0
+          return all[(idx-1)]
+        end
+      end
+    end
+    nil
+  end
+  
+  def get_next_filename(filename,prefix=nil)
+    all = get_filenames(prefix)
+    all.each_with_index do |f,idx|
+      if f.eql? filename
+        if idx < all.length
+          return all[(idx+1)]
+        end
+      end
+    end
+    nil
+  end
+  
+  
   
 end

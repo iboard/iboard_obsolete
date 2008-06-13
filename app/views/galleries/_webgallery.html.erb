@@ -1,5 +1,4 @@
-<%=   
-        gallery.get_filenames.map { |fn| 
-          thumbnail_url(fn,gallery.thumb_width,gallery.thumb_height,'webview',gallery.web_width,gallery.web_height)
+<%=     gallery.get_filenames.map { |fn| 
+          thumbnail_url(gallery.id, fn,gallery.thumb_width,gallery.thumb_height,'webview',gallery.web_width,gallery.web_height)
         }
 -%>

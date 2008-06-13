@@ -98,6 +98,8 @@ class GalleriesController < ApplicationController
   end
   
   def thumbnail
+    @gallery = Gallery.find(params[:id])
+    
     if ! params[:filename]
       return 
     end
@@ -122,14 +124,14 @@ class GalleriesController < ApplicationController
   end
   
   def show_picture
+    @gallery = Gallery.find(params[:id])
+    @prev_filename = @gallery.get_prev_filename(params[:filename])
+    @next_filename = @gallery.get_next_filename(params[:filename])
     render :layout => false
   end
   
   def webgallery
     @gallery = Gallery.find(params[:id])
-    layout = params[:layout] || 'application'
-    layout = 'application' if layout.empty? 
-    render :layout => layout
   end
   
 end

@@ -3,7 +3,7 @@
    height = params[:heigth] || "480"
    filetitle = File::basename(fn)
 %>
-<%  url = thumbnail_gallery_path(1,:filename=>fn,:width=>width,:height=>height) %>
+<%  url = thumbnail_gallery_path(@gallery,:filename=>fn,:width=>width,:height=>height) %>
 <% begin %>
   <div style='
 	border-top: 50px solid black;
@@ -11,9 +11,28 @@
 	background: white;
 	padding-bottom: 40px;'
   >
-    <h1><%= filetitle -%></h1>
-    <a style='opacity: 1; z-index:1; background: white;' href=# onclick="Element.hide('webview');"><img  
-    src='<%= url -%>'></a>
+    <table width=100% height=<%= @gallery.web_height -%>>
+        <tr>
+            <td width=200 align=right valign=center height=<%= @gallery.web_height -%>>
+               <%= 
+                  thumbnail_url(@gallery,@prev_filename,
+                                @gallery.thumb_width,@gallery.thumb_height,
+                                "webview", @gallery.web_width,@gallery.web_height) if @prev_filename
+                -%>
+            </td>
+            <td align=center valign=middle>
+               <h1><%= filetitle -%></h1>
+               <img src='<%= url -%>'>
+            </td>
+            <td width=200 align=left valign=center height=<%= @gallery.web_height -%>>
+                 <%= 
+                      thumbnail_url(@gallery,@next_filename,
+                                    @gallery.thumb_width,@gallery.thumb_height,
+                                    "webview",@gallery.web_width,@gallery.web_height) if @next_filename
+                 -%>
+            </td>
+        </tr>
+    </table>
   </div>
 <% rescue %>
   ERROR GENERATING PICTURE 
