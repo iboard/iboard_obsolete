@@ -1,5 +1,5 @@
 body { 
-	background-image: url('/images/background.jpg');
+	background-image: url('/iboard/images/background.jpg');
 	background-repeat: repeat-x;
 	background-position: top;
 	margin:0px; 
@@ -23,40 +23,41 @@ table tr td {
 	font-size: 13px;
 }
 
-a { color: #3C4F85; text-decoration: none;}
-a:visited { color: #5A7FB4; text-decoration:none; }
-a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
+a { color: #005379; text-decoration: none;}
+a:visited { color: #005076; text-decoration:none; }
+a:hover { color: #ffffff;  text-decoration: none; background-color:#005379; }
 
 .mainframe {
-	width: 1025px;
-	margin: auto;
+	margin: 0px;
 	padding: 0px;
-	text-align: left;
-	border-right: 2px solid #444;
-	border-left: 2px solid #888;
-	border-bottom: 2px solid #444;
+	background: #949EAD;
 
 }
 
+.innerframe {
+	margin-top: 0px;
+	background: #949EAD;
+}
+
 .copyright {
-	margin-top: 1px;
-	margin-bottom: 0px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	font-size: 10px;
-	height: 90px;
+	margin-top: 0px;
+	padding: 5px;
+	font-size: 11px;
+	background: #949EAD;
 	text-align: center;
-	background-image: url('/images/iboard-banner.jpg');
-	background-repeat: repeat-x;
-	background-position: bottom;
 }
 
 .layout_table {
 	display: table;
 	margin-left: 0px;
 	margin-bottom: 0px;
-	padding: 10px;
+	padding: 8px;
+	padding-right: 2px;
 	background: white;
+	text-align: left;
+	min-width: 790px;
+	max-width: 790px;
+	width:     790px;
 }
 
 .layout_row {
@@ -67,10 +68,11 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 
 .banner_layout_row {
 	margin: 0px;
+	margin-left: auto;
 	padding: 0px;
-	background-image: url('/images/iboard-banner.jpg');
-	background-repeat: repeat-x;
-	background-position: 0 0;
+	background-image: url('/images/banner-iboard.wwedu.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .banner_right_layout_cell {
@@ -89,22 +91,24 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 .banner {
     margin: 0px;
     padding: 0px;
-	width: 100%;
-	width: 820px;
-	height: 80px;
+	min-height: 140px;
+	max-height: 140px;
+	height: 140px;
+	text-align: center;
 }
 
 .banner_right {
 	padding: 0px;
-	padding-right: 20px;
-	width: 200px;
-	margin: 0px;
-	float: right;
+	padding-top: 40px;
+	padding-left: 760px;
+	margin: auto;
 	font-size: 13px;
 	color: #888;
 }
 
 .rss_chooser {
+	text-align: center;
+	margin-top:-20px;
 	font-size: 11px;
 }
 
@@ -118,7 +122,7 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 
 .site_title {
 	font-size: 11px;
-	color: #003A54;
+	color: #FF3200;
 	float:left;
 	margin-left: 25px;
 	margin-top: 8px;
@@ -130,9 +134,9 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin-top: -10px;
 	margin-bottom: 0px;
 	line-height: 90%;
-	font-style: italic;
-	color: #DADADA;
+	color: #4A4A4A;
 }
+
 .top_menu_right {
 	margin-bottom: 10px;
     height: 20px;
@@ -158,17 +162,18 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 .right_menu {
 	font-size: 13px;
 	width: 135px;
+	min-width: 135px;
+	max-width: 135px;
 	margin-top: -15px;
-	padding-left: 5px;
+	padding-left: 30px;
 	min-height: 100%;
 	max-height: 100%;
 	vertical-align: top;
-	border-left: 4px solid #ddd;
 }
 
 .main {
 	padding-right: 15px;
-	width: 790px;
+	width: 865px;
 }
 
 .float_right {
@@ -367,6 +372,7 @@ H2 {
 
 .picture_overlay a {
 	z-index: 4;
+	border: 1px solid red;
 	background: white;
 	opacity: 1.0; 
 }
