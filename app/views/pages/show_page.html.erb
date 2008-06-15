@@ -4,10 +4,10 @@
 <% end %>
 <% shadow_wrapper do %>
   <div style="<%= @page.div_tag.definition -%>">
-  <% if @page.show_title %><h1><%=h @page.name %></h1><% end %>
-  <% if @page.show_introduction %><div id='page_introduction'><%= interpret @page.introduction %></div><% end %>
-  <% @page.page_columns.each do |column| %>
-    <%= render :partial => 'page_column', :locals => { :column => column } -%>
-  <% end %>
+    <% if @page.show_title %><h1><%=h @page.name %></h1><% end %>
+    <% if @page.show_introduction %><div id='page_introduction'><%= interpret @page.introduction %></div><% end %>
+    <% @page.page_columns.each do |column| %>
+      <%= render :partial => 'page_column', :locals => { :column => column } -%>
+    <% end %>
   </div>
 <% end %>

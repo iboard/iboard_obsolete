@@ -56,5 +56,14 @@ class AuthenticateController < ApplicationController
     redirect_to :controller => "authenticate", :action => 'login'
     return
   end
-  
+
+  def toggle_layout_buttons
+    flash[:notice] = _('Layout buttons toggled')
+    if session[:hide_layout_buttons] == true
+      session[:hide_layout_buttons] = false
+    else
+      session[:hide_layout_buttons] = true
+    end
+    redirect_to params[:return_to]
+  end
 end

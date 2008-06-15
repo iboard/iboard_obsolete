@@ -16,7 +16,6 @@
     <%= will_paginate @postings -%>
     
     <% if granted_for? 'Edit layout' %>
-      <hr>
       <%= render :partial => 'edit_columns_buttons', :locals => { :column => column } -%>
     <% end %>
 </div>

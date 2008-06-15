@@ -1,4 +1,6 @@
-<div id='edit_buttons'>
-      <%= column.title -%>:<br/>
-      <%= link_to icon('posting-add.png',(_('Post to <em>%s</em>') % column.title)), add_postings_path( :page_column_id => column.id ) -%>
-</div>
+<% if session[:hide_layout_buttons] != false %>
+  <div id='edit_buttons'>
+        <%= column.title -%>:<br/>
+        <%= link_to icon('posting-add.png',(_('Post to <em>%s</em>') % column.title)), add_postings_path( :page_column_id => column.id ) -%>
+  </div>
+<% end %>

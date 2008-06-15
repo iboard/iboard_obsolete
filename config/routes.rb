@@ -1,7 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :shops
-  
+
+  map.toggle_layout_buttons '/authenticate/toggle_layout_buttons', :controller => 'authenticate', :action => 'toggle_layout_buttons'
+    
   map.resources :comments, 
     :member => {
       :set_rating => :put
