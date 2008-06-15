@@ -11,3 +11,8 @@ public/.htaccess
 public/dispatch*
 public/flash/*
 public/flash/curtain.swf
+public/images/background.jpg
+public/stylesheets/iboard_cc.css
+public/stylesheets/iboard_cc_ie.css
+public/stylesheets/localhost.css
+public/stylesheets/localhost_ie.css

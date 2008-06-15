@@ -2,9 +2,19 @@
     <% if granted_for? 'new posting' %>
         <%= render :partial => 'new_posting_button', :locals => { :column => column } -%>
     <% end %>
-    <% column.load_postings.each do |posting| %>
+
+
+    <% @postings = column.load_postings(params[:page],column.max_postings) %>
+    
+    <%= will_paginate @postings -%>
+
+    
+    <% @postings.each do |posting| %>
       <%= render :partial => 'column_posting', :locals => { :posting => posting } -%>
     <% end %>
+    
+    <%= will_paginate @postings -%>
+    
     <% if granted_for? 'Edit layout' %>
       <hr>
       <%= render :partial => 'edit_columns_buttons', :locals => { :column => column } -%>

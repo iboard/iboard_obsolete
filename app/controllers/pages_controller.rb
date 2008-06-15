@@ -167,6 +167,7 @@ class PagesController < ApplicationController
       c.position   = params['positions'][c.id.to_s].to_i
       c.div_tag_id = params['div_tags'][c.id.to_s].to_i
       c.title      = params['titles'][c.id.to_s]
+      c.max_postings= params['max_postings'][c.id.to_s]
       c.default_order      = params['default_order'][c.id.to_s]
       c.save!
     end

@@ -1,5 +1,5 @@
 body { 
-	background-image: url('/iboard/images/background.jpg');
+	background-image: url('/images/background.jpg');
 	background-repeat: repeat-x;
 	background-position: top;
 	margin:0px; 
@@ -23,41 +23,41 @@ table tr td {
 	font-size: 13px;
 }
 
-a { color: #005379; text-decoration: none;}
-a:visited { color: #005076; text-decoration:none; }
-a:hover { color: #ffffff;  text-decoration: none; background-color:#005379; }
+a { color: #3C4F85; text-decoration: none;}
+a:visited { color: #5A7FB4; text-decoration:none; }
+a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 
 .mainframe {
-	margin: 0px;
+	width: 1025px;
+	margin: auto;
 	padding: 0px;
-	background: #949EAD;
+	text-align: left;
+	border-right: 2px solid #444;
+	border-left: 2px solid #888;
+	border-bottom: 2px solid #444;
+	background: white;
 
-}
-
-.innerframe {
-	margin-top: 0px;
-	background: #949EAD;
 }
 
 .copyright {
-	margin-top: 0px;
-	padding: 5px;
-	font-size: 11px;
-	background: #949EAD;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 10px;
+	height: 90px;
 	text-align: center;
+	background-image: url('/images/iboard-banner.jpg');
+	background-repeat: repeat-x;
+	background-position: bottom;
 }
 
 .layout_table {
 	display: table;
 	margin-left: 0px;
 	margin-bottom: 0px;
-	padding: 8px;
-	padding-right: 2px;
+	padding: 10px;
 	background: white;
-	text-align: left;
-	min-width: 790px;
-	max-width: 790px;
-	width:     790px;
 }
 
 .layout_row {
@@ -68,11 +68,10 @@ a:hover { color: #ffffff;  text-decoration: none; background-color:#005379; }
 
 .banner_layout_row {
 	margin: 0px;
-	margin-left: auto;
 	padding: 0px;
-	background-image: url('/images/banner-iboard.wwedu.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
+	background-image: url('/images/iboard-banner.jpg');
+	background-repeat: repeat-x;
+	background-position: 0 0;
 }
 
 .banner_right_layout_cell {
@@ -91,24 +90,22 @@ a:hover { color: #ffffff;  text-decoration: none; background-color:#005379; }
 .banner {
     margin: 0px;
     padding: 0px;
-	min-height: 140px;
-	max-height: 140px;
-	height: 140px;
-	text-align: center;
+	width: 100%;
+	width: 820px;
+	height: 80px;
 }
 
 .banner_right {
 	padding: 0px;
-	padding-top: 40px;
-	padding-left: 760px;
-	margin: auto;
+	padding-right: 20px;
+	width: 200px;
+	margin: 0px;
+	float: right;
 	font-size: 13px;
 	color: #888;
 }
 
 .rss_chooser {
-	text-align: center;
-	margin-top:-20px;
 	font-size: 11px;
 }
 
@@ -122,7 +119,7 @@ a:hover { color: #ffffff;  text-decoration: none; background-color:#005379; }
 
 .site_title {
 	font-size: 11px;
-	color: #FF3200;
+	color: #003A54;
 	float:left;
 	margin-left: 25px;
 	margin-top: 8px;
@@ -134,9 +131,9 @@ a:hover { color: #ffffff;  text-decoration: none; background-color:#005379; }
 	margin-top: -10px;
 	margin-bottom: 0px;
 	line-height: 90%;
-	color: #4A4A4A;
+	font-style: italic;
+	color: #DADADA;
 }
-
 .top_menu_right {
 	margin-bottom: 10px;
     height: 20px;
@@ -162,18 +159,17 @@ a:hover { color: #ffffff;  text-decoration: none; background-color:#005379; }
 .right_menu {
 	font-size: 13px;
 	width: 135px;
-	min-width: 135px;
-	max-width: 135px;
 	margin-top: -15px;
-	padding-left: 30px;
+	padding-left: 5px;
 	min-height: 100%;
 	max-height: 100%;
 	vertical-align: top;
+	border-left: 4px solid #ddd;
 }
 
 .main {
 	padding-right: 15px;
-	width: 865px;
+	width: 790px;
 }
 
 .float_right {
@@ -372,7 +368,6 @@ H2 {
 
 .picture_overlay a {
 	z-index: 4;
-	border: 1px solid red;
 	background: white;
 	opacity: 1.0; 
 }

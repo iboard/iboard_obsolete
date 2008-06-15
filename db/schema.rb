@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 36) do
+ActiveRecord::Schema.define(:version => 37) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(:version => 36) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "default_order", :default => "updated_at desc"
+    t.integer  "max_postings",  :default => 10
   end
 
   create_table "page_columns_postings", :id => false, :force => true do |t|
@@ -201,6 +202,12 @@ ActiveRecord::Schema.define(:version => 36) do
     t.integer  "truncate_length",           :default => 512
     t.string   "allow_comments",            :default => "f"
   end
+
+  create_table "schema_migrations", :id => false, :force => true do |t|
+    t.string "version", :null => false
+  end
+
+  add_index "schema_migrations", ["version"], :name => "unique_schema_migrations", :unique => true
 
   create_table "shop_items", :force => true do |t|
     t.string   "title"

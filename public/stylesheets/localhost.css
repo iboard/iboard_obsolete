@@ -117,7 +117,8 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 }
 
 .site_title {
-	font-size: 11px;
+	font-size: 16px;
+	font-family: Georgia, Times, serif;
 	color: #003A54;
 	float:left;
 	margin-left: 25px;
@@ -127,7 +128,7 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 }
 .site_title p {
 	font-size: 11px;
-	margin-top: -10px;
+	margin-top: -5px;
 	margin-bottom: 0px;
 	line-height: 90%;
 	font-style: italic;
@@ -207,10 +208,12 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	text-align: left;
 }
 
-H2 {
+H1, H2 {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 	line-height: 100%;
+	font-family: Georgia, Times, serif;
+	
 }
 
 .posting_frontpage_body {
@@ -272,7 +275,7 @@ H2 {
 	padding:0px;
 	margin:0px;
 	margin-top: 20px;
-	border-bottom: 1px solid #888;
+
 	margin-bottom: 3px;
 }
 

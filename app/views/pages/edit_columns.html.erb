@@ -3,7 +3,9 @@
   <% @page.page_columns.each do |column| %>
     <p><small><b>
         <%= _('Column-Title') -%> :</b> <%= text_field_tag 'titles['+column.id.to_s+']', column.title, :size => 40 -%><br />
-        <%= _('Column position on page') -%>: <%= text_field_tag 'positions['+column.id.to_s+']', column.position.to_s, :size => 2 -%><br />
+        <%= _('Column position on page') -%>: <%= text_field_tag 'positions['+column.id.to_s+']', column.position.to_s, :size => 2 -%>
+        <%= _('Max postings per page') -%>: <%= text_field_tag 'max_postings['+column.id.to_s+']', column.max_postings.to_s, :size => 3  -%>
+        <br />
         <%= _('Layout (DIV-Tag)') -%>: <%= select_tag 'div_tags['+column.id.to_s+']', DivTag.find(:all,:order => 'name').map { |div_tag|
            selected = ( column.div_tag_id == div_tag.id ? ' SELECTED ' : '')
            "<option value='#{div_tag.id.to_s}' #{selected} >#{div_tag.name}</option>"

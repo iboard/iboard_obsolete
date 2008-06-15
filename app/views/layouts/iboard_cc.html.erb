@@ -59,10 +59,8 @@
       </div>
       <% if request.env["HTTP_USER_AGENT"].include? "MSIE" %>
         <div class="MSIE">
-            Sorry, your browser is not dedicated to display this page and we realy don't care about the bugs in MSIE.<br />
-            But fortunately we can offer a barrier-free css for you.<br />
-            We recommend to fetch a Browser which can display nearly any page out there, is faster, more beautiful, and stable: 
-            <a target=_blank href=http://www.apple.com/safari>Download Safari for PC + Mac for free</a>
+            <%= _('Internet Explorer displays this page with errors: We recommend') -%> 
+            <a target=_blank href=http://www.apple.com/safari>Safari for PC + Mac for free</a>
         </div>      
       <% end %>
       
