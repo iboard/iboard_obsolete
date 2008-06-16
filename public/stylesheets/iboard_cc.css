@@ -208,6 +208,10 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	text-align: left;
 }
 
+.postings_listing_title {
+	font-size: 14px;
+}
+
 H1, H2 {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
@@ -469,4 +473,20 @@ H1, H2 {
 }
 .rating_and_comments {
 	display: inline;
+}
+
+.sortable_menu_items {
+	display: inline;
+}
+
+.sortable_menu  {
+	margin-left: 0px;
+	padding-left: 0px;
+	display: inline;
+}
+
+.main_menu_item {
+	display: inline;
+	margin-left: 0px;
+	padding-left: 0px;
 }

@@ -25,10 +25,11 @@ class Page < ActiveRecord::Base
          ['show_in_menu = ? and restrict_to_function_id is ? and (only_for_domain is ? or only_for_domain = ? or only_for_domain = "")', 
            true,nil,
            nil, servername 
-         ])
+         ],
+       :order => :position )
      if user
        a = Accessor.find_all_by_user_id(user)
-       p2 = find(:all, :conditions => ['restrict_to_function_id in (?)', a])
+       p2 = find(:all, :conditions => ['restrict_to_function_id in (?)', a], :order => :position)
        p2.each do |p|
          pages << p
        end

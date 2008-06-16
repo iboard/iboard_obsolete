@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 37) do
+ActiveRecord::Schema.define(:version => 38) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -187,6 +187,7 @@ ActiveRecord::Schema.define(:version => 37) do
     t.boolean  "show_in_menu",            :default => true
     t.integer  "restrict_to_function_id"
     t.string   "only_for_domain"
+    t.integer  "position",                :default => 0
   end
 
   create_table "postings", :force => true do |t|

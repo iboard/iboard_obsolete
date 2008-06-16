@@ -468,3 +468,19 @@ H2 {
 .rating_and_comments {
 	display: inline;
 }
+
+.sortable_menu_items {
+	display: inline;
+}
+
+.sortable_menu  {
+	margin-left: 0px;
+	padding-left: 0px;
+	display: inline;
+}
+
+.main_menu_item {
+	display: inline;
+	margin-left: 0px;
+	padding-left: 0px;
+}

@@ -205,7 +205,12 @@ class PagesController < ApplicationController
     redirect_to :action => :redirect_domain
   end
   
-
+  def update_positions
+    params[:sortable_menu].each_with_index do |id, position|
+      Page.update(id, :position => position)
+    end
+    render :nothing => true
+  end
   
   private
   def get_language_fisrt_page
