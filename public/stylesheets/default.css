@@ -1,5 +1,5 @@
 body { 
-	background-image: url('/iboard/images/background.jpg');
+	background-image: url('/images/background.jpg');
 	background-repeat: repeat-x;
 	background-position: top;
 	margin:0px; 
@@ -23,39 +23,39 @@ table tr td {
 	font-size: 13px;
 }
 
-a { color: #E95800; text-decoration: none;}
-a:visited { color: #B83B00; text-decoration:none; }
-a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
+a { color: #3C4F85; text-decoration: none;}
+a:visited { color: #5A7FB4; text-decoration:none; }
+a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 
 .mainframe {
-	margin: 0px;
+	width: 1025px;
+	margin: auto;
 	padding: 0px;
-	width: 1024px;
-	min-width: 100%;
-	max-width: 100%;
-}
+	text-align: left;
+	border-right: 2px solid #444;
+	border-left: 2px solid #888;
+	border-bottom: 2px solid #444;
 
-.innerframe {
-	margin-left: 50px;
-	margin-top: 10px;
-	border: none;
-	background: white;
-	width:     1057px;
-	min-width: 1057px;
-	max-width: 1057px;
 }
 
 .copyright {
-	margin-left: 55px;
-	margin-top: 5px;
-	font-size: 11px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 10px;
+	height: 90px;
+	text-align: center;
+	background-image: url('/images/iboard-banner.jpg');
+	background-repeat: repeat-x;
+	background-position: bottom;
 }
 
 .layout_table {
 	display: table;
 	margin-left: 0px;
 	margin-bottom: 0px;
-	padding: 20px;
+	padding: 10px;
 	background: white;
 }
 
@@ -68,7 +68,7 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 .banner_layout_row {
 	margin: 0px;
 	padding: 0px;
-	background-image: url('/iboard/images/iboard-banner.jpg');
+	background-image: url('/images/iboard-banner.jpg');
 	background-repeat: repeat-x;
 	background-position: 0 0;
 }
@@ -89,11 +89,9 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 .banner {
     margin: 0px;
     padding: 0px;
-	min-height: 70px;
-	max-height: 70px;
 	width: 100%;
 	width: 820px;
-	height: 120px;
+	height: 80px;
 }
 
 .banner_right {
@@ -111,7 +109,7 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 }
 
 #search_txt {
-	background-image: url('/iboard/images/magnifyingglass.gif');
+	background-image: url('/images/magnifyingglass.gif');
 	background-repeat: no-repeat;
 	background-position: top right;
 	height: 24px;
@@ -119,8 +117,9 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 }
 
 .site_title {
-	font-size: 11px;
-	color: #FF3200;
+	font-size: 16px;
+	font-family: Georgia, Times, serif;
+	color: #003A54;
 	float:left;
 	margin-left: 25px;
 	margin-top: 8px;
@@ -129,10 +128,11 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 }
 .site_title p {
 	font-size: 11px;
-	margin-top: -10px;
+	margin-top: -5px;
 	margin-bottom: 0px;
 	line-height: 90%;
-	color: #4A4A4A;
+	font-style: italic;
+	color: #DADADA;
 }
 .top_menu_right {
 	margin-bottom: 10px;
@@ -158,21 +158,18 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 
 .right_menu {
 	font-size: 13px;
-	width: 165px;
-	min-width: 165px;
-	max-width: 165px;
+	width: 135px;
 	margin-top: -15px;
-	padding-left: 45px;
+	padding-left: 5px;
 	min-height: 100%;
 	max-height: 100%;
 	vertical-align: top;
+	border-left: 4px solid #ddd;
 }
 
 .main {
 	padding-right: 15px;
 	width: 790px;
-	min-width: 790px;
-	max-width: 790px;
 }
 
 .float_right {
@@ -211,10 +208,12 @@ a:hover { color: #F71800;  text-decoration: none; background-color:#FF8; }
 	text-align: left;
 }
 
-H2 {
+H1, H2 {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 	line-height: 100%;
+	font-family: Georgia, Times, serif;
+	
 }
 
 .posting_frontpage_body {
@@ -276,7 +275,7 @@ H2 {
 	padding:0px;
 	margin:0px;
 	margin-top: 20px;
-	border-bottom: 1px solid #888;
+
 	margin-bottom: 3px;
 }
 
@@ -371,7 +370,6 @@ H2 {
 
 .picture_overlay a {
 	z-index: 4;
-	border: 1px solid red;
 	background: white;
 	opacity: 1.0; 
 }
