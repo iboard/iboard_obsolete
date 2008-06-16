@@ -16,3 +16,7 @@ public/stylesheets/iboard_cc.css
 public/stylesheets/iboard_cc_ie.css
 public/stylesheets/localhost.css
 public/stylesheets/localhost_ie.css
+app/views/layouts/iboard_wwedu_com.html.erb
+po/de_AT/iboard-new.pot
+public/stylesheets/iboard_wwedu_com.css
+public/stylesheets/iboard_wwedu_com_ie.css
