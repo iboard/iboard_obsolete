@@ -1,6 +1,6 @@
 <% Page.find_for_menu(get_language_code,user,request.env['SERVER_NAME']).map do |page| %>
   <div class="horizontal_menu_item"><%= link_to page.name, show_page_page_path(page) -%></div>
 <% end %>
-<% if granted_for? 'layout' %>
+<% if granted_for? 'Edit layout' %>
    || <%= render :partial => 'authenticate/hide_show_layout_admin' %>
   <% end %>
