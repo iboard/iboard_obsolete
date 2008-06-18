@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
         ctl = req.split("/")[0]
         ok = granted_for?(ctl) || user.id==0 || req == "users/#{user.id}/welcome" || req == "newsletter_subscriptions/subscribe"
         if not ok
-          flash[:error] = _('Permition denied to <em>%{ctl}-controller</em> for <em>%{user}</em>') % 
+          flash[:error] = _('Permission denied to <em>%{ctl}-controller</em> for <em>%{user}</em>') % 
             {:ctl => ctl, :user => user.longname}
           flash[:error]+= "<br />" + _('Please log in with an authorized user')
         end

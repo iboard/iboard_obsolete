@@ -703,7 +703,7 @@ msgstr "Zugriffsrecht erfolgreich erstellt."
 msgid "Accessor was successfully updated."
 msgstr "Zugriffsrecht erfolgreich geändert."
 
-msgid "Permition denied to <em>%{ctl}-controller</em> for <em>%{user}</em>"
+msgid "Permission denied to <em>%{ctl}-controller</em> for <em>%{user}</em>"
 msgstr "Der Zugriff auf <em>%{ctl}-controller</em> wurde für <em>%{user}</em> verweigert"
 
 msgid "Please log in with an authorized user"
