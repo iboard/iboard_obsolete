@@ -3,6 +3,8 @@ body {
 	background-repeat: repeat-x;
 	background-position: top;
 	margin:0px; 
+	margin-top: 10px;
+	margin-bottom: 10px;
 	padding:0px; 
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -33,7 +35,8 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	padding: 0px;
 	text-align: left;
 	border-right: 2px solid #444;
-	border-left: 2px solid #888;
+	border-left: 2px solid #DDD;
+	border-top: 2px solid #DDD;
 	border-bottom: 2px solid #444;
 
 }
@@ -208,10 +211,6 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	text-align: left;
 }
 
-.postings_listing_title {
-	font-size: 14px;
-}
-
 H1, H2 {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
@@ -379,11 +378,11 @@ H1, H2 {
 }
 
 #page_introduction {
-	font-size: 11px;
-	border: 1px solid #888;
-	background: #FFFF88;
-	padding: 10px;
-	margin-bottom: 20px;
+	font-family: Georgia, Times;
+	line-height: 135%;
+	font-size: 14px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ddd;
 }
 
 .created_at {
