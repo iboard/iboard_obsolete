@@ -110,14 +110,18 @@ module ApplicationHelper
         root_url + 'galleries/webgallery/\1?layout=\2' + 
         "' title='Show Gallery'>"+
         '\3</a>')
-        
       rcl = RedCloth.new(out)
       rcl.hard_breaks = true if rcl.respond_to?("hard_breaks=")
-      return rcl.to_html.gsub(
+      rc = (rcl.to_html.gsub(
          /<p style="float:right"><img src=/,'<p style="float:right"><img hspace=10 vspace=5 src=').gsub(
          /<div style="float:right"><img src=/,'<div style="float:right"><img hspace=10 vspace=5 src=').gsub(
          /<div style="float:left"><img src=/,'<div style="float:left"><img hspace=10 vspace=5 src=').gsub(
-         /<p style="float:left"><img src=/,'<p style="float:left"><img hspace=10 vspace=5 src=')
+         /<p style="float:left"><img src=/,'<p style="float:left"><img hspace=10 vspace=5 src=') 
+         )
+      return rc.gsub(
+       /flv:(.*):(.*):(.*):flv/, 
+            WOWZA_INIT+  ' width="\2" height="\3" '  + WOWZA_2 +  ' width="\2" height="\3" ' +
+            WOWZA_3 + 'height=\3&width=\2&file=rtmp://streaming.iboard.cc/fastplay/&id=\1' + WOWZA_CLOSE  )
   end
   
   def icon(icon,title='',width=24, height=24)
