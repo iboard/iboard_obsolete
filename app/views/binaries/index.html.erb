@@ -28,7 +28,7 @@
 
 <% for binary in @binaries %>
   <tr>
-    <td align=center><%=h binary.id.to_s %></td>    
+    <td align=center><%=h binary.id.to_s %>/<%= sprintf( "%08x", binary.id ) -%></td>    
     <td><%= link_to_remote(
              '<img border=0 src='+thumbnail_binary_path(binary,:size=>"48x48")+'>',
               :url    => preview_binary_path(binary,:width=>270,:height=>170) ,
