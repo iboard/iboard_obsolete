@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
 
   layout :get_application_layout
+  
+  before_filter :authenticate, :except => [:show,:new,:create,:set_rating]
 
   # GET /comments
   # GET /comments.xml
