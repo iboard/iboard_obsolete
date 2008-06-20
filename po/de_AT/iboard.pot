@@ -1241,7 +1241,7 @@ msgid "Log out"
 msgstr "Abmelden"
 
 msgid "Sorry, no events found"
-msgstr "Sorry - keine Vernanstaltungen gefunden"
+msgstr "Sorry - keine Veranstaltungen gefunden"
 
 msgid "Please set your email first!"
 msgstr "Bitte zuerst Deine email angeben!"
