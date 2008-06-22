@@ -59,8 +59,10 @@
       </div>
       <% if request.env["HTTP_USER_AGENT"].include? "MSIE" %>
         <div class="MSIE">
-            <%= _('Internet Explorer displays this page with errors: We recommend') -%> 
-            <a target=_blank href=http://www.apple.com/safari>Safari for PC + Mac for free</a>
+            Sorry, your browser is not dedicated to display this page and we realy don't care about the bugs in MSIE.<br />
+            But fortunately we can offer a barrier-free css for you.<br />
+            We recommend to fetch a Browser which can display nearly any page out there, is faster, more beautiful, and stable: 
+            <a target=_blank href=http://www.apple.com/safari>Download Safari for PC + Mac for free</a>
         </div>      
       <% end %>
       
@@ -146,15 +148,17 @@
          </div>
          
       </div>
-      <div class="copyright">
+      <div class="copyright"><br/>
         <em><b>iBoard 2.0 sites</b></em>: 
-        <a href=http://www.thesoundtheatre.com target=_blank>www.thesoundtheatre.com</a> |
-        <a href=http://iboard.wwedu.com>iboard.wwedu.com</a>
+        <a href=http://www.thesoundtheatre.com target=_blank>www.thesoundtheatre.com</a> | 
+        <a href=http://iboard.wwedu.com target=_blank>iboard.wwedu.com</a>
+        <br>
+        <br>
+         <em><b>iBoard.cc services</b></em>: <a href=https://mail.iboard.cc>Webmail</a>
         <br><br>
         <br><br>
-        <br><br>
-        
-        <%= yield :copyright -%>
       </div> 
-   </div></center></body>
+   </div>
+   <div class="last_line"><br/><%= yield :copyright -%></div>
+   </center></body>
 </html>

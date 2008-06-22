@@ -34,13 +34,16 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin: auto;
 	padding: 0px;
 	text-align: left;
-	border-right: 2px solid #444;
-	border-left: 2px solid #DDD;
-	border-top: 2px solid #DDD;
-	border-bottom: 2px solid #444;
-
 }
 
+.copyright a,
+.copyright a:link,
+.copyright a:visited {
+	color: white;
+}
+.copyright a:hover {
+	background: black;
+}
 .copyright {
 	margin-top: 1px;
 	margin-bottom: 0px;
@@ -48,8 +51,9 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	padding-bottom: 4px;
 	font-size: 10px;
 	height: 90px;
+	color: white;
 	text-align: center;
-	background-image: url('/images/iboard-banner.jpg');
+	background-image: url('/images/iboard-footer.png');
 	background-repeat: repeat-x;
 	background-position: bottom;
 }
@@ -60,6 +64,10 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin-bottom: 0px;
 	padding: 10px;
 	background: white;
+	
+	background-image: url('/images/shadow-banner.png');
+	background-repeat: repeat-x;
+	background-position: top;
 }
 
 .layout_row {
@@ -71,7 +79,7 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 .banner_layout_row {
 	margin: 0px;
 	padding: 0px;
-	background-image: url('/images/iboard-banner.jpg');
+	background-image: url('/images/iboard-banner.png');
 	background-repeat: repeat-x;
 	background-position: 0 0;
 }
@@ -104,11 +112,18 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin: 0px;
 	float: right;
 	font-size: 13px;
-	color: #888;
+	color: #DDD;
 }
-
+.banner_right a,
+.banner_right a:link,
+.banner_right a:visited
+{
+	color: white;
+}
 .rss_chooser {
 	font-size: 11px;
+	padding-left: 20px;
+	padding-top: 5px;
 }
 
 #search_txt {
@@ -129,6 +144,20 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin-bottom: 0px;
 	line-height: 90%;
 }
+
+
+.postings_listing_title  {
+	padding-top: 12px;
+	font-size: 16px;
+}
+.postings_listing_title a:visited,
+.postings_listing_title a:link,
+.postings_listing_title a {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
 .site_title p {
 	font-size: 11px;
 	margin-top: -5px;
@@ -163,7 +192,8 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	font-size: 13px;
 	width: 135px;
 	margin-top: -15px;
-	padding-left: 5px;
+	margin-left: 25px;
+	padding-left: 25px;
 	min-height: 100%;
 	max-height: 100%;
 	vertical-align: top;
@@ -488,4 +518,9 @@ H1, H2 {
 	display: inline;
 	margin-left: 0px;
 	padding-left: 0px;
+}
+
+
+.last_line {
+	font-size: 9px;
 }

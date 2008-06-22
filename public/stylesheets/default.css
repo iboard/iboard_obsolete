@@ -34,11 +34,6 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin: auto;
 	padding: 0px;
 	text-align: left;
-	border-right: 2px solid #444;
-	border-left: 2px solid #DDD;
-	border-top: 2px solid #DDD;
-	border-bottom: 2px solid #444;
-
 }
 
 .copyright {
@@ -49,7 +44,7 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	font-size: 10px;
 	height: 90px;
 	text-align: center;
-	background-image: url('/images/iboard-banner.jpg');
+	background-image: url('/images/iboard-footer.png');
 	background-repeat: repeat-x;
 	background-position: bottom;
 }
@@ -60,6 +55,10 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin-bottom: 0px;
 	padding: 10px;
 	background: white;
+	
+	background-image: url('/images/shadow-banner.png');
+	background-repeat: repeat-x;
+	background-position: top;
 }
 
 .layout_row {
@@ -71,7 +70,7 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 .banner_layout_row {
 	margin: 0px;
 	padding: 0px;
-	background-image: url('/images/iboard-banner.jpg');
+	background-image: url('/images/iboard-banner.png');
 	background-repeat: repeat-x;
 	background-position: 0 0;
 }
@@ -104,11 +103,18 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin: 0px;
 	float: right;
 	font-size: 13px;
-	color: #888;
+	color: #DDD;
 }
-
+.banner_right a,
+.banner_right a:link,
+.banner_right a:visited
+{
+	color: white;
+}
 .rss_chooser {
 	font-size: 11px;
+	padding-left: 20px;
+	padding-top: 5px;
 }
 
 #search_txt {
@@ -129,6 +135,19 @@ a:hover { color: #223141;  text-decoration: none; background-color:#FF8; }
 	margin-bottom: 0px;
 	line-height: 90%;
 }
+
+.postings_listing_title a:visited,
+.postings_listing_title a:link,
+.postings_listing_title a {
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.postings_listing_title a {
+	font-size: 16px;
+}
+
 .site_title p {
 	font-size: 11px;
 	margin-top: -5px;
@@ -378,11 +397,11 @@ H1, H2 {
 }
 
 #page_introduction {
-	font-size: 11px;
-	border: 1px solid #888;
-	background: #FFFF88;
-	padding: 10px;
-	margin-bottom: 20px;
+	font-family: Georgia, Times;
+	line-height: 135%;
+	font-size: 14px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ddd;
 }
 
 .created_at {
@@ -488,4 +507,8 @@ H1, H2 {
 	display: inline;
 	margin-left: 0px;
 	padding-left: 0px;
+}
+
+.last_line {
+	font-size: 9px;
 }
