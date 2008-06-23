@@ -56,6 +56,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new
     @comment.ip_remote = request.env['REMOTE_ADDR']
     @comment.user = user
+    
+    @send_code = random_string(5)
+    mk_tmp_file(@send_code)
+    
     if params[:posting]
       @comment.posting = Posting.find(params[:posting].to_i)
     end
@@ -80,19 +84,28 @@ class CommentsController < ApplicationController
 
     item = @comment.posting || @comment.event
 
+    conf_ok = check_sec_code(params[:sec_code],params[:send_code])
 
-    respond_to do |format|
-      if @comment.save
-        flash[:notice] = 'Comment was successfully created.'
-        format.html { redirect_to(item) }
-        format.xml  { render :xml => @comment, :status => :created, :location => @comment }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
-      end
-    end
+    if conf_ok
+       respond_to do |format|
+         if @comment.save
+           flash[:notice] = 'Comment was successfully created.'
+           format.html { redirect_to(item) }
+           format.xml  { render :xml => @comment, :status => :created, :location => @comment }
+         else
+           @send_code = random_string(5)
+           mk_tmp_file(@send_code)
+           format.html { render :action => "new" }
+           format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+         end
+       end
+     else
+         @send_code = random_string(5)
+         mk_tmp_file(@send_code)
+         @comment.errors.add(:sec_code, _('Secure code invalid'))
+         render :action => "new"
+     end
   end
-
   # PUT /comments/1
   # PUT /comments/1.xml
   def update
@@ -130,6 +143,30 @@ class CommentsController < ApplicationController
       format.html { render :layout => false }
       format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
     end
+  end
+  
+  private
+  def mk_tmp_file(send_code)
+    code = random_string(5)
+    f = File::new("/tmp/#{send_code}.sendcode.iboard.cc","w")
+    f.puts(code)
+    f.close
+  end
+  
+  
+  def check_sec_code(user_input,sec_code)
+    rc = false
+    return rc if user_input.empty? or sec_code.empty?
+    fn =  "/tmp/#{sec_code}.sendcode.iboard.cc"
+    if File::exists?(fn) 
+      f = File::open(fn,"r")
+      code = f.gets
+      rc = (user_input.chomp.eql?(code.chomp))
+      f.close
+      File::unlink(fn)
+      File::unlink("/tmp/#{sec_code}.image.iboard.cc.jpg")
+    end
+    rc
   end
   
 end

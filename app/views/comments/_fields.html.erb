@@ -27,3 +27,8 @@
   <%= f.text_area :body, :rows => 10, :cols => 80 %>
 </p>
 
+
+<% url = generate_secure_code_img_url(@send_code) %>
+<%= _('Please enter the code <img src=\'%s\' border=0 title=\'Security Code\'><br/>for security reasons') % url -%>
+<%= hidden_field_tag "send_code", @send_code -%>
+<%= text_field_tag   "sec_code", "", :size => 8 -%>
