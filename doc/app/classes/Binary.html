@@ -78,10 +78,31 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <p>
+Any kind of binary data which may be displayed in postings by [[<a
+href="Binary.html#M000125">embed</a>:.&#8230;]] interpreter Binaries are
+stored in the global configured BINARY_PATH (see
+config/initializers/static_defaults.rb)
+</p>
+
+    </div>
 
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000124">base_part_of</a>&nbsp;&nbsp;
+      <a href="#M000125">embed</a>&nbsp;&nbsp;
+      <a href="#M000123">get_path</a>&nbsp;&nbsp;
+      <a href="#M000121">search</a>&nbsp;&nbsp;
+      <a href="#M000126">thumbnail</a>&nbsp;&nbsp;
+      <a href="#M000122">uploaded_file=</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -98,6 +119,244 @@
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="#M000121" class="method-signature">
+          <span class="method-name">search</span><span class="method-args">(search_txt, page, per_page=8)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000121-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/binary.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">search_txt</span>, <span class="ruby-identifier">page</span>, <span class="ruby-identifier">per_page</span>=<span class="ruby-value">8</span>)
+24:     <span class="ruby-constant">Binary</span>.<span class="ruby-identifier">paginate</span>( <span class="ruby-identifier">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">:per_page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">per_page</span>, <span class="ruby-identifier">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'title'</span>,
+25:       <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">'title like ? or description like ?'</span>, <span class="ruby-node">&quot;%#{search_txt}%&quot;</span>, <span class="ruby-node">&quot;%#{search_txt}%&quot;</span>])
+26:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
+
+        <div class="method-heading">
+          <a href="#M000124" class="method-signature">
+          <span class="method-name">base_part_of</span><span class="method-args">(file_name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000124-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/binary.rb, line 63</span>
+63:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">base_part_of</span>(<span class="ruby-identifier">file_name</span>)
+64:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file_name</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/[^\w._-]/</span>, <span class="ruby-value str">''</span>) 
+65:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
+
+        <div class="method-heading">
+          <a href="#M000125" class="method-signature">
+          <span class="method-name">embed</span><span class="method-args">(path,width=&quot;400&quot;,height=&quot;250&quot;)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Generate HTML-code to <a href="Binary.html#M000125">embed</a> object TODO:
+Shouldn&#8216;t this be done by a html(erb)-template?!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000125-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000125-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/binary.rb, line 71</span>
+71:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">embed</span>(<span class="ruby-identifier">path</span>,<span class="ruby-identifier">width</span>=<span class="ruby-value str">&quot;400&quot;</span>,<span class="ruby-identifier">height</span>=<span class="ruby-value str">&quot;250&quot;</span>)
+72:       <span class="ruby-identifier">width</span> = <span class="ruby-identifier">width</span>.<span class="ruby-identifier">to_i</span><span class="ruby-operator">-</span><span class="ruby-value">10</span>
+73:       <span class="ruby-identifier">height</span>= <span class="ruby-identifier">height</span>.<span class="ruby-identifier">to_i</span><span class="ruby-operator">-</span><span class="ruby-value">40</span>
+74:       <span class="ruby-node">&quot;&lt;OBJECT CLASSID=\&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\&quot; 
+75:                                       width=\&quot;#{width}\&quot; CODEBASE=\&quot;http://www.apple.com/qtactivex/qtplugin.cab\&quot; 
+76:                                       height=\&quot;#{height}\&quot;&gt;
+77:                                           &lt;PARAM name=\&quot;SRC\&quot; value=\&quot;#{path}\&quot;&gt;
+78:                                           &lt;PARAM name=\&quot;CONTROLLER\&quot; value=\&quot;true\&quot;&gt;
+79:                                           &lt;PARAM name=\&quot;scale\&quot; value=\&quot;Aspect\&quot;&gt;
+80:                                           &lt;PARAM name=\&quot;AUTOPLAY\&quot; value=\&quot;true\&quot;&gt;
+81:                                           &lt;PARAM name=\&quot;border\&quot; value=\&quot;1\&quot;&gt;
+82:                                           &lt;PARAM name=\&quot;target\&quot; value=\&quot;webbrowser\&quot;&gt;
+83:                                           &lt;PARAM name=\&quot;href\&quot;&gt;
+84:                                           &lt;EMBED src=\&quot;#{path}?filename=#{filename}\&quot; border=\&quot;0\&quot; 
+85:                                                  width=\&quot;#{width}\&quot; autoplay=\&quot;true\&quot; scale=\&quot;Aspect\&quot; 
+86:                                                  pluginspage=\&quot;http://www.apple.com/quicktime/download/\&quot; 
+87:                                                  height=\&quot;#{height}\&quot; target=\&quot;webbrowser\&quot; 
+88:                                                  controller=\&quot;true\&quot; bgcolor=\&quot;FFFFCC\&quot;&gt;
+89:                                           &lt;/EMBED&gt;
+90:                                       &lt;/OBJECT&gt;&quot;</span>
+91:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="#M000123" class="method-signature">
+          <span class="method-name">get_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Shortcut to return a HEX-interpration of the id in BINARY_PATH
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000123-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/binary.rb, line 58</span>
+58:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_path</span>
+59:     <span class="ruby-constant">BINARY_PATH</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%08x&quot;</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span> )
+60:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="#M000126" class="method-signature">
+          <span class="method-name">thumbnail</span><span class="method-args">(thumb_size = &quot;64x64&quot;,file_full_path=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Caclulate the <a href="Binary.html#M000126">thumbnail</a> with RMagick
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000126-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000126-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/binary.rb, line 98</span>
+ 98:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">thumbnail</span>(<span class="ruby-identifier">thumb_size</span> = <span class="ruby-value str">&quot;64x64&quot;</span>,<span class="ruby-identifier">file_full_path</span>=<span class="ruby-keyword kw">nil</span>)
+ 99:     <span class="ruby-identifier">fp</span> = <span class="ruby-identifier">file_full_path</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-identifier">get_path</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">filename</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">file_full_path</span>
+100:     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">exists?</span>( <span class="ruby-identifier">fp</span> ) 
+101:       <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">open</span>(<span class="ruby-identifier">fp</span>,<span class="ruby-value str">&quot;r&quot;</span>)
+102:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file_full_path</span> <span class="ruby-operator">||</span> [<span class="ruby-value str">'image/jpg'</span>,<span class="ruby-value str">'image/gif'</span>,<span class="ruby-value str">'image/png'</span>, <span class="ruby-value str">'image/jpeg'</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">mime_type</span>)
+103:         <span class="ruby-identifier">binary</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">sysread</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">size</span>(<span class="ruby-identifier">fp</span>))
+104:         <span class="ruby-identifier">img</span> = <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span><span class="ruby-operator">::</span><span class="ruby-identifier">from_blob</span>(<span class="ruby-identifier">binary</span>).<span class="ruby-identifier">first</span>
+105:         <span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
+106:         <span class="ruby-identifier">img_tn</span> = <span class="ruby-identifier">img</span> 
+107:         <span class="ruby-identifier">img_tn</span>.<span class="ruby-identifier">change_geometry!</span>(<span class="ruby-identifier">thumb_size</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cols</span>, <span class="ruby-identifier">rows</span>, <span class="ruby-identifier">image</span><span class="ruby-operator">|</span> 
+108:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cols</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">img</span>.<span class="ruby-identifier">columns</span>  <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">rows</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">img</span>.<span class="ruby-identifier">rows</span> <span class="ruby-keyword kw">then</span> 
+109:             <span class="ruby-identifier">image</span>.<span class="ruby-identifier">resize!</span>(<span class="ruby-identifier">cols</span>, <span class="ruby-identifier">rows</span>) 
+110:           <span class="ruby-keyword kw">end</span>     
+111:         <span class="ruby-keyword kw">end</span>     
+112:         <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+113:       <span class="ruby-keyword kw">else</span> 
+114:         <span class="ruby-identifier">fnf_f</span> = <span class="ruby-constant">RAILS_ROOT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/public/images/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">mime_type</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\//</span>,<span class="ruby-value str">&quot;_&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.gif&quot;</span>
+115:         <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">open</span>(<span class="ruby-identifier">fnf_f</span>,<span class="ruby-value str">&quot;r&quot;</span>)
+116:         <span class="ruby-identifier">fnf_b</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">sysread</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">size</span>(<span class="ruby-identifier">fnf_f</span>))
+117:         <span class="ruby-identifier">img</span> = <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span><span class="ruby-operator">::</span><span class="ruby-identifier">from_blob</span>(<span class="ruby-identifier">fnf_b</span>).<span class="ruby-identifier">first</span>
+118:         <span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
+119:         <span class="ruby-identifier">img_tn</span> = <span class="ruby-identifier">img</span>
+120:         <span class="ruby-identifier">img_tn</span>.<span class="ruby-identifier">change_geometry!</span>(<span class="ruby-identifier">thumb_size</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cols</span>, <span class="ruby-identifier">rows</span>, <span class="ruby-identifier">image</span><span class="ruby-operator">|</span> 
+121:            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cols</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">img</span>.<span class="ruby-identifier">columns</span>  <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">rows</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">img</span>.<span class="ruby-identifier">rows</span> <span class="ruby-keyword kw">then</span> 
+122:              <span class="ruby-identifier">image</span>.<span class="ruby-identifier">resize!</span>(<span class="ruby-identifier">cols</span>, <span class="ruby-identifier">rows</span>) 
+123:            <span class="ruby-keyword kw">end</span>     
+124:         <span class="ruby-keyword kw">end</span>
+125:       <span class="ruby-keyword kw">end</span>
+126:     <span class="ruby-keyword kw">else</span>
+127:       <span class="ruby-identifier">fnf_f</span> = <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">open</span>(<span class="ruby-constant">RAILS_ROOT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/public/images/filenotfound.gif&quot;</span>,<span class="ruby-value str">&quot;r&quot;</span>)
+128:       <span class="ruby-identifier">fnf_b</span> = <span class="ruby-identifier">fnf_f</span>.<span class="ruby-identifier">sysread</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">size</span>(<span class="ruby-identifier">fnf_f</span>))
+129:       <span class="ruby-identifier">img</span> = <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span><span class="ruby-operator">::</span><span class="ruby-identifier">from_blob</span>(<span class="ruby-identifier">fnf_b</span>).<span class="ruby-identifier">first</span>
+130:       <span class="ruby-identifier">fnf_f</span>.<span class="ruby-identifier">close</span>
+131:       <span class="ruby-identifier">img_tn</span> = <span class="ruby-identifier">img</span> 
+132:       <span class="ruby-identifier">img_tn</span>.<span class="ruby-identifier">change_geometry!</span>(<span class="ruby-identifier">thumb_size</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cols</span>, <span class="ruby-identifier">rows</span>, <span class="ruby-identifier">image</span><span class="ruby-operator">|</span> 
+133:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cols</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">img</span>.<span class="ruby-identifier">columns</span>  <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">rows</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">img</span>.<span class="ruby-identifier">rows</span> <span class="ruby-keyword kw">then</span> 
+134:           <span class="ruby-identifier">image</span>.<span class="ruby-identifier">resize!</span>(<span class="ruby-identifier">cols</span>, <span class="ruby-identifier">rows</span>) 
+135:         <span class="ruby-keyword kw">end</span>     
+136:       <span class="ruby-keyword kw">end</span>     
+137:     <span class="ruby-keyword kw">end</span>
+138:     
+139:     <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+140:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">img_tn</span>.<span class="ruby-identifier">to_blob</span>
+141:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="#M000122" class="method-signature">
+          <span class="method-name">uploaded_file=</span><span class="method-args">(field)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Virtaul Attribute to save the uploaded file
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000122-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/binary.rb, line 31</span>
+31:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uploaded_file=</span>(<span class="ruby-identifier">field</span>)
+32:      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">field</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;&quot;</span>
+33:        <span class="ruby-identifier">mt</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">content_type</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;application/binary&quot;</span>
+34:        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">filename</span> = <span class="ruby-identifier">base_part_of</span>(<span class="ruby-identifier">field</span>.<span class="ruby-identifier">original_filename</span>) 
+35:        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">mime_type</span> = <span class="ruby-identifier">mt</span>
+36:        <span class="ruby-identifier">path</span> = <span class="ruby-identifier">get_path</span>
+37:        <span class="ruby-identifier">data</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">read</span>
+38:        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">size</span>     = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span>
+39:        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">exist?</span> <span class="ruby-identifier">path</span>
+40:          <span class="ruby-constant">Dir</span><span class="ruby-operator">::</span><span class="ruby-identifier">mkdir</span>(<span class="ruby-identifier">path</span>)
+41:        <span class="ruby-keyword kw">else</span> 
+42:          <span class="ruby-comment cmt"># delete old images</span>
+43:          <span class="ruby-constant">Dir</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">oldfile</span><span class="ruby-operator">|</span>
+44:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">oldfile</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chr</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">'.'</span>
+45:               <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">unlink</span>(<span class="ruby-identifier">path</span><span class="ruby-operator">+</span><span class="ruby-value str">&quot;/&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">oldfile</span>)
+46:             <span class="ruby-keyword kw">end</span>
+47:          <span class="ruby-keyword kw">end</span>
+48:        <span class="ruby-keyword kw">end</span>
+49:        <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">filename</span>,<span class="ruby-value str">&quot;w&quot;</span>)
+50:        <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>
+51:        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
+52:      <span class="ruby-keyword kw">end</span>
+53:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

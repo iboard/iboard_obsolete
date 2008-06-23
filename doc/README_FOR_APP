@@ -1,2 +1,11 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+iBoard 2.0 is a basic framework for any RAILS CMS and Blogging-System. 
+It handles the basics which are needed by any web-application (Users, Postings/Articles, 
+Binary-files, newsletters and so on)
+
+see http://iboard.cc/pages/10/show_page for more information
+Find iBoard at http://github.com/iboard/iboard if you want to fetch the source.
+
+June 2008, Andi Altendorfer, Haid, Austria
+
+  Have Fun!
+

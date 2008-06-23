@@ -78,10 +78,32 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <pre>
+       ######### ######### ######### ######### ######### ######### ######### ######### ######### #########
+</pre>
+<p>
+iBoard 2.0 File (c) 2008 by Andi Altendorfer Licence: GPL Warranty:
+absolutely none
+</p>
+<pre>
+       ######### ######### ######### ######### ######### ######### ######### ######### ######### #########
+</pre>
+
+    </div>
 
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000028">avg_stars</a>&nbsp;&nbsp;
+      <a href="#M000027">editable_by_user?</a>&nbsp;&nbsp;
+      <a href="#M000026">search</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -98,6 +120,105 @@
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="#M000026" class="method-signature">
+          <span class="method-name">search</span><span class="method-args">(search_txt,date_exp,page,per_page=10)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/posting.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">search_txt</span>,<span class="ruby-identifier">date_exp</span>,<span class="ruby-identifier">page</span>,<span class="ruby-identifier">per_page</span>=<span class="ruby-value">10</span>)
+20:     <span class="ruby-identifier">paginate</span>( <span class="ruby-identifier">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">:per_page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">per_page</span>,     
+21:       <span class="ruby-identifier">:order</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'updated_at desc'</span>, 
+22:       <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">'date_expires &gt; ? and (title like ? or body like ?)'</span>, 
+23:                        <span class="ruby-identifier">date_exp</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-identifier">:db</span>),
+24:                       <span class="ruby-node">&quot;%#{search_txt}%&quot;</span>,<span class="ruby-node">&quot;%#{search_txt}%&quot;</span>]
+25:     )
+26:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="#M000028" class="method-signature">
+          <span class="method-name">avg_stars</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/posting.rb, line 42</span>
+42:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">avg_stars</span>
+43:     <span class="ruby-identifier">c</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">find_all_by_posting_id</span>(<span class="ruby-keyword kw">self</span>)
+44:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+45:       <span class="ruby-identifier">s</span> = <span class="ruby-value">0</span>
+46:       <span class="ruby-identifier">c</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">comment</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span><span class="ruby-operator">+=</span> <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">rating</span> }
+47:       <span class="ruby-identifier">s</span><span class="ruby-operator">/</span><span class="ruby-identifier">c</span>.<span class="ruby-identifier">length</span>
+48:     <span class="ruby-keyword kw">else</span>
+49:       <span class="ruby-value">0</span>
+50:     <span class="ruby-keyword kw">end</span>
+51:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">editable_by_user?</span><span class="method-args">(user)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Check if posting is allowed to be edited
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/posting.rb, line 30</span>
+30:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">editable_by_user?</span>(<span class="ruby-identifier">user</span>)
+31:     <span class="ruby-keyword kw">begin</span>
+32:       (<span class="ruby-identifier">user</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">or</span>                        <span class="ruby-comment cmt"># by root</span>
+33:       (<span class="ruby-identifier">allow_editing</span> <span class="ruby-operator">==</span> <span class="ruby-value">99</span>) <span class="ruby-keyword kw">or</span>                          <span class="ruby-comment cmt"># it's public editable</span>
+34:       (<span class="ruby-identifier">allow_editing</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">author</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">author</span>.<span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>) <span class="ruby-keyword kw">or</span>   <span class="ruby-comment cmt"># it's the author</span>
+35:       (<span class="ruby-identifier">allow_editing</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">user</span> ) <span class="ruby-keyword kw">or</span>                 <span class="ruby-comment cmt"># it's editable by any registered user</span>
+36:       (<span class="ruby-identifier">allow_editing</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">functions</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">restricted_to_function_id</span>)) <span class="ruby-comment cmt"># user is member of function</span>
+37:     <span class="ruby-keyword kw">rescue</span>
+38:       <span class="ruby-keyword kw">false</span>
+39:     <span class="ruby-keyword kw">end</span>
+40:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

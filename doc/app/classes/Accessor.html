@@ -78,10 +78,25 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <p>
+The <a href="Accessor.html">Accessor</a>-model controlls which user is
+granted to which function It&#8216;s an HABTM-association
+</p>
+
+    </div>
 
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000003">register_function</a>&nbsp;&nbsp;
+      <a href="#M000002">register_user</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -98,6 +113,70 @@
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="#M000002" class="method-signature">
+          <span class="method-name">register_user</span><span class="method-args">(user,request)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create default accessor(s) for newly registered users
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000002-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/accessor.rb, line 22</span>
+22:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">register_user</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">request</span>)
+23:     <span class="ruby-identifier">register_function</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">request</span>,<span class="ruby-value str">'registered users'</span>)
+24:     <span class="ruby-identifier">register_function</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">request</span>,<span class="ruby-value str">'newsletter_subscriptions'</span>)
+25:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="#M000003" class="method-signature">
+          <span class="method-name">register_function</span><span class="method-args">(user,request,function)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/accessor.rb, line 29</span>
+29:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_function</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">request</span>,<span class="ruby-identifier">function</span>)
+30:     <span class="ruby-identifier">fnc</span> = <span class="ruby-constant">Function</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">function</span>)
+31:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">fnc</span>
+32:       <span class="ruby-identifier">fnc</span> = <span class="ruby-constant">Function</span>.<span class="ruby-identifier">create</span>( <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">function</span>, <span class="ruby-identifier">:comment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Autocreated when user #{user.username} confirms&quot;</span> )
+33:     <span class="ruby-keyword kw">end</span>
+34:     <span class="ruby-identifier">new_accessor</span> = <span class="ruby-identifier">create</span>( <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{user.username}:#{fnc.name}&quot;</span>, 
+35:             <span class="ruby-identifier">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">:function_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fnc</span>.<span class="ruby-identifier">id</span>, 
+36:             <span class="ruby-identifier">:comment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Registered at #{DateTime::now.to_s} from #{request.env['REMOTE_ADDR']}&quot;</span>)
+37:     <span class="ruby-identifier">new_accessor</span>.<span class="ruby-identifier">save!</span>
+38:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

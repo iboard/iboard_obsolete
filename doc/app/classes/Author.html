@@ -78,6 +78,14 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <p>
+<a href="Author.html">Author</a> is not fully implemented yet but is used
+for postings. It&#8216;s designated as a profile-model for activ users and
+posters
+</p>
+
+    </div>
 
 
    </div>
@@ -86,9 +94,10 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000011">date_birth_string</a>&nbsp;&nbsp;
-      <a href="#M000012">date_birth_string=</a>&nbsp;&nbsp;
-      <a href="#M000013">validate</a>&nbsp;&nbsp;
+      <a href="#M000086">date_birth_string</a>&nbsp;&nbsp;
+      <a href="#M000087">date_birth_string=</a>&nbsp;&nbsp;
+      <a href="#M000089">display_name</a>&nbsp;&nbsp;
+      <a href="#M000088">validate</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -110,72 +119,99 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000011" class="method-detail">
-        <a name="M000011"></a>
+      <div id="method-M000086" class="method-detail">
+        <a name="M000086"></a>
 
         <div class="method-heading">
-          <a href="#M000011" class="method-signature">
+          <a href="#M000086" class="method-signature">
           <span class="method-name">date_birth_string</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000011-source">
+            onclick="toggleCode('M000086-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000086-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/author.rb, line 11</span>
-11:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">date_birth_string</span>
-12:     <span class="ruby-identifier">date_birth</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-identifier">:db</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">date_birth</span>.<span class="ruby-identifier">nil?</span>
-13:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/author.rb, line 26</span>
+26:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">date_birth_string</span>
+27:     <span class="ruby-identifier">date_birth</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-identifier">:db</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">date_birth</span>.<span class="ruby-identifier">nil?</span>
+28:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000012" class="method-detail">
-        <a name="M000012"></a>
+      <div id="method-M000087" class="method-detail">
+        <a name="M000087"></a>
 
         <div class="method-heading">
-          <a href="#M000012" class="method-signature">
+          <a href="#M000087" class="method-signature">
           <span class="method-name">date_birth_string=</span><span class="method-args">(str)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000012-source">
+            onclick="toggleCode('M000087-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000087-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/author.rb, line 15</span>
-15:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">date_birth_string=</span>(<span class="ruby-identifier">str</span>)
-16:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">date_birth</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">str</span>)
-17:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ArgumentError</span>
-18:     <span class="ruby-ivar">@date_birth_invalid</span> = <span class="ruby-keyword kw">true</span>
-19:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/author.rb, line 30</span>
+30:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">date_birth_string=</span>(<span class="ruby-identifier">str</span>)
+31:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">date_birth</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">str</span>)
+32:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ArgumentError</span>
+33:     <span class="ruby-ivar">@date_birth_invalid</span> = <span class="ruby-keyword kw">true</span>
+34:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000013" class="method-detail">
-        <a name="M000013"></a>
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
 
         <div class="method-heading">
-          <a href="#M000013" class="method-signature">
+          <a href="#M000089" class="method-signature">
+          <span class="method-name">display_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000089-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/author.rb, line 40</span>
+40:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_name</span>
+41:     <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">user</span>)
+42:       <span class="ruby-node">&quot;#{prename} #{lastname} (#{user.username})&quot;</span>
+43:     <span class="ruby-keyword kw">else</span>
+44:       <span class="ruby-node">&quot;#{prename} #{lastname}&quot;</span>    
+45:     <span class="ruby-keyword kw">end</span>
+46:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000088" class="method-detail">
+        <a name="M000088"></a>
+
+        <div class="method-heading">
+          <a href="#M000088" class="method-signature">
           <span class="method-name">validate</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000013-source">
+            onclick="toggleCode('M000088-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000088-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/author.rb, line 21</span>
-21:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate</span>
-22:     <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">:date_birth</span>, <span class="ruby-identifier">_</span>(<span class="ruby-value str">&quot;is invalid&quot;</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@date_birth_invalid</span>
-23:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/author.rb, line 36</span>
+36:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate</span>
+37:     <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">:date_birth</span>, <span class="ruby-identifier">_</span>(<span class="ruby-value str">&quot;is invalid&quot;</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@date_birth_invalid</span>
+38:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

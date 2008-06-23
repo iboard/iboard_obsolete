@@ -78,6 +78,19 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <pre>
+       ######### ######### ######### ######### ######### ######### ######### ######### ######### #########
+</pre>
+<p>
+iBoard 2.0 File (c) 2008 by Andi Altendorfer Licence: GPL Warranty:
+absolutely none
+</p>
+<pre>
+       ######### ######### ######### ######### ######### ######### ######### ######### ######### #########
+</pre>
+
+    </div>
 
 
    </div>
@@ -86,9 +99,11 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000010">function_ids=</a>&nbsp;&nbsp;
-      <a href="#M000009">password_field</a>&nbsp;&nbsp;
-      <a href="#M000008">password_field=</a>&nbsp;&nbsp;
+      <a href="#M000079">function_ids=</a>&nbsp;&nbsp;
+      <a href="#M000080">opts_for_select</a>&nbsp;&nbsp;
+      <a href="#M000078">password_field</a>&nbsp;&nbsp;
+      <a href="#M000077">password_field=</a>&nbsp;&nbsp;
+      <a href="#M000076">search</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -108,82 +123,151 @@
 
     <!-- if method_list -->
     <div id="methods">
-      <h3 class="section-bar">Public Instance methods</h3>
+      <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000010" class="method-detail">
-        <a name="M000010"></a>
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
 
         <div class="method-heading">
-          <a href="#M000010" class="method-signature">
+          <a href="#M000080" class="method-signature">
+          <span class="method-name">opts_for_select</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000080-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000080-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 67</span>
+67:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">opts_for_select</span>
+68:     <span class="ruby-identifier">find</span>(<span class="ruby-identifier">:all</span>, <span class="ruby-identifier">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'username'</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> [ <span class="ruby-node">&quot;#{u.longname} (#{u.username})&quot;</span>, <span class="ruby-identifier">u</span>.<span class="ruby-identifier">id</span> ] }      
+69:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000076" class="method-detail">
+        <a name="M000076"></a>
+
+        <div class="method-heading">
+          <a href="#M000076" class="method-signature">
+          <span class="method-name">search</span><span class="method-args">(search_txt,page,per_page=10)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="User.html#M000076">search</a> for paginate
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000076-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000076-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 27</span>
+27:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">search_txt</span>,<span class="ruby-identifier">page</span>,<span class="ruby-identifier">per_page</span>=<span class="ruby-value">10</span>)
+28:      <span class="ruby-identifier">paginate</span>( <span class="ruby-identifier">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">:per_page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>,     
+29:        <span class="ruby-identifier">:order</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'username'</span>, 
+30:        <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">'username like ? or longname like ?'</span>, <span class="ruby-node">&quot;%#{search_txt}%&quot;</span>,<span class="ruby-node">&quot;%#{search_txt}%&quot;</span>] )
+31:    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
+
+        <div class="method-heading">
+          <a href="#M000079" class="method-signature">
           <span class="method-name">function_ids=</span><span class="method-args">(function_ids)</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+Set array of assigned functions and create Accessors
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000010-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000010-source">
+            onclick="toggleCode('M000079-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000079-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/user.rb, line 21</span>
-21:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">function_ids=</span>(<span class="ruby-identifier">function_ids</span>)
-22:     <span class="ruby-identifier">accessors</span> = <span class="ruby-constant">Accessor</span>.<span class="ruby-identifier">find_all_by_user_id</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>)
-23:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">accessors</span>
-24:       <span class="ruby-identifier">accessors</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:destroy</span>)
-25:     <span class="ruby-keyword kw">end</span>
-26:     <span class="ruby-identifier">function_ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fnc_id</span><span class="ruby-operator">|</span>
-27:       <span class="ruby-constant">Accessor</span>.<span class="ruby-identifier">create</span>( <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{self.username}:#{Function.find(fnc_id).name}&quot;</span>, 
-28:                        <span class="ruby-identifier">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">:function_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fnc_id</span>,
-29:                        <span class="ruby-identifier">:comment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'autogenerated by editing user'</span> )
-30:     <span class="ruby-keyword kw">end</span>
-31:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 50</span>
+50:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">function_ids=</span>(<span class="ruby-identifier">function_ids</span>)
+51:     <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>
+52:       <span class="ruby-comment cmt"># delete old accessors for user</span>
+53:       <span class="ruby-identifier">accessors</span> = <span class="ruby-constant">Accessor</span>.<span class="ruby-identifier">find_all_by_user_id</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>)
+54:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">accessors</span>
+55:         <span class="ruby-identifier">accessors</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:destroy</span>)
+56:       <span class="ruby-keyword kw">end</span>
+57:       
+58:       <span class="ruby-comment cmt"># create new accessors for user</span>
+59:       <span class="ruby-identifier">function_ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fnc_id</span><span class="ruby-operator">|</span>
+60:         <span class="ruby-constant">Accessor</span>.<span class="ruby-identifier">create</span>( <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{self.username}:#{Function.find(fnc_id).name}&quot;</span>, 
+61:                          <span class="ruby-identifier">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">:function_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fnc_id</span>,
+62:                          <span class="ruby-identifier">:comment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'autogenerated by editing user'</span> )
+63:       <span class="ruby-keyword kw">end</span>
+64:     <span class="ruby-keyword kw">end</span>
+65:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000009" class="method-detail">
-        <a name="M000009"></a>
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
 
         <div class="method-heading">
-          <a href="#M000009" class="method-signature">
+          <a href="#M000078" class="method-signature">
           <span class="method-name">password_field</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+wrapper for crypted password field
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000009-source">
+            onclick="toggleCode('M000078-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000078-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/user.rb, line 17</span>
-17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">password_field</span>
-18:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">password</span>
-19:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 44</span>
+44:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">password_field</span>
+45:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">password</span>
+46:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000008" class="method-detail">
-        <a name="M000008"></a>
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
 
         <div class="method-heading">
-          <a href="#M000008" class="method-signature">
+          <a href="#M000077" class="method-signature">
           <span class="method-name">password_field=</span><span class="method-args">(plaintext)</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+Virtual Attributes <a href="User.html#M000078">password_field</a> - crypt
+if different from stored string (means it&#8216;s a plaintext password just
+entered by the user) and store in field &#8216;password&#8216;
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000008-source">
+            onclick="toggleCode('M000077-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000077-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/user.rb, line 11</span>
-11:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">password_field=</span>(<span class="ruby-identifier">plaintext</span>)
-12:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">plaintext</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">password</span>
-13:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">password</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA1</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">plaintext</span>)[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">39</span>] 
-14:     <span class="ruby-keyword kw">end</span>
-15:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 37</span>
+37:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">password_field=</span>(<span class="ruby-identifier">plaintext</span>)
+38:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">plaintext</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">password</span>
+39:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">password</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA1</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">plaintext</span>)[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">39</span>] 
+40:     <span class="ruby-keyword kw">end</span>
+41:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

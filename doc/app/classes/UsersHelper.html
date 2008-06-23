@@ -76,6 +76,14 @@
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000223">generate_secure_code_img_url</a>&nbsp;&nbsp;
+      <a href="#M000224">string_graphics_to_file</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -92,6 +100,77 @@
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
+
+        <div class="method-heading">
+          <a href="#M000223" class="method-signature">
+          <span class="method-name">generate_secure_code_img_url</span><span class="method-args">(send_code)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000223-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/helpers/users_helper.rb, line 4</span>
+ 4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate_secure_code_img_url</span>(<span class="ruby-identifier">send_code</span>)
+ 5:     <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>( <span class="ruby-node">&quot;/tmp/#{send_code}.sendcode.iboard.cc&quot;</span>, <span class="ruby-value str">&quot;r&quot;</span>)
+ 6:     <span class="ruby-identifier">fout_name</span> =  <span class="ruby-node">&quot;/tmp/#{send_code}.image.iboard.cc.jpg&quot;</span>
+ 7:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">f</span>
+ 8:       <span class="ruby-identifier">str</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>
+ 9:       <span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
+10:       <span class="ruby-identifier">img_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">fout_name</span>, <span class="ruby-value str">&quot;w+&quot;</span>)
+11:       <span class="ruby-identifier">img_file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">string_graphics_to_file</span>(<span class="ruby-identifier">str</span>.<span class="ruby-identifier">chomp</span>))
+12:       <span class="ruby-identifier">img_file</span>.<span class="ruby-identifier">close</span>
+13:     <span class="ruby-keyword kw">end</span>
+14:     <span class="ruby-node">&quot;#{root_url}binaries/0/send_image?file=&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Base64</span><span class="ruby-operator">::</span><span class="ruby-identifier">encode64</span>(<span class="ruby-identifier">fout_name</span>)
+15:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
+
+        <div class="method-heading">
+          <a href="#M000224" class="method-signature">
+          <span class="method-name">string_graphics_to_file</span><span class="method-args">(str)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000224-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/helpers/users_helper.rb, line 18</span>
+18:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">string_graphics_to_file</span>(<span class="ruby-identifier">str</span>)
+19:       <span class="ruby-identifier">canvas</span> = <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">20</span>, <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">HatchFill</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'white'</span>,<span class="ruby-value str">'lightcyan2'</span>))
+20:        <span class="ruby-identifier">gc</span> = <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">Draw</span>.<span class="ruby-identifier">new</span>()
+21:        <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">stroke</span>(<span class="ruby-value str">&quot;transparent&quot;</span>)
+22:        <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">fill</span>(<span class="ruby-value str">&quot;black&quot;</span>)
+23:        <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">annotate</span>(<span class="ruby-identifier">canvas</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-keyword kw">do</span>
+24:          <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">gravity</span> = <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">SouthGravity</span>
+25:          <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">font_family</span> = <span class="ruby-value str">&quot;Courier&quot;</span>
+26:          <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">pointsize</span> = <span class="ruby-value">18</span>
+27:          <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">font_weight</span> = <span class="ruby-constant">Magick</span><span class="ruby-operator">::</span><span class="ruby-constant">BoldWeight</span>
+28:        <span class="ruby-keyword kw">end</span>
+29:        <span class="ruby-identifier">gc</span>.<span class="ruby-identifier">draw</span>(<span class="ruby-identifier">canvas</span>)
+30:        <span class="ruby-identifier">canvas</span>.<span class="ruby-identifier">to_blob</span> { <span class="ruby-identifier">canvas</span>.<span class="ruby-identifier">format</span> = <span class="ruby-value str">&quot;jpg&quot;</span> }
+31:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

@@ -76,6 +76,13 @@
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000241">function_selector</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -92,6 +99,36 @@
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000241" class="method-detail">
+        <a name="M000241"></a>
+
+        <div class="method-heading">
+          <a href="#M000241" class="method-signature">
+          <span class="method-name">function_selector</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000241-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000241-source">
+<pre>
+   <span class="ruby-comment cmt"># File app/helpers/functions_helper.rb, line 3</span>
+3:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">function_selector</span>
+4:     <span class="ruby-constant">Function</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">:all</span>,<span class="ruby-identifier">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'name'</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">fnc</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">fnc</span>.<span class="ruby-identifier">name</span>,<span class="ruby-identifier">fnc</span>.<span class="ruby-identifier">id</span>] }.<span class="ruby-identifier">inject</span>([[<span class="ruby-identifier">_</span>(<span class="ruby-value str">'..public..'</span>),<span class="ruby-keyword kw">nil</span>]]) { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>,<span class="ruby-identifier">object</span><span class="ruby-operator">|</span>
+5:           <span class="ruby-identifier">c</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">object</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">object</span>[<span class="ruby-value">1</span>]] 
+6:     }
+7:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>
