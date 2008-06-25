@@ -13,6 +13,9 @@
 <div class="vertical_menu_item"><%= link_to _('Subscribe'), subscribe_newsletter_subscriptions_path -%></div>
 <div class="vertical_menu_item"><%= link_to( _('Newsletters'), newsletters_path) unless not granted_for? 'newsletters' -%></div>
 
+<div class="vertical_menu_item"><%= link_to _('Donate'), donate_path -%></div>
+
+
 <% if (granted_for?('content')) or (granted_for?('root')) %>
     <div class='menu_subject'><%= _('Content') -%></div>
     <div class="vertical_menu_item"><%= link_to _('Postings'), postings_path(:expires => "0" ) -%></div>

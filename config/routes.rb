@@ -91,8 +91,12 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
+  map.thanks_for_donation "paypal/thanks_for_donation", :controller => 'paypal', :action => 'thanks_for_donation'
+  map.donate "paypal/donate", :controller => 'paypal', :action => 'donate'
+  
   map.logout 'authenticate/logout', :controller => 'authenticate', :action => 'logout'
   map.login  'authenticate/login', :controller => 'authenticate', :action => 'login'
+
   map.rss    'rss', :controller => 'rss', :action => 'index'
   
   map.root   :controller => 'pages', :action => 'redirect_domain'

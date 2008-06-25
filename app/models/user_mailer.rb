@@ -39,4 +39,13 @@ class UserMailer < ActionMailer::Base
     body                    :user => user, :new_password => new_password
     content_type            "text/plain"
   end
+  
+  # Send Paypal notification
+  def paypal_notification(receiver,notification,host)
+    recipients              receiver
+    from                    REGISTRATION_FROM_ADDRESS
+    subject                 _('Paypal notification from %s') % host
+    body                    :paypal_notification => notification
+    content_type            "text/html"
+  end
 end

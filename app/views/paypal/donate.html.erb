@@ -1,0 +1,17 @@
+<h1><%= _('Donate') -%></h1>
+
+<form action="<%= @action_url %>" method="post">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <p><%=_('Amount') -%>:<%= text_field_tag :amount, "10", :size => 4, :id => 'amount' -%> EURO</p>
+  <div id='encrypted_field'><input id='encrypted' type="hidden" name="encrypted" value="<%= @encrypted_basic %>" />
+      <%=_('You may donate any amount up from 1 €') -%></div>
+  <p><input type="submit" value="<%= _('Donate using paypal') -%>"></p>
+  
+  <%= 
+       observe_field :amount, :url => { :action => :change_amount },
+            :frequency => 0.25,
+            :update => "encrypted_field",
+            :with => "'amount=' + escape(amount.value)" 
+  -%>
+  
+</form>
