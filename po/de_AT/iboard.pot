@@ -857,10 +857,10 @@ msgid "Download original file/size"
 msgstr "Original Datei/Größe"
 
 msgid "Gallery-Name"
-msgstr "Gallerie-Name"
+msgstr "Galerie-Name"
 
 msgid "Gallery path"
-msgstr "Gallerie-Pfad"
+msgstr "Galerie-Pfad"
 
 msgid "Thumb width"
 msgstr "Vorschau Breite"
@@ -884,13 +884,13 @@ msgid "Options"
 msgstr "Optionen"
 
 msgid "New gallery"
-msgstr "Neue Gallerie"
+msgstr "Neue Galerie"
 
 msgid "close"
 msgstr "schließen"
 
 msgid "Gallery %s"
-msgstr "Gallerie %s"
+msgstr "Galerie %s"
 
 msgid "Search"
 msgstr "Suchen"
@@ -898,8 +898,8 @@ msgstr "Suchen"
 msgid "Subscribe"
 msgstr "Abonnieren"
 
-msgid "Galleries"
-msgstr "Gallerien"
+msgid "Galeries"
+msgstr "Galerien"
 
 msgid "Your active subscriptions"
 msgstr "Ihre aktiven Abos"
@@ -1596,3 +1596,5 @@ msgstr "Ihre Newsletter"
 msgid "Session information"
 msgstr "Verbindungsinformationen"
 
+msgid "Galleries"
+msgstr "Galerien"

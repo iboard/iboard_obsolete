@@ -16,7 +16,7 @@
 <% if (granted_for?('content')) or (granted_for?('root')) %>
     <div class='menu_subject'><%= _('Content') -%></div>
     <div class="vertical_menu_item"><%= link_to _('Postings'), postings_path(:expires => "0" ) -%></div>
-    <div class="vertical_menu_item"><%= link_to _('Galleries'),galleries_path -%></div>
+    <div class="vertical_menu_item"><%= link_to _('Galleries'), galleries_path -%></div>
     <div class="vertical_menu_item"><%= link_to _('Events'),list_events_path -%></div>
     <div class="vertical_menu_item"><%= link_to _('Pages'), pages_path -%></div>
     <div class="vertical_menu_item"><%= link_to _('Binaries'), binaries_path -%></div>
