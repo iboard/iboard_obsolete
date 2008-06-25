@@ -1226,7 +1226,7 @@ msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
 msgid "Please enter the code <img src='%s' border=0 title='Security Code'><br/>for security reasons"
-msgstr "Bitter geben Sie aus Sicherheitsgründen den Code<br><img src='%s' border=0 title='Security Code'> ein"
+msgstr "Bitte geben Sie aus Sicherheitsgründen den Code<br><img src='%s' border=0 title='Security Code'> ein"
 
 msgid "Register"
 msgstr "Registrieren"
@@ -1550,4 +1550,49 @@ msgstr "Liste der Shops"
 
 msgid "open flash stage"
 msgstr "Flash-Bühne öffnen"
+
+msgid "Please rate between 1 and 5 stars"
+msgstr "Bitte mit zwischen 1 und 5 Sterne vergeben"Make POT-Files ...
+
+msgid "Layout buttons toggled"
+msgstr "Layout Buttons ein/aus"
+
+msgid "We've sent a new password to your e-mail-address <b>%s</b> if it is in our users database"
+msgstr "Wir haben ein neues Passwort an die e-mail-Adresse <b>%s</b> gesandt."
+
+msgid "Try again"
+msgstr "Bitte wiederholen"
+
+msgid "toggle layout buttons"
+msgstr "Layout Buttons ein/aus"
+
+msgid "Forgot your password?"
+msgstr "Passwort vergessen?"
+
+msgid "Max postings per page"
+msgstr "Max. Beiträge pro Seite"
+
+msgid "Someone (you?) request to send a new password for our domain %s to your address."
+msgstr "Jemand (sie?) hat ein neues Passwort für die Domäne %s angefordert."
+
+msgid "Your username is"
+msgstr "Ihr Benutzername lautet"
+
+msgid "Your new password is"
+msgstr "Ihr neues Passwort lautet"
+
+msgid "Forgot password"
+msgstr "Passwort vergessen"
+
+msgid "Please enter your e-mail-address"
+msgstr "Bitte geben Sie Ihre e-Mail-Adresse ein"
+
+msgid "Send me my password"
+msgstr "Neues Passwort senden"
+
+msgid "Your newsletters"
+msgstr "Ihre Newsletter"
+
+msgid "Session information"
+msgstr "Verbindungsinformationen"
 

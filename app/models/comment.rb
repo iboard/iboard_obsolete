@@ -17,7 +17,7 @@ class Comment < ActiveRecord::Base
   belongs_to  :user
   
   validates_presence_of :body
-  validates_inclusion_of :rating, :in => 1..5, :message => _('Please rate between 1 and 5')
+  validates_inclusion_of :rating, :in => 1..5, :message => _('Please rate between 1 and 5 stars')
   
   #
   # Create HTML-Code to display the stars

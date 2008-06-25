@@ -136,6 +136,6 @@ class NewslettersController < ApplicationController
       end
     end
   end
-  
+    
 end
 

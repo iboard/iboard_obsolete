@@ -2,10 +2,24 @@
 <%= _(' for %s') % @user.longname -%>
 <%- end -%>
 <h1><%= _('Welcome %{longname}') % {:longname => @user.longname} -%>!</h1>
-<div style="border: 1px solid #ddd; padding: 10px; float:right; width:33%;">
-    <%= render :partial => '/layouts/user_menu' -%>
+
+<div>
+    <h2><%= _('User') -%></h2>
+    <%= error_messages_for :user %>
+    <% form_for @user, :method => 'post' do |f| %>
+      <%= render :partial => 'fields', :locals => { :f => f, :hide_admin_fields => true } %>
+      <%= f.submit _('Save') -%>
+    <% end %>
 </div>
-<div style="width: 67%">
+<% if @user.errors.length == 0 %>
+  <div>
+      <h2><%= _('Your newsletters') -%></h2>
+      <%= render_component :controller => 'newsletter_subscriptions', :action => 'list_users_newsletters' %>
+  </div>
+<% end %>
+
+<div>
+    <h2><%= _('Session information') -%></h2>
     <%= _('You\'r logged in from <em>%{ip}</em> as <b>%{username}</b>') % { :ip => request.env['REMOTE_ADDR'], :username => @user.longname } %>
     <div style="font-size: 13px;">
     <br/><b><%= _('Your Browser') -%></b>  :<br/> <%= request.env['HTTP_USER_AGENT'] -%><br />
@@ -15,4 +29,3 @@
     </div>
     <p><%= link_to _('Log out'), logout_path %></p>
 </div>
-

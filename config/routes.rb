@@ -58,7 +58,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :accessors
 
   map.resources :users, :member => { :welcome => :get, :create_registration => :post, :confirmation => :post  },
-    :collection => { :registrations => :get, :register => :get }
+    :collection => { :registrations => :get, :register => :get,
+                                       :send_password => :get }
 
   map.resources :authors
 

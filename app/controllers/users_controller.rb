@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter  :authenticate, :except => [ :register, :create_registration, :confirmation ]
+  before_filter  :authenticate, :except => [ :register, :create_registration, :confirmation, :send_password ]
   layout :get_application_layout
   
   # GET /users
@@ -115,10 +115,22 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = _('User was successfully updated.')
-        format.html { redirect_to(@user) }
+        format.html { 
+            if session[:initial_uri] != "/users/#{@user.id}"
+              redirect_to(@user) 
+            else
+              redirect_to welcome_user_path(@user)
+            end
+          }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html {  
+            if session[:initial_uri] != "/users/#{@user.id}"
+               render :action => 'edit'
+            else
+               render :action => 'welcome'
+            end 
+          }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
@@ -157,6 +169,22 @@ class UsersController < ApplicationController
     mk_tmp_file(@send_code)
   end
   
+  def send_password
+    if params[:email] and (not params[:email].empty?)
+      @user = User.find_by_email(params[:email])
+      if @user
+        @new_password = random_string(8)
+        @user.password_field=(@new_password)
+        @user.save!
+        UserMailer.deliver_send_password(@user,@new_password,request.env['SERVER_NAME'])
+      end
+      flash[:notice] = _("We've sent a new password to your e-mail-address <b>%s</b> if it is in our users database" ) % "#{params[:email]}"
+      redirect_to root_url
+    else
+      @text = _('Try again')
+    end
+  end
+  
   private
   def mk_tmp_file(send_code)
     code = random_string(5)
@@ -164,7 +192,6 @@ class UsersController < ApplicationController
     f.puts(code)
     f.close
   end
-  
   
   def check_sec_code(user_input,sec_code)
     rc = false

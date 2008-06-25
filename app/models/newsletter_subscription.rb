@@ -34,5 +34,6 @@ class NewsletterSubscription < ActiveRecord::Base
     "\n\nUNSUBSCRIBE/EDIT SUBSCRIPTION:\n\nABMELDEN/EINSTELLUNGEN:\n\n   #{u}\n\n---end--\n"
     txt
   end  
-
+  
+ 
 end

@@ -37,9 +37,27 @@ module ApplicationHelper
     if not logged_in?      
       return false
     else      
+      
       if  user.username.eql?('root')    
         return true
       end
+      
+      # check if user updates his own record
+      user_self_update = false
+      begin
+        if ( params[:id].to_i == (user.id.to_i) and
+             params["_method"]  == "put"     and
+             params["action"]   == "update"  and
+             params["controller"]== "users" 
+           )
+           user_self_update = true
+        end
+      rescue
+        user_self_update = false
+      end
+      return true if user_self_update == true
+      
+
       function = Function.find_by_name(function_name)
       if not function
         return false
@@ -118,10 +136,27 @@ module ApplicationHelper
          /<div style="float:left"><img src=/,'<div style="float:left"><img hspace=10 vspace=5 src=').gsub(
          /<p style="float:left"><img src=/,'<p style="float:left"><img hspace=10 vspace=5 src=') 
          )
-      return rc.gsub(
+         
+      
+       notie = rc.gsub(
        /flv:(.*):(.*):(.*):flv/, 
             WOWZA_INIT+  ' width="\2" height="\3" '  + WOWZA_2 +  ' width="\2" height="\3" ' +
             WOWZA_3 + 'height=\3&width=\2&file=rtmp://streaming.iboard.cc/fastplay/&id=\1' + WOWZA_CLOSE  )
+            
+      # fuckie_rand = random_string(5)
+       fuckie =      rc.gsub(
+       /flv:(.*):(.*):(.*):flv/, 
+            IE_INIT+ '\1' + IE_INIT_2  + '\'\2\',\'\3\'' + IE_INIT_3 +
+            ' so.addVariable(\'width\',\'\2\');
+              so.addVariable(\'height\',\'\3\'); ' +
+            IE_2 +  'rtmp://streaming.iboard.cc/fastplay/&id=\1' +
+            IE_CLOSE + '\1' + IE_CLOSE_2  )
+      
+       if  !request.env["HTTP_USER_AGENT"].include? "MSIE" 
+         return notie
+       else
+         return fuckie
+       end 
   end
   
   def icon(icon,title='',width=24, height=24)

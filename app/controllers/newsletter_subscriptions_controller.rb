@@ -126,4 +126,10 @@ class NewsletterSubscriptionsController < ApplicationController
     end
   end
   
+  
+  def list_users_newsletters
+    @subscriptions = NewsletterSubscription.find_all_by_email( user.email, :include => ['newsletter'] )
+    render :layout => false
+  end
+  
 end

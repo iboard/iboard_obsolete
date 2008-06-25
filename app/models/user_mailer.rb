@@ -29,4 +29,14 @@ class UserMailer < ActionMailer::Base
     body                    :ticket => ticket
     content_type            "text/html"
   end
+  
+  # Send Password
+  def send_password(user,new_password,host)
+    recipients              user.email
+    bcc                     REGISTRATION_COPY_TO_ADDRESS
+    from                    REGISTRATION_FROM_ADDRESS
+    subject                 _('New password for %s') % host
+    body                    :user => user, :new_password => new_password
+    content_type            "text/plain"
+  end
 end
