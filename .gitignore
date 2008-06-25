@@ -23,3 +23,6 @@ app/views/layouts/iboard_wwedu_com.html.erb
 po/de_AT/iboard-new.pot
 public/stylesheets/iboard_wwedu_com.css
 public/stylesheets/iboard_wwedu_com_ie.css
+paypal/*
+vendor/plugins/active_merchant/*
+
