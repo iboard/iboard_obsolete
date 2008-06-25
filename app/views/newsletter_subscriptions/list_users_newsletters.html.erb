@@ -1,0 +1,8 @@
+<ul>
+  <% @subscriptions.each do |nl| %>
+  
+    <li><b><%= nl.newsletter.name %></b> - <%= nl.newsletter.description -%></li>
+    
+  <% end %>
+</ul>
+<%= link_to _('Subscriptions'), subscribe_newsletter_subscriptions_path -%>
