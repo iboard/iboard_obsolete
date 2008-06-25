@@ -1,5 +1,12 @@
 <h1><%= _('Donate') -%></h1>
 
+<p>
+<%= _('If you want to support iBoard development we would be glad if you will donate any amount up from 1€.' ) %>
+<%= _('I promise to use your donation  for iBoard only and of course donaters have more 
+       chances to get their feature-requests as soon as possible ;-)') 
+-%>
+<p>
+
 <form action="<%= @action_url %>" method="post">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <p><%=_('Amount') -%>:<%= text_field_tag :amount, "10", :size => 4, :id => 'amount' -%> EURO</p>
