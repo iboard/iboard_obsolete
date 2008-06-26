@@ -1601,7 +1601,7 @@ msgstr "Galerien"
 
 
 msgid "Donation for iboard.cc"
-msgstr "Spende für iboard.cc"
+msgstr "Spende an iboard.cc"
 
 msgid "Thank you for donating to iboard.cc!"
 msgstr "Danke für Ihre Spende an iboard.cc!"
