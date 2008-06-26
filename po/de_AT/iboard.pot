@@ -1598,3 +1598,37 @@ msgstr "Verbindungsinformationen"
 
 msgid "Galleries"
 msgstr "Galerien"
+
+
+msgid "Donation for iboard.cc"
+msgstr "Spende für iboard.cc"
+
+msgid "Thank you for donating to iboard.cc!"
+msgstr "Danke für Ihre Spende an iboard.cc!"
+
+msgid "Donate"
+msgstr "Spenden"
+
+msgid "If you want to support iBoard development we would be glad if you will donate any amount up from 1€."
+msgstr "Wenn Sie die Weiterentwicklung von iBoard unterstützen wollen würden wir uns über eine kleine Spende freuen (jeder Betrag ab 1€ ist möglich)"
+
+msgid "I promise to use your donation  for iBoard only and of course donaters have more \n       chances to get their feature-requests as soon as possible ;-)"
+msgstr "Ich verspreche dass Ihre Spende ausschliesslich für die Entwicklung von iBoard benutzt wird und \n natürlich haben Spender eine große Chance, dass Ihre Erweiterungswünsche schneller erfüllt werden ;-)"
+
+msgid "Amount"
+msgstr "Betrag"
+
+msgid "You may donate any amount up from 1 €"
+msgstr "Sie können jeden Betrag ab 1 € spenden"
+
+msgid "Donate using paypal"
+msgstr "Spenden mit paypal"
+
+msgid "Thank you!"
+msgstr "Vielen Dank!"
+
+msgid "Your donation will help us to develop iBoard.cc. If you have any feature request don't hesitate to drop me an email to andi@iboard.cc"
+msgstr "Ihre Spende wird uns helfen die Entwicklung von iBoard voranzutreiben. Wenn Sie Wünsche bzgl. Erweiterungen haben senden Sie mir ruhig Ihre Vorstellungen an andi@iboard.cc"
+
+
+

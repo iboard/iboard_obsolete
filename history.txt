@@ -1,5 +1,10 @@
 == iBoard 2.0 History File
 
+=== 2008-06-26
+
+  * Added ActiveMerchant, Money.
+  * Controller "paypal" added.
+
 === 2008-06-23
 
   * Security code for comments added
