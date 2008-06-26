@@ -1,0 +1,23 @@
+From 607ebb6ca139a295100b147bf2e2edf7b23d6855 Mon Sep 17 00:00:00 2001
+From: Andi Altendorfer <andi@iboard.cc>
+Date: Thu, 26 Jun 2008 10:35:25 +0200
+Subject: Added gems to script/install_plugins.sh
+
+---
+ script/install_plugins.sh |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+diff --git a/script/install_plugins.sh b/script/install_plugins.sh
+index aaa415ebb089482498dcfae1064925b010247dda..42627c0227d44dab2b043f2c3bcb92e5214c5e45 100755
+--- a/script/install_plugins.sh
++++ b/script/install_plugins.sh
+@@ -9,4 +9,6 @@
+ #
+ # obsolete # ./script/plugin install svn://errtheblog.com/svn/plugins/will_paginate
+ sudo gem install will_paginate
++sudo gem install activemerchant
++sudo gem install money
+ 
+-- 
+1.5.5.3
+
