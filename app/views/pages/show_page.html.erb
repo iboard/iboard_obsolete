@@ -1,4 +1,5 @@
 <% content_for :html_title do %><%=h @page.name -%><% end %>
+<% content_for :rss_link do %><%= link_to( icon('rss.png','Subscribe to RSS feed',24,12 ), formatted_postings_url(:rss) ) -%><% end %>
 <% if granted_for? 'Edit layout' %>
   <%= render :partial => 'edit_layout_buttons' -%>
 <% end %>

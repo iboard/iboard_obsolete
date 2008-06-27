@@ -1,3 +1,4 @@
+<% content_for :rss_link do %><%= link_to( icon('rss.png','Subscribe to Events RSS feed',24,12 ), formatted_events_url(:rss) ) -%><% end %>
 <% @events.in_groups_of(4) do |row_events| %>
   <div class='calendar_index'>
      <%= render :partial => 'events_row', :locals => { :events => row_events } %>

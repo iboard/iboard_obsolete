@@ -1,4 +1,5 @@
 <% content_for :html_title do %><%= _('Postings') -%><% end %>
+<% content_for :rss_link do %><%= link_to( icon('rss.png','Subscribe to RSS feed',24,12 ), formatted_postings_url(:rss) ) -%><% end %>
 <% content_for :controller_menu do %>
   <%= _('%{postings} found') % { :postings => pluralize(@postings.length, _('posting')) } -%> 
   <% if granted_for? 'new posting' %>
