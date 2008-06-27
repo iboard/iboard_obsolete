@@ -67,10 +67,7 @@
       <% end %>
       
       <div class='banner_layout_row'>
-         <div class='rss_chooser'><%= icon('rss.png', 30,20, 'Subscribe to RSS feed' ) -%>&nbsp;&nbsp;<%=  LANGUAGE_CODES.map { |lc| 
-                  link_to( "#{lc[0]}", "#{root_url}rss?language=#{lc[1]}")
-                }.join(", ") 
-           -%>
+         <div class='rss_chooser'><%= yield :rss_link  -%>
          </div>
          <div class='site_title'><h1>iBoard 2.0</h1><p>by Andi Altendorfer, Haid, Austria</p></div>
 
