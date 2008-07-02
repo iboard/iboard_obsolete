@@ -1,0 +1,45 @@
+<div class="form_item">
+    <div class="field_label"><%= _('Item name') -%>:</div>
+    <div class="input_field"><%= f.text_field :title, :size => 68 %></div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Shop') -%>:</div><br />
+    <div class="input_field"><%= f.select :shop_id, Shop.find(:all).map { |s| [s.name,s.id] } %></div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Item description') -%>:</div><br />
+    <div class="input_field"><%= f.text_area :description, :rows => 5, :cols => 80 %></div>
+</div>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Item price (incl. tax)') -%>:</div>
+    <div class="input_field"><%= f.text_field :price, :size => 5 %></div>
+    <div class="field_label"><%= _('Tax') -%>:</div>
+    <div class="input_field"><%= f.text_field :tax, :size => 3 %>%</div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Items in stock') -%>:</div>
+    <div class="input_field"><%= f.text_field :stock, :size => 5 %></div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Delivery note') -%>:</div><br />
+    <div class="input_field"><%= f.text_area :delivery_note, :rows => 5, :cols => 80 %></div>
+</div>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Item delivery time') -%>:</div>
+    <div class="input_field"><%= f.text_field :delivery_time %></div>
+</div>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Delivery type') -%>:</div>
+    <div class="input_field"><%= f.select :delivery_type, [0,1] %> 0=download, 1=shipping</div>
+</div>

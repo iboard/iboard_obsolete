@@ -1,0 +1,9 @@
+<% if @shop %>
+<h1><%= _('Items in shop %s') % @shop.name -%></h1>
+<% else %>
+<h1><%= _('All Items') -%></h1>
+<% end %>
+
+<div class='shop_item_list_table'>
+  <%= render :partial => @shop_items -%>
+</div>

@@ -1,4 +1,5 @@
 class CreateShopItems < ActiveRecord::Migration
+    
   def self.up
     create_table :shop_items do |t|
       t.string   :title

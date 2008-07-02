@@ -1,0 +1,27 @@
+<% if @transaction && @notify %>
+<% begin %>
+  <h1><%= _('Thank you, %{firstname} %{lastname}!') % { :firstname => @notify.params['first_name'], :lastname => @notify.params['last_name'] } -%></h1>
+<% rescue %>
+  <h1><%= _('Thank you!') -%></h1>
+<% end %>
+  <p><%= _('Transaction completed') -%></p>
+  <p>
+    <%= _('We receive %{amount} %{cc} from paypal') % {:amount => (@notify.amount.cents/100).to_s, :cc => @notify.amount.currency } -%>
+  </p>      
+  <p>
+    <%= _('Please refere to Transaction-ID %s if you have any question' )  % @notify.transaction_id -%> <br />
+  </p>
+  <h2><%= _('Invoice') -%></h2>
+  <p>
+      <%= _('Invoice-Number') -%>:<b><%= @notify.invoice -%></b>
+  </p>
+  <p>
+      <%= _('Quantity')    -%>:<b><%= @notify.params['quantity']     -%></b><br/>
+      <%= _('Item-Name')   -%>:<b><%= @notify.params['item_name']    -%></b><br/>
+      <%= _('Item-Number') -%>:<b><%= @notify.item_id                -%></b><br/>
+  </p>
+  
+<% else %>
+  oops, transaction is nil!
+<% end %>
+<hr>

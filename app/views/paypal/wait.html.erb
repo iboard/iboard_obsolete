@@ -1,0 +1,14 @@
+<div id="waiting">
+    <%= _('<b>Thank You!</b>,<br />Please wait while transaction-processing' ) -%>
+</div>
+
+
+<%=      
+      periodically_call_remote( 
+           :url => update_wait_paypal_url,
+           :method => :get,
+           :frequency => 3,
+           :update => "waiting",
+           :with => "'txn_id=' + '#{@transaction.txn_id}'" 
+      )
+ -%>

@@ -1,0 +1,48 @@
+<h1><%= @shop_item.title -%></h1>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Item description') -%>:</div>
+    <div class="input_field"><%= @shop_item.description %></div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Shop') -%>:</div>
+    <div class="input_field"><%= @shop_item.shop.name unless @shop_item.nil? %></div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Item price (incl. tax)') -%>:</div>
+    <div class="input_field"><%= @shop_item.price.to_s %></div>
+    <div class="field_label"><%= _('Tax') -%>:</div>
+    <div class="input_field"><%= @shop_item.tax.to_s %>%</div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Items in stock') -%>:</div>
+    <div class="input_field"><%= @shop_item.stock.to_s %></div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Delivery note') -%>:</div>
+    <div class="input_field"><%= @shop_item.delivery_note %></div>
+</div>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Item delivery time') -%>:</div>
+    <div class="input_field"><%= @shop_item.delivery_time %></div>
+</div>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Delivery type') -%>:</div>
+    <div class="input_field"><%= @shop_item.delivery_type.to_s %> 0=download, 1=shipping</div>
+</div>
+
+<div class='top_buttons'>
+    <%= link_to _('Edit item'),    edit_shop_item_path(@shop_item) -%> | 
+    <%= link_to _('goto shop'),    shop_path(@shop_item.shop) unless @shop_item.shop.nil? -%> | 
+    <%= link_to _('Back to list'), shop_items_path(:shop => @shop_item.shop) -%> 
+</div>

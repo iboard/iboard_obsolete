@@ -5,13 +5,16 @@
            <b><%= _('Username') -%></b><br />
            <%= f.text_field :username %>
          </p>
-         <% if not hide_admin_fields %>         
-          <p>
-            <b><%= _('User Locked?') -%></b><br />
-            <%= f.check_box :locked %>
-          </p>
+         <% begin %>
+            <% if not hide_admin_fields %>         
+             <p>
+               <b><%= _('User Locked?') -%></b><br />
+               <%= f.check_box :locked %>
+             </p>
+            <% end %>
+         <% rescue %>
+           <!-- # no admin -->
          <% end %>
-         
          <p>
            <b><%= _('EMail') -%></b><br />
            <%= f.text_field :email %>
@@ -27,19 +30,23 @@
            <%= f.password_field :password_field %>
          </p>
        </td>
-       <% if not hide_admin_fields %>
-          <td valign=top align=left width=50%> 
-              <% if @user.new_record? %>
-                <div class='right_box'>
-                  <%= _('Please save this new record before assigning functions here.') -%>
-                </div>
-              <% else %> 
-                <h2><%= _('Accessors' ) -%></h2>
-                <% Function.find(:all,:order => 'name').each do |function| %>
-                  <div><%= check_box_tag "user[function_ids][]", function.id, (@user.functions.include? function) -%><%= function.name %></div>
-                <% end %>
-              <% end %> 
-          </td>
+       <% begin %>
+         <% if not hide_admin_fields %>
+            <td valign=top align=left width=50%> 
+                <% if @user.new_record? %>
+                  <div class='right_box'>
+                    <%= _('Please save this new record before assigning functions here.') -%>
+                  </div>
+                <% else %> 
+                  <h2><%= _('Accessors' ) -%></h2>
+                  <% Function.find(:all,:order => 'name').each do |function| %>
+                    <div><%= check_box_tag "user[function_ids][]", function.id, (@user.functions.include? function) -%><%= function.name %></div>
+                  <% end %>
+                <% end %> 
+            </td>
+         <% end %>
+       <% rescue %>       
+          <!-- # no admin -->
        <% end %>
   </tr>
 </table>

@@ -1,3 +1,20 @@
 <div class="form_item">
-    <%= _('Shop-name') -%>: <%= f.text_field :name %>
+    <div class="field_label"><%= _('Shop-name') -%>:</div>
+    <div class="input_field"><%= f.text_field :name, :size => 68 %></div>
+</div>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Shop-description') -%>:</div><br /> 
+    <div class="input_field"><%= f.text_area :description, :cols => 80, :rows => 5 %></div>
+</div>
+
+<div class="form_item">
+    <div class="field_label"><%= _('Seller infromation') -%>:</div><br /> 
+    <div class="input_field"><%= f.text_area :seller, :cols => 40, :rows => 5 %></div>
+</div>
+
+
+<div class="form_item">
+    <div class="field_label"><%= _('Terms and conditions') -%>:</div><br /> 
+    <div class="input_field"><%= f.text_area :terms_and_conditions, :cols => 80, :rows => 20 %></div>
 </div>

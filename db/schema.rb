@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 38) do
+ActiveRecord::Schema.define(:version => 40) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -190,6 +190,14 @@ ActiveRecord::Schema.define(:version => 38) do
     t.integer  "position",                :default => 0
   end
 
+  create_table "payments", :force => true do |t|
+    t.string   "txn_id"
+    t.text     "notification"
+    t.integer  "shop_item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "postings", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -217,6 +225,11 @@ ActiveRecord::Schema.define(:version => 38) do
     t.integer  "shop_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "stock",         :default => 0
+    t.string   "delivery_note", :default => ""
+    t.string   "delivery_time", :default => ""
+    t.integer  "delivery_type", :default => 1
+    t.float    "tax",           :default => 0.0
   end
 
   create_table "shops", :force => true do |t|
@@ -224,6 +237,8 @@ ActiveRecord::Schema.define(:version => 38) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "seller"
+    t.text     "terms_and_conditions"
   end
 
   create_table "tickets", :force => true do |t|

@@ -1,0 +1,10 @@
+<h1><%= _('Edit shop item %s') % @shop_item.title -%></h1>
+
+<% form_for @shop_item do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <div class='form_buttons'>
+    <%= f.submit(_('update item')) -%>
+  </div>
+<% end %>
+
+

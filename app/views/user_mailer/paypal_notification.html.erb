@@ -1,4 +1,8 @@
-<h1>PAYPAL income!</h1>
+<h1>PAYPAL income notification</h1>
 
-<%= debug @paypal_notification -%>
+<% @paypal_notification.params.each_with_index do |item,index| %>
+
+  <p><b><%= item[0] -%>(<%= index -%>)</b>: <%= item[1] -%>
+
+<% end %>
 

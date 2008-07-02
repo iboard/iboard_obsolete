@@ -1,6 +1,22 @@
 <h1><%= _('Shop %s') % @shop.name %></h1>
 
+<div class="shop_description">
+    <%= interpret h(@shop.seller )     -%>
+    <%= interpret h(@shop.description) -%>
+</div>
 
-<div class="link_button">
-<%= link_to _('Shop list'), shops_path -%>
+<div class='top_buttons'>
+    <%= link_to _('Edit shop'), edit_shop_path(@shop) -%> | 
+    <%= link_to _('Items'), shop_items_path(:shop => @shop) -%> | 
+    <%= link_to _('Shop list'), shops_path -%> 
+</div>
+
+<div class='list_of_shop_items'>
+    
+    <h2><%= _('Shop items') -%></h2>
+    <div class='top_buttons'>
+        <%= link_to _('Add item'), new_shop_item_path(:shop => @shop) -%>
+    </div>
+    
+    <%= render :partial => @shop.shop_items -%>
 </div>

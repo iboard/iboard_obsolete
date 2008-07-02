@@ -2,7 +2,7 @@ class CreateShops < ActiveRecord::Migration
   def self.up
     create_table :shops do |t|
       t.string :name
-      t.text :description
+      t.text   :description
 
       t.timestamps
     end

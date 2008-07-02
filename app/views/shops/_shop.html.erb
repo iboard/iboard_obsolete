@@ -1,4 +1,9 @@
 <div class="shop_summary">
-  <div class="title"><%= link_to shop.name, edit_shop_path(shop) -%></div>
+  <div class="list_title"><%= link_to shop.name, shop -%></div>
+  <div class="list_actions">
+      <%= link_to _('Items'), shop_items_path(:shop => shop) -%> | 
+      <%= link_to _('Edit shop'),  edit_shop_path(shop) -%> |
+      <%= link_to _('Enter shop'), shop -%>
+  </div>
 </div>
 <p></p>

@@ -1,0 +1,28 @@
+<h1><%= _('Buy %s') % @shop_item.title -%></h1>
+
+<form action="<%= @action_url %>" method="post">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+
+  <div>
+      <p><%=_('Num items') -%>: <%= text_field_tag :count, "1", :size => 4 -%></p>
+  </div>
+
+  <div id='encrypted_field'>
+      <input id='encrypted' type="hidden" name="encrypted" value="<%= @encrypted_basic %>" />
+      <input type='hidden' name='amount' id='amount' value='<%= @shop_item.price.to_s -%>'>
+      
+      <p><%=_('Total price') -%>: <span style='display: inline;' id='total'><%= @shop_item.price.to_s -%></span> EUR</p>
+  </div>
+
+  <%= 
+       observe_field :count, :url => { :action => :update_paypal_form },
+            :frequency => 0.25,
+            :update => "encrypted_field",
+            :with => "'id=#{@shop_item.id.to_s}' +  '&count=' + escape(count.value)" 
+  -%>
+  
+  <p>
+      <input type="submit" value="<%= _('buy using paypal') -%>">
+  </p>
+
+</form>

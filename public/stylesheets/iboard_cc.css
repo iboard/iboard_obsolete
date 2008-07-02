@@ -350,6 +350,11 @@ H1, H2 {
 	margin-bottom: 5px;
 }
 
+.top_buttons {
+  margin-top: 5px;
+  margin-left: 5px;	
+}
+
 .top_buttons_right {
 	float: rigth;
 	padding: 10px;
@@ -524,3 +529,57 @@ H1, H2 {
 .last_line {
 	font-size: 9px;
 }
+
+.form_item {
+	margin-top: 10px;
+}
+
+.field_label {
+	display: inline;
+	font-weight: bold;
+}
+
+.input_field {
+	display: inline;
+}
+
+.list_title {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.list_actions {
+	margin-left: 20px;
+}
+
+.shop_description {
+	font-size: 14px;
+}
+
+.form_buttons {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.shop_item_list_table {
+	display: table;
+}
+.shop_item_list_entry {
+	border-bottom: 1px solid #8B8B8B;
+	display: table-row;
+}
+
+.list_item_cell,
+.list_item_title {
+	display: table-cell;
+	width: 200px;
+}
+
+#waiting {
+	border: 1px solid #ddd;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding: 10px;
+}
+

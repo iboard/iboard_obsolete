@@ -1,6 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :shops
+  
+  map.resources :shop_items, 
+    :member => { :buy => :get }
 
   map.toggle_layout_buttons '/authenticate/toggle_layout_buttons', :controller => 'authenticate', :action => 'toggle_layout_buttons'
     
@@ -92,7 +95,9 @@ ActionController::Routing::Routes.draw do |map|
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
   map.thanks_for_donation "paypal/thanks_for_donation", :controller => 'paypal', :action => 'thanks_for_donation'
-  map.donate "paypal/donate", :controller => 'paypal', :action => 'donate'
+  map.donate              "paypal/donate", :controller => 'paypal', :action => 'donate'
+  map.wait_paypal         "paypal/wait",   :controller => 'paypal', :action => 'wait'
+  map.update_wait_paypal  "paypal/update_wait",   :controller => 'paypal', :action => 'update_wait'
   
   map.logout 'authenticate/logout', :controller => 'authenticate', :action => 'logout'
   map.login  'authenticate/login', :controller => 'authenticate', :action => 'login'

@@ -1,0 +1,6 @@
+<div class='shop_item_list_entry'>
+    <div class='list_item_title'><%= link_to( shop_item.title, edit_shop_item_path(shop_item) )-%></div>
+    <div class='list_item_cell'><%= shop_item.description -%></div>
+    <div class='list_item_cell'><%= shop_item.price.to_s -%></div>
+    <div class='list_item_cell'><%= link_to _('buy now'), buy_shop_item_path(shop_item) -%></div>
+</div>
