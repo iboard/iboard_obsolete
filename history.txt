@@ -1,5 +1,11 @@
 == iBoard 2.0 History File
 
+=== 2008-07-04
+
+  * Paypal and editor branch merged to master
+  * Simple Textilize Editor for postings and shop_items
+  * Paypal works with donation and shop_items but there is no chart yet.
+
 === 2008-06-26
 
   * Added ActiveMerchant, Money.
