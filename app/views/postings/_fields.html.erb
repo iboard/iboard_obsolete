@@ -51,8 +51,7 @@
 <div style="width: 550px;"><p>
   <b><%= _('Body') -%></b><br />
    <%= textile_editor 'posting', 'body', :cols => 73, :rows => 20 -%>
-  
- 
+   <%= textile_editor_initialize -%>
   <br/>
   <%= _('Truncate body in columndisplay to') -%><%= f.text_field :truncate_length, :size => 5 %><%= _('Characters') -%>
   | <%= _('Show rating') -%><%= f.check_box :allow_comments %>
@@ -63,4 +62,3 @@
   <b><%= _('expires') %></b><br />
   <%= f.date_select :date_expires %>
 </p>
-<%= textile_editor_initialize -%>

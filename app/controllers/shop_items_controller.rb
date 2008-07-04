@@ -4,6 +4,8 @@ class ShopItemsController < ApplicationController
   require 'crypto42'
   require 'money'
 
+  before_filter :authenticate, :except => [:index, :show, :buy, :update_paypal_form ]
+
   def index
     if not params[:shop]
       @shop_items = ShopItem.find(:all)
