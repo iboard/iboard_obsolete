@@ -12,7 +12,8 @@
 
 <div class="form_item">
     <div class="field_label"><%= _('Item description') -%>:</div><br />
-    <div class="input_field"><%= f.text_area :description, :rows => 5, :cols => 80 %></div>
+    <div class="input_field"><%= textile_editor 'shop_item', 'description', :cols => 80, :rows => 5 -%></div>
+    <%= textile_editor_initialize -%>
 </div>
 
 <div class="form_item">

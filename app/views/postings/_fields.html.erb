@@ -19,12 +19,16 @@
       <% end %>
   </div>
 <% end %>
+
 <% if @column %>
   <div class='right_box_small'>
       <%= _('This posting will be auto-assigned to <br/><b>%s</b>') % @column.title %>
       <%= hidden_field_tag :auto_add_to_column, @column.id.to_s -%>
   </div>
 <% end %>
+
+
+
 <p>
   <b><%= _('Title') -%></b><br />
   <%= f.text_field :title, :size => 75 %>
@@ -43,16 +47,20 @@
   <br/><%= f.radio_button :allow_editing,  1 %>&nbsp;<%= _('By registered users')%>
   <br/><%= f.radio_button :allow_editing,  2 %>&nbsp;<%= _('By function members (as selected above)')%>
   <br/><%= f.radio_button :allow_editing,  99 %>&nbsp;<%= _('public writeable')%>
-<p>
+
+<div style="width: 550px;"><p>
   <b><%= _('Body') -%></b><br />
-  <%= f.text_area :body, :cols => 73, :rows => 20 %>
+   <%= textile_editor 'posting', 'body', :cols => 73, :rows => 20 -%>
+  
+ 
   <br/>
   <%= _('Truncate body in columndisplay to') -%><%= f.text_field :truncate_length, :size => 5 %><%= _('Characters') -%>
   | <%= _('Show rating') -%><%= f.check_box :allow_comments %>
 </p>
-
+</div>
 
 <p>
   <b><%= _('expires') %></b><br />
   <%= f.date_select :date_expires %>
 </p>
+<%= textile_editor_initialize -%>
