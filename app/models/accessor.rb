@@ -26,7 +26,7 @@ class Accessor < ActiveRecord::Base
   
   
   protected
-  def register_function(user,request,function)
+  def self.register_function(user,request,function)
     fnc = Function.find_by_name(function)
     if !fnc
       fnc = Function.create( :name => function, :comment => "Autocreated when user #{user.username} confirms" )
