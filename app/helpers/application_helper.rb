@@ -170,27 +170,39 @@ module ApplicationHelper
   end
 
   def shadow_wrapper(&block)
-    concat("<div class='shadow_table'>
-        <div class='shadow_above_row'>
-            <div class='shadow_upper_left'></div>
-            <div class='shadow_upper_middle'></div>
-            <div class='shadow_upper_right'></div>
-        </div>
-        <div class='shadow_content_row'>
-            <div class='shadow_content_left'></div>
-            <div class='shadow_content'>", block.binding )
-     
-            yield
-     
-     concat("</div>
-            <div class='shadow_content_right'></div>
-        </div>
-        <div class='shadow_below_row'>
-            <div class='shadow_below_left'></div>
-            <div class='shadow_below_middle'></div>
-            <div class='shadow_below_right'></div>
-        </div>
-    </div>", block.binding )
+    begin
+      if USE_SHADOW_WRAPPER
+        concat("<div class='shadow_table'>
+            <div class='shadow_above_row'>
+                <div class='shadow_upper_left'></div>
+                <div class='shadow_upper_middle'></div>
+                <div class='shadow_upper_right'></div>
+            </div>
+            <div class='shadow_content_row'>
+                <div class='shadow_content_left'></div>
+                <div class='shadow_content'>", block.binding )
+         
+                yield
+         
+         concat("</div>
+                <div class='shadow_content_right'></div>
+            </div>
+            <div class='shadow_below_row'>
+                <div class='shadow_below_left'></div>
+                <div class='shadow_below_middle'></div>
+                <div class='shadow_below_right'></div>
+            </div>
+        </div>", block.binding )
+      else
+        concat("<!-- no shadows begin -->", block.binding )
+        yield
+        concat("<!-- no shadows end -->", block.binding )
+      end
+    rescue
+      concat("<!-- no shadows begin -->", block.binding )
+      yield
+      concat("<!-- no shadows end -->", block.binding )
+    end
   end
   
   def render_stars(rating,comment)

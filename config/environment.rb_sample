@@ -63,5 +63,7 @@ Rails::Initializer.run do |config|
   DateTime::DATE_FORMATS[:begins_at] = "%d. %b `%y"
   Time::DATE_FORMATS[:begins_at] = "%d. %b `%y %H:%M"
   
+  USE_SHADOW_WRAPPER = false
+  
   
 end
