@@ -15,7 +15,7 @@
   <% end %>
   <%= javascript_include_tag 'prototype', 'effects', 'application', 'dragdrop.js' %>
 </head>
-<body id='body' onload="new Effect.Fade('flash_popup',{});">
+<body id='body'><!-- onload="new Effect.Fade('flash_popup',{});"> -->
      
     <div id="webview" style="
               position: absolute;
@@ -53,7 +53,7 @@
             
     <div class='top1'>
        <center>
-            <div id='open_id' style='color: #BD9B4A; padding: 2px; padding-left: 10px; width: 100px;'>
+           <!-- <div id='open_id' style='color: #BD9B4A; padding: 2px; padding-left: 10px; width: 100px;'>
                 <a  
                     onclick="Element.hide('open_id');Element.show('close_id');new Effect.Appear('flash_popup',{});">
                      <%= _('open flash stage') -%>
@@ -86,6 +86,7 @@
                 				type="application/x-shockwave-flash" width="766" quality="best" play="true">
                 </object>
             </div>
+        -->
        </center>
     </div>
     <div class='top2'>

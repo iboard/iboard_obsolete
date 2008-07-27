@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 40) do
+ActiveRecord::Schema.define(:version => 43) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -239,6 +239,34 @@ ActiveRecord::Schema.define(:version => 40) do
     t.datetime "updated_at"
     t.text     "seller"
     t.text     "terms_and_conditions"
+  end
+
+  create_table "survey_answers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "survey_question_id"
+    t.string   "answer"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_questions", :force => true do |t|
+    t.text     "question"
+    t.integer  "survey_id"
+    t.integer  "qtype"
+    t.boolean  "mandatory"
+    t.string   "values"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surveys", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "date_start"
+    t.datetime "date_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tickets", :force => true do |t|

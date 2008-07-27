@@ -1,0 +1,24 @@
+<pre>
+    <%= _('Input format:') %>:
+    id;vorname;nachname;titel;username;passwort
+</pre>
+<%= _('Please enter or paste one or more (line seperated) records as shown above') -%>
+<br/>
+<% form_tag do %>
+  <%= text_area_tag :csv, "", :rows => 40, :cols => 70 -%>
+  <p></p>
+  <%= submit_tag _('Import...')%>
+<% end %>
+
+
+<% if @lines %>
+  <ul>
+    <% for line in @lines %>
+      <li><%= line %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<pre>
+<%= @output %>
+</pre>

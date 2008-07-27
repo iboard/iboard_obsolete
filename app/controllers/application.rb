@@ -27,12 +27,19 @@ class ApplicationController < ActionController::Base
     if not user.nil?
       if user.utok == session[:utok]
         req = (root_path == "/") ? request.request_uri.gsub(/^\/(.*)/,'\1') : request.request_uri.gsub(root_path,"")
+        prm = req.split("/")
+        
         req.gsub!(/^(.*)\?(.*)$/,'\1')
         ctl = req.split("/")[0]
-        ok = granted_for?(ctl) || user.id==0 || req == "users/#{user.id}/welcome" || req == "newsletter_subscriptions/subscribe"
+        ok = (
+          granted_for?(ctl) || user.id==0 || 
+          req == "users/#{user.id}/welcome" || 
+          req == "newsletter_subscriptions/subscribe" ||
+          (prm[0] == "surveys" && (prm[2] == "answer"||prm[2]=="save_answer"))
+        )
         if not ok
           flash[:error] = _('Permission denied to <em>%{ctl}-controller</em> for <em>%{user}</em>') % 
-            {:ctl => ctl, :user => user.longname}
+            {:ctl => ctl+", "+req, :user => user.longname}
           flash[:error]+= "<br />" + _('Please log in with an authorized user')
         end
       end

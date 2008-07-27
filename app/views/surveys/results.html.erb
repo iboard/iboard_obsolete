@@ -1,0 +1,65 @@
+<h1><%= @survey.title %></h1>
+<p>
+  <%= interpret @survey.description %>
+  <br>From: <%= @survey.date_start -%>
+      to: <%= @survey.date_end -%>
+</p>
+<h2>Results</h2>
+<p><%= @survey.survey_questions.length %> <%= _("Question(s)") -%>, <p><%= @survey.survey_answers.length/@survey.survey_questions.length %> <%= _("Answers") -%></p>
+<table border="1" width=100%>
+    <% @survey.survey_questions.each do |question| %>
+      <% answers = question.survey_answers %>
+      <tr>
+        <td><%= question.question -%></td>
+        <td><%= question.qtype %></td>
+        <td width=200><% case question.qtype 
+               when 0 %>
+              <%= question.survey_answers.map { |a| a.answer }.join("<br/>")%>
+            <% when 1 %>
+              <b><%= _('Average') -%> = <%= (question.survey_answers.map { |a| a.answer.to_i }.sum.to_f)/(@survey.survey_answers.length/@survey.survey_questions.length) %>
+              </b><br/>
+              <% act_answer = "" 
+                   act_sum    = 0 
+                   act_num    = 0 %>
+                <%= question.survey_answers.map do |a| a.answer.to_i 
+                    if a.answer != act_answer && act_answer != ""
+                         "#{act_num} Answers #{act_answer}<br/> " 
+                         act_sum = act_answer.to_f 
+                         act_num = 1 
+                        "#{act_num} Answers #{act_answer} <br/>"          
+                        act_answer = a.answer
+                    else
+                        act_answer = a.answer if act_answer == "" 
+                        act_sum += act_answer.to_f
+                        act_num += 1
+                        act_answer = a.answer
+                    end   
+                   end
+                   "#{act_num} Answers #{act_answer} <br/>"
+                 %>    
+            <% when 2 %>
+              <% act_answer = "" 
+                 act_sum    = 0 
+                 act_num    = 0 %>
+              <%= question.survey_answers.map do |a| a.answer.to_i 
+                  if a.answer != act_answer && act_answer != ""
+                       "#{act_num} Answers #{act_answer}<br/> " 
+                       act_sum = act_answer.to_f 
+                       act_num = 1 
+                  else
+                      act_sum += act_answer.to_f
+                      act_num += 1
+                  end
+                  if a.answer != act_answer 
+                      act_answer = a.answer
+                  end
+                  "#{act_num} Answers #{act_answer} <br/>"                 
+                 end
+              %>
+            <% else %>
+               <%= _('unknown question type') -%>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+</table>

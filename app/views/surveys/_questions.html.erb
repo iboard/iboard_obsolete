@@ -1,0 +1,24 @@
+<% if (not @survey.new_record?) %>
+  <div style="width: 100%; display: table;">
+    <%- for question in @survey.survey_questions -%>
+      <div style="display: table-row;" onmouseover="Element.setStyle(this, 'background: #eee;');"
+        onmouseout="Element.setStyle(this,'background: white;');"
+      >
+        <div style="display: table-cell;">
+          <p><b><%= question.question %></b></p>
+        </div>
+        <div style="display: table-cell;">
+            <%= question.qtype -%>
+        </div>
+        <div style="display: table-cell;">
+          <p><%= question.values -%></p>
+        </div>
+        <div style="display: table-cell;">
+          <p><%= link_to _('Delete'), destroy_question_survey_path(question), 
+                 :confirm => _('Are you shure?'),
+                 :method => :put -%>
+        </div>
+      </div>
+    <%- end -%>
+  </div>
+<% end %>

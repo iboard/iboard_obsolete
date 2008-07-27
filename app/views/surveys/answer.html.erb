@@ -1,0 +1,10 @@
+<div class="survey" >
+  <h1><%= @survey.title %></h1>
+  <p><%= interpret @survey.description -%></p>
+  <% form_tag "save_answer" do %>
+    
+    <%= render :partial => @survey.survey_questions -%>
+    <p></p>
+    <p><%= submit_tag _('Submit') -%></p>
+  <% end %>
+</div>

@@ -1,0 +1,33 @@
+<p>
+   <b><%= _('Title') -%></b><br />
+   <%= f.text_field :title, :size => 70 %>
+ </p>
+
+ <p>
+   <b><%= _('Description') -%></b><br />
+   <%= f.text_area :description, :cols => 68, :rows => 5 %>
+ </p>
+
+ <p>
+   <b><%= _('Date start') -%></b><br />
+   <%= f.datetime_select :date_start %>
+ </p>
+
+ <p>
+   <b><%= _('Date end') -%></b><br />
+   <%= f.datetime_select :date_end %>
+ </p>
+ <% if not @survey.new_record? %>
+   <h2><%= _('Questions') -%></h2>
+   
+   <%= render :partial => 'questions', :locals => { :survey => @survey } -%>
+   
+   <%= link_to_remote _('Add question'), 
+       :url => add_question_survey_path(@survey), :method => :get,
+       :update => 'question' %>
+   
+   <div id="question">
+   </div>
+   
+   
+ <% end %> 

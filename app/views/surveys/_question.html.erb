@@ -1,0 +1,22 @@
+<p><strong>
+  <%= question.question -%>
+  </strong>
+<p>
+<blockquote>
+  <% case question.qtype 
+     when 0 %>
+    <%= text_field_tag :answer %>
+  <% when 1 %>
+     <% values = question.values.split(";") %>
+      <% for value in values                 %>
+        <%= radio_button_tag "answer", value %>&nbsp;<%= value %><br/>
+      <% end                                 %>
+  <% when 2 %>
+    <% values = question.values.split(";") %>
+     <% for value in values                 %>
+       <%= check_box_tag "answer[]", value %>&nbsp;<%= value %><br/>
+     <% end                                 %>
+  <% else %>
+    <em><%= _('unknown question type') -%>
+  <% end %>
+</blockquote>

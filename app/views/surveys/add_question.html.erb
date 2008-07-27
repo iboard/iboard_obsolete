@@ -1,0 +1,15 @@
+<p><b><%= _('New question: ') -%></b></p>
+<p><%= text_field_tag :new_question, '', :size => 50 -%>
+   <b><%= _('Type') -%></b>: <%= select_tag :question_type, 
+       [
+           [_('Text'), 0],
+           [_('one of ...'),1],
+           [_('multiple choice'),2],
+       ].map { |label, value|
+           "<option value='#{value}'>#{label}</option>"
+       } -%>
+</p>
+<p>
+    <b><%= _('Values') -%></b><br/>
+    <%= text_field_tag :new_question_values, '', :size => 50 -%>
+</p>

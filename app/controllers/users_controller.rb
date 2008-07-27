@@ -185,6 +185,50 @@ class UsersController < ApplicationController
     end
   end
   
+  def import
+    #1016;uc07645407@wan.wwedu.com;uc07645407;9wzprdx5;uc07645407@wan.wwedu.com
+    
+    if granted_for?('root') || granted_for?('users')
+       @output = ""
+       @lines = []
+       if params[:csv]
+         @lines = params[:csv].split("\n")
+       end
+       for line in @lines
+         record = line.split(";")
+         new_user_name = record[2]
+         if not (new_user_name.blank? && record[3].blank?)
+           new_password  = Digest::SHA1.hexdigest(record[3].chomp)[0..39]
+           if new_user_name.blank? || new_password.blank?
+             @output += "\nERROR USER #{record.join(', ')}"
+           else
+             @output += "\nADDING #{new_user_name}, #{new_password} ..."
+             @user = User.find_by_username(new_user_name)
+             if !@user 
+               new_user = User.create( :username => new_user_name, :password => new_password,
+                 :longname => "#{record[1]} #{record[2]}, #{record[3]}",
+                 :email => new_user_name )
+                @user = new_user
+               new_user.save!
+               @output += " NEW USER CREATED #{@user.id}/#{@user.username}, #{record[6]}"
+             else
+               @output += " USER UPDATING ... #{@user.id}/#{@user.username}, #{record[6]}"
+               @user.password = new_password
+               @user.confirmed_at = DateTime::now()
+               @user.confirmed_from_ip = request.env['REMOTE_ADDR']
+               @user.registered_at = DateTime::now()
+               @user.confirmation_code = "auto"
+               @user.save(false)
+             end
+           end
+         end
+       end
+     else
+       access_denied
+     end
+   end
+  
+  
   private
   def mk_tmp_file(send_code)
     code = random_string(5)
@@ -208,4 +252,7 @@ class UsersController < ApplicationController
     end
     rc #.to_s + "*#{user_input.chomp}* != *#{code.chomp}*"
   end
+  
+ 
+  
 end

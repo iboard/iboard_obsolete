@@ -1,0 +1,12 @@
+<h1><%= _("Create") -%></h1>
+
+<%= error_messages_for :survey %>
+
+<% form_for(@survey) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } -%>
+  <p>
+    <%= f.submit _("Create") %>
+  </p>
+<% end %>
+
+<%= link_to _('Back'), surveys_path %>

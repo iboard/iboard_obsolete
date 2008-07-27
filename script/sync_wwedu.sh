@@ -10,11 +10,13 @@ rsync -avr --exclude=tmp --exclude=log --exclude=db/production.sqlite3 \
    --exclude="public/" \
    --exclude="script/" \
    --exclude="app/views/layouts/application.html.erb" \
+   --exclude="app/views/layouts/_user_menu.html.erb" \
    --exclude="gallery_cache/" \
    --exclude=public/dispatch* --exclude=config/environment.rb $SOURCE/* $TARGET
 
 rsync -avr \
    --exclude="app/views/layouts/application.html.erb" \
+   --exclude="app/views/layouts/_user_menu.html.erb" \
    $SOURCE/app $TARGET
 
 

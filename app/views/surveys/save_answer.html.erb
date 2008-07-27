@@ -1,0 +1,13 @@
+<h1><%= _('Thank you!')%></h1>
+
+<p>
+    <b><%= @survey.title%></b><br/>
+    <%= @survey.description %>
+</p>
+
+
+<% @answers.each do |a| %>
+ <p><%= a.survey_question.question %>: <%= a.answer.split(",").join(", ") %></p>
+<% end %>
+
+<%= link_to( _('Edit answers'), answer_survey_path(@survey))%>

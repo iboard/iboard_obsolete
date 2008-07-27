@@ -1,0 +1,25 @@
+<h1><%=h @survey.title %></h1>
+<address><%=h @survey.description %></address>
+<p><small>
+  <b>Date start:</b> <%=h @survey.date_start %> 
+  <b>Date end:</b>   <%=h @survey.date_end %>
+</small></p>
+
+<% @survey.survey_questions.each do |question| %>
+  <%= render :partial => "question", :locals => { :question => question } -%>
+<% end %>
+
+<h2><%= _('Answers') -%></h2>
+<table border=1>
+<% @survey.survey_answers.each do |answer| %>
+  <tr>
+      <td><%= answer.user.username -%></td>
+      <td><%= answer.survey_question.question %></td>
+      <td><%= answer.answer -%></td>
+  </tr>
+<% end %>
+</table>
+<% if granted_for?( 'root' ) || granted_for?('surveys') %>
+  <%= link_to 'Edit', edit_survey_path(@survey) %> |
+  <%= link_to 'Back', surveys_path %>
+<% end %>

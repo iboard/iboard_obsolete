@@ -1,0 +1,25 @@
+<div id="<%= survey_question.id -%>">
+    <%= hidden_field_tag :question_id, survey_question.id -%>
+  <p><strong>
+    <%= survey_question.question -%>
+    </strong>
+  <p>
+  <blockquote>
+    <% case survey_question.qtype 
+       when 0 %>
+      <%= text_field_tag "answer[#{survey_question.id}]" %>
+    <% when 1 %>
+       <% values = survey_question.values.split(";") %>
+        <% for value in values                 %>
+          <%= radio_button_tag "answer[#{survey_question.id}]", value %>&nbsp;<%= value %><br/>
+        <% end                                 %>
+    <% when 2 %>
+      <% values = survey_question.values.split(";") %>
+       <% for value in values                 %>
+         <%= check_box_tag "answer[#{survey_question.id}][]", value %>&nbsp;<%= value %><br/>
+       <% end                                 %>
+    <% else %>
+      <em><%= _('unknown question type') -%>
+    <% end %>
+  </blockquote>
+</div>

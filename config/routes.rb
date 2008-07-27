@@ -1,5 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-
+  map.resources :surveys, :member => { :add_question => :get, 
+                                       :destroy_question => :put, 
+                                       :answer => :get, 
+                                       :save_answer => :post,
+                                       :results => :get }
+                          
   map.resources :shops
   
   map.resources :shop_items, 
@@ -62,7 +67,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users, :member => { :welcome => :get, :create_registration => :post, :confirmation => :post  },
     :collection => { :registrations => :get, :register => :get,
-                                       :send_password => :get }
+                                       :send_password => :get,
+                                       :import => :get }
 
   map.resources :authors
 
