@@ -11,17 +11,29 @@
       <% answers = question.survey_answers %>
       <tr>
         <td><%= question.question -%></td>
-        <td><%= question.qtype %></td>
+        <td> <%= case question.qtype
+            when 0
+                _('Textfield')
+            when 1 
+                _('Select one')
+            when 2
+                _('Multiple choice')
+            else
+                _('unkown type')
+            end
+            -%></td>
         <td width=200><% case question.qtype 
                when 0 %>
               <%= question.survey_answers.map { |a| a.answer }.join("<br/>")%>
             <% when 1 %>
-              <b><%= _('Average') -%> = <%= (question.survey_answers.map { |a| a.answer.to_i }.sum.to_f)/(@survey.survey_answers.length/@survey.survey_questions.length) %>
+              <b><%= _('Average') -%> = 
+                 <%= (question.survey_answers.map { |a| a.answer.to_i }.sum.to_f)/(@survey.survey_answers.length/@survey.survey_questions.length) %>
               </b><br/>
-              <% act_answer = "" 
-                   act_sum    = 0 
-                   act_num    = 0 %>
-                <%= question.survey_answers.map do |a| a.answer.to_i 
+              <% act_answer = 0 
+                 act_sum    = 0 
+                 act_num    = 0 
+              %>
+                <%= question.survey_answers.map do |a| 
                     if a.answer != act_answer && act_answer != ""
                          "#{act_num} Answers #{act_answer}<br/> " 
                          act_sum = act_answer.to_f 
@@ -34,8 +46,9 @@
                         act_num += 1
                         act_answer = a.answer
                     end   
+                    "#{act_num} Answers #{act_answer} <br/>"
+                    
                    end
-                   "#{act_num} Answers #{act_answer} <br/>"
                  %>    
             <% when 2 %>
               <% act_answer = "" 

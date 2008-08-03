@@ -8,7 +8,17 @@
           <p><b><%= question.question %></b></p>
         </div>
         <div style="display: table-cell;">
-            <%= question.qtype -%>
+            <%= case question.qtype
+            when 0
+                _('Textfield')
+            when 1 
+                _('Select one')
+            when 2
+                _('Multiple choice')
+            else
+                _('unkown type')
+            end
+            -%>
         </div>
         <div style="display: table-cell;">
           <p><%= question.values -%></p>
