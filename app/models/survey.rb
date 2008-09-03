@@ -11,4 +11,27 @@ class Survey < ActiveRecord::Base
                            :values    => new_question_values )  
   end
   
+  def display_result_table(question)
+    rc ="<table border=1 width=100%>" +
+        "<tr><th>" + _('Answer') + "</th><th>" + _('Count') + "</th></tr>"
+    
+    answers = {}
+    question.survey_answers.each do |a|      
+      if not a.answer.include? "!map:HashWithIndifferentAccess"
+        if not answers["#{a.answer}"].nil?
+          answers["#{a.answer}"] += 1
+        else
+          answers["#{a.answer}"] = 1
+        end
+      end
+    end
+    
+    answers.each_with_index do |a,k|
+      rc += "<tr><td>#{a[0]}</td><td align=right>#{a[1]}</td></tr>\n"
+    end
+    
+    rc += "</table>\n"
+    return rc 
+  end
+  
 end

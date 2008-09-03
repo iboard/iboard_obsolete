@@ -27,6 +27,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html 
       format.rss 
+      format.csv  { render :layout => false }
       format.xml  { render :xml => @events }
     end
   end

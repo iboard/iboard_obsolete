@@ -181,8 +181,9 @@ class SurveysController < ApplicationController
   end
   
   def results
-    @survey = Survey.find(params[:id],:order => 'survey_question_id, survey_answers.answer', :include => [:survey_questions, :survey_answers])
-    
+    @survey = Survey.find(params[:id],
+      :order => 'survey_questions.id',
+      :include => [:survey_questions, :survey_answers])
   end
 
   
