@@ -209,4 +209,18 @@ module ApplicationHelper
     StarsRenderer.new(rating,comment,self).render_stars
   end
     
+  def block_ascii_text(text,width=60,ident='')
+    words = text.split(" ")
+    word = 0
+    rc = ""
+    line = ident
+    words.each do |word|
+      line += word + " "
+      if line.length >= width
+        rc += line + "\n"
+        line = ident
+      end
+    end
+    rc + line
+  end
 end

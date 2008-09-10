@@ -1,4 +1,7 @@
 <% @events.each do |event| %>
-  <%= "#{event.title};#{event.begins_at.to_s(:db)};#{event.price};#{event.price_prebooking};#{event.price_reduced};#{event.body.gsub(/\n/,'<br>')};" +
-      link_to( 'Details', event_url(event) ) %>
+  <%= "#{request.env['SERVER_NAME']};#{event.title};#{event.begins_at.to_s(:db)};#{event.price};#{event.price_prebooking};"+
+      "#{event.price_reduced};#{link_to( 'Details', event_url(event) )}\n" + 
+      block_ascii_text(event.body,60,'		') 
+  %>
 <% end %>
+
