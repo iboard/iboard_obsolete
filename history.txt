@@ -1,5 +1,13 @@
 == iBoard 2.0 History File
 
+=== 2008-09-10
+
+  After small activities during the summer I start a new branch 'cleanup'
+  * No new features
+  * Cleaning up source
+  * complete remarks and documentation
+  * reorganize and smarten functions
+
 === 2008-07-04
 
   * Paypal and editor branch merged to master
