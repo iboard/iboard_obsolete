@@ -22,19 +22,9 @@ class AuthenticateController < ApplicationController
       if user
          if Digest::SHA1.hexdigest(params[:login][:password])[0..39] == user.password
            if not user.locked
-             session[:user] = user.id
-             utok = Digest::SHA1.hexdigest(DateTime.now().to_s(:long))
-             session[:utok]= utok
-             user.utok = utok
-             user.save_without_validation!
+             set_user_utok(user)
              Log.log('Successfull login', user.id, 'authentication', request.env['REMOTE_ADDR'])
-             if session[:initial_uri] && session[:initial_uri] != root_path
-               flash[:ok] = _('Welcome %{longname}! You are successfully logged in as %{shortname}') % 
-                 { :shortname => user.username, :longname => user.longname }
-               redirect_to session[:initial_uri]
-             else
-               redirect_to welcome_user_path(user)
-             end
+             redirect_after_successfull_login(user)
            else
              Log.log('Rejected login (user locked)' +  +"#{params[:login]}/#{params[:password]}", 
                 nil, 'authentication', request.env['REMOTE_ADDR'])
@@ -66,4 +56,25 @@ class AuthenticateController < ApplicationController
     end
     redirect_to params[:return_to]
   end
+  
+  private
+  def set_user_utok(user)
+     session[:user] = user.id
+     utok = Digest::SHA1.hexdigest(DateTime.now().to_s(:long))
+     session[:utok]= utok
+     user.utok = utok
+     user.save_without_validation!
+  end
+  
+  private
+  def redirect_after_successfull_login(user)
+    if session[:initial_uri] && session[:initial_uri] != root_path
+      flash[:ok] = _('Welcome %{longname}! You are successfully logged in as %{shortname}') % 
+        { :shortname => user.username, :longname => user.longname }
+      redirect_to session[:initial_uri]
+    else
+      redirect_to welcome_user_path(user)
+    end
+  end
+  
 end

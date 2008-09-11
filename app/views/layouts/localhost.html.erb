@@ -1,110 +1,161 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- RAILS 2.0 APPLICATION BY Andreas Altendorfer
-     <% date = DateTime::now %>
-     <%- content_for :html_title do -%><% end %>
-     <%- content_for :top_menu do -%><%= render :partial => 'layouts/main_menu' -%><% end %>
-     <%- content_for :controller_menu do -%><% end %>
-     <%- content_for :user_menu do -%><%= render :partial => 'layouts/user_menu' -%><% end %>
-     <%- content_for :banner_left do -%>&nbsp;<% end %>
-     <%- content_for :banner_right do -%><%= _('Last update:') + " " + _( date.localize(get_language_code) ) -%><% end %>
-     <%- content_for :copyright do -%>© 2008 by Andreas Altendorfer, Haid, Austria<% end %>
- -->
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Events: <%= controller.action_name %></title>
-  <link rel="alternate" type="application/rss+xml" title="RSS Feed"  href='<%= "#{root_url}/rss" -%>'>
-  <%= stylesheet_link_tag 'scaffold' %>
-  <% if ! request.env["HTTP_USER_AGENT"].include? "MSIE" %>
-    <%= stylesheet_link_tag get_application_layout %>
-  <% else %>
-    <%= stylesheet_link_tag get_application_layout + '_ie' %>
-  <% end %>
-  <%= javascript_include_tag 'prototype', 'effects', 'application', 'dragdrop.js' %>
-</head>
-<body id="newsPage" class="mainPage">
-                                
-      <div id="webview" style="
-                position: absolute;
-                top: 150px;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                margin: auto;
-                height: 100%;
-                width: 100%;
-                text-align: center;
-                vertical-align: middle;
-                z-index: 4;
-                display: none;
-                background: #333;
-                overflow: visible;">
-        </div>
-        
-        <div id="photo_spinner" style="
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          margin: auto;
-          padding-top: 180px;
-          opacity: 1.0;
-          height: 100%;
-          width: 100%;
-          text-align: center;
-          vertical-align: middle;
-          z-index: 5;
-          display: none;
-          overflow: visible;"><img src=<%= root_url + "/images/spinner.gif" -%>>
-        </div>
+<html>
+  <!-- RAILS 2.0 APPLICATION BY Andreas Altendorfer
+      <% date = DateTime::now %>
+      <%- content_for :html_title do -%><% end %>
+      <%- content_for :top_menu do -%><%= render :partial => 'layouts/main_menu' -%><% end %>
+      <%- content_for :controller_menu do -%><% end %>
+      <%- content_for :user_menu do -%><%= render :partial => 'layouts/user_menu' -%><% end %>
+      <%- content_for :banner_left do -%>&nbsp;<% end %>
+      <%- content_for :banner_right do -%><%=  _( date.localize(get_language_code) ) -%><% end %>
+      <%- content_for :copyright do -%>© 2008 by Andreas Altendorfer, Haid, Austria<% end %>
+  -->
+  <head>
+    <title>iboard - <%= yield :html_title -%></title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed"  href='<%= formatted_postings_url(:rss) -%>'>
+    <meta http-equiv="Content-Language" content="<%= get_language_code -%>">
+    <% if  !request.env["HTTP_USER_AGENT"].include? "MSIE" %>
+       <%= stylesheet_link_tag get_application_layout %>
+       <%= stylesheet_link_tag "scaffold" %>
+    <% else %>
+       <%= stylesheet_link_tag get_application_layout+'_ie' %>
+    <% end %>    
     
-        <div id="container">
-                                        
-          <div id="header">
-            <div id='language_chooser'><%= language_chooser -%></div>
-            <div class="banner">&nbsp;</div>               
-            <div id="nav">
-              <%= yield :top_menu -%>
-            </div>
-          </div>
-          
-          <div class="column wide">
-             <div id="main_spinner" 
-                    style="display:none; text-align: center; float: left; width: 250px; padding-top:150px;padding-bottom:150px;">                    
-                   <img src=<%= root_url -%>images/spinner.gif alt=Searching>
-             </div>
-             <div id="main">
-                <%= yield -%>
-             </div>
-             <div id='controller_menu' class='controller_menu'>
-                <%= yield :controller_menu -%>
-             </div>
-          </div>
-          
-          <div class="column small" id="newsletter">
-            <p class="chapeau"><strong> Search</strong></p>
-            <div id='spotlight'><%= render :partial => '/layouts/search_box', 
-                :locals => { :show_button => false , :size => 15, :controller => 'postings' } %>
-            </div>
-            
-            <div id="user_menu">            
-               <%= yield :user_menu %>
-               <br/>
-            </div>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p class="chapeau"><%= _('World Wide Education!') -%></p>
-            <p><%= _('Decide now and enroll in a programme with WORLD WIDE EDUCATION today!') %></p>
-          </div>
-        
-          <hr />
-        
-          <div id="footer">
-            <div class="column wide">
-              <p>&copy; 2007&ndash;2008 | All content copyright WWEDU or its respective owners</p> 
-            </div>
-          </div>
-        </div>
+    <%= javascript_include_tag 'prototype', 'effects', 'application', 'dragdrop.js' %>
+  </head>
+  <body id="body"><center><div class="mainframe">
+      <div id="webview" style="
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+        z-index: 1;
+        display: none;
+        background: #333;
+        overflow: visible;">
+      </div>
+      <div id="photo_spinner" style="
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        padding-top: 180px;
+        opacity: 1.0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+        z-index: 3;
+        display: none;
+        overflow: visible;"><img src=<%= root_url + "/images/spinner.gif" -%>>
+      </div>
+      <% if request.env["HTTP_USER_AGENT"].include? "MSIE" %>
+        <div class="MSIE">
+            Sorry, your browser is not dedicated to display this page and we realy don't care about the bugs in MSIE.<br />
+            But fortunately we can offer a barrier-free css for you.<br />
+            We recommend to fetch a Browser which can display nearly any page out there, is faster, more beautiful, and stable: 
+            <a target=_blank href=http://www.apple.com/safari>Download Safari for PC + Mac for free</a>
+        </div>      
+      <% end %>
+      
+      <div class='banner_layout_row'>
+         <div class='rss_chooser'><%= yield :rss_link  -%>
+         </div>
+         <div class='site_title'><h1>iBoard 2.0</h1><p>by Andi Altendorfer, Haid, Austria</p></div>
 
-</body>
+         <div class='banner_right'>
+             <div id='banner_right'><%= yield :banner_right %></div>
+             <div id='language_chooser'><%= language_chooser -%></div>
+             <div id='spotlight'><%= render :partial => '/layouts/search_box', 
+                :locals => { :show_button => false , :size => 15, :controller => 'postings' } %>
+             </div>
+         </div>
+            
+         <div class="banner">
+             <%= yield :banner_left %>          
+         </div>
+      </div>
+             
+      <div class="layout_table">
+
+         <div class='layout_row'>
+             
+           <div class='layout_cell'>
+             <div id="top_menu" class="top_menu_left">
+                   <%= yield :top_menu %>
+             </div>
+             <br />
+             <div id='controller_menu' class='controller_menu'><%= yield :controller_menu -%></div>  
+           </div>
+           
+           <div class='layout_cell'>
+               <div class="top_menu_right">&nbsp;</div>
+           </div>
+           
+         </div>
+         
+         <div class='layout_row'>
+             
+             <div class='layout_cell'>
+                <div id="main_spinner" 
+                     style="display:none; text-align: center; width: 90%; padding-top:150px;padding-bottom:150px;">                    
+                    <img src=<%= root_url -%>images/spinner.gif alt=Searching>
+                </div>
+                <div id="main" class="main">
+                    <div id="flashes"><%= render :partial => '/layouts/flashes' -%></div>
+                    <%= yield %>
+                    <br clear=all />
+                    <div class='content_hr'></div><br/>
+                    <div id='controller_menu' class='controller_menu'><%= yield :controller_menu -%></div>  
+                </div>
+             </div>
+             
+             <div class='layout_cell'>
+                <div id="user_menu" class="right_menu">
+                    <%= yield :user_menu %>
+                    <br/>
+                    <% if not logged_in? %>
+                      <div style='background: #fff;'>
+                         <a href=http://wwedu.com target=_top><img src=/images/wwedu-logo.jpg width=150 border=0></a><br/><br/>
+                         <script type="text/javascript"><!--
+                                                   google_ad_client = "pub-7902385865012873";
+                                                   /* 120x600, Erstellt 08.05.08 */
+                                                   google_ad_slot = "2190328213";
+                                                   google_ad_width = 120;
+                                                   google_ad_height = 600;
+                                                   //-->
+                                                   </script>
+                                                   <script type="text/javascript"
+                                                   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                         </script>
+                         
+                      </div>
+                    <% end %>
+                </div>
+             </div>
+             
+         </div>
+         
+      </div>
+      <div class="copyright"><br/>
+        <em><b>iBoard 2.0 sites</b></em>: 
+        <a href=http://www.thesoundtheatre.com target=_blank>www.thesoundtheatre.com</a> | 
+        <a href=http://iboard.wwedu.com target=_blank>iboard.wwedu.com</a>
+        <br>
+        <br>
+         <em><b>iBoard.cc services</b></em>: <a href=https://mail.iboard.cc>Webmail</a>
+        <br><br>
+        <br><br>
+      </div> 
+   </div>
+   <div class="last_line"><br/><%= yield :copyright -%></div>
+   </center></body>
 </html>
