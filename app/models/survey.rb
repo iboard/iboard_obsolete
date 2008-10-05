@@ -1,6 +1,6 @@
 class Survey < ActiveRecord::Base
-  has_many :survey_questions
-  has_many :survey_answers, :through => :survey_questions
+  has_many :survey_questions, :dependent => :destroy
+  has_many :survey_answers, :through => :survey_questions, :dependent => :destroy
   has_many :users, :through => :survey_answers
   
   

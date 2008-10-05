@@ -9,7 +9,7 @@
 
 class Page < ActiveRecord::Base
   belongs_to :div_tag
-  belongs_to :function
+  belongs_to :function, :dependent => :destroy
   has_many   :page_columns
   has_many   :postings, :through => :page_columns
   validates_presence_of :name
@@ -23,8 +23,7 @@ class Page < ActiveRecord::Base
      pages = find_all_by_language(language,
        :conditions => 
          ['show_in_menu = ? and restrict_to_function_id is ? and (only_for_domain is ? or only_for_domain = ? or only_for_domain = "")', 
-           true,nil,
-           nil, servername 
+           true,nil, nil,servername 
          ],
        :order => :position )
      if user

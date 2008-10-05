@@ -1,5 +1,13 @@
 == iBoard 2.0 History File
 
+=== 2008-10-05
+
+  Removed Log.log-Lines to prevent 5xx-Errors with Rails 2.1 and MongREL on my debian-box.
+  I have no idea where this crash on the debian box comes from. On my Mac OS X boxes this
+  error never occurs?!?
+  
+  Added ':dependent => :destroy' to all models - because I failed to do so in the past
+
 === 2008-09-10
 
   After small activities during the summer I start a new branch 'cleanup'

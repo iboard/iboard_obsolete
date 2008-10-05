@@ -10,7 +10,7 @@ class AuthenticateController < ApplicationController
   def logout
      user.utok = nil
      user.save_without_validation!
-     Log.log('Logout',user.id,'authentication',request.env['REMOTE_ADDR'])
+     #Log.log('Logout',user.id,'authentication',request.env['REMOTE_ADDR'])
      reset_session
      flash[:notice] = _('Goodbye')
      redirect_to root_path
@@ -23,25 +23,25 @@ class AuthenticateController < ApplicationController
          if Digest::SHA1.hexdigest(params[:login][:password])[0..39] == user.password
            if not user.locked
              set_user_utok(user)
-             Log.log('Successfull login', user.id, 'authentication', request.env['REMOTE_ADDR'])
+             #Log.log('Successfull login', user.id, 'authentication', request.env['REMOTE_ADDR'])
              redirect_after_successfull_login(user)
            else
-             Log.log('Rejected login (user locked)' +  +"#{params[:login]}/#{params[:password]}", 
-                nil, 'authentication', request.env['REMOTE_ADDR'])
+             #Log.log('Rejected login (user locked)' +  +"#{params[:login]}/#{params[:password]}", 
+                #nil, 'authentication', request.env['REMOTE_ADDR'])
              flash[:ok] = _('Sorry, your account is locked. Did you confirm your registration email?')
              redirect_to(welcome_user_path(user))
            end
            return
          else
-           Log.log('Rejected login (wrong password) ' +"#{params[:login]}/#{params[:password]}", 
-           nil, 'authentication', request.env['REMOTE_ADDR']) 
+           #Log.log('Rejected login (wrong password) ' +"#{params[:login]}/#{params[:password]}", 
+           #nil, 'authentication', request.env['REMOTE_ADDR']) 
          end
       else
-        Log.log('Rejected login (unknown user) ' +"#{params[:login]}/#{params[:password]}", 
-            nil, 'authentication', request.env['REMOTE_ADDR']) 
+        #Log.log('Rejected login (unknown user) ' +"#{params[:login]}/#{params[:password]}", 
+# nil,'authentication', request.env['REMOTE_ADDR']) 
       end
     end
-    Log.log('Rejected login (no params)', nil, 'authentication', request.env['REMOTE_ADDR']) 
+    #Log.log('Rejected login (no params)', nil, 'authentication', request.env['REMOTE_ADDR']) 
     flash[:error] = _('Bad username and/or passwort. Try again …')
     redirect_to :controller => "authenticate", :action => 'login'
     return

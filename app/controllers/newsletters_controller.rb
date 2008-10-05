@@ -70,7 +70,7 @@ class NewslettersController < ApplicationController
   # DELETE /newsletter/1.xml
   def destroy
     @newsletter = Newsletter.find(params[:id])
-    Log.log('Delete newsletter ' + " #{@newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])
+    #Log.log('Delete newsletter ' + " #{@newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])
     @newsletter.destroy
 
     respond_to do |format|
@@ -101,10 +101,10 @@ class NewslettersController < ApplicationController
       unless address.chomp.empty?
         begin
           added = @newsletter.subscribe(address)
-          Log.log("Add #{address} to #{@newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])
+          #Log.log("Add #{address} to #{@newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])
         rescue
           added = false
-          Log.log("Add #{address} to #{@newsletter.name} FAILED",user.id,'newsletters',request.env['REMOTE_ADDR'])
+          #Log.log("Add #{address} to #{@newsletter.name} FAILED",user.id,'newsletters',request.env['REMOTE_ADDR'])
         end
         if added
           @new_subscriptions << _('<font color=green>%s</font>') % added
@@ -127,10 +127,10 @@ class NewslettersController < ApplicationController
       email = address.gsub(/(\S+@\S+)(.*)/,'\1').chomp.downcase
       unless email.empty?
         if @newsletter.unsubscribe(email)
-          Log.log("Remove #{email} from #{@newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])          
+          #Log.log("Remove #{email} from #{@newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])          
           @removed_subscriptions << _('<font color=green>%s</font>') % email
         else
-          Log.log("Remove #{email} from #{@newsletter.name} FAILED",user.id,'newsletters',request.env['REMOTE_ADDR'])
+          #Log.log("Remove #{email} from #{@newsletter.name} FAILED",user.id,'newsletters',request.env['REMOTE_ADDR'])
           @removed_subscriptions << _('<font color=red>%s</font>') % email
         end
       end

@@ -10,7 +10,7 @@
 class Posting < ActiveRecord::Base
   belongs_to :author
   belongs_to :function, :foreign_key => :restrict_to_function_id
-  has_many   :comments
+  has_many   :comments, :dependent => :destroy
   has_and_belongs_to_many :page_columns
   validates_presence_of :title
   validates_presence_of :body

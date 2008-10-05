@@ -11,7 +11,7 @@
 # Accessors take control over the acessibility of application-functions, postings and pages
 #
 class Function < ActiveRecord::Base
-  has_many    :accessors
+  has_many    :accessors, :dependent => :destroy
   has_many    :users, :through => :accessors
   
   has_many    :postings

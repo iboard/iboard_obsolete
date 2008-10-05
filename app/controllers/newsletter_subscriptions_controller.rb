@@ -67,8 +67,8 @@ class NewsletterSubscriptionsController < ApplicationController
   def create
     @newsletter_subscription = NewsletterSubscription.new(params[:newsletter_subscription])
     @newsletter_subscription.handling_code = random_stirng(10)
-    Log.log("Subscription created #{@newsletter_subscription.email}/#{@newsletter_subscription.newsletter.name}",
-      user.id,'newsletters',request.env['REMOTE_ADDR'])
+    #Log.log("Subscription created #{@newsletter_subscription.email}/#{@newsletter_subscription.newsletter.name}",
+    #  user.id,'newsletters',request.env['REMOTE_ADDR'])
     
     respond_to do |format|
       if @newsletter_subscription.save
@@ -87,7 +87,7 @@ class NewsletterSubscriptionsController < ApplicationController
   def update
     @newsletter_subscription = NewsletterSubscription.find(params[:id])
     if user || params[:sc] == @newsletter_subscription.handling_code
-      Log.log("Update #{@newsletter_subscription.email}/#{params.inspect}",user.id,'newsletters',request.env['REMOTE_ADDR'])
+      #Log.log("Update #{@newsletter_subscription.email}/#{params.inspect}",user.id,'newsletters',request.env['REMOTE_ADDR'])
       respond_to do |format|
         if @newsletter_subscription.update_attributes(params[:newsletter_subscription])
           flash[:notice] = _('Newsletter Subscription was successfully updated.')
@@ -111,7 +111,7 @@ class NewsletterSubscriptionsController < ApplicationController
     
     if user || params[:sc] == @newsletter_subscription.handling_code
       
-      Log.log("Unsubscribe #{@newsletter_subscription.email}/#{@newsletter_subscription.newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])
+      #Log.log("Unsubscribe #{@newsletter_subscription.email}/#{@newsletter_subscription.newsletter.name}",user.id,'newsletters',request.env['REMOTE_ADDR'])
       @newsletter_subscription.destroy
       
       respond_to do |format|

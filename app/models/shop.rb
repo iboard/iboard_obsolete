@@ -9,5 +9,5 @@
 
 # This is a placehoder only! Developing the Shop is not an active task yet.
 class Shop < ActiveRecord::Base
-  has_many :shop_items
+  has_many :shop_items, :dependent => :destroy
 end

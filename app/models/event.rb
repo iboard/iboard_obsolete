@@ -13,8 +13,8 @@
 class Event < ActiveRecord::Base
   
   has_one  :binary
-  has_many :tickets
-  has_many :comments
+  has_many :tickets,  :dependent => :destroy
+  has_many :comments, :dependent => :destroy
   
   validates_presence_of :title
   validates_presence_of :begins_at

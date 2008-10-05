@@ -11,7 +11,7 @@ class NewsletterSubscription < ActiveRecord::Base
   validates_presence_of   :email
   validates_uniqueness_of :email, :scope => [:newsletter_id]
   belongs_to :newsletter
-  has_many   :newsletter_logs
+  has_many   :newsletter_logs, :dependent => :destroy
   
   def log( template )
     NewsletterLog.create(

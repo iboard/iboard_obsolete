@@ -85,11 +85,11 @@ class NewsletterTemplatesController < ApplicationController
        session[:c_sent] += 1       
     rescue ActionMailerError
       rc = "<font color=red>"+ _('Mailer error') +"</font>"
-      Log.log("Mailer-Error #{@subscription.email}/#{@template.subject}",user.id,'newsletters',request.env['REMOTE_ADDR'])
+      #Log.log("Mailer-Error #{@subscription.email}/#{@template.subject}",user.id,'newsletters',request.env['REMOTE_ADDR'])
       session[:c_error] += 1
     rescue
       rc = "<font color=red>"+ _('unkown error') + "</font>"
-      Log.log("Unknown-Error #{@subscription.email}/#{@template.subject}",user.id,'newsletters',request.env['REMOTE_ADDR'])
+      #Log.log("Unknown-Error #{@subscription.email}/#{@template.subject}",user.id,'newsletters',request.env['REMOTE_ADDR'])
       session[:c_error] += 1
     end 
     render :text => rc

@@ -15,10 +15,10 @@ class User < ActiveRecord::Base
   validates_presence_of   :longname
   validates_presence_of   :email
   
-  has_many                :authors
+  has_many                :authors, :dependent => :destroy
   has_many                :postings, :through => :authors
-  has_many                :accessors
-  has_many                :functions, :through => :accessors
+  has_many                :accessors, :dependent => :destroy
+  has_many                :functions, :through => :accessors, :dependent => :destroy
   has_many                :binaries
   has_many                :comments
   

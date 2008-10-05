@@ -11,5 +11,5 @@
 # This is a placehoder only! Developing the Shop is not an active task yet.
 class ShopItem < ActiveRecord::Base
   belongs_to :shop
-  has_many   :payments
+  has_many   :payments, :dependent => :destroy
 end
