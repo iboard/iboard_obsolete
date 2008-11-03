@@ -1,5 +1,12 @@
 == iBoard 2.0 History File
 
+=== 2008-11-03
+
+  Changes in the application controller (set_language) fix the failure with WebRick-Apache-Proxy-Configuration.
+  Laguage-chooser works again.
+  
+  A summary-line added in the tickets-controller for event-reservations
+
 === 2008-10-05
 
   Removed Log.log-Lines to prevent 5xx-Errors with Rails 2.1 and MongREL on my debian-box.
