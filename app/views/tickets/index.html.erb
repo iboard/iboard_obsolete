@@ -17,8 +17,8 @@
     <td><%= link_to h(ticket.event.title), edit_event_path(ticket.event) %></td>
     <td><%=h ticket.name %></td>
     <td align=center><%=h ticket.num_tickets %></td>
-    <td><%=h ticket.price %></td>
-    <td><%=h ticket.price * ticket.num_tickets %></td>
+    <td align=right><%=h ticket.price %></td>
+    <td align=right><%=h ticket.price * ticket.num_tickets %></td>
     <td><%=h ticket.reservation_code %></td>
     <td><%=h ticket.email %></td>
     <td><%= link_to 'Show', ticket %></td>
@@ -26,6 +26,18 @@
     <td><%= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+  <tr>
+	  <td><b><%= _('Total') -%></b></td>
+	  <td>&nbsp;</td>
+	  <td align=center><b><%= @num_people %></b></td>
+	  <td>&nbsp;</td>
+	  <td align=right><b><%= @sum_price -%></b></td>
+	  <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+	</tr>
 </table>
 
 <br />

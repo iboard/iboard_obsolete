@@ -2,18 +2,21 @@
  <%=h @posting.title -%>
 <% end %>
 
-<% content_for :controller_menu do %>
-  <% if granted_for? 'edit posting' %>
-    <%= link_to _('Edit'), edit_posting_path(@posting) %> |
+<% begin %>
+  <% content_for :controller_menu do %>
+    <% if granted_for? 'edit posting' %>
+      <%= link_to _('Edit'), edit_posting_path(@posting) %> |
+    <% end %>
+    <% page_id ||= params[:page_id]  %>
+    <% if page_id.to_i > 0 %>
+      <%= link_to _('Back'), show_page_page_path(page_id) -%>
+    <% else %>
+      <%= link_to _('Back'), postings_path %>
+    <% end %>
   <% end %>
-  <% page_id ||= params[:page_id] || nil %>
-  <% if page_id && (!page_id.empty?) %>
-    <%= link_to _('Back'), show_page_page_path(page_id) -%>
-  <% else %>
-    <%= link_to _('Back'), postings_path %>
-  <% end %>
+<% rescue Exception => e %>
+  <div><%= e.to_s %></div>
 <% end %>
-
 
 <% shadow_wrapper do %>
   <h1><%=h @posting.title -%></h1>
@@ -37,7 +40,7 @@
  
   <div id='published_pages_list'>
       <% @posting.page_columns.each do |p| %>
-      &raquo;&nbsp;<%= link_to p.page.name, show_page_page_path( p.page, :layout => params[:layout] )-%>&nbsp;
+      &raquo;&nbsp;<%= link_to p.page.name, show_page_page_path( p.page, :layout => params[:layout] ) -%>&nbsp;
       <% end %>
   </div>
 <% end %>

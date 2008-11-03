@@ -1,4 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  
+  # The priority is based upon order of creation: first created -> highest priority.
+  map.connect 'application/set_language/:code/:back_to', :controller => 'application', :action => 'set_language'
+  
   map.resources :surveys, :member => { :add_question => :get, 
                                        :destroy_question => :put, 
                                        :answer => :get, 
@@ -72,8 +77,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :authors
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  map.connect 'application/set_language/:code/:back_to', :controller => 'application', :action => 'set_language'
+
   
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'

@@ -3,7 +3,7 @@
     link_to( "#{lc[0]}", :controller => 'application',
                          :action => 'set_language', 
                          :code => lc[1],
-                         :back_to => request.env['REQUEST_URI'].gsub(/\//,":") )
+                         :back_to => lc[0] )  #request.env['REQUEST_URI'].gsub(/\//,":")
                         }.join(", ") 
 -%>
 <br />

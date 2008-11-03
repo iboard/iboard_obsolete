@@ -11,6 +11,13 @@ class TicketsController < ApplicationController
     else
       @tickets = Ticket.find(:all)
     end
+    
+    @num_people = @tickets.sum(&:num_tickets)
+    @sum_price  = 0
+    @tickets.each { |t| 
+      @sum_price += (t.price * t.num_tickets)
+    }
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tickets }

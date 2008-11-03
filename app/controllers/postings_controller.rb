@@ -34,7 +34,7 @@ class PostingsController < ApplicationController
   def show
     @posting = Posting.find(params[:id])
     
-    if params[:page_id]
+    if params[:page_id] && !params[:page_id].empty?
        @page = Page.find(params[:page_id].to_i)
     end
 

@@ -52,7 +52,6 @@ class ApplicationController < ActionController::Base
   end
   
   def set_language
-    url = params[:back_to].gsub(/:/,"/")
     cookies[:language_code] = params[:code]
     flash[:notice] = _('Language changed to %{language}') % { :language => params[:code] }
     
