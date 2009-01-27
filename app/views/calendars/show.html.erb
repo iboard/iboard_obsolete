@@ -1,0 +1,28 @@
+<p>
+  <b>Time start:</b>
+  <%=h @calendar.time_start %>
+</p>
+
+<p>
+  <b>Time end:</b>
+  <%=h @calendar.time_end %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @calendar.title %>
+</p>
+
+<p>
+  <b>Remarks:</b>
+  <%=h @calendar.remarks %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%=h @calendar.color %>
+</p>
+
+
+<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
+<%= link_to 'Back', calendars_path %>

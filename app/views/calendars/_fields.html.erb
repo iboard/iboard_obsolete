@@ -1,0 +1,34 @@
+<p>
+  <b>Title</b><br />
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <b>Event group</b><br />
+  <%= f.text_field :event_group %>
+</p>
+
+<p>
+  <b>Time start</b><br />
+  <%= f.datetime_select :time_start %>
+</p>
+
+<p>
+  <b>Time end</b><br />
+  <%= f.datetime_select :time_end %>
+</p>
+
+
+<p>
+  <b>Remarks</b><br />
+  <%= f.text_area :remarks %>
+</p>
+
+<p>
+  <b>Color</b><br />
+  <%= f.text_field :color %>
+</p>
+
+<p>
+  <%= f.submit "Save" %>
+</p>

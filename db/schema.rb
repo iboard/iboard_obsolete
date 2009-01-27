@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 43) do
+ActiveRecord::Schema.define(:version => 44) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(:version => 43) do
     t.integer  "size"
     t.text     "description"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calendars", :force => true do |t|
+    t.datetime "time_start"
+    t.datetime "time_end"
+    t.string   "event_group"
+    t.string   "title"
+    t.text     "remarks"
+    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -123,6 +123,10 @@ module ApplicationHelper
         "' title='Show Gallery'>"+
         '\2</a>')
       txt = out
+      #mp3
+      out = txt.gsub(/\[\[mp3:(.*)\]\]/, '<EMBED src="\1" autostart=true loop=false volume=100 width=240 height=30>')
+      txt = out
+      
       # gallery-layout
       out = txt.gsub(/\[\[gallerylayoutlink:(.*):(.*):(.*)\]\]/, "<a target=_top href='" +
         root_url + 'galleries/webgallery/\1?layout=\2' + 

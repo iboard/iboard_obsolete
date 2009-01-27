@@ -57,21 +57,14 @@
         display: none;
         overflow: visible;"><img src=<%= root_url + "/images/spinner.gif" -%>>
       </div>
-      <% if request.env["HTTP_USER_AGENT"].include? "MSIE" %>
-        <div class="MSIE">
-            Sorry, your browser is not dedicated to display this page and we realy don't care about the bugs in MSIE.<br />
-            But fortunately we can offer a barrier-free css for you.<br />
-            We recommend to fetch a Browser which can display nearly any page out there, is faster, more beautiful, and stable: 
-            <a target=_blank href=http://www.apple.com/safari>Download Safari for PC + Mac for free</a>
-        </div>      
-      <% end %>
+      
       <div class='banner_layout_row'>
          <div class='rss_chooser'><%= icon('rss.png', 30,20, 'Subscribe to RSS feed' ) -%>&nbsp;&nbsp;<%=  LANGUAGE_CODES.map { |lc| 
                   link_to( "#{lc[0]}", "#{root_url}rss?language=#{lc[1]}")
                 }.join(", ") 
            -%>
          </div>
-         <div class='site_title'><h1>iBoard 2.0</h1><p>by Andi Altendorfer, Haid, Austria</p></div>
+         <div class='site_title'><p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>by Julian Altendorfer, Austria</p></div>
 
          <div class='banner_right'>
              <div id='banner_right'><%= yield :banner_right %></div>
@@ -86,7 +79,6 @@
          </div>
       </div>
        
-      
       <div class="innerframe">
       
       <div class="layout_table">
@@ -128,21 +120,7 @@
                     <%= yield :user_menu %>
                     <br/>
                     <% if not logged_in? %>
-                      <div style='background: #fff;'>
-                         <a href=http://wwedu.com target=_top><img src=/images/wwedu-logo.jpg width=150 border=0></a><br/><br/>
-                         <script type="text/javascript"><!--
-                                                   google_ad_client = "pub-7902385865012873";
-                                                   /* 120x600, Erstellt 08.05.08 */
-                                                   google_ad_slot = "2190328213";
-                                                   google_ad_width = 120;
-                                                   google_ad_height = 600;
-                                                   //-->
-                                                   </script>
-                                                   <script type="text/javascript"
-                                                   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-                         </script>
-                         
-                      </div>
+                      
                     <% end %>
                 </div>
              </div>
@@ -151,6 +129,6 @@
          
       </div>
    </div>
-   <div class="copyright"><%= yield :copyright -%></div> 
+   <div class="copyright"><br/><br/><%= yield :copyright -%></div> 
    </div></body>
 </html>

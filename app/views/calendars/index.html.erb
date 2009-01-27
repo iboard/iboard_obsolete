@@ -1,0 +1,28 @@
+<h1>Listing calendars</h1>
+
+<table>
+  <tr>
+    <th>Time start</th>
+    <th>Time end</th>
+    <th>Title</th>
+    <th>Remarks</th>
+    <th>Color</th>
+  </tr>
+
+<% for calendar in @calendars %>
+  <tr>
+    <td><%=h calendar.time_start %></td>
+    <td><%=h calendar.time_end %></td>
+    <td><%=h calendar.title %></td>
+    <td><%=h calendar.remarks %></td>
+    <td><%=h calendar.color %></td>
+    <td><%= link_to 'Show', calendar %></td>
+    <td><%= link_to 'Edit', edit_calendar_path(calendar) %></td>
+    <td><%= link_to 'Destroy', calendar, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New calendar', new_calendar_path %>

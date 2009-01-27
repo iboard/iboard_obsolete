@@ -1,0 +1,26 @@
+<h1><%= _('Calendar') -%></h1>
+
+<% form_tag 'inline' do %>
+  <%= select_tag 'event_group', 
+      @event_groups.map { |grp| 
+        ["<option>#{grp.event_group}</option>"] 
+      }.inject([_("<option value='%'>#{_('all')}</option>")]) { |c,object|
+        c << object[0] 
+      } 
+  %>
+  <p>
+    <%= date_select 'date_range', 'ffrom', :default => @ffrom %> –
+    <%= date_select 'date_range', 'fto',   :default => @fto %>
+  </p>
+  <p>
+    <%= submit_tag 'Filter' -%>
+  </p>
+<% end %>
+
+<% @events.each do |event| %>
+  <div style='margin-bottom: 5px;'>
+    <b><%= event.title %></b><br/>
+    <em><%= event.time_start.to_s(:short) -%> – <%= event.time_end.to_s(:short) -%></em><br/>
+    <%= event.remarks -%>
+  </div>
+<% end %>
