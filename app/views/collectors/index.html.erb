@@ -1,0 +1,26 @@
+<h1>Listing collectors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Groups</th>
+    <th>Description</th>
+    <th>Fields</th>
+  </tr>
+
+<% for collector in @collectors %>
+  <tr>
+    <td><%=h collector.name %></td>
+    <td><%=h collector.groups %></td>
+    <td><%=h collector.description %></td>
+    <td><%=h collector.fields %></td>
+    <td><%= link_to 'Show', collector %></td>
+    <td><%= link_to 'Edit', edit_collector_path(collector) %></td>
+    <td><%= link_to 'Destroy', collector, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New collector', new_collector_path %>

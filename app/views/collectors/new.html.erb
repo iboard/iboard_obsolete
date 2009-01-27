@@ -1,0 +1,36 @@
+<h1>New collector</h1>
+
+<%= error_messages_for :collector %>
+
+<% form_for(@collector) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Groups</b><br />
+    <%= f.text_field :groups %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>Fields</b><br />
+    <%= f.text_field :fields %>
+  </p>
+
+  <p>
+    <b>Values</b><br />
+    <%= f.text_area :values %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', collectors_path %>

@@ -1,0 +1,17 @@
+<% if ! @entry || @values.blank? %>
+  <% @fields.each do |f| %>
+    <p>  
+      <b><%= f  -%></b><br/>
+      <%= text_field_tag "fields[#{f}]", "--#{f}--" -%>
+    </p>
+  <% end %>
+<% else %>
+  <% if @values %>
+    <% @values.each do |v| %>
+      <p>  
+        <b><%= v[0]  -%></b><br/>
+        <%= text_field_tag "fields[#{v[0]}]", v[1] -%>
+      </p>
+    <% end %>
+  <% end %>
+<% end %>

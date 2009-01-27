@@ -16,6 +16,16 @@
 
 <div class="vertical_menu_item"><%= link_to _('Donate'), donate_path -%></div>
 
+<% if ( granted_for?('collectors') || granted_for?('collector_entries')) %>
+  <div class='menu_subject'><%= _('Collectors') -%></div>
+  <% if granted_for?('collectors') %>
+    <div class='vertical_menu_item'><%= link_to _('Collectors'), collectors_path -%></div>
+  <% end %>  
+  <% if granted_for?('collector_entries') %>
+    <div class='vertical_menu_item'><%= link_to _('Entries'), collector_entries_path -%></div>
+    <div class='vertical_menu_item'><%= link_to _('Entries.csv'), collector_entries_path+".csv" -%></div>
+  <% end %>
+<% end %>
 
 <% if (granted_for?('content')) or (granted_for?('root')) %>
     <div class='menu_subject'><%= _('Content') -%></div>

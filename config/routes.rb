@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :collector_entries
+
+  map.resources :collectors
+
   map.resources :calendars, :collection => { :inline => :get }
 
   

@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many                :functions, :through => :accessors, :dependent => :destroy
   has_many                :binaries
   has_many                :comments
+  has_many                :collector_entries
   
   
   # search for paginate

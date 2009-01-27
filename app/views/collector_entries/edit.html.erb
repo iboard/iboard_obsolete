@@ -1,0 +1,12 @@
+<h1>Editing collector_entry</h1>
+
+<%= error_messages_for :collector_entry %>
+
+
+<% form_for(@collector_entry) do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } %>
+<% end %>
+
+
+<%= link_to 'Show', @collector_entry %> |
+<%= link_to 'Back', collector_entries_path %>

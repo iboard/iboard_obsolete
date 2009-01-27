@@ -1,0 +1,26 @@
+<p>
+  <b>Collector</b><br />
+  <%= f.select :collector_id, Collector.find(:all).map { |c| [ c.name, c.id] }.inject( [['--select collector--', nil]]) { |o,c| o<< c} %>
+  <%= observe_field("collector_entry_collector_id", 
+                    :update => "form_fields", 
+                    :url => { :controller => 'collector_entries', :action => "load_fields"},
+                    :with => "'collector_id=' + escape(value) + '&id=' + escape(#{params[:id]})"
+     ) 
+  %>
+</p>
+
+<div id='form_fields'>
+ <% if @collector_entry.collector_id %>
+    <% s = remote_function(:url => { :controller => 'collector_entries', :action => 'load_fields'},
+          :update => "form_fields",
+          :with => "'collector_id=' + escape(collector_entry_collector_id.value) + '&id=' + escape(#{params[:id]})" ) %>
+    <script>
+      <%= s %>
+    </script>
+ <% else %>
+   Please select collector
+ <% end %>
+</div>
+<p>
+  <%= f.submit "Save" %>
+</p>

@@ -1,0 +1,9 @@
+ID;USER;CREATED AT;VALUES
+<%- @collector_entries.each do |entry| -%>
+<%= "#{entry.id}" -%>;<%= 
+      "#{entry.user.username}" if entry.user -%>;<%=
+      "#{entry.created_at};"
+  -%>
+  <%= ActiveResource::Formats::XmlFormat::decode(entry.values).map { |v| "#{v[0]} = #{v[1]},"} 
+  %>
+<%- end -%>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 44) do
+ActiveRecord::Schema.define(:version => 46) do
 
   create_table "accessors", :force => true do |t|
     t.string   "name"
@@ -72,6 +72,25 @@ ActiveRecord::Schema.define(:version => 44) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "collector_entries", :force => true do |t|
+    t.integer  "collector_id"
+    t.integer  "user_id"
+    t.string   "fields"
+    t.text     "values"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "collectors", :force => true do |t|
+    t.string   "name"
+    t.string   "groups"
+    t.text     "description"
+    t.string   "fields"
+    t.text     "values"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  groups: MyString
+  description: MyText
+  fields: MyString
+  values: MyText
+
+two:
+  name: MyString
+  groups: MyString
+  description: MyText
+  fields: MyString
+  values: MyText

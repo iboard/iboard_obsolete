@@ -18,8 +18,9 @@ class PagesController < ApplicationController
     when 'www.thesoundtheatre.eu'
       redirect_to :controller => :events, :action => :calendar, :location => 'soundtheatre'
     else
-      if !request.env['HTTP_REFERER'] || ((request.env['HTTP_REFERER'] && request.env['HTTP_REFERER'].blank?) || 
-         (request.env['HTTP_REFERER'].match(/^http:\/\/iboard\.cc*/).blank?))
+      if (!request.env['HTTP_REFERER'] || ((request.env['HTTP_REFERER'] && request.env['HTTP_REFERER'].blank?) || 
+         (request.env['HTTP_REFERER'].match(/^http:\/\/iboard\.cc*/).blank?))) && request.env['SERVER_NAME'] == 'iboard.cc'
+         
         redirect_to "http://iboard.cc/fw/index.html"
       else
         redirect_to :action => :show_page, :id => get_language_fisrt_page

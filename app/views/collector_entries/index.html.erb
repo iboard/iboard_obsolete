@@ -1,0 +1,35 @@
+<h1>Listing Entries</h1>
+<p>User: <%= user.username -%> | <%= link_to 'CSV', collector_entries_path + ".csv", :target => '_blank',
+   :content_type => 'text/csv' -%></p>
+<% if @collector_entries %>
+<table width=100%>
+  <tr>
+    <th>Collector</th>
+    <th>User</th>
+    <th>Timestamp</th>
+    <th>Values</th>
+    <th colspan=3>&nbsp;</th>
+  </tr>
+
+<% for collector_entry in @collector_entries %>
+  <tr>
+    <td valign=top><%=h( collector_entry.collector.name) unless collector_entry.collector.nil? %></td>
+    <td valign=top><%=h( collector_entry.user.username) unless collector_entry.collector.nil? || collector_entry.user.nil?  %></td>
+    <td valign=top><%= collector_entry.created_at.to_s(:db) %>
+    <td valign=top><%= ActiveResource::Formats::XmlFormat::decode(collector_entry.values).map { |e| "#{e[0]}: #{e[1]}<br/>" } -%></td>
+    <% if granted_for?('collectors') || Time::now - collector_entry.created_at < 3600  %>
+      <td valign=top><%= link_to 'Show', collector_entry %></td>
+      <td valign=top><%= link_to 'Edit', edit_collector_entry_path(collector_entry) %></td>
+      <td valign=top><%= link_to 'Destroy', collector_entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% else %>
+      <td colspan=4 valign=top><small><%= _('Entries can be edited<br/>within one hour<br/>after record creation' ) -%></small></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<% else %>
+  No Entries
+<% end %>
+<br />
+
+<%= link_to 'New collector_entry', new_collector_entry_path %>

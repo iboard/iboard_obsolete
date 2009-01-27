@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @collector.name %>
+</p>
+
+<p>
+  <b>Groups:</b>
+  <%=h @collector.groups %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @collector.description %>
+</p>
+
+<p>
+  <b>Fields:</b>
+  <%=h @collector.fields %>
+</p>
+
+<p>
+  <b>Values:</b>
+  <%=h @collector.values %>
+</p>
+
+
+<%= link_to 'Edit', edit_collector_path(@collector) %> |
+<%= link_to 'Back', collectors_path %>
